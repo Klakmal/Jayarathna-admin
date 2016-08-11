@@ -1,0 +1,71 @@
+#login{
+	background-color: ;
+
+}
+#log1{
+	background-color: ;
+	width:350px;
+
+	margin: 0px 0px 0px 500px;
+	padding: 10px;
+}
+#signup{
+	background-color: ;
+	float:center;
+}
+
+label{
+	color: gray;
+}
+
+input[type=text],[type=password],[type=email],[type=date]{
+	border:none;
+	background-color: white;
+	color: gray;
+	margin: 4px;
+	padding: 4px;
+	width: 200px;
+	height: 25px;
+	border-radius: 4px;
+	font-size: 12px;
+	
+	transition: box-shadow 0.3s, border 1s;
+	box-shadow: inset 1px 1px 2px 0 #707070;
+}
+
+input[type=text]:focus,[type=password]:focus,[type=email]:focus,[type=date]:focus{
+	border: solid 1px #707070;
+	box-shadow: 0 0 5px 1px #969696;
+}
+
+input[type=radio]{
+	background-color: yellow;
+	size: 15px;
+}
+
+input[type=submit],[type=reset]{
+	margin: 5px;
+	float: center;
+	border:none;
+	background-color: #70102e;
+	color:white;
+	width: 85px;
+	height: 30px;
+	float:right;
+}
+
+input[type=submit]:hover,[type=reset]:hover{
+	background-color: white;
+	color:gray;
+	width: 85px;
+	height: 30px;
+	transition: box-shadow 0.3s, border 1s;
+	box-shadow: 0 0 5px 3px #969696;
+	
+}
+
+.error{
+	color: red;
+	font-size: 11px;
+	text-shadow: 1px 1px 2px black, 0 0 7px red, 0 0 5px darkred;
+}
