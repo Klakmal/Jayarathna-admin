@@ -40,7 +40,7 @@
   <div id="site_title"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
   <!-- Dynamic Menu -->
   <ol id="menu" class="simple_menu simple_menu_css horizontal black_menu">
-    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="#">Our Services</a>
       <!-- sub menu -->
       <ol>
