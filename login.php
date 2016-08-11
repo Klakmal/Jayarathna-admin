@@ -5,59 +5,6 @@
 <body>
     <h1>Jayarathna Funerals</h1>
     <?php
-     require "dbcon/dbcon.php";
-          $error= "" ;
-        
-        if(isset($_POST['send'])){
-            
-            $mail = $_POST['mail'];
-            $pwd = $_POST['pwd'];
-       if($mail != '' and $pwd != ''){
-            
-                $query = mysqli_query($conn,"SELECT * FROM customers WHERE email='".$mail."' AND password='".$pwd."' ") or die("There is an error");
-                $res = mysqli_fetch_array($query);
-                if(!empty($res['email']) && !empty($res['password'])){
-                    session_start();
-                    $_SESSION['email']=$mail;
-                    header('location:form.html');
-                }else{
-                    $error = "Invaild username or password";
-                }
-                
-            }else{
-                $error = "Please Enter Username and Password ";
-            }
-            
-        }
-        
-            
-     ?>
-    
-    <div id="login">
-			<form id="f1" action="login.php" method="post">
-                <table id="tb1">
-                <tr>
-                    <th colspan="2" style="font-family:fantasy" "size:18px">Login</th> 
-                </tr>
-                    <tr><td colspan="2"><span class="error"><?php echo $error ?></span></td></tr>
-                <tr>
-                    <td><label for="email">UserName</label></td>
-                    <td><input type="email" name="mail"  ></td>
-                </tr>
-                <tr>
-                    <td><label for="password">Password</label></td>
-                    <td><input type="password" name="pwd"  ></td>
-                
-                </tr>
-                   <tr> <td colspan="2" align="center"><input type="submit" value="Login" name="send"></td>
-                </tr>
-            
-            
-                </table> 
-			</form>		   
-    </div>
-    
-    <?php
     require "dbcon/dbcon.php";
 
     $error=FALSE;
@@ -205,7 +152,7 @@
 
              <tr>
                 <td colspan="2">
-                    <input type="submit" value="submit" name="submit">
+                     <input type="submit" value="submit" name="submit">
                     <input type="reset" value="cancle" name="cancle">
                 </td>
             
