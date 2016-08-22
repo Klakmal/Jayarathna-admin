@@ -27,33 +27,7 @@ jQuery.noConflict()(function ($) {
 <!-- END Dynamic Menu -->
 </head>
 <body>
-<div class="header">
-  <div id="site_title"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
-  <!-- Dynamic Menu -->
-  <ol id="menu" class="simple_menu simple_menu_css horizontal black_menu">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="#">Our Services</a>
-      <!-- sub menu -->
-      <ol>
-        <li><a href="Packeges.html">Packeges and Services</a></li>
-        <li><a href="ReservationForm.html">Reservation Form</a></li>
-        <li><a href="ReservationForm.html">Pre-Paid Plan</a></li>
-      </ol>
-      <!-- end sub menu -->
-    <li><a class="active" href="gallery.html">Gallery</a></li>
-    <li><a href="fullscreen-gallery.html">Contact Us</a></li>
-    <li class="last"><a href="news.html">About Us</a></li>
-  </ol>
-  <div class="clr"></div>
-  <!-- menu 2 -->
-  <ol id="menu2" class="simple_menu simple_menu_css horizontal black_menu">
-    <li><a href="gallery.html">Condolence Screen Message</a></li>
-    <li><a href="gallery.html">Web Casting</a></li>
-    <li><a href="gallery.html">Feed-Back</a></li>
-    <li class="last" align="right" style="float:right;"><a class="abutton1" href="gallery.html" style="color:white;">Login/Signup</a></li>
-  </ol>
-  <div class="clr"></div>
-</div>
+<?php include '../temp/header.php';  ?>
 <!-- end header -->
 
 <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 960px; height: 480px; overflow: hidden; visibility: hidden; background-color: #24262e;">
@@ -143,47 +117,14 @@ jQuery.noConflict()(function ($) {
 <!-- pagination margin -->
 <div style="position: relative; margin: 10px auto 0px; padding:auto; width:960px; height: 50px;">
     <ul class="pagination">
-      <li><a href="gallery1.html">«</a></li>
-      <li><a href="gallery.html">1</a></li>
+      <li><a class="disabled">«</a></li>
+      <li><a class="active" href="#">1</a></li>
       <li><a href="gallery1.html">2</a></li>
-      <li><a class="active" href="#">3</a></li>
-      <li><a class="disabled">»</a></li>
+      <li><a href="gallery2.html">3</a></li>
+      <li><a href="gallery1.html">»</a></li>
     </ul>
 </div>
 <!-- close container -->
-<div style="clear:both; height: 40px"></div>
-<div id="footer">
-  <div style="width:960px; margin: auto; padding-bottom: 30px">
-    <div class="one-fourth">
-      <h3>About us</h3>
-      <ul style="font-family: Georgia, 'Times New Roman'; margin: 0 15px 0 0">
-        <li style="border-bottom: 1px dotted #737a84; border-top: 1px dotted #737a84; padding: 3px 20px; letter-spacing: 2px"><a href="#" style="color:gray;">Who are we..</a></li>
-        
-        
-      </ul>
-    </div>
-    <div class="one-fourth">
-      <h3>Our services</h3>
-      <ul style="font-family: Georgia, 'Times New Roman'; margin: 0 15px 0 0">
-        <li style="border-bottom: 1px dotted #737a84; border-top: 1px dotted #737a84; padding: 3px 20px; letter-spacing: 2px"><a href="Packeges.html" style="color:gray;">Packages and services</a></li>
-        <li style="border-bottom: 1px dotted #737a84; padding: 3px 20px; letter-spacing: 2px"><a href="ReservationForm.html" style="color:gray;">Reservation form</a></li>
-        <li style="border-bottom: 1px dotted #737a84; padding: 3px 20px; letter-spacing: 2px"><a href="Pre-paid plan.html" style="color:gray;">Pre-paid plan</a></li>
-      </ul>
-    </div>
-    <div class="one-fourth">
-      <h3>Contact us</h3>
-      <ul style="font-family:;, 'Times New Roman'; margin: 0 15px 0 0">
-        <li style="border-bottom: 1px dotted #737a84; border-top: 1px dotted #737a84; padding: 3px 20px; letter-spacing: 2px"><a href="#" style="color:gray;">+94112686981</a></li>
-        <li style="border-bottom: 1px dotted #737a84; padding: 3px 20px; letter-spacing: 2px"><a  href="#" style="color:gray;">+94112686999</a></li>
-        
-      </ul>
-    </div>
-    <div class="one-fourth last">
-      <h3>Socialize</h3>
-      <img src="img/icon_fb.png" alt=""> <img src="img/icon_twitter.png" alt=""> <img src="img/icon_in.png" alt=""> </div>
-    <div style="clear:both"></div>
-  </div>
-</div>
-<div id="shadow"></div>
+<?php include '../temp/footer.php';  ?>
 </body>
 </html>
