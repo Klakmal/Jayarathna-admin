@@ -1,0 +1,11 @@
+.condol{
+	background-color: yellow;
+}
+
+.conform{
+	background-color: red;
+	width: 850px;
+	position: relative;
+	float: center;
+	padding: 50px; 
+}

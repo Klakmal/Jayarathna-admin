@@ -77,28 +77,28 @@
             
             
             if(empty($_POST['cusname'])){ 
-                $cnameerr = "</br>* Customer Name is required";
+                $cnameerr = "* ";
                 $error = TRUE;
             }else{
                 $cname = $_POST['cusname'];
             }
             
           if(empty($_POST['deadname'])){ 
-                $dnameerr = "</br>* Dead person Name is required";
+                $dnameerr = "</br>* ";
                 $error = TRUE;
             }else{
                 $dname = $_POST['deadname'];
             }
             
             if(empty($_POST['connumber'])){ 
-                $connumbererr = "</br>* Contact Number is required";
+                $connumbererr = "</br>* ";
                 $error = TRUE;
             }else{
                 $connumber = $_POST['connumber'];
             }
             
             if(empty($_POST['email'])){ 
-                $emailerr = "</br>* Email is required";
+                $emailerr = "</br>* ";
                 $error = TRUE;
             }else{
                 $email = $_POST['email'];
@@ -109,7 +109,7 @@
             }
             
             if(empty($_POST['gender'])){ 
-                $gendererr = "</br>* Gender is required";
+                $gendererr = "</br>* ";
                 $error = TRUE;
             }else{
                 $gender = $_POST['gender'];
@@ -117,7 +117,7 @@
             
            
             if(empty($_POST['password'])){ 
-                $passworderr = "</br>* Passowrd is required";
+                $passworderr = "</br>* ";
                 $error = TRUE;
             }else{
                 $password = $_POST['password'];
@@ -135,7 +135,7 @@
             }
         
             if(empty($_POST['dob'])){ 
-                $doberr = "</br>* Date of Birth is required";
+                $doberr = "</br>* ";
                 $error = TRUE;
             }else{
                 $dob = $_POST['dob'];
@@ -165,44 +165,44 @@
                 
                   <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cnameerr;?></span></td>
                     
-                <td> <input type="text" name="cusname" id="cusname"></td>
+                <td> <input type="text" name="cusname" id="cusname" required></td>
                 
             </tr>
             <tr>
                 
                     <td><label for="deadname">Dead Person Name</label><span class="error"><?php echo $dnameerr;?></span></td>
                     
-                    <td><input type="text" name="deadname" id="deadname" ></td>
+                    <td><input type="text" name="deadname" id="deadname" required></td>
             
             </tr>
              <tr>
                 
                    <td><label for="connumber">Contact Number</label><span class="error"><?php echo $connumbererr;?></span></td>
             
-                   <td> <input type="text" name="connumber" id="connumber" ></td>
+                   <td> <input type="text" name="connumber" id="connumber" required></td>
             
             </tr>
              <tr>
                 
                     <td><label for="password">Password</label><span class="error"><?php echo $passworderr;?></span></td>
                    
-                    <td><input type="password" name="password" id="password" ></td>
+                    <td><input type="password" name="password" id="password" required></td>
             </tr>
             <tr>
                 
                     <td><label for="Password">Reenter Password</label><span class="error"><?php echo $repassworderr;?></span></td>
                    
-                    <td><input type="password" name="repassword" id="repassword" ></td>
+                    <td><input type="password" name="repassword" id="repassword" required></td>
             </tr>
              <tr>
                 
                  <td><label for="email">Email</label><span class="error"><?php echo $emailerr;?></span></td>
                     
-                   <td><input type="email" name="email" id="email" ></td>
+                   <td><input type="email" name="email" id="email" required></td>
             </tr>
             <tr>
                 <td><label>Gender</label><span class="error"><?php echo $gendererr;?></span></td>
-                <td> <input type="radio" name="gender" value="male"><label>Male</label>
+                <td> <input type="radio" name="gender" value="male" required><label>Male</label>
                     <input type="radio" name="gender" value="female"><label>Female</label>
                 </td>
              </tr>
@@ -210,7 +210,7 @@
                 
                  <td><label for="dob">DOB</label><span class="error"><?php echo $doberr;?></span></td>
                     
-                   <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd"></td>
+                   <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd" required></td>
             </tr>
 
              <tr>
