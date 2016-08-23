@@ -1,12 +1,11 @@
 #login{
-	background-color: ;
+	background-color: #2d2e2f;
+	box-shadow: 2px 2px 2px 0 #4a4c4f;
 
 }
 #log1{
 	background-color: ;
 	width:350px;
-
-	margin: 0px 0px 0px 500px;
 	padding: 10px;
 }
 #signup{

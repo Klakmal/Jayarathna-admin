@@ -103,15 +103,15 @@
                 </tr>
                  <tr>
                     
-                       <td><label for="message">Condolence Message</label><span class="error"><?php echo $messageerr;?></span></td>
+                       <td><label for="message"></label><span class="error"><?php echo $messageerr;?></span></td>
                 
                      <td> <textarea name="message" id="message" rows="10" cols="60" placeholder="Input your condolence message here" required></textarea></td>
                 
                 </tr>
                  <tr>
                     <td colspan="2">
-                        <input type="submit" value="submit" name="submit"> 
-                        <input type="reset" value="cancle" name="cancle">
+                        <input type="submit" value="Submit" name="submit"> 
+                        <input type="reset" value="Cancle" name="cancle">
                     </td>
                 
                 </tr>
