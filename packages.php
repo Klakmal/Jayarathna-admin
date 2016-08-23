@@ -24,8 +24,8 @@
                 </tr>
 
                 <tr>
-                <td><div id="one1">Rs.275, 000.00
-                <img src="img/candel.jpg" alt="blah" width=90% height=90% style="border-radius: 10%;">
+                <td><div id="one1"><p><font color ="yellow">Rs.275, 000.00</font></p>
+                <img src="img/candel.jpg" alt="blah" width=90% height=80% style="border-radius: 10%;">
                 </div></td>
 
                 <td><div id="one2"><p><font color ="yellow">
@@ -52,27 +52,35 @@
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool</div></td>
+                <td><div id="one1">coool
+                <img src="img/candel.jpg" alt="blah" width=90% height=90% style="border-radius: 10%;">
+                </div></td>
                 <td><div id="one2">coool naa</div></td>
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool</div></td>
+                <td><div id="one1">coool
+                <img src="img/candel.jpg" alt="blah" width=90% height=90% style="border-radius: 10%;">
+                </div></td>
                 <td><div id="one2">coool naa</div></td>
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool</div></td>
+                <td><div id="one1">coool
+                <img src="img/candel.jpg" alt="blah" width=90% height=90% style="border-radius: 10%;">
+                </div></td>
                 <td><div id="one2">coool naa</div></td>
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool</div></td>
+                <td><div id="one1">coool
+                <img src="img/candel.jpg" alt="blah" width=90% height=90% style="border-radius: 10%;">
+                </div></td>
                 <td><div id="one2">coool naa</div></td>
                 </tr>
                  
                  <tr>
-                <td colspan="2"><div id="h1">coool</div></td>
+                <td colspan="2"><div><h2 id="h2">services</h2></div></td>
                 
                 </tr>   
                
