@@ -27,7 +27,6 @@ input[type=text],[type=password],[type=email],[type=date]{
 	height: 25px;
 	border-radius: 4px;
 	font-size: 12px;
-	
 	transition: box-shadow 0.3s, border 1s;
 	box-shadow: inset 1px 1px 2px 0 #707070;
 }
@@ -52,7 +51,6 @@ input[type=submit],[type=reset]{
 	height: 30px;
 	float:right;
 }
-
 input[type=submit]:hover,[type=reset]:hover{
 	background-color: white;
 	color:gray;
@@ -60,6 +58,16 @@ input[type=submit]:hover,[type=reset]:hover{
 	height: 30px;
 	transition: box-shadow 0.3s, border 1s;
 	box-shadow: 0 0 5px 3px #969696;
+	
+}
+input[type=submit]:active,[type=reset]:active{
+	background-color: white;
+	color:gray;
+	width: 85px;
+	height: 30px;
+	-webkit-box-shadow: inset 0px 0px 10px 1px rgba(28,27,28,1);
+	-moz-box-shadow: inset 0px 0px 10px 1px rgba(28,27,28,1);
+	box-shadow: inset 0px 0px 10px 1px rgba(28,27,28,1);
 	
 }
 
