@@ -1,20 +1,32 @@
 .ab1{
-	/*background-color: yellow;*/
-	padding: 20px;
+	float:center;
+	background-color: #1d1e1f;
+	font-size: 16px;
+	padding: 40px;
+	font-family: myfont1;
+	color: #b8b8b8;
 }
 
 .ab2{
 	background-color: ;
-	width: 1100px;
-	padding: 10px;
-	color: #c4c4c4;
-	box-shadow:  0 0 3px #a40e57;
-	
+	width: 900px;
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid #2d3234;
+	-webkit-box-shadow: 0px 0px 30px 0px rgba(66,66,66,1);
+	-moz-box-shadow: 0px 0px 30px 0px rgba(66,66,66,1);
+	box-shadow: 0px 0px 30px 0px rgba(66,66,66,1);
 }
 
 .hd{
-	color: #8a335d;
-	font-size: 20px;
-	text-shadow: 0 0 3px #FF0000;
+	background-color: ;
+	font-family:myfont1;
+	color: #a86205;
+}
 
+hr{
+	color: #3c4443;
+	width: 700px;
+	border: 3px solid #3c4443;
+	border-radius: 5px;
 }

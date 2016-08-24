@@ -21,6 +21,12 @@ html {
     font-weight: bold;
 }
 
+@font-face {
+    font-family: myfont1;
+    src: url(fonts/Semi_Casual.ttf);
+}
+
+
 body {	font-family: Arial, Helvetica, sans-serif;
 		font-size: .875em;
 	    line-height: 1.6em;

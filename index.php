@@ -54,35 +54,35 @@ jQuery.noConflict()(function ($) {
   <div class="one-third">
     <a class = "pic_button1" target="_blank" href="#" style="color: gray;" >
     <img src="img/candel.jpg" alt="blah" width="300" height="170" style="border-radius: 10%;">
-    <div class="desc">Condolence Screen Message</div>
+    <div class="desc">CONDOLENCE SCREEN MESSAGE</div>
     </a>
   </div>
   <div class="one-third">
     <a class = "pic_button2" target="_blank" href="#" style="color: gray">
     <img src="img/candel.jpg" alt="blah" width="300" height="170" style="border-radius: 10%;">
-    <div class="desc">Web Casting</div>
+    <div class="desc">WEB CASTING</div>
     </a>
   </div>
   <div class="one-third last">
     <a class = "pic_button3" target="_blank" href="#" style="color: gray">
     <img src="img/candel.jpg" alt="blah" width="300" height="170" style="border-radius: 10%;">
-    <div class="desc">Feed-Back</div>
+    <div class="desc">FEED-BACK</div>
     </a>
   </div>
 
 
   <div class="one-third" >
-    <h2 style="color: white; font-family:myfont;">Condolence Screen Message</h2>
+    <h2 style="color: white; font-family:myfont1;">CONDOLENCE MESSAGE</h2>
     <p style="color: gray;">Anyone who wishes to share their feelings with the family and the friends can use the condolence screen to send their sympathy from anypart of the world. </p>
     
   </div>
   <div class="one-third" >
-    <h2 style="color: white; color: white; font-family:myfont;">Web Casting</h2>
+    <h2 style="color: white; color: white; font-family:myfont1;">WEB CASTING</h2>
     <p style="color: gray;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the opportunity to watch the ceremony online & honour their loved one.</p>
     
   </div>
   <div class="one-third last" >
-    <h2 style="color: white; color: white; font-family:myfont;">Feed-Back</h2>
+    <h2 style="color: white; color: white; font-family:myfont1;">FEED-BACK</h2>
     <p style="color: gray;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
     
   </div>

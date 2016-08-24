@@ -10,7 +10,9 @@
 
 	<div class="ab1" align="center">
 		<div class="ab2" align="left">
-			<p style="text-align:center;" class="hd"><U><b>ABOUT US</U></b></p>
+			<h1 style="text-align:center;" class="hd"><b>ABOUT US</b></h1>
+			<hr/>
+			</br>
 			<p>Founded in 1952 in a small sales outlet made to sell flowers at No: 432, Deans road, Colombo 10, late Mr. K. G. A. Jayaratne, founder of “Jayaratne Florists” gave birth to its name. 
 			Request of customers and friends of the founder,he has decided to start funeral service company in 1967 at No : 280, Deans Road (opposite to Fatima Church) under name of Jayaratne Florists 
 			and Funeral undertakers was converted to a limited liability company in 1989 as Jayaratne Funeral Directors (PVT) LTD.</p>
