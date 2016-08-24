@@ -10,6 +10,18 @@
 
 }
 
+#h1_1{
+	background-color: #1d1e1f;
+	height:30px;
+	position: relative;
+	float: center;
+	padding: 10px;
+	margin:10px 10px 10px 10px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+
+}
+
 #one1{
 	background-color: #1d1e1f;
 	width: 250px;
@@ -26,7 +38,7 @@
 	width: 700px;
 	height:330px;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 12px;
+	font-size: 13px;
 	
 	float: right;
 	padding: 20px;
@@ -42,7 +54,7 @@
 	padding: 10px;
 	margin:20px;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 12px;
+	font-size: 13px;
 	
 }
 
@@ -63,5 +75,8 @@
 	float: center;
 	padding: 10px 20px 20px 30px;
 	margin:20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 13px;
+	
 
 }

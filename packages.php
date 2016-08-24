@@ -19,13 +19,32 @@
 
                 <tr>
                     <td colspan="2">
-                        <div><h2 id="h1"><font color ="yellow">Packages and services</font></h2></div>
+                        <div><h2 id="h1"><font color ="white">Packages and services</font></h2></div>
                     </td>
                 </tr>
 
                 <tr>
-                <td><div id="one1"><p><font color ="yellow">Rs.275, 000.00<br></font></p>
-                <img src="img/candel.jpg" alt="blah" width=90% height=70% style="border-radius: 10%;">
+                    <td colspan="2">
+                        <div id="h1_1"><font color ="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        Rate&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        Package</font></div>
+                    </td>
+                </tr>
+
+                <tr>
+                <td><div id="one1"><p><font color ="white" size="2px">
+                &emsp;&emsp;&emsp;&emsp;&emsp;Rs.275, 000.00<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;+<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;2 % N.B.T<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tax<br>
+
+
+               <br></font></p>
+                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
                 </div></td>
 
                 <td><div id="one2">
@@ -55,8 +74,22 @@
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool
-                <img src="img/candel.jpg" alt="blah" width=90% height=70% style="border-radius: 10%;">
+                <td><div id="one1"><p><font color="white" size="2px">
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A<br>
+
+				&emsp;&emsp;&emsp;&emsp;&emsp;Rs.275, 000.00<br>
+
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B<br>
+
+				&emsp;&emsp;&emsp;&emsp;&emsp;Rs.325, 000.00<br>
+
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;+<br>
+
+				&emsp;&emsp;&emsp;&emsp;&emsp;2 % N.B.T<br>
+
+				&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tax</font></p>
+
+                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
                 </div></td>
 				    <td><div id="one2">
 				    <p><font color ="white">
@@ -85,8 +118,23 @@
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool
-                <img src="img/candel.jpg" alt="blah" width=90% height=70% style="border-radius: 10%;">
+                <td><div id="one1"><p><font color="white" size="2px">
+                	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;Rs.375, 000.00<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;Rs.425, 000.00<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;+<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;2 % N.B.T<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tax<br>
+
+                </font></p>
+                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
                 </div></td>
                 <td><div id="one2">
                 	<p><font color ="white">
@@ -117,8 +165,24 @@
                 </tr>
 
                 <tr>
-                <td><div id="one1">coool
-                <img src="img/candel.jpg" alt="blah" width=90% height=70% style="border-radius: 10%;">
+                <td><div id="one1"><p><font color="white" size="2px">
+                	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;Rs.550, 000.00<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;Rs.650, 000.00<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;+<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;2 % N.B.T<br>
+
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tax<br>
+
+
+                </font></p>
+                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
                 </div></td>
                 <td><div id="one2">
                 	<p><font color ="white">
@@ -157,32 +221,40 @@
                         <div id="h2"><font color ="white"><br>&emsp;&emsp; &emsp;Please note the following package is for funerals held at our newly renovated parlour.</font></div>
                     </td>
                 </tr>
-
+                <tr>
+                    <td colspan="2">
+                        <div id="h1_1"><font color ="white">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        Rate&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                        Package</font></div>
+                    </td>
+                </tr>
 
                 <tr>
                 <td><div id="one1">
-                <p><font color ="white">
-                	&emsp;A<br>
+                <p><font color ="white" size="2px">
+                	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;A<br>
 
-					Rs.150, 000.00<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;Rs.150, 000.00<br>
 
-					&emsp;B<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;B<br>
 
-					175,000.00<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;175,000.00<br>
 
-					&emsp;+<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;+<br>
 
-					Rs.10, 000.00<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;Rs.10, 000.00<br>
 
-					Parlour charges<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;Parlour charges<br>
 
-					(For day 1)<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;(For day 1)<br>
 
-					(10,000/= for day 2, 7500/= for each day after)<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;(10,000/= for day 2, 7500/= for <br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;each day after)<br>
 
-					&emsp;+<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;+<br>
 
-					2 % N.B.T<br>
+					&emsp;&emsp;&emsp;&emsp;&emsp;2 % N.B.T<br>
 
 
                 </font></p>
@@ -197,11 +269,11 @@
 
 				    <h4>DELUXE PACKAGE</h4><br>
 
-				    * Newly renovated Parlour<br>
-				    * Casket with import fittings<br>
-				    * Embalming with English preservatives.<br>
-				    * Fresh flower arrangements<br>
-				    * Luxury Grey Volvo 960 Hearse or Vauxhall Omega Hearse<br>
+				    * Newly renovated Parlour<br><br>
+				    * Casket with import fittings<br><br>
+				    * Embalming with English preservatives.<br><br>
+				    * Fresh flower arrangements<br><br>
+				    * Luxury Grey Volvo 960 Hearse or Vauxhall Omega Hearse<br><br>
 
 
                 </div></td>
@@ -264,7 +336,12 @@
 
                 	</font></p></div></td></tr>
                
-                
+                <tr>
+                <td colspan="2"><div id="h4">
+                	<p><br><font color ="white">
+                		
+                		hifrwhiwhf
+                	</font></p></div></td></tr>
                 
                 </table>
     </form>
