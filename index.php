@@ -73,17 +73,17 @@ jQuery.noConflict()(function ($) {
 
   <div class="one-third" >
     <h2 style="color: white; font-family:myfont;">Condolence Screen Message</h2>
-    <p style="color: gray;">.............................................................</p>
+    <p style="color: gray;">Anyone who wishes to share their feelings with the family and the friends can use the condolence screen to send their sympathy from anypart of the world. </p>
     
   </div>
   <div class="one-third" >
     <h2 style="color: white; color: white; font-family:myfont;">Web Casting</h2>
-    <p style="color: gray;">.............................................................</p>
+    <p style="color: gray;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the oppertunity to watch the ceremony online & honour their loved one.</p>
     
   </div>
   <div class="one-third last" >
     <h2 style="color: white; color: white; font-family:myfont;">Feed-Back</h2>
-    <p style="color: gray;">.............................................................</p>
+    <p style="color: gray;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
     
   </div>
   <div class="disc" style="color: gray;">
