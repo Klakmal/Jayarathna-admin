@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
-		<!--<link rel="stylesheet" type="text/css" media="screen" href="css/contactUs.css">-->
+		<link rel="stylesheet" type="text/css" media="screen" href="css/contactUs.css">
 	</head>
 
 	<body>
@@ -14,7 +14,8 @@
 	
 	</br>
 	
-	<div id="para">
+	<div id="para1" align="center">
+		<div id="para" align="left">
 
 	<h1> <center>Contact Us</center></h1>
 	<ul class ="a">
@@ -25,7 +26,7 @@
 	  <li> > Jayaratne Group of companies</li>
 	  <li> > Jayaratne Stables</li>
 	</ul>
-	
+		</div>
 	</div>
 	
 	<?php include "temp/footer.php"; ?>
