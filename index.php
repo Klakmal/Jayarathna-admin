@@ -78,7 +78,7 @@ jQuery.noConflict()(function ($) {
   </div>
   <div class="one-third" >
     <h2 style="color: white; color: white; font-family:myfont;">Web Casting</h2>
-    <p style="color: gray;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the oppertunity to watch the ceremony online & honour their loved one.</p>
+    <p style="color: gray;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the opportunity to watch the ceremony online & honour their loved one.</p>
     
   </div>
   <div class="one-third last" >
