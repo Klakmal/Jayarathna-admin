@@ -3,7 +3,7 @@
 }
 
 .conform{
-	background-color: ;
+	background-color: #1d1e1f;
 	width: 850px;
 	position: relative;
 	float: center;
@@ -18,13 +18,12 @@
 }
 
 input[type=text],[type=visnic]{
-	background-color: none;
 	width: 250px;
 	height: 25px;
 	padding: 5px;
 	margin: 5px;
-	border: none;
-	border-radius: 5px;
+	border-color: none;
+	border-radius: 7px;
 
 }
 input[type=text]:hover,[type=visnic]:hover{
@@ -33,22 +32,8 @@ input[type=text]:hover,[type=visnic]:hover{
 	padding: 5px;
 	margin: 5px;
 	border-color: none;
-	border-radius: 3px;
-	transition: box-shadow 0.3s, border 1s;
-	-webkit-box-shadow: 0px 0px 10px 1px rgba(220,216,230,1);
-    -moz-box-shadow: 0px 0px 10px 1px rgba(220,216,230,1);
-    box-shadow: 0px 0px 10px 1px rgba(220,216,230,1);
-}
-input[type=text]:focus,[type=visnic]:focus{
-	width: 260px;
-	height: 25px;
-	padding: 5px;
-	margin: 5px;
-	border-color: none;
-	border-radius: 3px;
-	-webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,1);
-	-moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,1);
-	box-shadow: 0px 0px 4px 1px rgba(0,0,0,1);
+	border-radius: 4px;
+	box-shadow: 4px 2px  #444;
 }
 
 textarea{
@@ -56,31 +41,8 @@ textarea{
 	margin: 5px; 
 	width: 350px;
 	height: 125px;
-	border: none;
-	border-radius: 5px;
-}
-textarea:hover{
-	padding: 5px;
-	margin: 5px; 
-	width: 350px;
-	height: 125px;
-	border: none;
-	border-radius: 3px;
-	transition: box-shadow 0.3s, border 1s;
-	-webkit-box-shadow: 0px 0px 10px 1px rgba(220,216,230,1);
-    -moz-box-shadow: 0px 0px 10px 1px rgba(220,216,230,1);
-    box-shadow: 0px 0px 10px 1px rgba(220,216,230,1);
-}
-textarea:focus{
-	padding: 5px;
-	margin: 5px; 
-	width: 350px;
-	height: 125px;
 	border-color: none;
-	border-radius: 3px;
-	-webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,1);
-	-moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,1);
-	box-shadow: 0px 0px 4px 1px rgba(0,0,0,1);
+	border-radius: 5px;
 }
 
 input[type=submit],[type=reset]{
@@ -119,8 +81,7 @@ input[type=submit]:active,[type=reset]:active{
 	color:gray;
 	width: 85px;
 	height: 30px;
-	-webkit-box-shadow: inset 0px 0px 10px 1px rgba(28,27,28,1);
-	-moz-box-shadow: inset 0px 0px 10px 1px rgba(28,27,28,1);
-	box-shadow: inset 0px 0px 10px 1px rgba(28,27,28,1);
+	transition: box-shadow 0.3s, border 1s;
+	box-shadow: 0 0 5px 3px #969696;
 	
 }
