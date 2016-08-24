@@ -13,7 +13,7 @@
       <!-- end sub menu -->
     <li><a href="gallery.php">Gallery</a></li>
     <li><a href="contactus.php">Contact Us</a></li>
-    <li class="last"><a href="abutus.php">About Us</a></li>
+    <li class="last"><a href="aboutus.php">About Us</a></li>
   </ol>
   <div class="clr"></div>
   <!-- menu 2 -->
