@@ -1,4 +1,3 @@
-<div style="clear:both; height: 40px"></div>
 <div id="footer">
   <div style="width:960px; margin: auto; padding-bottom: 30px">
     <div class="one-fourth">

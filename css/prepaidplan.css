@@ -1,12 +1,54 @@
-ul.a{
-	list-style-type: square;
+@font-face {
+    font-family: myfont1;
+    src: url(fonts/Semi_Casual.ttf);
 }
+
 
 #para{
 	float:center;
 	background-color: #1d1e1f;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 14px;
+	font-size: 16px;
+	padding: 40px;
+	font-family: myfont1;
+	color: #b8b8b8;
+}
+.para1{
+	background-color: ;
+	width: 900px;
 	padding: 20px;
-	margin:20px;
+	border-radius: 10px;
+	border: 2px solid #2d3234;
+	-webkit-box-shadow: 0px 0px 30px 0px rgba(66,66,66,1);
+	-moz-box-shadow: 0px 0px 30px 0px rgba(66,66,66,1);
+	box-shadow: 0px 0px 30px 0px rgba(66,66,66,1);
+
+}
+
+.hd1{
+	background-color: ;
+	font-family:myfont1;
+}
+hr{
+	color: #3c4443;
+	width: 700px;
+	border: 3px solid #3c4443;
+	border-radius: 5px;
+}
+
+.pg1{
+	padding: 10px;
+}
+
+.sp1{
+	background-color: ;
+	padding: 10px;
+	border-radius: 10px;
+	border: 2px solid #3c4443;
+	font-family:myfont1;
+	-webkit-box-shadow: inset 0px 0px 7px 0px rgba(66,66,66,1);
+	-moz-box-shadow: inset 0px 0px 7px 0px rgba(66,66,66,1);
+	box-shadow: inset 0px 0px 7px 0px rgba(66,66,66,1);
+}
+.spp{
+	color: white;
 }
