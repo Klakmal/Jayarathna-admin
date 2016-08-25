@@ -1,4 +1,11 @@
+.pack{
+	background-color: blue;
+}
 
+.pack1{
+	background-color: pink;
+	width: 1200px;
+}
 
 #h1{
 	background-color: #1d1e1f;
