@@ -24,11 +24,11 @@
 				</div>
 
 				<div class="sp1">
-				<p class="spp">Pre paid funeral plans start from the <b>Basic package of 125,000 LKR, 
-				with the deluxe packages ranging from 150,000 to 200,000 LKR</b>.
+				<p class="spp">Pre paid funeral plans start from the Basic package of 125,000 LKR, 
+				with the deluxe packages ranging from 150,000 to 200,000 LKR.
 				All of which, can be custom made to suit your requirements.
 				Customers are also able to purchase our exclusive 
-				<b>VIP Packages, starting from 250,000 LKR</b>.</p>
+				VIP Packages, starting from 250,000 LKR.</p>
 				</div>
 
 				<p>Our comprehensive range of pre-paid funeral plans allows you to choose 

@@ -21,8 +21,10 @@
 		                    <td colspan="2">
 		                        <div align="center">
 			                        <h2 id="h1">
-				                        <font color ="white">
-				                        	Packages and services
+				                        <font color ="#a86205">
+				                        	<b>PACKAGE AND SERVICES</b>
+				                        	<hr id="hr1">
+				                        	<br>
 				                        </font>
 			                        </h2>
 		                        </div>
@@ -31,64 +33,73 @@
 
 		                <tr>
 		                    <td>
-		                        <div id="h1_1" align="center">Rate</div>
+		                        <div id="h1_1" align="center"><b>RATE</b></div>
 		                    </td>
 		                    <td>
-		                        <div id="h1_1" align="center">Service</div>
+		                        <div id="h1_1" align="center"><b>SERVICES</b></div>
 		                    </td>
 		                </tr>
-
-		                <tr>
-			                <td>
-				                <div id="one1" align="center">
-				                	<p>
-					                	<font color ="white" size="2px">
-							                Rs.275, 000.00<br>
-											+<br>
-											2 % N.B.T<br>
-											Tax<br>
-							                <br>
-						                </font>
-					                </p>
-					                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
-				                </div>
+						<tr>
+			                <td colspan="2">
+			                	<hr>
 			                </td>
+			            </tr>
+		                <tr>
+				                <td>
+					                <div id="one1" align="center">
+					                	<p>
+						                	<font color ="#b8b8b8" size="2px">
+								                Rs.275, 000.00<br>
+												+<br>
+												2 % N.B.T<br>
+												Tax<br>
+								                <br>
+								                <br>
+								                <br>
+							                </font>
+						                </p>
+						                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+					                </div>
+				                </td>
 
-		               		<td>
-			                	<div id="one2">
-					                <p>
-						                <font color ="white">
-							                <h4>VIP BRONZE PACKAGE</h4><br>
-							                <ul id="unodd">
-											    <li>-> Casket</li>
-											    <li>-> Embalming with the best English Preservatives</li>
-											    <li>-> Delivery within Colombo City Limits</li>
-											    <li>-> Supply of Stands</li>
-											    <li>-> Carpet</li>
-											    <li>-> Oil Lamp</li>
-											    <li>-> Brass Canopy</li>
-											    <li>-> 04 Floral Arrangements and Special vehicle to carry floral tributes</li>
-											    <li>-> "VOLVO" S80 Limousine Hearse with Personal Attendance on the day of funeral</li>
-									    	</ul><br>
+			               		<td>
+				                	<div id="one2">
+						                <p>
+							                <font color ="#b8b8b8">
+								                <h4>VIP BRONZE PACKAGE</h4><br>
+								                <ul id="unodd">
+												    <li>-> Casket</li>
+												    <li>-> Embalming with the best English Preservatives</li>
+												    <li>-> Delivery within Colombo City Limits</li>
+												    <li>-> Supply of Stands</li>
+												    <li>-> Carpet</li>
+												    <li>-> Oil Lamp</li>
+												    <li>-> Brass Canopy</li>
+												    <li>-> 04 Floral Arrangements and Special vehicle to carry floral tributes</li>
+												    <li>-> "VOLVO" S80 Limousine Hearse with Personal Attendance on the day of funeral</li>
+										    	</ul><br>
 
-											<b>Free of charge</b> : Photo Album (60 photographs of the events on the funeral day)<br>
-											Photographer and Videographer will be available only on the funeral day.<br><br>
+												<b>Free of charge</b> : Photo Album (60 photographs of the events on the funeral day)<br>
+												Photographer and Videographer will be available only on the funeral day.<br>
 
-											<b>Note </b>:<br>
+												<b>Note </b>:
 
-											Above rates are applicable only within Colombo city limits. Additional charges incurred if city limits exceeded.Orders accepted from Kurunegala, Ratnapura and Kandy branches would incur an additional sum of Rs. 35,000/- per unit as extra transport charges
-										</font>
-									</p>
-
-			    				</div>
-		    				</td>
+												Above rates are applicable only within Colombo city limits. Additional charges incurred if city limits exceeded.Orders accepted from Kurunegala, Ratnapura and Kandy branches would incur an additional sum of Rs. 35,000/- per unit as extra transport charges
+											</font>
+										</p>
+			    				</td>
+			    			</div>
 		                </tr>
-
+						<tr>
+			                <td colspan="2">
+			                	<hr>
+			                </td>
+			            </tr>
 		                <tr>
 			                <td>
 				                <div id="one1" align="center">
 				                	<p>
-				                		<font color="white" size="2px">
+				                		<font color="#b8b8b8" size="2px">
 							                A<br>
 											Rs.275, 000.00<br>
 											B<br>
@@ -105,7 +116,7 @@
 						    <td>
 							    <div id="one2">
 								    <p>
-									    <font color ="white">
+									    <font color ="#b8b8b8">
 										    <h4>VIP SILVER PACKAGE</h4><br>
 										    -> Casket with import fittings<br>
 										    -> Embalming with the best English<br> 
@@ -120,9 +131,9 @@
 
 										    <b>Free of charge</b> : Video coverage and Photo Album (60 photographs of the events on the day of funeral)
 
-											Photographer will be available only on the funeral day.<br><br>
+											Photographer will be available only on the funeral day.<br>
 
-											<b>Note</b> : <br>
+											<b>Note</b> :
 											bove rates are applicable only within Colombo city limits. Additional charges incurred if city limits exceeded.
 											sport charges.<br>
 
@@ -132,10 +143,15 @@
 							</td>
 		                </tr>
 		                <tr>
+			                <td colspan="2">
+			                	<hr>
+			                </td>
+			            </tr>
+		                <tr>
 			                <td>
 				                <div id="one1" align="center">
 				                	<p>
-						                <font color="white" size="2px">
+						                <font color="#b8b8b8" size="2px">
 						                	A<br>
 											Rs.375, 000.00<br>
 											B<br>
@@ -151,7 +167,7 @@
 			                <td>
 				                <div id="one2">
 				                	<p>
-					                	<font color ="white">
+					                	<font color ="#b8b8b8">
 										    <h4>VIP GOLD PACKAGE</h4><br>
 										    -> Casket with heavy import fittings<br>
 										    -> Embalming with the best English Preservatives<br>
@@ -163,9 +179,9 @@
 										    -> 04 Large Floral Arrangements and Special vehicle to carry floral tributes<br>
 										    -> S80 Volvo/Mercedes Benz Hearse according to availability with Personal Attendance on the day of funeral<br>
 										    <br>
-											<b>Free of charge </b>:<i> Video coverage and Photo Album (80 photographs of the events on the day of funeral</i>Photographer will be available only on the funeral day.<br><br>
+											<b>Free of charge </b>:<i> Video coverage and Photo Album (80 photographs of the events on the day of funeral</i>Photographer will be available only on the funeral day.<br>
 
-											<b>Note</b> :<br>
+											<b>Note</b> :
 
 											    Above rates are applicable only within Colombo city limits. Additional charges incurred if city limits exceeded.
 											    Orders accepted from Kurunegala, Ratnapura and Kandy branches would incur an additional sum of Rs. 35,000/- per unit as extra transport charges.<br>
@@ -176,10 +192,15 @@
 				            </td>
 		                </tr>
 		                <tr>
+			                <td colspan="2">
+			                	<hr>
+			                </td>
+			            </tr>
+		                <tr>
 			                <td>
 				                <div id="one1" align="center">
 					                <p>
-						                <font color="white" size="2px">
+						                <font color="#b8b8b8" size="2px">
 						                	A<br>
 											Rs.550, 000.00<br>
 											B<br>
@@ -195,7 +216,7 @@
 			                <td>
 				                <div id="one2">
 				                	<p>
-					                	<font color ="white">
+					                	<font color ="#b8b8b8">
 
 										    <h4>VIP PLATINUM PACKAGE</h4><br>
 
@@ -207,15 +228,15 @@
 										    -> Oil Lamp<br>
 										    -> Brass Canopy<br>
 										    -> 04 Large Floral Arrangements and Special vehicle to carry floral tributes<br>
-										    -> Brand New Mercedes Benz Hearse with Personal Attendance on the day of funeral.<br><br>
+										    -> Brand New Mercedes Benz Hearse with Personal Attendance on the day of funeral.<br>
 
 										    <b>Free of charge</b> :<i> Video coverage and Photo Album
 											(100 photographs of the events on the day of funeral)</i><br>
 
 											Photographer will be available only on the funeral day.<br>
 
-											Special complimentary floral arrangement for casket.<br><br>
-											<b>Note</b>:<br>
+											Special complimentary floral arrangement for casket.<br>
+											<b>Note</b> :
 
 											    Above rates are applicable only within Colombo city limits. Additional charges incurred if city limits exceeded.
 											    Orders accepted from Kurunegala, Ratnapura and Kandy branches would incur an additional sum of Rs. 35,000/- per unit as extra transport charges.<br>
@@ -225,10 +246,15 @@
 				                </div>
 			                </td>
 		                </tr>
+		                <tr>
+			                <td colspan="2">
+			                	<hr>
+			                </td>
+			            </tr>
 						<tr>
 		                    <td colspan="2">
 		                        <div id="h2">
-			                        <font color ="white">
+			                        <font color ="#b8b8b8">
 			                        	<br>Please note the following package is for funerals held at our newly renovated parlour.
 			                        </font>
 		                        </div>
@@ -237,24 +263,29 @@
 		                <tr>
 		                    <td>
 		                        <div id="h1_1" align="center">
-			                        <font color ="white">
-			                        Rate
+			                        <font color ="#b8b8b8">
+			                        	<b>RATE</b>
 			                        </font>
 		                        </div>
 		                    </td>
 		                    <td>
 		                        <div id="h1_1" align="center">
-			                        <font color ="white">
-			                        Package
+			                        <font color ="#b8b8b8">
+			                        	<b>PACKAGE</b>
 			                        </font>
 		                        </div>
 		                    </td>
 		                </tr>
 		                <tr>
+			                <td colspan="2">
+			                	<hr>
+			                </td>
+			            </tr>
+		                <tr>
 			                <td>
 				                <div id="one1" align="center">
 					                <p>
-						                <font color ="white" size="2px">
+						                <font color ="#b8b8b8" size="2px">
 						                	A<br>
 											Rs.150, 000.00<br>
 											B<br>
@@ -274,7 +305,7 @@
 			                <td>
 				                <div id="one2">
 				                	<p>
-					                	<font color ="white">
+					                	<font color ="#b8b8b8">
 										    <h4>DELUXE PACKAGE</h4><br>
 										    -> Newly renovated Parlour<br><br>
 										    -> Casket with import fittings<br><br>
@@ -285,15 +316,21 @@
 									</p>
 				                </div>
 			                </td>
-			            </tr>   
+			            </tr> 
+			            <tr>
+			                <td colspan="2">
+			                	<hr>
+			                </td>
+			            </tr>  
 			            <tr>
 			                <td colspan="2">
 				                <div align="center">
 					                <h2 id="h3">
-						                <font color ="white">
-						                	Services
+						                <font color ="#a86205">
+						                	<b>SERVICES</b>
 						                </font>
 					                </h2>
+					                <hr id="hr1">
 				                </div>
 			                </td>
 		                </tr> 
@@ -301,7 +338,7 @@
 			                <td colspan="2">
 				                <div id="h4">
 				                	<p><br>
-				                		<font color ="white">
+				                		<font color ="#b8b8b8">
 					                		We are known for our varieties of services and facilities to those who place their loved ones final journey in our hands.<br><br>
 
 											We supply our customers a range of services depending on the casket of their choice, hens being experienced in the trade of funeral directing for over 50 years we offer our customers the most courteous service from professionals maintaining excellence in service. As serenity is experienced in death, we also put forward a fleet of luxurious vehicles which includes Mercedes Benz, Volvo, Ford Falcon, Fords LTD Cadillac, Toyota Crown and in addition to those lavish vehicles we also provide family cars and special vehicle to carry floral tributes and Ransivige on request.<br><br>
@@ -318,7 +355,7 @@
 			                <td colspan="2">
 			                	<div id="h4">
 				                	<p><br>
-					                	<font color ="white"> 
+					                	<font color ="#b8b8b8"> 
 										    <h4>Services Available</h4><br><br>
 										    -> Supplying Funeral requisites for any type of religious service<br>
 										    -> Embalming with best quality preservatives using advanced techniques<br>
@@ -357,7 +394,7 @@
 			                <td colspan="2">
 			                	<div id="h4">
 				                	<p><br>
-					                	<font color ="white">
+					                	<font color ="#b8b8b8">
 					                		button
 					                	</font>
 				                	</p>
