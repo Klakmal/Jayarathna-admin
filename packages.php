@@ -1,7 +1,7 @@
 <html>
 <head>
-    <title>Condolence Screen</title>
-
+    <title>Packages and services</title>
+    
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/packages.css">
