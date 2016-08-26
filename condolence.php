@@ -69,43 +69,67 @@
             <form id="f3" action="condolence.php" method="post">
             <table id="tb3">
                 <tr>
+                    <td colspan="2" align="center">
+                        <h2 id="heading2" align="center"><b>CONDOLENCE MESSAGE SCREEN</b></h2>
+						<hr>
+                    </td>
+                
+                </tr>
+				<tr>
+                    <td colspan="2" align="center">
+                        
+						<br>
+                    </td>
+                
+                </tr>
+				<tr>
                     <td colspan="2">
-                        <h2 id="heading2">Condolence message screen</h2>
+                        <div class="disdiv">
+							<p id="discond">Anyone who wishes to share their feelings with the family and the friends can use the
+							condolence screen to send their sympathy from anypart of the world. </p>
+						</div>
+                    </td>
+                
+                </tr>
+				<tr>
+                    <td colspan="2" align="center">
+                        
+						<br>
                     </td>
                 
                 </tr>
                  <tr>
                     
-                        <td><label for="deadname">Dead Person Name</label><span class="error"><?php echo $deadnameerr;?></span></td>
+                        <td><label for="deadname">Dead Person Name : </label><span class="error"><?php echo $deadnameerr;?></span></td>
                         
-                        <td><input type="text" name="deadname" id="deadname" required></td>
+                        <td><input type="text" name="deadname" id="deadname" placeholder="Dead Person Name" required></td>
                 
                 </tr>
                 <tr>
                     
-                      <td><label for="visname">visitor Name</label><span class="error"><?php echo $visnameerr;?></span></td>
+                      <td><label for="visname">Visitor Name : </label><span class="error"><?php echo $visnameerr;?></span></td>
                         
-                    <td> <input type="text" name="visname" id="visname" required></td>
+                    <td> <input type="text" name="visname" id="visname" placeholder="Visitor Name" required></td>
                     
                 </tr>
                
                 <tr>
                     
-                     <td><label for="visnic">Visitor NIC</label><span class="error"><?php echo $visnicerr;?></span></td>
+                     <td><label for="visnic">Visitor NIC : </label><span class="error"><?php echo $visnicerr;?></span></td>
                         
-                       <td><input type="visnic" name="visnic" id="visnic" required></td>
+                       <td><input type="visnic" name="visnic" id="visnic" placeholder="Visitor NIC" required></td>
                 </tr>
                 <tr>
                     
-                     <td><label for="relation">Relationship</label><span class="error"><?php echo $relationerr;?></span></td>
+                     <td><label for="relation">Relationship : </label><span class="error"><?php echo $relationerr;?></span></td>
                         
-                       <td><input type="text" name="relation" id="relation" required></td>
+                       <td><input type="text" name="relation" id="relation" placeholder="Relationship" required></td>
                 </tr>
                  <tr>
                     
                        <td><label for="message"></label><span class="error"><?php echo $messageerr;?></span></td>
                 
-                     <td> <textarea name="message" id="message" rows="10" cols="60" placeholder="Input your condolence message here" required></textarea></td>
+                     <td> <textarea name="message" id="message" rows="10" cols="60" placeholder="Input Your Condolence Message Here" required></textarea></td>
                 
                 </tr>
                  <tr>

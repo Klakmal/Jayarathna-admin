@@ -49,48 +49,56 @@
             }
         ?>
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-        <div id="feedback">
-            <form id="fb5" action="feedback.php" method="post">
-            <table id="fb6">
-                <tr>
-                    <td colspan="2">
-                        <h2 id="headertable">Feed-Back</h2>
-                    </td>
-                
-                </tr>
-                 <tr>
-                    
-                        <td><label for="yourname">Your Name : </label></td>
+            <div id="feedback">
+                <form id="fb5" action="feedback.php" method="post">
+                    <table id="fb6">
+                        <tr>
+                            <td colspan="2">
+                                <h1 id="headertable" align="center" style = "font-family: myfont1; color: #a86205;"><b>FEED-BACK</b></h1>
+                                <hr>
+                            </td>
                         
-                        <td><input type="text" name="yourname" id="yourname" required></td>
-                
-                </tr>
-                <tr>
-                    
-                       <td><label for="fdback"></label></td>
-                
-                     <td> <textarea name="fdback" id="fdback" rows="10" cols="40" placeholder="Enter your Feed-Back" required></textarea></td>
-                
-                </tr>
-               
-                <tr>
-                    
-                     <td><label for="status">Our Service : </label></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <p id="headdis" align="center">
+									We would love to hear your,thoughts, concerns, problems with anything so we can improve!<br> 
+									Please take a minute to let us know what you think about us.
+								</p>
+                            </td>
                         
-                     <td>   Satisfied<input type="radio" name="status" value="Satisfied" >
-                            Unsatisfied<input type="radio" name="status" value="Unsatisfied" ><br/></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Submit" name="submit"> 
-                        <input type="reset" value="Cancle" name="cancle">
-                    </td>
-                
-                </tr>
-                
-                
-                </table>
-            </form>
+                        </tr>
+                         <tr>
+                            
+                                <td><label for="yourname"></label></td>
+                                
+                                <td><input type="text" name="yourname" id="yourname" placeholder="Your Name" required></td>
+                        
+                        </tr>
+                        <tr>
+                            
+                               <td><label for="fdback"></label></td>
+                        
+                             <td> <textarea name="fdback" id="fdback" rows="10" cols="40" placeholder="Enter your Feed-Back" required></textarea></td>
+                        
+                        </tr>
+                       
+                        <tr>
+                            
+                             <td><label for="status">Our Service : </label></span></td>
+                                
+                             <td>   <label for="fdback">Satisfied </label><input type="radio" name="status" value="Satisfied" >
+                                    <label for="fdback">Unsatisfied </label><input type="radio" name="status" value="Unsatisfied" ><br/></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="Submit" name="submit"> 
+                                <input type="reset" value="Cancle" name="cancle">
+                            </td>
+                        
+                        </tr>
+                    </table>
+                </form>
             </div>
         </form>
     </div>
