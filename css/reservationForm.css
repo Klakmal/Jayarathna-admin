@@ -1,0 +1,134 @@
+
+
+#res1{
+	background-color: #1d1e1f;
+	width: 600px;
+	height:40px;
+	position: relative;
+	float: center;
+	padding: 10px;
+	margin:100px 20px 20px 20px 20px;
+}
+#res3{
+
+float:center;
+
+}
+
+label{
+	color: gray;
+}
+
+
+input[type=text],[type=visnic]{
+	width: 250px;
+	height: 25px;
+	padding: 5px;
+	margin: 5px;
+	border-color: none;
+	border-radius: 7px;
+
+}
+input[type=text]:hover,[type=visnic]:hover{
+	width: 260px;
+	height: 25px;
+	padding: 5px;
+	margin: 5px;
+	border-color: none;
+	border-radius: 4px;
+	box-shadow: 4px 2px  #444;
+}
+
+
+input[type=date],[type=visnic]{
+	width: 250px;
+	height: 25px;
+	padding: 5px;
+	margin: 5px;
+	border-color: none;
+	border-radius: 7px;
+
+}
+input[type=date]:hover,[type=visnic]:hover{
+	width: 260px;
+	height: 25px;
+	padding: 5px;
+	margin: 5px;
+	border-color: none;
+	border-radius: 4px;
+	box-shadow: 4px 2px  #444;
+}
+
+
+
+input[type=submit],[type=reset]{
+	margin: 5px;
+	float: center;
+	border:none;
+	background-color: #70102e;
+	color:white;
+	width: 85px;
+	height: 30px;
+	float:right;
+}
+input[type=submit]:hover,[type=reset]:hover{
+	background-color: white;
+	color:gray;
+	width: 85px;
+	height: 30px;
+	transition: box-shadow 0.3s, border 1s;
+	box-shadow: 0 0 5px 3px #969696;
+	
+}
+input[type=submit]:active,[type=reset]:active{
+	background-color: white;
+	color:gray;
+	width: 85px;
+	height: 30px;
+	transition: box-shadow 0.3s, border 1s;
+	box-shadow: 0 0 5px 3px #969696;
+	
+}
+
+#p1{
+	background-color: #1d1e1f;
+	width:800px;
+	height:50px;
+	position: relative;
+	float: center;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	margin:30px;
+}
+#pa1{
+	background-color: #1d1e1f;
+	width:800px;
+	height:100px;
+	position: relative;
+	float: center;
+	padding: 10px 20px 20px 30px;
+	margin:10px;
+}
+
+#tb{
+
+	float:center;
+}
+#pa2{
+	background-color: #1d1e1f;
+	width:800px;
+	height:500px;
+	position: relative;
+	float: center;
+	padding: 10px 20px 20px 30px;
+	margin:10px;
+}
+#pa3{
+	background-color: #1d1e1f;
+	width:800px;
+	height:50px;
+	position: relative;
+	float: center;
+	padding: 10px 20px 20px 30px;
+	margin:10px;
+}

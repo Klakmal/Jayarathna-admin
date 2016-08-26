@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reservationForm.css">
 </head>
 <body>
 
@@ -109,6 +110,7 @@
                      <td> <input type="text" name="mobilenum" id="mobile" required></input></td>
                 
                 </tr>
+
                  <tr>
                     <td colspan="2">
                         <input type="submit" value="Submit" name="submit"> 
@@ -116,14 +118,75 @@
                     </td>
                 
                 </tr>
+
+                 
                 
-                
+
                 </table>
             </form>
             </div>
         </form>
     </div>
+
+
+<div>
+    <div id="tb"><table id="tbl1">
+
+                <tr>
+                    <td colspan="2">
+                        <div id="p1" align="center"><h2><font color ="white" >Packages</font></h2></div>
+                    </td>
+                </tr>
+
+                   <tr>
+                        <td colspan="2">
+                            <div id="pa1"><font color ="white">jjhgjh</font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa1"><font color ="white">lhllgg</font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa1"><font color ="white">lhllgg</font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa1"><font color ="white">lhllgg</font></div>
+                        </td>
+                    </tr>
+
+                <tr>
+                <td colspan="2">
+                    <div id="p1" align="center"><h2><font color ="white">Other Services</font></h2></div>
+                </td>
+                </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa2"><font color ="white">lhllgg</font></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa3"><font color ="white">amount</font></div>
+                        </td>
+                    </tr>
+                    <div id="onlinep">
+                        fkffkfdhddh
+                    </div>
+
+        
+    </table>
+    </div>
 </div>
+</div>
+
+
 
     <!-- include footer -->
     <?php include 'temp/footer.php';  ?>
