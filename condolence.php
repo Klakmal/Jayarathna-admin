@@ -58,8 +58,13 @@
                
                 $sql = "INSERT INTO visitors (deadname,visname,visnic,relation,message) VALUES ('".$deadname."','".$visname."','".$visnic."','".$relation."','".$message."')";
                 if(mysqli_query($conn,$sql)){
+                    /*echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
+                    header( "Location: condolence.php");*/
+                    echo "<script>alert('Thank you for writing. Condolence message'); window.location.href='condolence.php'; </script>";
                     die();
-                } else{echo "error";}
+                } else{
+                    echo "<script type='text/javascript'>alert('Not successfully datatranfer!')</script>";
+                }
                  
                 }
             }

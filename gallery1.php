@@ -38,60 +38,60 @@ jQuery.noConflict()(function ($) {
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 240px; width: 720px; height: 480px; overflow: hidden;">
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/01.jpg" />
-                <img data-u="thumb" src="img/thumb-01.jpg" />
+                <img data-u="image" src="img/15.jpg" />
+                <img data-u="thumb" src="img/t15.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/02.jpg" />
-                <img data-u="thumb" src="img/thumb-02.jpg" />
+                <img data-u="image" src="img/16.jpg" />
+                <img data-u="thumb" src="img/t16.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/03.jpg" />
-                <img data-u="thumb" src="img/thumb-03.jpg" />
+                <img data-u="image" src="img/17.jpg" />
+                <img data-u="thumb" src="img/t17.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/04.jpg" />
-                <img data-u="thumb" src="img/thumb-04.jpg" />
+                <img data-u="image" src="img/18.jpg" />
+                <img data-u="thumb" src="img/t18.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/05.jpg" />
-                <img data-u="thumb" src="img/thumb-05.jpg" />
+                <img data-u="image" src="img/19.jpg" />
+                <img data-u="thumb" src="img/t19.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/06.jpg" />
-                <img data-u="thumb" src="img/thumb-06.jpg" />
+                <img data-u="image" src="img/20.jpg" />
+                <img data-u="thumb" src="img/t20.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/07.jpg" />
-                <img data-u="thumb" src="img/thumb-07.jpg" />
+                <img data-u="image" src="img/21.jpg" />
+                <img data-u="thumb" src="img/t21.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/08.jpg" />
-                <img data-u="thumb" src="img/thumb-08.jpg" />
+                <img data-u="image" src="img/22.jpg" />
+                <img data-u="thumb" src="img/t22.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
-                <img data-u="image" src="img/09.jpg" />
-                <img data-u="thumb" src="img/thumb-09.jpg" />
+                <img data-u="image" src="img/23.jpg" />
+                <img data-u="thumb" src="img/t23.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
                 <img data-u="image" src="img/10.jpg" />
-                <img data-u="thumb" src="img/thumb-10.jpg" />
+                <img data-u="thumb" src="img/t10.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
                 <img data-u="image" src="img/11.jpg" />
-                <img data-u="thumb" src="img/thumb-11.jpg" />
+                <img data-u="thumb" src="img/t11.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
                 <img data-u="image" src="img/12.jpg" />
-                <img data-u="thumb" src="img/thumb-12.jpg" />
+                <img data-u="thumb" src="img/t12.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
                 <img data-u="image" src="img/13.jpg" />
-                <img data-u="thumb" src="img/thumb-13.jpg" />
+                <img data-u="thumb" src="img/t13.jpg" />
             </div>
             <div data-p="150.00" style="display: none;">
                 <img data-u="image" src="img/14.jpg" />
-                <img data-u="thumb" src="img/thumb-14.jpg" />
+                <img data-u="thumb" src="img/t14.jpg" />
             </div>
         
         </div>

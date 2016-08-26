@@ -39,12 +39,13 @@
                 }
                 
                 if ($error==FALSE){
-                               
                 $sql = "INSERT INTO `feedback`(`yourname`, `fdback`, `status`) VALUES ('$_POST[yourname]','$_POST[fdback]','$_POST[status]')";
+
                 if(mysqli_query($conn,$sql)){
+                    echo "<script>alert('Thank you for writing. I appreciate your feedback'); window.location.href='feedback.php'; </script>";
                     die();
-                } else{echo "error";}
-                 
+                } else{
+                    echo "<script type='text/javascript'>alert('Not successfully datatranfer!')</script>";}
                 }
             }
         ?>
@@ -87,12 +88,12 @@
                             
                              <td><label for="status">Our Service : </label></span></td>
                                 
-                             <td>   <label for="fdback">Satisfied </label><input type="radio" name="status" value="Satisfied" >
-                                    <label for="fdback">Unsatisfied </label><input type="radio" name="status" value="Unsatisfied" ><br/></td>
+                             <td>   <label for="fdback">Satisfied </label><input type="radio" name="status" value="Satisfied" required>
+                                    <label for="fdback">Unsatisfied </label><input type="radio" name="status" value="Unsatisfied"><br/></td>
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <input type="submit" value="Submit" name="submit"> 
+                                <input type="submit" value="Submit" name="submit" <?php if ($error==FALSE){}?>> 
                                 <input type="reset" value="Cancle" name="cancle">
                             </td>
                         
