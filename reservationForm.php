@@ -54,11 +54,16 @@
                 }else{
                     $mobilenum = $_POST['mobilenum'];
                 }
-                
+
+                if(empty($_POST['packname'])){ 
+                    $error = TRUE;
+                }else{
+                    $status = $_POST['packname'];
+                }
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]')";
                 if(mysqli_query($conn,$sql)){
                     die();
                 } else{echo "error";}
@@ -111,57 +116,64 @@
                 
                 </tr>
 
-                 <tr>
-                    <td colspan="2">
-                        <input type="submit" value="Submit" name="submit"> 
-                        <input type="reset" value="Cancle" name="cancle">
-                    </td>
-                
-                </tr>
-
                  
-                
-
-                </table>
-            </form>
-            </div>
-        </form>
-    </div>
-
-
-<div>
-    <div id="tb"><table id="tbl1">
 
                 <tr>
                     <td colspan="2">
-                        <div id="p1" align="center"><h2><font color ="white" >Packages</font></h2></div>
+                        <div id="p1" align="left"><h2><font color ="white"><h5>Packages</h5></font></h2></div>
                     </td>
                 </tr>
 
                    <tr>
                         <td colspan="2">
-                            <div id="pa1"><font color ="white">jjhgjh</font></div>
+                            <div id="pa1"><font color ="white" size="2px">
+                            
+                            <label for="packname"><h4>VIP BRONZE PACKAGE</label><input type="radio" name="packname" value="VIP BRONZE PACKAGE" required></h4>
+                                <p>Bronze package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
+                            Free of charge photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+
+                            </font></div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <div id="pa1"><font color ="white">lhllgg</font></div>
+                            <div id="pa1"><font color ="white" size="2px">
+                            <label for="packname"><h4>VIP SILVER PACKAGE</label><input type="radio" name="packname" value="VIP SILVER PACKAGE"></h4>
+                            <p>Silver package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
+                            Free of charge video coverage and photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+                            </font></div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <div id="pa1"><font color ="white">lhllgg</font></div>
+                            <div id="pa1"><font color ="white" size="2px">
+                            <label for="packname"><h4>VIP GOLD PACKAGE</label><input type="radio" name="packname" value="VIP GOLD PACKAGE"></h4>
+                            <p>Gold package will include S80 "Volvo/Mercedes Benz" Hearse according to availability and 04 large floral arrangements with special vehicle to carry floral tributes.
+                            Free of charge video coverage photo album with 80 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+                                </font></div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <div id="pa1"><font color ="white">lhllgg</font></div>
+                            <div id="pa1"><font color ="white" size="2px">
+                            <label for="packname"><h4>VIP PLATINUM PACKAGE</label><input type="radio" name="packname" value="VIP PLATINUM PACKAGE"></h4>
+                            <p>Platinum package will include Brand New Mercedes Benz Hearse and 04 large floral arrangements with special vehicle to carry floral tributes.
+                            Free of charge photo video coveragalbum with 100 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy, special complimentary floral arrangement for casket and etc</p>
+                            </font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa1"><font color ="white" size="2px">
+                            <label for="packname"><h4>DELUXE PACKAGE</label><input type="radio" name="packname" value="DELUXE PACKAGE"></h4>
+
+                            </font></div>
                         </td>
                     </tr>
 
                 <tr>
                 <td colspan="2">
-                    <div id="p1" align="center"><h2><font color ="white">Other Services</font></h2></div>
+                    <div id="p1" align="left"><h2><font color ="white"><h5>Other Services</h5></font></h2></div>
                 </td>
                 </tr>
 
@@ -176,9 +188,28 @@
                             <div id="pa3"><font color ="white">amount</font></div>
                         </td>
                     </tr>
-                    <div id="onlinep">
-                        fkffkfdhddh
-                    </div>
+
+                    <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Save" name="submit"> 
+                        <input type="reset" value="Cancle" name="cancle">
+                    </td>
+                
+                </tr>
+
+                </table>
+            </form>
+            </div>
+        </form>
+    </div>
+
+
+<div>
+    <div id="tb"><table id="tbl1">
+
+                
+
+                    
 
         
     </table>
