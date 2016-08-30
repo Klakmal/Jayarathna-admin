@@ -16,7 +16,7 @@
         require "dbcon/dbcon.php";
 
         $error=FALSE;
-            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr = "";
+            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr = $packname = $service1 = "";
             
             if (isset($_POST['submit'])) {
                 
@@ -58,12 +58,18 @@
                 if(empty($_POST['packname'])){ 
                     $error = TRUE;
                 }else{
-                    $status = $_POST['packname'];
+                    $packname = $_POST['packname'];
+                }
+
+                if(empty($_POST['service1'])){ 
+                    $error = TRUE;
+                }else{
+                    $service1 = $_POST['service1'];
                 }
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`floralTributes`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]')";
                 if(mysqli_query($conn,$sql)){
                     die();
                 } else{echo "error";}
@@ -166,6 +172,8 @@
                         <td colspan="2">
                             <div id="pa1"><font color ="white" size="2px">
                             <label for="packname"><h4>DELUXE PACKAGE</label><input type="radio" name="packname" value="DELUXE PACKAGE"></h4>
+                            <p>Deluxe package is for funerals held at our newly renovated parlour.This package will include Luxury Grey Volvo 960 Hearse or Vauxhall Omega Hearse, 
+                            fresh flower arrangements, embalming with the best english preservations and casket with important fittings.</p>
 
                             </font></div>
                         </td>
@@ -179,7 +187,7 @@
 
                     <tr>
                         <td colspan="2">
-                            <div id="pa2"><font color ="white">lhllgg</font></div>
+                            <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label><input type="radio" name="service1" value="true" ></font></div>
                         </td>
                     </tr>
 
