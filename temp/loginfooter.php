@@ -1,5 +1,5 @@
 <div class="header">
-  <div id="site_title"><a href="index.html"><img src="img/logo.png" alt=""></a></div>
+  <div id="site_title"><a href="index.php"><img src="img/logo.png" alt=""></a></div>
   <!-- Dynamic Menu -->
   <ol id="menu" class="simple_menu simple_menu_css horizontal black_menu">
     <li><a href="index.php">HOME</a></li>
@@ -18,9 +18,9 @@
   <div class="clr"></div>
   <!-- menu 2 -->
   <ol id="menu2" class="simple_menu simple_menu_css horizontal black_menu">
-    <li><a href="condolence.php">Condolence Screen Message</a></li>
-    <li><a href="webcast.php">Web Casting</a></li>
-    <li><a href="feedback.php">Feed-Back</a></li>
+    <li><a href="condolence.php">CONDOLENCE SCREEN MESSAGES</a></li>
+    <li><a href="webcast.php">WEB CASTING</a></li>
+    <li><a href="feedback.php">FEED-BACK</a></li>
   </ol>
   <div class="clr"></div>
 </div>

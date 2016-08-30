@@ -278,7 +278,7 @@ $dob="$year-$month-$dt";
 <option value='31'>31</option>
 </select>
 
-<input class="year" type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4">
+<input class="year" type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year">
 
              <tr>
                 <td colspan="2">
