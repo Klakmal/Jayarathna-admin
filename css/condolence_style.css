@@ -77,7 +77,7 @@ input[type=text]:hover,[type=visnic]:hover{
 	background-color: #222326;
 	color: white;
 	font-size: 16px;
-	transition: 1s;
+	transition: 0.3s;
 	
 }
 

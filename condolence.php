@@ -122,7 +122,7 @@
                     
                      <td><label for="visnic">Visitor NIC : </label><span class="error"><?php echo $visnicerr;?></span></td>
                         
-                       <td><input type="visnic" name="visnic" id="visnic" placeholder="Visitor NIC" required></td>
+                       <td><input type="visnic" name="visnic" id="visnic" pattern="^\d[0-9V]{9}$" maxlength="10" placeholder="Visitor NIC - XXXXXXXXXV" required></td>
                 </tr>
                 <tr>
                     

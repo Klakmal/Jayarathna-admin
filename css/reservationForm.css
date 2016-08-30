@@ -91,23 +91,23 @@ input[type=submit]:active,[type=reset]:active{
 }
 
 #p1{
-	
+	background-color: #1d1e1f;
 	width:800px;
 	height:50px;
 	position: relative;
-	float: left;
-	padding: 1px 2px 2px 2px;
-	
-	margin:30px 0px 0px 0px;
+	float: center;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	margin:30px;
 }
 #pa1{
-	
+	background-color: #1d1e1f;
 	width:800px;
 	height:100px;
 	position: relative;
-	float: left;
-	padding: 10px 20px 20px 10px;
-	margin:20px 0px 0px 0px;
+	float: center;
+	padding: 10px 20px 20px 30px;
+	margin:10px;
 }
 
 #tb{
