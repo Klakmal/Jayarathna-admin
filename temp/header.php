@@ -19,7 +19,7 @@
   <!-- menu 2 -->
   <ol id="menu2" class="simple_menu simple_menu_css horizontal black_menu">
     <li><a href="condolence.php">CONDOLENCE SCREEN MESSAGES</a></li>
-    <li><a href="webcast.php">WEB CASTING</a></li>
+    <li><a href="webcasting.php">WEB CASTING</a></li>
     <li><a href="feedback.php">FEED-BACK</a></li>
     <li class="last" align="right" style="float:right;"><a class="abutton1" href="login.php" style="color:white;">Login/Signup</a></li>
   </ol>
