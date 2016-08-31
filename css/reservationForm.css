@@ -91,7 +91,7 @@ input[type=submit]:active,[type=reset]:active{
 }
 
 #p1{
-	background-color: #1d1e1f;
+	
 	width:800px;
 	height:50px;
 	position: relative;
@@ -101,7 +101,7 @@ input[type=submit]:active,[type=reset]:active{
 	margin:30px;
 }
 #pa1{
-	background-color: #1d1e1f;
+	
 	width:800px;
 	height:100px;
 	position: relative;
@@ -115,7 +115,7 @@ input[type=submit]:active,[type=reset]:active{
 	float:center;
 }
 #pa2{
-	background-color: #1d1e1f;
+	
 	width:800px;
 	height:500px;
 	position: relative;
