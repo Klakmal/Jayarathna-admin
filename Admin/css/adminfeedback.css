@@ -1,0 +1,42 @@
+body{
+	margin: 0px;
+}
+
+.afb1{
+	background-color: ;
+	padding: 10px;
+}
+.afb2{
+	background-color: ;
+	width: 800px;
+	padding: 20px; 
+
+}
+.row{
+	background-color: ;
+	margin-bottom: 20px;
+
+}
+
+.col1{
+	background-color: #d0d1d7;
+	width: 150px;
+	border: 1px solid white;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	padding: 10px;
+
+}
+.col2{
+	background-color: #e3e4e8;
+	max-width: 500px;
+	padding: 10px;
+	overflow: hidden;
+}
+.col3{
+	background-color: #f7f7f8;
+	width: 150px;
+	padding: 10px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
