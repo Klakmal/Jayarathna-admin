@@ -16,7 +16,7 @@
         require "dbcon/dbcon.php";
 
         $error=FALSE;
-            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 =  "";
+            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 = $service2=  "";
             
             if (isset($_POST['submit'])) {
                 
@@ -64,10 +64,16 @@
                 }else{
                     $service1 = $_POST['service1'];
                 }
+                 if(empty($_POST['service2'])){ 
+                    $error = TRUE;
+                }else{
+                    $service1 = $_POST['service2'];
+                }
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]')";
+
                 if(mysqli_query($conn,$sql)){
                     die();
                 } else{echo "error";}
@@ -85,16 +91,14 @@
                     </td>
                 
                 </tr>
-                 <tr>
-                    
-                        <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cusnameerr;?></span></td>
+                 <tr> 
+                    <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cusnameerr;?></span></td>
                         
-                        <td><input type="text" name="cusname" id="cusname" required></td>
+                    <td><input type="text" name="cusname" id="cusname" required></td>
                 
                 </tr>
                 <tr>
-                    
-                      <td><label for="diladd">Dilivery Address</label><span class="error"><?php echo $diladderr;?></span></td>
+                    <td><label for="diladd">Dilivery Address</label><span class="error"><?php echo $diladderr;?></span></td>
                         
                     <td> <input type="text" name="diladd" id="diladd" required></td>
                     
@@ -120,12 +124,7 @@
                 
                 </tr>
 
-                 
-
-                 
-                
-
-                </table>
+            </table>
             
             </div>
 
@@ -201,13 +200,21 @@
                     <tr>
                         <td colspan="2">
                             
-                            <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label><input type="radio" name="service1" value="true" >
-                            <select name=s1>Choose one</option>
+                            <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label>
+                            <select name=service1>
+                                <option value='false'>--Choose-one--</option>
                                 <option value='op1'>option1</option>
                                 <option value='op2'>option2</option>
                                 <option value='op3'>option3</option>
                             </select>
                             </font></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa2"><font color ="white"><label for="service1">Provision of Remembrance Booklet</label>
+                            <input type="date" name="dildate" id="dildate">
                         </td>
                     </tr>
 
