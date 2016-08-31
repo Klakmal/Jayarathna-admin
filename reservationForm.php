@@ -34,7 +34,7 @@
                     $diladd = $_POST['diladd'];
                 }
 
-                if(empty($_POST['dildate'])){ 
+               if(empty($_POST['dildate'])){ 
                     $dildateerr = "required";
                     $error = TRUE;
                 }else{
@@ -62,7 +62,7 @@
                 if(empty($_POST['service1'])){ 
                     $error = TRUE;
                 }else{
-                    $packname = $_POST['service1'];
+                    $service1 = $_POST['service1'];
                 }
                 
                 if ($error==FALSE){
@@ -81,7 +81,7 @@
             <table id="tb4">
                 <tr>
                     <td colspan="2">
-                        <h2 id="reshead">Reservation Form</h2>
+                        <h2 id="reshead" align="center" style = "font-family: myfont1; color: #a86205;" >Reservation Form</h2>
                     </td>
                 
                 </tr>
@@ -135,7 +135,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <div id="p1" align="left"><h2><font color ="white"><h5>Packages</h5></font></h2></div>
+                        <div id="p1" align="left"><h2><font color ="white"><h5 style="font-family:myfont1; font-size:28px; color: white;">Packages</h5></font></h2></div>
                     </td>
                 </tr>
 
@@ -194,14 +194,20 @@
 
                 <tr>
                 <td colspan="2">
-                    <div id="p1" align="left"><h2><font color ="white"><h5>Other Services</h5></font></h2></div>
+                    <div id="p1" align="left"><h2><font color ="white"><h5 style="font-family:myfont1; font-size:28px; color: white;">Other Services</h5></font></h2></div>
                 </td>
                 </tr>
 
                     <tr>
                         <td colspan="2">
                             
-                            <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label><input type="radio" name="service1" value="true" ></font></div>
+                            <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label><input type="radio" name="service1" value="true" >
+                            <select name=s1>Choose one</option>
+                                <option value='op1'>option1</option>
+                                <option value='op2'>option2</option>
+                                <option value='op3'>option3</option>
+                            </select>
+                            </font></div>
                         </td>
                     </tr>
 
