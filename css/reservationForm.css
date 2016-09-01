@@ -9,8 +9,8 @@
 	padding: 10px;
 	margin:100px 20px 20px 20px 20px;
 }
-#res3{
-
+#res2{
+background-color: white;
 float:center;
 
 }
@@ -20,7 +20,7 @@ label{
 }
 
 
-input[type=text],[type=visnic]{
+input[name=diladd],[name=mobilenum],[name=cusname],[type=visnic]{
 	width: 250px;
 	height: 25px;
 	padding: 5px;
@@ -29,7 +29,7 @@ input[type=text],[type=visnic]{
 	border-radius: 7px;
 
 }
-input[type=text]:hover,[type=visnic]:hover{
+input[name=diladd]:hover,[name=mobilenum],[name=cusname]:hover,[type=visnic]:hover{
 	width: 250px;
 	height: 25px;
 	padding: 5px;
@@ -40,24 +40,26 @@ input[type=text]:hover,[type=visnic]:hover{
 }
 
 
-input[type=date],[type=visnic]{
-	width: 250px;
+input[name=dildate],[type=visnic]{
+	width: 50px;
 	height: 25px;
 	padding: 5px;
-	margin: 5px;
+	margin: 5px 0px 5px 5px;
 	border-color: none;
 	border-radius: 7px;
 
 }
-input[type=date]:hover,[type=visnic]:hover{
-	width: 250px;
+input[name=dildate]:hover,[type=visnic]:hover{
+	width: 50px;
 	height: 25px;
 	padding: 5px;
-	margin: 5px;
+	margin: 5px 0px 5px 5px;
 	border-color: none;
 	border-radius: 4px;
 	box-shadow: 4px 2px  #444;
 }
+
+
 
 
 
@@ -133,7 +135,7 @@ input[type=submit]:active,[type=reset]:active{
 	margin:10px;
 }
 select{
-    margin:40px;
+    margin:5px 5px 5px 10px;
     background: rgba(0,0,0,0.3);
     color:#fff;
     text-shadow:0 1px 0 rgba(0,0,0,0.4);
