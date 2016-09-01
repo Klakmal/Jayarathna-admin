@@ -16,7 +16,7 @@
         require "dbcon/dbcon.php";
 
         $error=FALSE;
-            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 = $service2=  "";
+            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 = $service2 = $service3=  "";
             
             if (isset($_POST['submit'])) {
                 
@@ -67,12 +67,22 @@
                  if(empty($_POST['service2'])){ 
                     $error = TRUE;
                 }else{
-                    $service1 = $_POST['service2'];
+                    $service2 = $_POST['service2'];
+                }
+                if(empty($_POST['service3'])){ 
+                    $error = TRUE;
+                }else{
+                    $service3 = $_POST['service3'];
+                }
+                if(empty($_POST['service4'])){ 
+                    $error = TRUE;
+                }else{
+                    $service3 = $_POST['service4'];
                 }
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`,`Remembrance booklet`,`Chairs and tents`,`Obituary Notices`) VALUES ('$_POST[cusname]','$_POST[diladd]','$_POST[dildate]','$_POST[diltime]','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]')";
 
                 if(mysqli_query($conn,$sql)){
                     die();
@@ -210,14 +220,45 @@
                             </font></div>
                         </td>
                     </tr>
-
                     <tr>
                         <td colspan="2">
-                            <div id="pa2"><font color ="white"><label for="service1">Provision of Remembrance Booklet</label>
-                            <input type="date" name="dildate" id="dildate">
+                            <div id="pa2"><font color ="white"><label for="service2">Provision of Remembrance Booklet</label>
+                            <input type="text" name="service2" id="service2"></font></div>
                         </td>
                     </tr>
-
+                    <tr>
+                        <td colspan="2">
+                            
+                            <div id="pa2"><font color ="white"><label for="service3">Assisting to hire Chairs and tents</label>
+                            <select name=service3>
+                                <option value='false'>--Choose-one--</option>
+                                <option value='op1'>option1</option>
+                                <option value='op2'>option2</option>
+                                <option value='op3'>option3</option>
+                            </select>
+                            </font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            
+                            <div id="pa2"><font color ="white"><label for="service4">Arranging Obituary Notices</label>
+                            <select name=service4>
+                                <option value='false'>------Choose-one--------</option>
+                                <option value='Newsaper'>Newsaper</option>
+                                <option value='Radio Announcement'>Radio Announcement</option>
+                                
+                            </select>
+                            </font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa2"><font color ="white"><label for="service2">Crematorium Booking</label>
+                            <input type="radio" name="service5" id="service5"></font></div>
+                        </td>
+                    </tr>
+                    
                     
                 <tr>
                      <td colspan="2">
