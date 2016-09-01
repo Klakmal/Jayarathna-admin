@@ -37,7 +37,7 @@
 			<form id="f1" action="adminlogin.php" method="post">
                 <table id="tb1">
                 <tr>
-                    <th colspan="2" font-size:28px; color: white;"><b>LOGIN</b></th> 
+                    <th colspan="2" font-size:28px; color: white;><b>LOGIN</b></th> 
                 </tr>
                     <tr><td colspan="2"><span class="error"><?php echo $error ?></span></td></tr>
                 <tr>

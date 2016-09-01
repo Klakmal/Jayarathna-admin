@@ -125,7 +125,7 @@ $dob="$year-$month-$dt";
            
             $sql = "INSERT INTO employee (fname,lname,employeeid,nic,email,address,hnumber,mnumber,position,password,repassword,gender,dob) VALUES ('".$lname."','".$lname."','".$employeeid."','".$nic."','".$email."','".$address."','".$hnumber."','".$mnumber."','".$position."','".$password."','".$repassword."','".$gender."','".$dob."')";
             if(mysqli_query($conn,$sql)){
-                header('location:home.php');
+                header('location:adminlogin.php');
                 die();
             } else{echo "error";}
              
@@ -290,7 +290,7 @@ $dob="$year-$month-$dt";
             </tr>
              <tr>
                 <td colspan="2">
-                    <input type="submit" value="Sign Up" name="submit">
+                    <a href="../signout.php"><input type="submit" value="Sign Up" name="submit"></a>
                     <input type="reset" value="Reset" name="cancle">
                 </td>
             </tr>
