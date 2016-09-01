@@ -88,10 +88,20 @@
                 
                 </tr>
 				<tr>
-                    <td colspan="2">
+                    <td colspan="2" align="center">
+                        <div class="conimg" align="center"><img src="img/condolencepic.png"></div>
                         <div class="disdiv">
-							<p id="discond">Anyone who wishes to share their feelings with the family and the friends can use the
-							condolence screen to send their sympathy from anypart of the world. </p>
+							<p id="discond">As part of our service to those arranging a funeral, each client will be 
+offered the choice to have a condelence screen on the funeral day. This is one
+of our unique services which allows anyone anywhere in the world to share 
+their precious memories with their loved ones at the funeral. This service can be 
+easily accessed from our website allowing the family and friends to leave 
+their thoughts and personal messages of condolence which also is a
+personal tribute to the passed away person on his/her final day. 
+All those messages will be put on display through this screen near the coffin.
+The place and the number of days of its screening can be arranged according to
+the clients' will. When displaying, all the messages will be screened after the
+supervision of our team members. </p>
 						</div>
                     </td>
                 

@@ -137,15 +137,15 @@ input[type=submit],[type=reset]{
 	border:none;
 	background-color: #70102e;
 	color:white;
-	width: 85px;
-	height: 30px;
+	width: 100px;
+	height: 40px;
 	float:right;
 }
 input[type=submit]:hover,[type=reset]:hover{
 	background-color: white;
 	color:gray;
-	width: 85px;
-	height: 30px;
+	width: 100px;
+	height: 40px;
 	transition: box-shadow 0.3s, border 1s;
 	box-shadow: 0 0 5px 3px #969696;
 	
@@ -153,8 +153,8 @@ input[type=submit]:hover,[type=reset]:hover{
 input[type=submit]:active,[type=reset]:active{
 	background-color: white;
 	color:gray;
-	width: 85px;
-	height: 30px;
+	width: 100px;
+	height: 40px;
 	transition: box-shadow 0.3s, border 1s;
 	box-shadow: 0 0 5px 3px #969696;
 	
@@ -174,13 +174,40 @@ input[type=radio]{
 
 .disdiv{
 	background-color: ;
-	width: 650px;
-	padding: 20px;
+	width: 700px;
+	padding: 10px;
 	border-radius: 10px;
 	font-family:myfont1;
-
+	margin-top: 20px;
+	border: 1px solid gray;
 }
 
+.disdiv:hover{
+	background-color: ;
+	width: 700px;
+	padding: 10px;
+	border-radius: 10px;
+	font-family:myfont1;
+	margin-top: 20px;
+	border: 1px solid gray;
+	-webkit-box-shadow: inset 1px 1px 5px 0px rgba(171,171,171,1);
+-moz-box-shadow: inset 1px 1px 5px 0px rgba(171,171,171,1);
+box-shadow: inset 1px 1px 5px 0px rgba(171,171,171,1);
+
+}
 label{
 	font-family:myfont1;
+}
+
+.conimg{
+	background-color: black;
+
+}
+.conimg:hover{
+	background-color: black;
+	transition: 0.3s;
+	opacity: 0.6;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(171,171,171,1);
+-moz-box-shadow: 1px 1px 5px 0px rgba(171,171,171,1);
+box-shadow: 1px 1px 5px 0px rgba(171,171,171,1);
 }
