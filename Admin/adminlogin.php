@@ -18,7 +18,24 @@
                 if(!empty($res['employeeid']) && !empty($res['password'])){
                     session_start();
                     $_SESSION['employeeid']=$empid;
-                    header('location:home.php');
+                    $position = $res['position'];
+                    
+                    switch($position){
+                        case "manager":
+                            header('location:indexmanager.php');
+                            break;
+                        case "receptionist":
+                            header('location:indexreceptionist.php');
+                            break;
+                        case "itoperator":
+                            header('location:indexitoperator.php');
+                            break; 
+                        default:
+                            header('location:#');
+                            
+                    }
+                    
+                  
                 }else{
                     $error = "Invaild UserID or Password";
                 }
