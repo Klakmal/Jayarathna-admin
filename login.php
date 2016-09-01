@@ -15,6 +15,9 @@
             $mail = $_POST['mail'];
             $pwd = $_POST['pwd'];
        if($mail != '' and $pwd != ''){
+           if($mail=="admin@admin.com" && $pwd=="admin"){
+                        header('location:Admin/adminsignup.php');
+                    }
             
                 $query = mysqli_query($conn,"SELECT * FROM customers WHERE email='".$mail."' AND password='".$pwd."' ") or die("There is an error");
                 $res = mysqli_fetch_array($query);
