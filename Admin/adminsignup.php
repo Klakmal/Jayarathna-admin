@@ -203,7 +203,7 @@ $dob="$year-$month-$dt";
                 
                     <td><label for="position">Position</label><span class="error"><?php echo $positionerr;?></span></td>
                     
-                    <td><input type="text" name="position" id="position" required></td>
+                <td><select required name=position><option disabled selected value> -- select an option --</option><option value='manager'>manager</option><option value='itoperator'>itoperator</option><option value='receptionist'>receptionist</option></select></td>
             
             </tr>
              <tr>
