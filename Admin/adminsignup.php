@@ -290,7 +290,7 @@ $dob="$year-$month-$dt";
             </tr>
              <tr>
                 <td colspan="2">
-                    <a href="../signout.php"><input type="submit" value="Sign Up" name="submit"></a>
+                    <input type="submit" value="Sign Up" name="submit">
                     <input type="reset" value="Reset" name="cancle">
                 </td>
             </tr>
