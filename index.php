@@ -73,7 +73,7 @@ jQuery.noConflict()(function ($) {
 
   <div class="one-third" >
     <h2 style="color: white; font-family:myfont1;">CONDOLENCE MESSAGE</h2>
-    <p style="color: gray;">Anyone who wishes to share their feelings with the family and the friends can use the condolence screen to send their sympathy from anypart of the world. </p>
+    <p style="color: gray;">Anyone who wishes to share their thoughts & feelings with the passed away person's dear ones can use the condolence screen to send their sympathy from anypart of the world. </p>
     
   </div>
   <div class="one-third" >
