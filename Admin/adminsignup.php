@@ -6,11 +6,12 @@
    
     <?php
     require "dbcon/dbcon.php";
-
+    
     $error=FALSE;
-        $fnameerr = $lnameerr = $employeeiderr = $nicerr = $emailerr = $addresserr = $hnumbererr = $mnumbererr = $positionerr =$passworderr =$repassworderr = $gendererr = $doberr = "";
+        $fnameerr = $lnameerr = $employeeiderr = $nicerr = $emailerr = $addresserr = $hnumbererr = $mnumbererr =$temppassworderr= $passworderr =$repassworderr = $gendererr = $doberr = "";
+    if (isset($_POST['submit'])) {
         
-        if (isset($_POST['submit'])) {
+        
             
             
             if(empty($_POST['fname'])){ 
@@ -73,18 +74,20 @@
                 $mnumber = $_POST['mnumber'];
             }
 
-            if(empty($_POST['position'])){ 
-                $positionerr = "</br>* ";
-                $error = TRUE;
-            }else{
-                $position = $_POST['position'];
-            }
+            
             
             if(empty($_POST['gender'])){ 
                 $gendererr = "</br>* ";
                 $error = TRUE;
             }else{
                 $gender = $_POST['gender'];
+            }
+            
+            if(empty($_POST['temppassword'])){ 
+                $temppassworderr = "</br>* ";
+                $error = TRUE;
+            }else{
+                $temppassword = $_POST['temppassword'];
             }
             
            
@@ -123,7 +126,7 @@ $dob="$year-$month-$dt";
 
              if ($error==FALSE){
            
-            $sql = "INSERT INTO employee (fname,lname,employeeid,nic,email,address,hnumber,mnumber,position,password,repassword,gender,dob) VALUES ('".$lname."','".$lname."','".$employeeid."','".$nic."','".$email."','".$address."','".$hnumber."','".$mnumber."','".$position."','".$password."','".$repassword."','".$gender."','".$dob."')";
+            $sql = "UPDATE employee SET fname='$fname',lname='$lname', email='$email',address='$address',nic='$nic',hnumber='$hnumber', mnumber='$mnumber', password='$password',repassword='$repassword',gender='$gender', dob='$dob'WHERE employeeid='$employeeid' AND temppassword='$temppassword'";
             if(mysqli_query($conn,$sql)){
                 header('location:adminlogin.php');
                 die();
@@ -131,6 +134,7 @@ $dob="$year-$month-$dt";
              
             }
         }
+    
     ?>
 
 
@@ -160,9 +164,9 @@ $dob="$year-$month-$dt";
             </tr>
              <tr>
                 
-                   <td><label for="employeeid">Employee ID</label></td>
+                   <td><label for="employeeid">Employee ID</label><span class="error"><?php echo $employeeiderr;?></span></td>
             
-                   <td> <input type="text" name="employeeid" id="employeeid" required><span class="error"></span></td>
+                   <td> <input type="text" name="employeeid" id="employeeid" required></td>
             
             </tr>
             <tr>
@@ -201,11 +205,11 @@ $dob="$year-$month-$dt";
             </tr>
             <tr>
                 
-                    <td><label for="position">Position</label><span class="error"><?php echo $positionerr;?></span></td>
-                    
-                <td><select required name=position><option disabled selected value> -- select an option --</option><option value='manager'>manager</option><option value='itoperator'>itoperator</option><option value='receptionist'>receptionist</option></select></td>
-            
+                <td><label for="temppassword">Temporary Password</label><span class="error"><?php echo $temppassworderr;?></span></td>
+                   
+                    <td><input type="password" name="temppassword" id="temppassword" required>
             </tr>
+            
              <tr>
                 
                     <td><label for="password">Password</label></td>
