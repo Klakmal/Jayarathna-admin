@@ -74,7 +74,7 @@
     require "dbcon/dbcon.php";
 
     $error=FALSE;
-        $cnameerr = $dnameerr = $connumbererr = $passworderr = $repassworderr = $emailerr = $gendererr = $doberr = "";
+        $cnameerr = $dnameerr = $connumbererr = $passworderr = $repassworderr = $emailerr = $gendererr = $doberr = $nicerr= "";
         
         if (isset($_POST['submit'])) {
             
@@ -91,6 +91,12 @@
                 $error = TRUE;
             }else{
                 $dname = $_POST['deadname'];
+            }
+            if(empty($_POST['nic'])){ 
+                $nicerr = "* ";
+                $error = TRUE;
+            }else{
+                $nic = $_POST['nic'];
             }
             
             if(empty($_POST['connumber'])){ 
@@ -154,7 +160,7 @@ $dob="$year-$month-$dt";
 
              if ($error==FALSE){
            
-            $sql = "INSERT INTO customers (cusname,deadname,connumber,password,repassword,email,gender,dob) VALUES ('".$cname."','".$dname."','".$connumber."','".$password."','".$repassword."','".$email."','".$gender."','".$dob."')";
+            $sql = "INSERT INTO customers (cusname,deadname,nic,connumber,password,repassword,email,gender,dob) VALUES ('".$cname."','".$dname."','".$nic."','".$connumber."','".$password."','".$repassword."','".$email."','".$gender."','".$dob."')";
             if(mysqli_query($conn,$sql)){
                 die();
             } else{echo "error";}
@@ -201,6 +207,13 @@ $dob="$year-$month-$dt";
                     <td><label for="deadname">Dead Person Name</label><span class="error"><?php echo $dnameerr;?></span></td>
                     
                     <td><input type="text" name="deadname" id="deadname" required></td>
+            
+            </tr>
+            <tr>
+                
+                    <td><label for="nic">NIC</label><span class="error"><?php echo $nicerr;?></span></td>
+                    
+                    <td><input type="text" name="nic" id="nic" required></td>
             
             </tr>
              <tr>
