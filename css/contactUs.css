@@ -44,3 +44,7 @@ h2{
 	color: white;
 	font-family: myfont1;
 }
+
+.contact_header:hover{
+	text-shadow: 3px 3px black;
+}

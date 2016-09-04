@@ -344,7 +344,7 @@ a {color: #2997AB; text-decoration: none}
 .abutton1:hover {
 	color: white;
 	opacity: 0.8;
-	box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.5);
+	
 }
 
 .pic_button1 {
@@ -354,13 +354,13 @@ a {color: #2997AB; text-decoration: none}
     padding: 5px;
     transition: 0.3s;
     border-radius: 10%;
-    background-color: #380a1c;
+    background-color: ;
 
 }
 
 .pic_button1:hover {
-	opacity: 0.5;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 5);
+	opacity: 0.2;
+    
 }
 
 .pic_button2 {
@@ -370,12 +370,13 @@ a {color: #2997AB; text-decoration: none}
     padding: 5px;
     transition: 0.3s;
     border-radius: 10%;
-    background-color: #380a1c;
+    background-color: 
+    .;
 }
 
 .pic_button2:hover {
-	opacity: 0.5;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 5);
+	opacity: 0.2;
+    
 }
 
 .pic_button3 {
@@ -385,12 +386,12 @@ a {color: #2997AB; text-decoration: none}
     padding: 5px;
     transition: 0.3s;
     border-radius: 10%;
-    background-color: #380a1c;
+    background-color: ;
 }
 
 .pic_button3:hover {
-	opacity: 0.5;
-    box-shadow: 0 0 3px 2px rgba(0, 0, 0, 5);
+	opacity: 0.2;
+    
 }
 
 .desc {

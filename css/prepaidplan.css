@@ -52,3 +52,7 @@ hr{
 .spp{
 	color: white;
 }
+
+.plan_header:hover{
+	text-shadow: 3px 3px black;
+}

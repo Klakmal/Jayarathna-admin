@@ -156,6 +156,7 @@ input[type=submit]:active,[type=reset]:active{
 	width: 100px;
 	height: 40px;
 	transition: box-shadow 0.3s, border 1s;
+	border-radius: 15px;
 	box-shadow: 0 0 5px 3px #969696;
 	
 }
@@ -199,15 +200,27 @@ label{
 	font-family:myfont1;
 }
 
-.conimg{
-	background-color: black;
-
-}
 .conimg:hover{
 	background-color: black;
+	opacity: 0.8;
+	
+
+}
+.conimg{
+	background-color: black;
 	transition: 0.3s;
-	opacity: 0.6;
+	opacity: 0.4;
 	-webkit-box-shadow: 1px 1px 5px 0px rgba(171,171,171,1);
 -moz-box-shadow: 1px 1px 5px 0px rgba(171,171,171,1);
 box-shadow: 1px 1px 5px 0px rgba(171,171,171,1);
+}
+
+#headertable:hover{
+	text-shadow: 3px 3px black;
+
+}
+
+#heading2:hover{
+	text-shadow: 3px 3px black;
+	
 }

@@ -52,41 +52,41 @@ jQuery.noConflict()(function ($) {
 <!-- wrapper -->
 <div id="container" style="box-shadow: none; border: none">
   <div class="one-third">
-    <a class = "pic_button1" target="_blank" href="#" style="color: gray;" >
-    <img src="img/candel.jpg" alt="blah" width="300" height="170" style="border-radius: 10%;">
-    <div class="desc">CONDOLENCE SCREEN MESSAGE</div>
+    <a href = "condolence.php" class = "pic_button1" target="_blank" href="#" style="color: gray;" >
+    <img src="img/condolence.png" alt="blah" width="300" height="170" style="border-radius: 10%;">
+    <div class="desc" style="font-family:myfont1;"></div>
     </a>
   </div>
   <div class="one-third">
-    <a class = "pic_button2" target="_blank" href="#" style="color: gray">
-    <img src="img/candel.jpg" alt="blah" width="300" height="170" style="border-radius: 10%;">
-    <div class="desc">WEB CASTING</div>
+    <a href="webcasting.php" class = "pic_button2" target="_blank" href="#" style="color: gray">
+    <img src="img/webcasting.png" alt="blah" width="300" height="170" style="border-radius: 10%;">
+    <div class="desc" style="font-family:myfont1;"></div>
     </a>
   </div>
   <div class="one-third last">
-    <a class = "pic_button3" target="_blank" href="#" style="color: gray">
-    <img src="img/candel.jpg" alt="blah" width="300" height="170" style="border-radius: 10%;">
-    <div class="desc">FEED-BACK</div>
+    <a href="feedback.php" class = "pic_button3" target="_blank" href="#" style="color: gray">
+    <img src="img/feedback.png" alt="blah" width="300" height="170" style="border-radius: 10%;">
+    <div class="desc" style="font-family:myfont1;"></div>
     </a>
   </div>
 
 
   <div class="one-third" >
     <h2 style="color: white; font-family:myfont1;">CONDOLENCE MESSAGE</h2>
-    <p style="color: gray;">Anyone who wishes to share their thoughts & feelings with the passed away person's dear ones can use the condolence screen to send their sympathy from anypart of the world. </p>
+    <p style="color: gray; font-family:myfont1;">Anyone who wishes to share their thoughts & feelings with the passed away person's dear ones can use the condolence screen to send their sympathy from anypart of the world. </p>
     
   </div>
   <div class="one-third" >
     <h2 style="color: white; color: white; font-family:myfont1;">WEB CASTING</h2>
-    <p style="color: gray;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the opportunity to watch the ceremony online & honour their loved one.</p>
+    <p style="color: gray; font-family:myfont1;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the opportunity to watch the ceremony online & honour their loved one.</p>
     
   </div>
   <div class="one-third last" >
     <h2 style="color: white; color: white; font-family:myfont1;">FEED-BACK</h2>
-    <p style="color: gray;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
+    <p style="color: gray; font-family:myfont1;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
     
   </div>
-  <div class="disc" style="color: gray;">
+  <div class="disc" style="color: gray; font-family:myfont1;">
 	<p>Funeral is a ceremony marking a person's death. Funerary customs comprise the complex of beliefs and practices used by a culture to remember the dead, from the funeral itself, to various monuments, prayers, and rituals undertaken in their honor. These customs vary widely between cultures, and between religious affiliations within cultures.</p>
 </div>
 </div>

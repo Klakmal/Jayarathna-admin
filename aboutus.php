@@ -10,7 +10,7 @@
 
 	<div class="ab1" align="center">
 		<div class="ab2" align="left">
-			<h1 style="text-align:center;" class="hd"><b>ABOUT US</b></h1>
+			<h1 style="text-align:center;" class="hd"><b class="aboutus_header">ABOUT US</b></h1>
 			<hr/>
 			</br>
 			<p>Founded in 1952 in a small sales outlet made to sell flowers at No: 432, Deans road, Colombo 10, late Mr. K. G. A. Jayaratne, founder of “Jayaratne Florists” gave birth to its name. 

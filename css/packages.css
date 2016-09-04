@@ -34,7 +34,7 @@ div{
 }
 
 #h1_1{
-	background-color: #3a0818;
+	background-color: ;
 	color: #b8b8b8;
 	height:30px;
 	position: relative;
@@ -42,8 +42,14 @@ div{
 	padding: 10px;
 	margin:10px 25px 10px 25px;
 	font-size: 20px;
-	border-bottom: 3px solid #40454a;
+	border: 1px solid #40454a;
+	border-bottom: 5px solid #40454a;
 	border-radius: 5px;
+}
+
+#h1_1:hover{
+	background-color: #b8b8b8;
+	color: black;
 }
 
 #one1{
@@ -143,4 +149,8 @@ box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
 	-webkit-box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
 -moz-box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
 box-shadow: 2px 2px 0px 1px rgba(0,0,0,0.75);
+}
+
+.package_head:hover{
+	text-shadow: 2px 2px black;
 }

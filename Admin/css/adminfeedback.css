@@ -32,6 +32,7 @@ body{
 	max-width: 500px;
 	padding: 10px;
 	overflow: hidden;
+	display: block;
 }
 .col3{
 	background-color: #f7f7f8;

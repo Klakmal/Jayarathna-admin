@@ -15,7 +15,7 @@
 		<div id="para" align="center">
 			<div class="para1" align="left"> 
 				<div class="hd1">
-					<h1> <center style = "font-family: myfont1; color: #a86205;"><b>PRE-PAID PLANS</b></center></h1>
+					<h1> <center style = "font-family: myfont1; color: #a86205;"><b class="plan_header">PRE-PAID PLANS</b></center></h1>
 					<hr/>
 					</br>
 				</div>

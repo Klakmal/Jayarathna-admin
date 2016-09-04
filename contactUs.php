@@ -15,7 +15,7 @@
 	<div id="par1" align="center">
 		<div id="par" align="center">
 			<div >	
-				<h1><center style = "font-family: myfont1; color: #a86205;"><b>CONTACT US</b></center></h1>
+				<h1><center class="contact_header" style = "font-family: myfont1; color: #a86205;"><b>CONTACT US</b></center></h1>
 				<hr class="hh1">
 			</div>
 			<div class="tb" align="center">

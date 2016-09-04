@@ -21,8 +21,8 @@
 		                    <td colspan="2">
 		                        <div align="center">
 			                        <h2 id="h1">
-				                        <font color ="#a86205">
-				                        	<b>PACKAGE AND SERVICES</b>
+				                        <font color ="#a86205" class="package_head">
+				                        	<b class="package_head">PACKAGE AND SERVICES</b>
 				                        	<hr id="hr1">
 				                        	<br>
 				                        </font>
@@ -58,7 +58,7 @@
 								                <br>
 							                </font>
 						                </p>
-						                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+						                <img src="img/vipbronze.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
 					                </div>
 				                </td>
 
@@ -110,7 +110,7 @@
 										</font>
 									</p>
 
-					                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+					                <img src="img/vip2silver.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
 				                </div>
 		                	</td>
 						    <td>
@@ -161,7 +161,7 @@
 											Tax<br>
 						                </font>
 					                </p>
-				                	<img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+				                	<img src="img/vip3gold.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
 				                </div>
 			                </td>
 			                <td>
@@ -210,7 +210,7 @@
 											Tax<br>
 						                </font>
 					                </p>
-					                <img src="img/candel.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+					                <img src="img/vip3platinum.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
 				                </div>
 			                </td>
 			                <td>
@@ -263,14 +263,14 @@
 		                <tr>
 		                    <td>
 		                        <div id="h1_1" align="center">
-			                        <font color ="#b8b8b8">
+			                        <font >
 			                        	<b>RATE</b>
 			                        </font>
 		                        </div>
 		                    </td>
 		                    <td>
 		                        <div id="h1_1" align="center">
-			                        <font color ="#b8b8b8">
+			                        <font >
 			                        	<b>PACKAGE</b>
 			                        </font>
 		                        </div>

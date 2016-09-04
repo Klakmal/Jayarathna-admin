@@ -30,3 +30,7 @@ hr{
 	border: 3px solid #3c4443;
 	border-radius: 5px;
 }
+
+.aboutus_header:hover{
+	text-shadow: 3px 3px black;
+}

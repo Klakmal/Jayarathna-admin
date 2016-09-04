@@ -162,9 +162,24 @@ $dob="$year-$month-$dt";
             }
         }
     ?>
+<script type="text/javascript">
+    function validateForm() {
+        return checkPhone();
+    }
+    function checkPhone() {
+            var connumber = document.forms["myForm"]["connumber"].value;
+            var phoneNum = connumber.replace(/[^\d]/g, '');
+            if(phoneNum.length == 10) {
+                return true;
+            }
+            else {
+                document.getElementById("connumber").className = document.getElementById("connumber").className + " error";
+                return false;
+            }
+        }
+</script>
 
-
-    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" onsubmit = "return validateForm()">
     <div id="signup" align="center">
         <form id="f2" action="login.php" method="post">
         <table id="tb2">
@@ -193,13 +208,14 @@ $dob="$year-$month-$dt";
                    <td><label for="connumber">Contact Number</label></td>
             
                    <td> <input type="tel" name="connumber" id="connumber" pattern="^\d{10}$" maxlength="10" minlength="10" required><span class="error"></span></td>
-            
+                    <td></td>
             </tr>
              <tr>
                 
                     <td><label for="password">Password</label></td>
                    
                     <td><input type="password" name="password" id="password" placeholder="<?php echo $passworderr;?>" required><span class="error"><?php echo $passworderr;?></span></td>
+                    
             </tr>
             <tr>
                 

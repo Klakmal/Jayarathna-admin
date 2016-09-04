@@ -94,7 +94,7 @@
 							<p id="discond">As part of our service to those arranging a funeral, each client will be 
 offered the choice to have a condelence screen on the funeral day. This is one
 of our unique services which allows anyone anywhere in the world to share 
-their precious memories with their loved ones at the funeral. This service can be 
+their precious memories with their loved ones at the funeral.</p><p> This service can be 
 easily accessed from our website allowing the family and friends to leave 
 their thoughts and personal messages of condolence which also is a
 personal tribute to the passed away person on his/her final day. 
