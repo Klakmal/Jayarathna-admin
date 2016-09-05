@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="h1">
-		<div class="h2">
+		<div class="h3">
 		hako
 			<a href="condolenceadmin.php"><div class="item"></div></a>
 			
