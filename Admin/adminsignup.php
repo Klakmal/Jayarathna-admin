@@ -1,9 +1,15 @@
 <html>
 <head>
     <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="css/adminsingup.css">
+    <style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+</style>
 </head>
 <body>
-   
+<div class="reg_container" align="center">
+<div class="reg_container1" align="center">
     <?php
     require "dbcon/dbcon.php";
     
@@ -144,7 +150,7 @@ $dob="$year-$month-$dt";
         <table id="atable2">
             <tr>
                 <td colspan="2">
-                    <h2 id="aheading"><b>REGISTRATION FORM</b></h2>
+                    <h1 id="aheading" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">REGISTRATION FORM</b></h1>
                 </td>
             
             </tr>
@@ -205,9 +211,9 @@ $dob="$year-$month-$dt";
             </tr>
             <tr>
                 
-                <td><label for="temppassword">Temporary Password</label><span class="error"><?php echo $temppassworderr;?></span></td>
+                <td><label for="temppassword">Temporary Password </label><span class="error"><?php echo $temppassworderr;?></span></td>
                    
-                    <td><input type="password" name="temppassword" id="temppassword" required>
+                    <td><input type="password" name="temppassword" id="temppassword" required></td>
             </tr>
             
              <tr>
@@ -223,9 +229,10 @@ $dob="$year-$month-$dt";
                     <td><input type="password" name="repassword" id="repassword" placeholder="<?php echo $repassworderr;?>" required></td>
             </tr>
             <tr>
-                <td><label>Gender</label><span class="error"><?php echo $gendererr;?></span></td>
-                <td> <input type="radio" name="gender" value="male" required><label>Male</label>
-                    <input type="radio" name="gender" value="female"><label>Female</label>
+                <td><label>Gender</label></td>
+                <td style="display: inline; color:gray;"> <input type="radio" name="gender" value="male" required>Male
+                <input type="radio" name="gender" value="female">Female
+                    
                 </td>
              </tr>
 <!--            <tr>
@@ -236,7 +243,7 @@ $dob="$year-$month-$dt";
             </tr>-->
             <tr>
             <td>
-                <label for="dob">DOB</label><span class="error">
+                <label for="dob">DOB</label><span class="error"></span>
             </td>
             <td  align=left  >   
 
@@ -293,7 +300,7 @@ $dob="$year-$month-$dt";
                 </td>
             </tr>
              <tr>
-                <td colspan="2">
+                <td colspan="2" align="right">
                     <input type="submit" value="Sign Up" name="submit">
                     <input type="reset" value="Reset" name="cancle">
                 </td>
@@ -302,6 +309,9 @@ $dob="$year-$month-$dt";
         </form>
         </div>
     </form>
+
+</div>
+</div>
 <!--form end -->
 </body>
 </html>

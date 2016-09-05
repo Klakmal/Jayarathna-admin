@@ -3,10 +3,14 @@
 <head>
 	<title>Condolence Message</title>
 	<link rel="stylesheet" type="text/css" href="css/admincondolence.css">
+	<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+</style>
 </head>
 <body>
 <div class="header">
-	<h2>CONDOLENCE SCREEN MESSAGES</h2>
+	<h1 style="color:white; font-size:24px; text-shadow:2px 2px 2px gray; padding-left:20px;"><b>CONDOLENCE SCREEN MESSAGES</b></h1>
 	</div>
 <div>
 	<div>

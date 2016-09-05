@@ -1,6 +1,11 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/adminlogin.css">
+    <style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+</style>
 </head>
 <body>
     <?php
@@ -54,7 +59,7 @@
 			<form id="f1" action="adminlogin.php" method="post">
                 <table id="tb1">
                 <tr>
-                    <th colspan="2" font-size:28px; color: white;><b>LOGIN</b></th> 
+                    <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">LOGIN</b></th> 
                 </tr>
                     <tr><td colspan="2"><span class="error"><?php echo $error ?></span></td></tr>
                 <tr>
@@ -66,7 +71,7 @@
                     <td><input type="password" name="pwd"  placeholder="Password"></td>
                 
                 </tr>
-                   <tr> <td colspan="2" align="center"><input type="submit" value="Login" name="send"></td>
+                   <tr> <td colspan="2" align="right"><input type="submit" value="Login" name="send"></td>
                 </tr>
             
             

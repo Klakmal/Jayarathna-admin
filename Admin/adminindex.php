@@ -17,12 +17,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <p class="">Jayarathna Funrels</p>
     </div>
   </div>
-  <a href="#" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="#" class="navi"><img src="img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE <span class="noti">5</span></a>
-  <a href="#" class="navi"><img src="img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  <a href="#" class="navi"><img src="img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
-  <a href="#" class="navi"><img src="img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
-  <a href="#" class="navi"><img src="img/stock.png" class="image">&nbsp;&nbsp;STOCK MANEGMENT</a>
+  <a href="adminindex.php" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="admincondolence.php" class="navi"><img src="img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE <span class="noti">5</span></a>
+  <a href="feedbackadmin.php" class="navi"><img src="img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
+  <a href="adminpackage.php" class="navi"><img src="img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
+  <a href="webcastingadmin.php" class="navi"><img src="img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
+  <a href="manage.php" class="navi"><img src="img/stock.png" class="image">&nbsp;&nbsp;EMPLOYEE REGISTER</a>
+  <a href="stockmanagement.php" class="navi"><img src="img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
    
   
 </nav>

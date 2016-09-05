@@ -1,15 +1,17 @@
 body{
+	background-color: #f1f1f1;
 	margin: 0px;
 }
 
 .afb1{
 	background-color: ;
-	padding: 10px;
+	padding: 50px;
+	padding-left: 350px;
 }
 .afb2{
 	background-color: ;
 	width: 800px;
-	padding: 20px; 
+	padding: 50px; 
 
 }
 .row{
@@ -20,7 +22,7 @@ body{
 
 .col1{
 	background-color: #d0d1d7;
-	width: 150px;
+	width: 550px;
 	border: 1px solid white;
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
@@ -40,4 +42,9 @@ body{
 	padding: 10px;
 	border-top-right-radius: 7px;
 	border-bottom-right-radius: 7px;
+}
+
+td{
+	min-height: 120px;
+
 }
