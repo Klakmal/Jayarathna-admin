@@ -5,7 +5,7 @@
 <body>
 <?php
     require "dbcon/dbcon.php";
-$query="";
+$query=null;
     $error=FALSE;
         $deadnameerr = "";
         
@@ -46,9 +46,11 @@ $query="";
             </table>
             
             <a href="<?php
+                     if ($query != null) {
             while ($row = mysqli_fetch_assoc($query)){
             echo $row['url'];
         }
+                     }
                      ?>">Your Link</a>
             
             
