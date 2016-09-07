@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Sign Up</title>
+    <title>Edit profile</title>
     <link rel="stylesheet" type="text/css" href="css/adminsingup.css">
     <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
@@ -98,7 +98,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <table id="btable5">
             <tr>
                 <td colspan="2">
-                    <h1 id="aheading" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">EDIT INFORMATION</b></h1>
+                    <h1 id="aheading" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">EDIT PROFILE</b></h1>
                 </td>
             
             </tr>

@@ -74,7 +74,7 @@
     require "dbcon/dbcon.php";
 
     $error=FALSE;
-        $cnameerr = $dnameerr = $connumbererr = $passworderr = $repassworderr = $emailerr = $gendererr = $doberr = $nicerr= "";
+        $cnameerr = $dnameerr = $connumbererr = $passworderr = $repassworderr = $emailerr = $gendererr = $doberr = $nicerr= $addresserr ="";
         
         if (isset($_POST['submit'])) {
             
@@ -97,6 +97,12 @@
                 $error = TRUE;
             }else{
                 $nic = $_POST['nic'];
+            }
+            if(empty($_POST['address'])){ 
+                $addresserr = "</br>* ";
+                $error = TRUE;
+            }else{
+                $address = $_POST['address'];
             }
             
             if(empty($_POST['connumber'])){ 
@@ -160,7 +166,7 @@ $dob="$year-$month-$dt";
 
              if ($error==FALSE){
            
-            $sql = "INSERT INTO customers (cusname,deadname,nic,connumber,password,repassword,email,gender,dob) VALUES ('".$cname."','".$dname."','".$nic."','".$connumber."','".$password."','".$repassword."','".$email."','".$gender."','".$dob."')";
+            $sql = "INSERT INTO customers (cusname,deadname,nic,address,connumber,password,repassword,email,gender,dob) VALUES ('".$cname."','".$dname."','".$nic."','".$address."','".$connumber."','".$password."','".$repassword."','".$email."','".$gender."','".$dob."')";
             if(mysqli_query($conn,$sql)){
                 die();
             } else{echo "error";}
@@ -222,6 +228,13 @@ $dob="$year-$month-$dt";
             
                    <td> <input type="tel" name="connumber" id="connumber" pattern="^\d{10}$" maxlength="10" minlength="10" required><span class="error"></span></td>
                     <td></td>
+            </tr>
+            <tr>
+                
+                    <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
+                    
+                    <td><input type="text" name="address" id="address" required></td>
+            
             </tr>
              <tr>
                 
