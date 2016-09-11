@@ -1,0 +1,35 @@
+
+
+.input, .dropdown, .r{
+	margin:0;
+	padding:0;
+	border:0;
+	width:250;
+}
+
+.input{
+	padding:4px;
+	border:1px solid #000;
+}
+
+.r{
+	width:260px;
+	list-style:none;
+}
+
+.r li{
+	padding:5px;
+	border:1px solid #000;
+	border-top:0;
+	cursor:pointer;
+}
+
+.r li:hover{
+	background:#000;
+	color:#fff;
+}
+.r ul {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}

@@ -116,7 +116,7 @@ $diltime="$hours-$mins-$ampm";
         ?>
         <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
         <div id="res3">
-            <form id="f4" action="reservaton.php" method="post">
+            <form id="f4" action="reservationForm.php" method="post">
             <table id="tb4">
                 <tr>
                     <td colspan="2">
@@ -379,13 +379,43 @@ $diltime="$hours-$mins-$ampm";
                                 <option value='op2'>option2</option>
                                 <option value='op3'>option3</option>
                             </select>
-                            </font></div>
+
+                            <label id="LearnMoreBtn">More details..</label>
+
+                            <div id="overlay"></div>
+
+
+                            <div id="popup" align="center">
+                                <div id="btn" align="right">
+                                <button id="CloseBtn">CLOSE</button>
+                                </div>
+                             <div id="popupcontent" align="center">
+                                hi halooo eeee
+                             </div>
+                            </div>
+<script type="text/javascript">
+window.onload = function() {
+  document.getElementById("LearnMoreBtn").onclick = function(){
+        var overlay = document.getElementById("overlay");
+        var popup = document.getElementById("popup");
+        overlay.style.display = "block";
+        popup.style.display = "block";
+    };
+    
+  document.getElementById("CloseBtn").onclick = function(){
+        var overlay = document.getElementById("overlay");
+        var popup = document.getElementById("popup");
+        overlay.style.display = "none";
+        popup.style.display = "none";      
+  }
+};
+</script>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service2">Provision of Remembrance Booklet - Quantity</label>
-                            <input type="text" name="service2" id="service2"></font></div>
+                            <input type="text" name="service2" id="service2" value="0"></font></div>
                         </td>
                     </tr>
                     <tr>
