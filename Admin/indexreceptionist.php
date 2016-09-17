@@ -22,7 +22,7 @@
   <a href="adminindex.php" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;HOME</a>
    <a href="receptionistregister.php" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;REGISTRATION</a>
   <a href="feedbackadmin.php" class="navi"><img src="img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  <a href="adminpackage.php" class="navi"><img src="img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
+  <a href="adminReservation.php" class="navi"><img src="img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
  
 </nav>
 

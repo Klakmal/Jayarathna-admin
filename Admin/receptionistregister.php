@@ -1,12 +1,40 @@
 <html>
 <head>
     <title>login</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/signup.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/receptionistregister.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/adminindex.css">
+    <link rel="stylesheet" type="text/css" href="css/resiptionistregister.css">
+    <style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+    </style>
 </head>
 <body>
-   
+
+
+<nav class="navi_menu" id="mySidenav"><br>
+  <div class="container">
+    <div class="navi_pro">
+    <img class="propic" src="img_avatar_g2.jpg"><br>
+    <h4 class=""><b>PORTFOLIO</b></h4>
+    <p class="">Jayarathna Funrels</p>
+    </div>
+  </div>
+  <a href="adminindex.php" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+   <a href="receptionistregister.php" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;REGISTRATION</a>
+  <a href="feedbackadmin.php" class="navi"><img src="img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
+  <a href="adminReservation.php" class="navi"><img src="img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
+ 
+</nav>
+
+<div class="menu2" align="right">
+    <div class="menu2in">
+      <a href="signout.php" class="myButton">Log Out</a>
+    </div>
+
+<div class="conner1" align="center">
+            <div class="conner2" align="center">
     <?php
     require "dbcon/dbcon.php";
 
@@ -175,7 +203,7 @@ $dob="$year-$month-$dt";
                     
                    <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd" required></td>
             </tr>-->
-            <tr><td><label for="dob">DOB</label><span class="error"></td><td  align=left  >   
+            <tr><td><label for="dob">DOB</label><span class="error"></span></td><td  align=left  >   
 
 <select name=month value=''>Select Month</option>
 <option value='01'>January</option>
@@ -231,10 +259,11 @@ $dob="$year-$month-$dt";
 <option value='31'>31</option>
 </select>
 
-<input class="year" type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year">
-
+<input class="year" type=year name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year">
+</td>
+</tr>
              <tr>
-                <td colspan="2">
+                <td colspan="2" align="center">
                     <input type="submit" value="Sign Up" name="submit">
                     <input type="reset" value="Reset" name="cancle">
                 </td>
@@ -244,6 +273,9 @@ $dob="$year-$month-$dt";
         </form>
         </div>
     </form>
+</div>
+</div>
+</div>
 <!--form end -->
 </body>
 </html>
