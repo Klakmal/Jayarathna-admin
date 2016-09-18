@@ -19,7 +19,7 @@
     <p class="">Jayarathna Funrels</p>
     </div>
   </div>
-  <a href="adminindex.php" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="#" class="navi"><img src="img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="admincondolence.php" class="navi"><img src="img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE <span class="noti">5</span></a>
   <a href="webcastingadmin.php" class="navi"><img src="img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
   <a href="feedbackadmin.php" class="navi"><img src="img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
