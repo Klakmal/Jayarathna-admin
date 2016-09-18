@@ -394,7 +394,7 @@
 			                <td colspan="2">
 			                	<div id="h4" align="center">
 				                	<p>
-					                	<a class="resbutton" href="reservationForm.php">Reservation<br> Form <br><img src="img/butimg.png" width="100%" height="70%"></a>
+					                	<a class="resbutton" href="login.php">Reservation<br> Form <br><img src="img/butimg.png" width="100%" height="70%"></a>
 
 				                	</p>
 			                	</div>

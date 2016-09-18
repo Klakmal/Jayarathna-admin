@@ -24,7 +24,7 @@
                 if(!empty($res['email']) && !empty($res['password'])){
                     session_start();
                     $_SESSION['email']=$mail;
-                    header('location:index.php');
+                    header('location:reservationForm.php');
                 }else{
                     $error = "Invaild username or password";
                 }
@@ -39,7 +39,7 @@
      ?>
 
 <!--header-->
-<?php include 'temp/loginfooter.php'; ?>
+<?php include 'temp/header.php'; ?>
 <!--header end-->
     
     <div id="login" align = "center">
@@ -168,6 +168,7 @@ $dob="$year-$month-$dt";
            
             $sql = "INSERT INTO customers (cusname,deadname,nic,address,connumber,password,repassword,email,gender,dob) VALUES ('".$cname."','".$dname."','".$nic."','".$address."','".$connumber."','".$password."','".$repassword."','".$email."','".$gender."','".$dob."')";
             if(mysqli_query($conn,$sql)){
+                header('location:reservationForm.php');
                 die();
             } else{echo "error";}
              

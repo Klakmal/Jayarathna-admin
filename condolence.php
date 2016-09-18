@@ -117,7 +117,16 @@ supervision of our team members. </p>
                     
                         <td><label for="deadname">Dead Person Name : </label><span class="error"><?php echo $deadnameerr;?></span></td>
                         
-                        <td><input type="text" name="deadname" id="deadname" placeholder="Dead Person Name" required></td>
+                        <td>
+                        
+                        <input list="browsers" name="deadname" id="deadname" placeholder="Dead Person Name" required>
+                            <datalist id="browsers">
+                            <?php
+
+                              echo '<option value="Internet Explorer">';
+                              ?>
+                            </datalist>
+                        </td>
                 
                 </tr>
                 <tr>

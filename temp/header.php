@@ -7,7 +7,7 @@
       <!-- sub menu -->
       <ol>
         <li><a href="packages.php" style="font-family:myfont1; font-size:16px;">PACKAGES AND SERVICES</a></li>
-        <li><a href="reservationForm.php" style="font-family:myfont1; font-size:16px;">RESERVATION FORM</a></li>
+        <li><a href="login.php" style="font-family:myfont1; font-size:16px;">RESERVATION FORM</a></li>
         <li><a href="prepaidplan.php" style="font-family:myfont1; font-size:16px;">PRE-PAID PLAN</a></li>
       </ol>
       <!-- end sub menu -->
