@@ -45,16 +45,34 @@ $query=null;
             </tr>
             </table>
             
-            <a href="<?php
-                     if ($query != null) {
-            while ($row = mysqli_fetch_assoc($query)){
-            echo $row['url'];
-        }
-                     }
-                     ?>">Your Link</a>
+            <?php 
+            ?>
             
             
         </form>
+        <?php 
+        
+            if ($query != null) {
+                while ($row = mysqli_fetch_assoc($query)){
+                    $no = $row['no'];
+                }
+            }
+        
+            if(isset($no)){
+                echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/";
+                $sql = "SELECT * FROM `webcasting` WHERE no=$no";
+                $query=(mysqli_query($conn,$sql));
+                
+                if($query){
+                    while($row = mysqli_fetch_assoc($query)){
+                        echo $row['url'];
+                    }
+                }
+                
+                echo "\" frameborder=\"0\" allowfullscreen></iframe>";
+            }                                      
+        ?>
+        
         </div>
     </form>
     </body>
