@@ -3,6 +3,7 @@
 <head>
 	<title>Condolence Message</title>
 	<link rel="stylesheet" type="text/css" href="css/admincondolence.css">
+    <link rel="stylesheet" type="text/css" href="css/adminindex.css">
 	<style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
@@ -10,7 +11,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </head>
 <body>
 <div class="header">
-	<h1 style="color:white; font-size:24px; text-shadow:2px 2px 2px gray; padding-left:20px;"><b>CONDOLENCE SCREEN MESSAGES</b></h1>
+	<p style="color:white; font-size:24px; text-shadow:2px 2px 2px gray; padding-left:20px;"><b>CONDOLENCE SCREEN MESSAGES</b><a class="myButton" href="indexitoperator.php" style="float:right; margin-right:20px;">Home</a></p>
+    
 	</div>
 <div>
 	<div>
