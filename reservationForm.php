@@ -110,7 +110,7 @@ $diltime="$hours-$mins-$ampm";
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`,`Remembrance booklet`,`Chairs and tents`,`Obituary Notices`,`Crematorium booking`,`Monumental plaques`,`Funeral pyres`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]','$_POST[service8]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`,`Remembrance booklet`,`Chairs and tents`,`Obituary Notices`,`Crematorium booking`,`Monumental plaques`,`Funeral pyres`,`web casting`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]','$_POST[service8]')";
 
                 if(mysqli_query($conn,$sql)){
                     die();
