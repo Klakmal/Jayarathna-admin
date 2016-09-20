@@ -34,8 +34,8 @@
 				<li>Jayaratne Stables</li>
 				
 			</ul>
-			<img src="mrjayaratne.jpg"alt="mr.jayaratne"  style="position:relative; left: 350px; width:200px; height:300px">
-			<img src="mrsjayaratne.jpg"alt="mrs.jayaratne"  style="position:relative; left: 350px; width:200px; height:300px">
+			<img src="img/mrjayaratne.jpg"alt="mr.jayaratne"  style="position:relative; left: 520px; width:200px; height:300px">
+			<p style="position:relative; left: 550px; width:200px;">K. G. A. Jayaratne</p>
 		</div>
 	</div>
 

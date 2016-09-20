@@ -59,30 +59,30 @@ jQuery.noConflict()(function ($) {
   </div>
   <div class="one-third">
     <a href="webcasting.php" class = "pic_button2" target="_blank" href="#" style="color: gray">
-    <img src="img/webcasting.png" alt="blah" width="300" height="170" style="border-radius: 10%;">
+    <img src="img/webcasting.png" alt="blah" width="300" height="100" style="border-radius: 10%;">
     <div class="desc" style="font-family:myfont1;"></div>
     </a>
   </div>
   <div class="one-third last">
     <a href="feedback.php" class = "pic_button3" target="_blank" href="#" style="color: gray">
-    <img src="img/feedback.png" alt="blah" width="300" height="170" style="border-radius: 10%;">
+    <img src="img/feedback.png" alt="blah" width="300" height="100" style="border-radius: 10%;">
     <div class="desc" style="font-family:myfont1;"></div>
     </a>
   </div>
 
 
-  <div class="one-third" >
-    <h2 style="color: white; font-family:myfont1;">CONDOLENCE MESSAGE</h2>
+  <div class="one-third" align="center">
+    
     <p style="color: gray; font-family:myfont1;">Anyone who wishes to share their thoughts & feelings with the passed away person's dear ones can use the condolence screen to send their sympathy from anypart of the world. </p>
     
   </div>
-  <div class="one-third" >
-    <h2 style="color: white; color: white; font-family:myfont1;">WEB CASTING</h2>
+  <div class="one-third" align="center">
+    
     <p style="color: gray; font-family:myfont1;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the opportunity to watch the ceremony online & honour their loved one.</p>
     
   </div>
-  <div class="one-third last" >
-    <h2 style="color: white; color: white; font-family:myfont1;">FEED-BACK</h2>
+  <div class="one-third last" align="center">
+    
     <p style="color: gray; font-family:myfont1;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
     
   </div>

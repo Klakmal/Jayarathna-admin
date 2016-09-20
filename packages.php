@@ -30,7 +30,16 @@
 		                        </div>
 		                    </td>
 		                </tr>
+		                <tr>
+			                <td colspan="2">
+			                	<div id="h4" align="center">
+				                	<p>
+					                	<a class="resbutton" href="login.php">Reservation Form</a>
 
+				                	</p>
+			                	</div>
+			                </td>
+		                </tr>
 		                <tr>
 		                    <td>
 		                        <div id="h1_1" align="center"><b>RATE</b></div>
@@ -58,7 +67,7 @@
 								                <br>
 							                </font>
 						                </p>
-						                <img src="img/vipbronze.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+						                <img src="img/vipbronze.jpg" alt="blah" width=90% height=80% style="border-radius: 10%;">
 					                </div>
 				                </td>
 
@@ -110,7 +119,7 @@
 										</font>
 									</p>
 
-					                <img src="img/vip2silver.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+					                <img src="img/vip2silver.jpg" alt="blah" width=90% height=80% style="border-radius: 10%;">
 				                </div>
 		                	</td>
 						    <td>
@@ -161,7 +170,7 @@
 											Tax<br>
 						                </font>
 					                </p>
-				                	<img src="img/vip3gold.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+				                	<img src="img/vip3gold.jpg" alt="blah" width=90% height=80% style="border-radius: 10%;">
 				                </div>
 			                </td>
 			                <td>
@@ -210,7 +219,7 @@
 											Tax<br>
 						                </font>
 					                </p>
-					                <img src="img/vip3platinum.jpg" alt="blah" width=90% height=60% style="border-radius: 10%;">
+					                <img src="img/vip3platinum.jpg" alt="blah" width=90% height=80% style="border-radius: 10%;">
 				                </div>
 			                </td>
 			                <td>
@@ -394,7 +403,7 @@
 			                <td colspan="2">
 			                	<div id="h4" align="center">
 				                	<p>
-					                	<a class="resbutton" href="login.php">Reservation<br> Form <br><img src="img/butimg.png" width="100%" height="70%"></a>
+					                	<a class="resbutton" href="login.php">Reservation Form</a>
 
 				                	</p>
 			                	</div>
