@@ -16,7 +16,7 @@
         require "dbcon/dbcon.php";
 
         $error=FALSE;
-            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 = $service2 = $service3=  "";
+            $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 = $service2 = $service3=$service4=$service5= $service6= $service7=$service8s="";
             
             if (isset($_POST['submit'])) {
                 
@@ -85,27 +85,32 @@ $diltime="$hours-$mins-$ampm";
                 if(empty($_POST['service4'])){ 
                     $error = TRUE;
                 }else{
-                    $service3 = $_POST['service4'];
+                    $service4 = $_POST['service4'];
                 }
                 if(empty($_POST['service5'])){ 
                     $error = TRUE;
                 }else{
-                    $service3 = $_POST['service5'];
+                    $service5 = $_POST['service5'];
                 }
                 if(empty($_POST['service6'])){ 
                     $error = TRUE;
                 }else{
-                    $service3 = $_POST['service6'];
+                    $service6 = $_POST['service6'];
                 }
                 if(empty($_POST['service7'])){ 
                     $error = TRUE;
                 }else{
-                    $service3 = $_POST['service7'];
+                    $service7 = $_POST['service7'];
+                }
+                if(empty($_POST['service8'])){ 
+                    $error = TRUE;
+                }else{
+                    $service8 = $_POST['service8'];
                 }
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`,`Remembrance booklet`,`Chairs and tents`,`Obituary Notices`,`Crematorium booking`,`Monumental plaques`,`Funeral pyres`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`,`Remembrance booklet`,`Chairs and tents`,`Obituary Notices`,`Crematorium booking`,`Monumental plaques`,`Funeral pyres`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]','$_POST[service8]')";
 
                 if(mysqli_query($conn,$sql)){
                     die();
@@ -375,41 +380,13 @@ $diltime="$hours-$mins-$ampm";
                             <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label>
                             <select name=service1>
                                 <option value='false'>--Choose-one--</option>
-                                <option value='op1'>option1</option>
-                                <option value='op2'>option2</option>
-                                <option value='op3'>option3</option>
+                                <option value='op1'>Gold</option>
+                                <option value='op2'>Silver</option>
+                                <option value='op3'>Bronze</option>
                             </select>
 
-                            <label id="LearnMoreBtn">More details..</label>
+                            
 
-                            <div id="overlay"></div>
-
-
-                            <div id="popup" align="center">
-                                <div id="btn" align="right">
-                                <button id="CloseBtn">CLOSE</button>
-                                </div>
-                             <div id="popupcontent" align="center">
-                                hi halooo eeee
-                             </div>
-                            </div>
-<script type="text/javascript">
-window.onload = function() {
-  document.getElementById("LearnMoreBtn").onclick = function(){
-        var overlay = document.getElementById("overlay");
-        var popup = document.getElementById("popup");
-        overlay.style.display = "block";
-        popup.style.display = "block";
-    };
-    
-  document.getElementById("CloseBtn").onclick = function(){
-        var overlay = document.getElementById("overlay");
-        var popup = document.getElementById("popup");
-        overlay.style.display = "none";
-        popup.style.display = "none";      
-  }
-};
-</script>
                         </td>
                     </tr>
                     <tr>
@@ -424,9 +401,9 @@ window.onload = function() {
                             <div id="pa2"><font color ="white"><label for="service3">Assisting to hire Chairs and tents</label>
                             <select name=service3>
                                 <option value='false'>--Choose-one--</option>
-                                <option value='op1'>option1</option>
-                                <option value='op2'>option2</option>
-                                <option value='op3'>option3</option>
+                                <option value='op1'>Gold</option>
+                                <option value='op2'>Silver</option>
+                                <option value='op3'>Bronze</option>
                             </select>
                             </font></div>
                         </td>
@@ -448,7 +425,7 @@ window.onload = function() {
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service5">Crematorium Booking</label>
-                            <input type="radio" name="service5" id="service5" value="true"></font></div>
+                            <input type="checkbox" name="service5" id="service5" value="true"></font></div>
                         </td>
                     </tr>
                     <tr>
@@ -457,10 +434,10 @@ window.onload = function() {
                             <div id="pa2"><font color ="white"><label for="service6">Engraving, Supplying and erection of Monumental Plaques</label>
                             <select name=service6>
                                 <option value='false'>--Choose-one--</option>
-                                <option value='op1'>option1</option>
-                                <option value='op2'>option2</option>
-                                <option value='op3'>option3</option>
-                                <option value='op4'>option4</option>
+                                <option value='op1'>Gold</option>
+                                <option value='op2'>Silver</option>
+                                <option value='op3'>Bronze</option>
+                                <option value='op4'>Deluxe</option>
                             </select>
                             </font></div>
                         </td>
@@ -471,12 +448,18 @@ window.onload = function() {
                             <div id="pa2"><font color ="white"><label for="service7">Construction of different types of funeral Pyres</label>
                             <select name=service7>
                                 <option value='false'>--Choose-one--</option>
-                                <option value='op1'>option1</option>
-                                <option value='op2'>option2</option>
-                                <option value='op3'>option3</option>
+                                <option value='op1'>Gold</option>
+                                <option value='op2'>Silver</option>
+                                <option value='op3'>Bronze</option>
                                 
                             </select>
                             </font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa2"><font color ="white"><label for="service8">web casting</label>
+                            <input type="checkbox" name="service5" id="service" value="true"></font></div>
                         </td>
                     </tr>
                     
