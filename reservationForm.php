@@ -139,7 +139,7 @@ $diltime="$hours-$mins-$ampm";
                
                 <tr>
                     
-                     <td><label for="dildate">Dilivery Date</label><span class="error"><?php echo $dildateerr;?></span></td>
+                     <td><label for="dildate">Funeral Date</label><span class="error"><?php echo $dildateerr;?></span></td>
                         
                        <td><select name=month value='' required>
                         <option value='01'>January</option>
@@ -201,7 +201,7 @@ $diltime="$hours-$mins-$ampm";
                 </tr>
                 <tr>
                     
-                     <td><label for="diltime">Dilivery Time</label><span class="error"><?php echo $diltmerr;?></span></td>
+                     <td><label for="diltime">Funeral Time</label><span class="error"><?php echo $diltmerr;?></span></td>
                         
                        <td>
                        <select name=hours required>
