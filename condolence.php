@@ -119,19 +119,21 @@ supervision of our team members. </p>
                         
                         <td>
                         
-                        <input list="browsers" name="deadname" id="deadname" placeholder="Dead Person Name" required>
-                            <datalist id="browsers">
+                        
                                 <?php 
-                                    $sql1 = "Select DISTINCT deadname from visitors";
-                                    $result1= mysqli_query($connection, $sql1);
-                                         while($r=mysqli_fetch_row($result1))
-                                         { 
-                                               echo '<option id=' .$r[0].'> ' . $r[0] . '</option>';
-
-                                         }
+                                    
+                                    echo '<input type="text" list="deadname" name="deadname" placeholder="Dead Person Name" required>';
+                                    echo '<datalist id="deadname">';
+                                    
+                                    $sql1 = "SELECT `deadname` FROM `visitors`";
+                                    $result1= mysqli_query($conn, $sql1);
+                                     while($r=mysqli_fetch_row($result1))
+                                     { 
+                                           echo '<option id='.$r[0].'>'.$r[0].'</option>';
+                                     }
                                     echo '</datalist>';
                                 ?>
-                            </datalist>
+                            
                         </td>
                 
                 </tr>
