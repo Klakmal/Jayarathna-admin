@@ -384,7 +384,7 @@ $diltime="$hours-$mins-$ampm";
                             
                             <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label>
                             <select name=service1>
-                                <option value='false'>--Choose-one--</option>
+                                <option value='false'>---None---</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
                                 <option value='op3'>Bronze</option>
@@ -405,7 +405,7 @@ $diltime="$hours-$mins-$ampm";
                             
                             <div id="pa2"><font color ="white"><label for="service3">Assisting to hire Chairs and tents</label>
                             <select name=service3>
-                                <option value='false'>--Choose-one--</option>
+                                <option value='false'>--None--</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
                                 <option value='op3'>Bronze</option>
@@ -418,7 +418,7 @@ $diltime="$hours-$mins-$ampm";
                             
                             <div id="pa2"><font color ="white"><label for="service4">Arranging Obituary Notices</label>
                             <select name=service4>
-                                <option value='false'>------Choose-one--------</option>
+                                <option value='false'>----------None----------</option>
                                 <option value='Newsaper'>Newsaper</option>
                                 <option value='Radio Announcement'>Radio Announcement</option>
                                 
@@ -430,7 +430,11 @@ $diltime="$hours-$mins-$ampm";
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service5">Crematorium Booking</label>
-                            <input type="checkbox" name="service5"  value="true"></font></div>
+                            <select name=service5>
+                                <option value='no'> No </option>
+                                <option value='yes'>Yes</option>
+                                
+                            </select></font></div>
                         </td>
                     </tr>
                     <tr>
@@ -438,7 +442,7 @@ $diltime="$hours-$mins-$ampm";
                             
                             <div id="pa2"><font color ="white"><label for="service6">Engraving, Supplying and erection of Monumental Plaques</label>
                             <select name=service6>
-                                <option value='false'>--Choose-one--</option>
+                                <option value='false'>---None---</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
                                 <option value='op3'>Bronze</option>
@@ -452,7 +456,7 @@ $diltime="$hours-$mins-$ampm";
                             
                             <div id="pa2"><font color ="white"><label for="service7">Construction of different types of funeral Pyres</label>
                             <select name=service7>
-                                <option value='false'>--Choose-one--</option>
+                                <option value='false'>--None--</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
                                 <option value='op3'>Bronze</option>
@@ -464,13 +468,21 @@ $diltime="$hours-$mins-$ampm";
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service8">web casting</label>
-                            <input type="radio" name="service8"  value="true"></font></div>
+                            <select name=service8>
+                                <option value='no'> No </option>
+                                <option value='yes'>Yes</option>
+                                
+                            </select></font></div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service9">Condolence messeges screening Feature</label>
-                            <input type="radio" name="service9" value="true"></font></div>
+                            <select name=service9>
+                                <option value='no'> No </option>
+                                <option value='yes'>Yes</option>
+                                
+                            </select></font></div>
                         </td>
                     </tr>
                     
