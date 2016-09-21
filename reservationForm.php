@@ -107,10 +107,15 @@ $diltime="$hours-$mins-$ampm";
                 }else{
                     $service8 = $_POST['service8'];
                 }
+                if(empty($_POST['service9'])){ 
+                    $error = TRUE;
+                }else{
+                    $service9 = $_POST['service9'];
+                }
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral tributes`,`Remembrance booklet`,`Chairs and tents`,`Obituary Notices`,`Crematorium booking`,`Monumental plaques`,`Funeral pyres`,`web casting`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]','$_POST[service8]')";
+                $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral_tributes`,`Remembrance_booklet`,`Chairs_and_tents`,`Obituary_Notices`,`Crematorium_booking`,`Monumental_plaques`,`Funeral_pyres`,`Web_casting`,`Condolence_messeges`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]','$_POST[service8]','$_POST[service9]')";
 
                 if(mysqli_query($conn,$sql)){
                     die();
@@ -392,7 +397,7 @@ $diltime="$hours-$mins-$ampm";
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service2">Provision of Remembrance Booklet - Quantity</label>
-                            <input type="text" name="service2" id="service2" value="0"></font></div>
+                            <input type="text" name="service2" value="0"></font></div>
                         </td>
                     </tr>
                     <tr>
@@ -425,7 +430,7 @@ $diltime="$hours-$mins-$ampm";
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service5">Crematorium Booking</label>
-                            <input type="checkbox" name="service5" id="service5" value="true"></font></div>
+                            <input type="checkbox" name="service5"  value="true"></font></div>
                         </td>
                     </tr>
                     <tr>
@@ -459,7 +464,13 @@ $diltime="$hours-$mins-$ampm";
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service8">web casting</label>
-                            <input type="checkbox" name="service5" id="service" value="true"></font></div>
+                            <input type="radio" name="service8"  value="true"></font></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa2"><font color ="white"><label for="service9">Condolence messeges screening Feature</label>
+                            <input type="radio" name="service9" value="true"></font></div>
                         </td>
                     </tr>
                     

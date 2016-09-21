@@ -45,7 +45,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     		$sql = "SELECT * FROM paid_reservations";
     		$query=(mysqli_query($conn,$sql)); 
     		echo '<ul class="naviul1">';  
-    		echo '<li class="navili1" ><b>Paid Reservations</b></li>';    
+    		echo '<li class="navili1" ><b>Confirmed Reservations</b></li>';    
             while($row = mysqli_fetch_array($query)) {
     
     ?>	
@@ -227,7 +227,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    echo '</tr>';
 		    echo '<tr>';	 ?>
 		    	<td colspan="2" align="right">
-		    		<button class="acc"  onclick="location.href='adminReservation.php?accept=<?php echo $rid ?>'">Paid</button>
+		    		<button class="acc"  onclick="location.href='adminReservation.php?accept=<?php echo $rid ?>'">Confirm</button>
 		    		<button class="rej"  onclick="location.href='adminReservation.php?reject=<?php echo $rid ?>'">Delete</button>
 	<?php	    	echo '</td>';
 		    echo '</tr>';

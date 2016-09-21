@@ -53,7 +53,7 @@ jQuery.noConflict()(function ($) {
 <div id="container" style="box-shadow: none; border: none">
   <div class="one-third">
     <a href = "condolence.php" class = "pic_button1" target="_blank" href="#" style="color: gray;" >
-    <img src="img/condolence.png" alt="blah" width="300" height="170" style="border-radius: 10%;">
+    <img src="img/condolence.png" alt="blah" width="200" height="170" style="border-radius: 10%;">
     <div class="desc" style="font-family:myfont1;"></div>
     </a>
   </div>
