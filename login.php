@@ -110,6 +110,7 @@
                 $error = TRUE;
             }else{
                 $connumber = $_POST['connumber'];
+
             }
             
             if(empty($_POST['email'])){ 
@@ -218,9 +219,9 @@ $dob="$year-$month-$dt";
             </tr>
             <tr>
                 
-                    <td><label for="nic">NIC</label><span class="error"><?php echo $nicerr;?></span></td>
+                    <td><label for="nic" >NIC</label><span class="error"><?php echo $nicerr;?></span></td>
                     
-                    <td><input type="text" name="nic" id="nic" required></td>
+                    <td><input type="text" name="nic" id="nic" maxlength="10" minlength="10" required></td>
             
             </tr>
              <tr>
