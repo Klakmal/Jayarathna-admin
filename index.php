@@ -54,7 +54,7 @@ jQuery.noConflict()(function ($) {
   <div class="one-third">
     <a href = "condolence.php" class = "pic_button1" target="_blank" href="#" style="color: gray;" >
     <h1 align="center" style="color: white; font-family:myfont1;"><b>CONDOLENCE</b></h1>
-    <h3 align="center"  style="color: white; font-family:myfont1;">MESSAGES</h3>
+    <h1 align="center"  style="color: white; font-family:myfont1;">MESSAGES</h1>
     </a>
   </div>
   <div class="one-third">
