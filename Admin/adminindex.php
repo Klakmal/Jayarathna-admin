@@ -13,7 +13,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="container">
     <div class="navi_pro">
     <img class="propic" src="img_avatar_g2.jpg"><br>
-    <h4 class=""><b>PORTFOLIO</b></h4>
+    <h4 class=""><b>Kasun Lakmal</b></h4>
     <p class="">Jayarathna Funrels</p>
     </div>
   </div>
