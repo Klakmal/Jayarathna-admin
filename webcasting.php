@@ -22,6 +22,7 @@
                         $error = TRUE;
                     }else{
                         $deadname = $_POST['deadname'];
+
                     }
                   if ($error==FALSE){  
                 $sql="SELECT * FROM webcasting WHERE deadname='$deadname'";
@@ -45,8 +46,8 @@
                     <td>
                         <?php 
                                     
-                                    echo '<input type="text" list="deadname" name="deadname" placeholder="Dead Person Name" required>';
-                                    echo '<datalist id="deadname">';
+                                    echo '<input type="text" list="dn" id="deadname" name="deadname" placeholder="Dead Person Name" required>';
+                                    echo '<datalist id="dn">';
                                     
                                     $sql1 = "SELECT `deadname` FROM `webcasting`";
                                     $result1= mysqli_query($conn, $sql1);
@@ -71,16 +72,16 @@
                 
                 </form>
                 <?php 
-            
                 if ($query != null) {
                     while ($row = mysqli_fetch_assoc($query)){
                         $no = $row['no'];
                     }
                 }
-                echo '<div class = "iframe_div" align="center">';
-                echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/";
-                echo '</div>';
+                
                 if(isset($no)){
+                    echo '<div class = "iframe_div" align="center">';
+                    echo "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/";
+                    
                     $sql = "SELECT * FROM `webcasting` WHERE no=$no";
                     $query=(mysqli_query($conn,$sql));
                     
@@ -91,6 +92,7 @@
                     }
                     
                     echo "\" frameborder=\"0\" allowfullscreen></iframe>";
+                    echo '</div>';
                 }                                      
                 ?>
             
