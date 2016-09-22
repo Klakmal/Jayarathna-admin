@@ -53,35 +53,33 @@ jQuery.noConflict()(function ($) {
 <div id="container" style="box-shadow: none; border: none">
   <div class="one-third">
     <a href = "condolence.php" class = "pic_button1" target="_blank" href="#" style="color: gray;" >
-    <img src="img/condolence.png" alt="blah" width="200" height="170" style="border-radius: 10%;">
-    <div class="desc" style="font-family:myfont1;"></div>
+    <h1 align="center" style="color: white; font-family:myfont1;"><b>CONDOLENCE</b></h1>
+    <h3 align="center"  style="color: white; font-family:myfont1;">MESSAGES</h3>
     </a>
   </div>
   <div class="one-third">
     <a href="webcasting.php" class = "pic_button2" target="_blank" href="#" style="color: gray">
-    <img src="img/webcasting.png" alt="blah" width="300" height="100" style="border-radius: 10%;">
-    <div class="desc" style="font-family:myfont1;"></div>
+    <h1 align="center"  style="color: white; font-family:myfont1;"><b>WEB</b> CASTING</h1>
     </a>
   </div>
   <div class="one-third last">
     <a href="feedback.php" class = "pic_button3" target="_blank" href="#" style="color: gray">
-    <img src="img/feedback.png" alt="blah" width="300" height="100" style="border-radius: 10%;">
-    <div class="desc" style="font-family:myfont1;"></div>
+    <h1 align="center" style="color: white; font-family:myfont1;"><b>FEED</b> BACK</h1>
     </a>
   </div>
 
 
-  <div class="one-third" align="center">
+  <div class="one-third">
     
     <p style="color: gray; font-family:myfont1;">Anyone who wishes to share their thoughts & feelings with the passed away person's dear ones can use the condolence screen to send their sympathy from anypart of the world. </p>
     
   </div>
-  <div class="one-third" align="center">
+  <div class="one-third">
     
     <p style="color: gray; font-family:myfont1;">Gives the live footage of the ceremony. For the ones who are unable to attend will get the opportunity to watch the ceremony online & honour their loved one.</p>
     
   </div>
-  <div class="one-third last" align="center">
+  <div class="one-third last">
     
     <p style="color: gray; font-family:myfont1;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
     
