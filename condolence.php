@@ -5,6 +5,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/condolence_style.css">
+    <script type="text/javascript">
+    window.onload = function() {
+        var overlay = document.getElementById("overlay");
+        var popup = document.getElementById("popup");
+        overlay.style.display = "block";
+        popup.style.display = "block";
+    
+    document.getElementById("CloseBtn").onclick = function(){
+            var overlay = document.getElementById("overlay");
+            var popup = document.getElementById("popup");
+            overlay.style.display = "none";
+            popup.style.display = "none";      
+        }
+    };
+    </script>
 </head>
 <body>
 
@@ -60,7 +75,21 @@
                 if(mysqli_query($conn,$sql)){
                     /*echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
                     header( "Location: condolence.php");*/
-                    echo "<script>alert('Thank you for writing. Condolence message'); window.location.href='condolence.php'; </script>";
+                    //echo "<script>alert('Thank you for writing. Condolence message'); window.location.href='condolence.php'; </script>";
+                    echo '<div id="overlay"></div>';
+                    echo '<div id="popup" align = "center">';
+                    echo '<div id="popcon">';
+                    echo '<div id="pophead">';
+                    echo 'this is a head';
+                    echo '</div>';
+                    echo '<div id="popbody">';
+                    echo 'this is a body';
+                    echo '</div>';
+                    echo '<div id="popfooter">';
+                    echo '<a id="CloseBtn" href="condolence.php">Ok</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
                     die();
                 } else{
                     echo "<script type='text/javascript'>alert('Not successfully datatranfer!')</script>";
