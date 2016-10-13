@@ -80,10 +80,10 @@
                     echo '<div id="popup" align = "center">';
                     echo '<div id="popcon">';
                     echo '<div id="pophead">';
-                    echo 'this is a head';
+                    echo 'Condolence screen';
                     echo '</div>';
                     echo '<div id="popbody">';
-                    echo 'this is a body';
+                    echo 'Thank you for submiting your condolence message';
                     echo '</div>';
                     echo '<div id="popfooter">';
                     echo '<a id="CloseBtn" href="condolence.php">Ok</a>';

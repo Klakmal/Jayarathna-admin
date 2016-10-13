@@ -61,10 +61,10 @@
                     echo '<div id="popup" align = "center">';
                     echo '<div id="popcon">';
                     echo '<div id="pophead">';
-                    echo 'this is a head';
+                    echo 'Feedback submission';
                     echo '</div>';
                     echo '<div id="popbody">';
-                    echo 'this is a body';
+                    echo 'Thank you for submiting your feedback';
                     echo '</div>';
                     echo '<div id="popfooter">';
                     echo '<a id="CloseBtn" href="feedback.php">Ok</a>';
