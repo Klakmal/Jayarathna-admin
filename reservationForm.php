@@ -34,23 +34,13 @@
                     $diladd = $_POST['diladd'];
                 }
 
-              /* if(empty($_POST['dildate'])){ 
-                    $dildateerr = "required";
-                    $error = TRUE;
-                }else{
-                    $dildate = $_POST['dildate'];
-                }*/
+             
 $month=$_POST['month'];
 $dt=$_POST['dt'];
 $year=$_POST['year'];
 $dildate="$year-$month-$dt";
                 
-                /*if(empty($_POST['diltime'])){ 
-                    $diltmerr = "required";
-                    $error = TRUE;
-                }else{
-                    $diltime = $_POST['diltime'];
-                }*/
+                
 $hours=$_POST['hours'];
 $mins=$_POST['mins'];
 $ampm=$_POST['ampm'];
@@ -66,6 +56,7 @@ $diltime="$hours-$mins-$ampm";
                     $error = TRUE;
                 }else{
                     $packname = $_POST['packname'];
+
                 }
                 if(empty($_POST['service1'])){ 
                     $error = TRUE;
@@ -323,49 +314,65 @@ $diltime="$hours-$mins-$ampm";
                    <tr>
                         <td colspan="2">
                             <div id="pa1"><font color ="white" size="2px">
-                            
-                            <label for="packname"><h4>VIP BRONZE PACKAGE</label><input type="radio" name="packname" value="VIP BRONZE PACKAGE" required></h4>
+                            <label for="packname"><h4>VIP BRONZE PACKAGE</label><input type="radio" name="packname" onchange="getValue(bronze);" value="VIP BRONZE PACKAGE" required></h4>
                                 <p>Bronze package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
                             Free of charge photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+                            <script>
+                                bronze="Rs. 275 000";
+                                gold="Rs. 375 000";
+                                silver="Rs. 325 000";
+                                platinum="Rs. 550 000";
+                                deluxe="Rs. 150 000";
 
+                                function getValue(s){
+                                    document.getElementById("packval").innerHTML= s ;
+                                }
+                            </script>
+                            
                             </font></div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                               <div id="pa1"><font color ="white" size="2px">
-                            <label for="packname"><h4>VIP SILVER PACKAGE</label><input type="radio" name="packname" value="VIP SILVER PACKAGE"></h4>
+                            <label for="packname"><h4>VIP SILVER PACKAGE</label><input type="radio" name="packname" onchange="getValue(silver)" value="VIP SILVER PACKAGE"></h4>
                             <p>Silver package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
                             Free of charge video coverage and photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+                           
+                            
                             </font></div>
-                        </td>
+
                     </tr>
                     <tr>
                         <td colspan="2">
                             <div id="pa1"><font color ="white" size="2px">
-                            <label for="packname"><h4>VIP GOLD PACKAGE</label><input type="radio" name="packname" value="VIP GOLD PACKAGE"></h4>
+                            <label for="packname"><h4>VIP GOLD PACKAGE</label><input type="radio" name="packname" onchange="getValue(gold)" value="VIP GOLD PACKAGE"></h4>
                             <p>Gold package will include S80 "Volvo/Mercedes Benz" Hearse according to availability and 04 large floral arrangements with special vehicle to carry floral tributes.
                             Free of charge video coverage photo album with 80 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+                         
                                 </font></div>
                         </td>
+                        </td>
+                        <td><div id="packval"><p id="packval"></div></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <div id="pa1"><font color ="white" size="2px">
-                            <label for="packname"><h4>VIP PLATINUM PACKAGE</label><input type="radio" name="packname" value="VIP PLATINUM PACKAGE"></h4>
+                            <label for="packname"><h4>VIP PLATINUM PACKAGE</label><input type="radio" name="packname" onchange="getValue(platinum)" value="VIP PLATINUM PACKAGE"></h4>
                             <p>Platinum package will include Brand New Mercedes Benz Hearse and 04 large floral arrangements with special vehicle to carry floral tributes.
                             Free of charge photo video coveragalbum with 100 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy, special complimentary floral arrangement for casket and etc</p>
+                            
                             </font></div>
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
                            <div id="pa1"><font color ="white" size="2px">
-                            <label for="packname"><h4>DELUXE PACKAGE</label><input type="radio" name="packname" value="DELUXE PACKAGE"></h4><p>
+                            <label for="packname"><h4>DELUXE PACKAGE</label><input type="radio" name="packname" onchange="getValue(deluxe)" value="DELUXE PACKAGE"></h4><p>
                             Deluxe package is for funerals held at our newly renovated parlour.This package will include Luxury Grey Volvo 960 Hearse or Vauxhall Omega Hearse, 
                             fresh flower arrangements, embalming with the best english preservations and casket with important fittings.
                             </p>
-
+                            
                             </font></div>
                         </td>
                     </tr>
@@ -383,16 +390,26 @@ $diltime="$hours-$mins-$ampm";
                         <td colspan="2">
                             
                             <div id="pa2"><font color ="white"><label for="service1">Arrangement of Floral Tributes</label>
-                            <select name=service1>
+                            <select id="service1" onchange="s1func()" name=service1>
                                 <option value='false'>---None---</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
                                 <option value='op3'>Bronze</option>
                             </select>
-
+                            <script>
+                                function s1func() {
+                                    var x = document.getElementById("service1").value;
+                                    if(x=='false'){y=0;}
+                                    if(x=='op1'){y=12;}
+                                    if(x=='op2'){y=20;}
+                                    if(x=='op3'){y=50;}
+                                    document.getElementById("s1").innerHTML =  y;
+                                }
+                                </script>
                             
 
                         </td>
+                        <td><p id="s1"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -404,7 +421,7 @@ $diltime="$hours-$mins-$ampm";
                         <td colspan="2">
                             
                             <div id="pa2"><font color ="white"><label for="service3">Assisting to hire Chairs and tents</label>
-                            <select name=service3>
+                            <select id="service3" onchange="s3func()" name=service3>
                                 <option value='false'>--None--</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
@@ -412,36 +429,77 @@ $diltime="$hours-$mins-$ampm";
                             </select>
                             </font></div>
                         </td>
+                         <script>
+                                function s3func() {
+                                    var x = document.getElementById("service3").value;
+                                    if(x=='false'){y=0;}
+                                    if(x=='op1'){y=99;}
+                                    if(x=='op2'){y=75;}
+                                    if(x=='op3'){y=80;}
+                                    document.getElementById("s3").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s3"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             
                             <div id="pa2"><font color ="white"><label for="service4">Arranging Obituary Notices</label>
-                            <select name=service4>
+                            <select id="service4" onchange="s4func()" name=service4>
                                 <option value='false'>----------None----------</option>
-                                <option value='Newsaper'>Newsaper</option>
+                                <option value='Newspaper'>Newspaper</option>
                                 <option value='Radio Announcement'>Radio Announcement</option>
                                 
                             </select>
                             </font></div>
                         </td>
+                        <script>
+                                function s4func() {
+                                    var x = document.getElementById("service4").value;
+                                    if(x=='false'){y=0;}
+                                    if(x=='Newspaper'){y=999;}
+                                    if(x=='Radio Announcement'){y=1522;}
+                                    
+                                    document.getElementById("s4").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s4"></p></td>
                     </tr>
 
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service5">Crematorium Booking</label>
-                            <select name=service5>
+                            <select id="service5" onchange="s5func()" name=service5>
                                 <option value='no'> No </option>
                                 <option value='yes'>Yes</option>
                                 
                             </select></font></div>
                         </td>
+                        <script>
+                                function s5func() {
+                                    var x = document.getElementById("service5").value;
+                                    if(x=='no'){y=0;}
+                                    if(x=='yes'){y=469;}
+                                    
+                                    document.getElementById("s5").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s5"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             
                             <div id="pa2"><font color ="white"><label for="service6">Engraving, Supplying and erection of Monumental Plaques</label>
-                            <select name=service6>
+                            <select id="service6" onchange="s6func()" name=service6>
                                 <option value='false'>---None---</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
@@ -450,12 +508,27 @@ $diltime="$hours-$mins-$ampm";
                             </select>
                             </font></div>
                         </td>
+                        <script>
+                                function s6func() {
+                                    var x = document.getElementById("service6").value;
+                                    if(x=='false'){y=0;}
+                                    if(x=='op1'){y=99;}
+                                    if(x=='op2'){y=75;}
+                                    if(x=='op3'){y=80;}
+                                    if(x=='op4'){y=19;}
+                                    document.getElementById("s6").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s6"></p></td>
                     </tr>
                      <tr>
                         <td colspan="2">
                             
                             <div id="pa2"><font color ="white"><label for="service7">Construction of different types of funeral Pyres</label>
-                            <select name=service7>
+                            <select id="service7" onchange="s7func()" name=service7>
                                 <option value='false'>--None--</option>
                                 <option value='op1'>Gold</option>
                                 <option value='op2'>Silver</option>
@@ -464,26 +537,66 @@ $diltime="$hours-$mins-$ampm";
                             </select>
                             </font></div>
                         </td>
+                        <script>
+                                function s7func() {
+                                    var x = document.getElementById("service7").value;
+                                    if(x=='false'){y=0;}
+                                    if(x=='op1'){y=27;}
+                                    if(x=='op2'){y=46;}
+                                    if(x=='op3'){y=80;}
+                                    document.getElementById("s7").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s7"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service8">web casting</label>
-                            <select name=service8>
+                            <select id="service8" onchange="s8func()" name=service8>
                                 <option value='no'> No </option>
                                 <option value='yes'>Yes</option>
                                 
                             </select></font></div>
                         </td>
+                        <script>
+                                function s8func() {
+                                    var x = document.getElementById("service8").value;
+                                    if(x=='no'){y=0;}
+                                    if(x=='yes'){y=469;}
+                                    
+                                    document.getElementById("s8").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s8"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service9">Condolence messeges screening Feature</label>
-                            <select name=service9>
+                            <select id="service9" onchange="s9func()" name=service9>
                                 <option value='no'> No </option>
                                 <option value='yes'>Yes</option>
                                 
                             </select></font></div>
                         </td>
+                        <script>
+                                function s9func() {
+                                    var x = document.getElementById("service9").value;
+                                    if(x=='no'){y=0;}
+                                    if(x=='yes'){y=469;}
+                                    
+                                    document.getElementById("s9").innerHTML =  y;
+                                }
+                                </script>
+                            
+
+                        </td>
+                        <td><p id="s9"></p></td>
                     </tr>
                     
                     
