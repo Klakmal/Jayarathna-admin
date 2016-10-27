@@ -318,11 +318,11 @@ $diltime="$hours-$mins-$ampm";
                                 <p>Bronze package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
                             Free of charge photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
                             <script>
-                                bronze="Rs. 275 000";
-                                gold="Rs. 375 000";
-                                silver="Rs. 325 000";
-                                platinum="Rs. 550 000";
-                                deluxe="Rs. 150 000";
+                                bronze=275000;
+                                gold=375000;
+                                silver=325000;
+                                platinum=550000;
+                                deluxe=150000;
 
                                 function getValue(s){
                                     document.getElementById("packval").innerHTML= s ;
@@ -414,8 +414,16 @@ $diltime="$hours-$mins-$ampm";
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service2">Provision of Remembrance Booklet - Quantity</label>
-                            <input type="text" name="service2" value="0"></font></div>
+                            <input type="text" id="service2" onchange="s2func()" name="service2" value="0"></font></div>
                         </td>
+                        <script>
+                            function s2func() {
+                                var x = document.getElementById("service2");
+                                y = x.value*50;
+                                document.getElementById("s2").innerHTML =  y;
+                            }
+                        </script>
+                        <td><p id="s2"></p></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -566,6 +574,7 @@ $diltime="$hours-$mins-$ampm";
                                     var x = document.getElementById("service8").value;
                                     if(x=='no'){y=0;}
                                     if(x=='yes'){y=469;}
+
                                     
                                     document.getElementById("s8").innerHTML =  y;
                                 }
@@ -597,6 +606,16 @@ $diltime="$hours-$mins-$ampm";
 
                         </td>
                         <td><p id="s9"></p></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <div id="pa2"><font color ="white"><label for="total">TOTAL</label>
+                    </font></div></td>
+                    <td>
+
+                    </td>
+
                     </tr>
                     
                     
