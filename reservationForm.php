@@ -5,6 +5,40 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/reservationForm.css">
+
+    <style type="text/css">
+    .packv{
+        background-color: white;
+        width:200px;
+        height:20px;
+        position: relative;
+        float: right;
+        padding: 10px;
+        padding-bottom: 30px;
+        margin: 0px;
+        border: 2px solid darkgray;
+        border-collapse: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        transition: box-shadow 0.3s, border 1s;
+    }
+
+    #s3,#s1,#s2,#s4,#s5,#s6,#s7,#s8,#s9{
+        background-color: white;
+        width:150px;
+        height:10px;
+        position: relative;
+        float: right;
+        padding: 5px;
+        padding-bottom: 10px;
+        margin: 0px;
+        border: 2px solid darkgray;
+        border-collapse: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        transition: box-shadow 0.3s, border 1s;
+    }
+    </style>
 </head>
 <body>
 
@@ -353,7 +387,7 @@ $diltime="$hours-$mins-$ampm";
                                 </font></div>
                         </td>
                         </td>
-                        <td><div id="packval"><p id="packval"></div></p></td>
+                        <td><div class="packv" align="center" "><p id="packval">Package Prize</p></div></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -405,7 +439,7 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='op3'){y=50;}
                                     document.getElementById("s1").innerHTML =  y;
                                 }
-                                </script>
+                            </script>
                             
 
                         </td>
