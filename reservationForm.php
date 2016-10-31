@@ -23,7 +23,7 @@
         transition: box-shadow 0.3s, border 1s;
     }
 
-    #s3,#s1,#s2,#s4,#s5,#s6,#s7,#s8,#s9{
+    #s3,#s1,#s2,#s4,#s5,#s6,#s7,#s8,#s9,#total{
         background-color: white;
         width:150px;
         height:10px;
@@ -352,6 +352,7 @@ $diltime="$hours-$mins-$ampm";
                                 <p>Bronze package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
                             Free of charge photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
                             <script>
+                                total=0;
                                 bronze=275000;
                                 gold=375000;
                                 silver=325000;
@@ -360,7 +361,10 @@ $diltime="$hours-$mins-$ampm";
 
                                 function getValue(s){
                                     document.getElementById("packval").innerHTML= s ;
+                                    total=total+s;
+                                    document.getElementById("total").innerHTML= total ;
                                 }
+                               
                             </script>
                             
                             </font></div>
@@ -431,6 +435,7 @@ $diltime="$hours-$mins-$ampm";
                                 <option value='op3'>Bronze</option>
                             </select>
                             <script>
+
                                 function s1func() {
                                     var x = document.getElementById("service1").value;
                                     if(x=='false'){y=0;}
@@ -438,6 +443,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='op2'){y=20;}
                                     if(x=='op3'){y=50;}
                                     document.getElementById("s1").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                             </script>
                             
@@ -646,8 +653,13 @@ $diltime="$hours-$mins-$ampm";
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="total">TOTAL</label>
                     </font></div></td>
-                    <td>
 
+                    <td>
+                            <p id="total"></p>
+                    <script>
+                        
+                        document.getElementById("total").innerHTML = total;
+                    </script>
                     </td>
 
                     </tr>
