@@ -13,7 +13,7 @@ jQuery.noConflict()(function ($) {
         autoplay: true,
         slideshow_interval: 3000,
         titlesFactor: 0
-    });
+     });
 });
 </script>
 <!-- get fancybox -->
