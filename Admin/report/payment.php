@@ -40,7 +40,10 @@
              echo "<td>";
             echo $row['pay'];
             echo "</td>";
-        
+            
+             echo "<td>";
+            echo $row['due'];
+            echo "</td>";
          echo "</tr>";}
 ?>
 </table>
@@ -85,7 +88,7 @@
                                 $due = $buy - $pay ;
                     
                     $sql = "INSERT INTO payment (supplierno,supplier,date,buy, pay, due)
-                VALUES ('".$supplierno."','".$supplier."','".$date."','".$buy."','".$pay."',,'".$due."')";
+                VALUES ('".$supplierno."','".$supplier."','".$date."','".$buy."','".$pay."','".$due."')";
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("New record created successfully")</script>';
