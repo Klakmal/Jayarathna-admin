@@ -72,6 +72,7 @@ input[type=submit],[type=reset]{
 	width: 85px;
 	height: 30px;
 	float:right;
+	margin-left: 500px;
 }
 input[type=submit]:hover,[type=reset]:hover{
 	background-color: white;

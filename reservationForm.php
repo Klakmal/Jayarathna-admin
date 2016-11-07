@@ -38,6 +38,28 @@
         border-top-left-radius: 10px;
         transition: box-shadow 0.3s, border 1s;
     }
+    #payHere{
+       
+        margin-bottom:100px;
+        margin-left: 450px;
+        margin-top: -21px;
+        position: center;
+
+        width: 200px;
+        height: 50px;
+    }
+    input[type=submit],[type=reset]{
+    margin: 5px;
+    float: center;
+    border:none;
+    background-color: #70102e;
+    color:white;
+    width: 85px;
+    height: 30px;
+    float:right;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
     </style>
 </head>
 <body>
@@ -69,16 +91,16 @@
                 }
 
              
-$month=$_POST['month'];
-$dt=$_POST['dt'];
-$year=$_POST['year'];
-$dildate="$year-$month-$dt";
+                $month=$_POST['month'];
+                $dt=$_POST['dt'];
+                $year=$_POST['year'];
+                $dildate="$year-$month-$dt";
                 
                 
-$hours=$_POST['hours'];
-$mins=$_POST['mins'];
-$ampm=$_POST['ampm'];
-$diltime="$hours-$mins-$ampm";
+                $hours=$_POST['hours'];
+                $mins=$_POST['mins'];
+                $ampm=$_POST['ampm'];
+                $diltime="$hours-$mins-$ampm";
                 
                 if(empty($_POST['mobilenum'])){ 
                     $mobilenoerr = "";
@@ -462,6 +484,8 @@ $diltime="$hours-$mins-$ampm";
                                 var x = document.getElementById("service2");
                                 y = x.value*50;
                                 document.getElementById("s2").innerHTML =  y;
+                                total=total+y;
+                                document.getElementById("total").innerHTML = total;
                             }
                         </script>
                         <td><p id="s2"></p></td>
@@ -486,6 +510,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='op2'){y=75;}
                                     if(x=='op3'){y=80;}
                                     document.getElementById("s3").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -513,6 +539,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='Radio Announcement'){y=1522;}
                                     
                                     document.getElementById("s4").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -537,6 +565,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='yes'){y=469;}
                                     
                                     document.getElementById("s5").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -566,6 +596,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='op3'){y=80;}
                                     if(x=='op4'){y=19;}
                                     document.getElementById("s6").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -594,6 +626,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='op2'){y=46;}
                                     if(x=='op3'){y=80;}
                                     document.getElementById("s7").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -618,6 +652,8 @@ $diltime="$hours-$mins-$ampm";
 
                                     
                                     document.getElementById("s8").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -641,6 +677,8 @@ $diltime="$hours-$mins-$ampm";
                                     if(x=='yes'){y=469;}
                                     
                                     document.getElementById("s9").innerHTML =  y;
+                                    total=total+y;
+                                    document.getElementById("total").innerHTML = total;
                                 }
                                 </script>
                             
@@ -659,6 +697,7 @@ $diltime="$hours-$mins-$ampm";
                     <script>
                         
                         document.getElementById("total").innerHTML = total;
+                        
                     </script>
                     </td>
 
@@ -666,6 +705,22 @@ $diltime="$hours-$mins-$ampm";
                     
                     
                 <tr>
+                    <td><div id="payHere">
+                        <form action="reservationForm.php" method="POST">
+                          <script
+                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                            data-amount="total"
+                            data-name="Jayarathna-funerals"
+                            data-description=""
+                            data-image="img/18.jpg"
+                            data-locale="auto"
+                            data-zip-code="true">
+                            document.getElementById("total").innerHTML = total;
+                          </script>
+                        </form>
+                        </div>
+                    </td>
                      <td colspan="2">
                         <input type="submit" value="Submit" name="submit"> 
                         <input type="reset" value="Cancle" name="cancle">
