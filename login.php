@@ -4,6 +4,296 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/signup.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+        $( "#datepicker" ).datepicker();
+        $( "#datepicker1" ).datepicker();
+        $( "input" ).checkboxradio();
+        } );
+        function allletters(){
+        	document.getElementById("correctname").innerHTML = "";
+        	var text1 = document.getElementById("cusname");
+        	var letters = /^[A-Za-z]+$/;
+        	if(text1.value.match(letters))  
+		    {  
+		      	return true;  
+		    }  
+		    else  
+		    {  
+		     	document.getElementById("correctname").innerHTML = "please Enter correct name";
+		     	return false;
+		    }  
+        }
+        function nicval(){
+            var nic = document.getElementById("nic").value;
+            var val = /^[0-9]{9}[vVxX]$/;
+            if (nic != ""){
+                if (nic.match(val)) {
+                    document.getElementById("nic_err").innerHTML = "";
+                    return true;
+                }else{
+                    document.getElementById("nic_err").innerHTML = "Invaild NIC";
+                    return false;
+                }
+            }else{
+                document.getElementById("nic_err").innerHTML = "";
+            }
+        }
+        function mypassword(){
+        	var str = document.getElementById("password");
+        	var x = str.value.length;
+        	if (x==0) {
+        		document.getElementById("length_error").innerHTML = "";
+        	}else if (x<8) {
+        		document.getElementById("length_error").innerHTML = "too short";
+        	}else{
+        		document.getElementById("length_error").innerHTML = "perfect";
+        	}
+        }
+
+        function repassword1(){
+        	var pass = document.getElementById("password");
+        	var repass = document.getElementById("repassword");
+            if (pass.value != "" && repass.value != ""){
+                if (pass.value == repass.value) {
+                    document.getElementById("notmatch").innerHTML = "password matched";
+                    return true;
+                }else{
+                    document.getElementById("notmatch").innerHTML = "password not match";
+                    return false;
+                }
+            }else{
+            document.getElementById("notmatch").innerHTML = "";
+            }
+        }
+
+        function checkPhone() {
+            var connumber = document.getElementById("connumber").value;
+            connumber = connumber.replace(/-/g, "");
+            connumber = connumber.replace(/ /g, "");
+            document.getElementById("check4n").innerHTML = connumber;
+            var phoneno = /^[0][0-9]{9}$/;
+            if (connumber != "") {
+                if(connumber.match(phoneno)) {
+                	document.getElementById("check4n").innerHTML = " ok";
+                    return true;
+                }
+                else {
+                    document.getElementById("check4n").innerHTML = " error";
+                    return false;
+                }
+            }else{
+                document.getElementById("check4n").innerHTML = " ";
+            }
+        }
+
+        function finalresult(){
+            document.getElementById("nic_err").innerHTML = "";
+            document.getElementById("dateerror").innerHTML = "";
+            document.getElementById("gnderr").innerHTML = "";
+        	var nicno = document.getElementById("nic").value;
+        	var res = nicno.substring(0,2);
+        	
+        	var bdate = document.getElementById("datepicker").value;
+        	var res1 = bdate.substring(bdate.length-2,bdate.length);
+        	
+        	var gr = document.getElementById("get").value;
+        	var gender;
+        	if (document.getElementById('m').checked) {
+			  	gender = document.getElementById('m').value;
+			}else if (document.getElementById('f').checked) {
+				gender = document.getElementById('f').value;
+			}
+			var mf = nicno.substring(5,10);
+			var mfnum = parseInt(mf);
+			
+			var mof;
+			if (mfnum < 500) {
+				mof = "male";
+			}else {
+				mof = "female";
+			}
+
+			if ( mof == gender && res == res1){
+				document.getElementById("nic_err").innerHTML = "ok";
+				document.getElementById("dateerror").innerHTML = "ok";
+				document.getElementById("gnderr").innerHTML = "ok";
+				return true;
+			}else {
+				document.getElementById("nic_err").innerHTML = "Invaild";
+				document.getElementById("dateerror").innerHTML = "Deos not match";
+				document.getElementById("gnderr").innerHTML = "Deos not match";
+				return false;
+			}
+
+        }
+        function validation(){
+            var nicno = document.getElementById("nic").value;
+            var nicyear = nicno.substring(0,2);
+            var days = nicno.substring(2,5);
+            var gr = document.getElementById("get").value;
+            var gender;
+            var mfnum = parseInt(nicno.substring(2,5));
+            var mof;
+            var bday = document.getElementById("datepicker").value;
+            var bday_year = bday.substring(bday.length-2,bday.length);
+            var birtharray = bday.split("/");
+            var year = parseInt(birtharray[2]);
+            var day = parseInt(birtharray[1]);
+            var month = parseInt(birtharray[0]);
+
+            if (document.getElementById('m').checked) {
+                gender = document.getElementById('m').value;
+            }else if (document.getElementById('f').checked) {
+                gender = document.getElementById('f').value;
+            }
+            
+            if (0 < mfnum && mfnum < 367) {
+                document.getElementById("gnderr").innerHTML = "";
+                mof = "male";
+            }else if (500 < mfnum && mfnum < 867) {
+                document.getElementById("gnderr").innerHTML = "";
+                mof = "female";
+                mfnum = mfnum - 500;
+            }else {
+                document.getElementById("gnderr").innerHTML = "Invalid NIC";
+                return false;
+            }
+            if (mof != gender){
+                document.getElementById("dateerror").innerHTML = "Invalid Gender";
+                return false;
+            }
+            if (mof == gender && bday_year == nicyear && countdays(year,month,day,mfnum)) {
+                document.getElementById("gnderr").innerHTML = "OK";
+                document.getElementById("dateerror").innerHTML = "OK";
+                document.getElementById("nic_err").innerHTML = "OK";
+            }else{
+                document.getElementById("gnderr").innerHTML = "not";
+                document.getElementById("dateerror").innerHTML = "not";
+                document.getElementById("nic_err").innerHTML = "not";
+            }
+        }
+
+        function countdays(year,month,day,days) {
+            var count = 1;
+            for (i = 1; i<month+1; i++){
+                if (i == 2) {
+                    count = count + 31;
+                }
+                if (i == 3) {
+                    if (year%4 == 0){
+                        count = count + 29;
+                    }else{
+                        count = count + 28;
+                    } 
+                }
+                if (i == 4 ) {
+                    count = count + 31;
+                }
+                if (i == 5) {
+                    count = count + 30;
+                }
+                if (i == 6) {
+                    count = count + 31;
+                }
+                if (i == 7) {
+                    count = count + 30;
+                }
+                if (i == 8) {
+                    count = count + 31;
+                }
+                if (i == 9) {
+                    count = count + 31;
+                }
+                if (i == 10) {
+                    count = count + 30;
+                }
+                if (i == 11) {
+                    count = count + 31;
+                }
+                if (i == 12) {
+                    count = count + 30;
+                }
+                if (month == i){
+                    count = count + day;
+                }
+            }
+            if (days == count){
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+
+        function validatedate()  
+          {  
+          var inputText = document.getElementById("datepicker"); 
+          var dateformat = /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/;  
+          
+          if(inputText.value.match(dateformat))  
+              {
+                  document.getElementById("dateerror").innerHTML = inputText;
+                  var opera1 = inputText.value.split('/');  
+                  var opera2 = inputText.value.split('-');  
+                  lopera1 = opera1.length;
+                  lopera2 = opera2.length;
+                  if (lopera1>1)  
+                  {  
+                    var pdate = inputText.value.split('/');  
+                  }  
+                    else if (lopera2>1)  
+                  {  
+                  var pdate = inputText.value.split('-');  
+                  }  
+                  var mm  = parseInt(pdate[0]);  
+                  var dd = parseInt(pdate[1]);  
+                  var yy = parseInt(pdate[2]);  
+                  var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];  
+                  var ListofDays1 = [31,29,31,30,31,30,31,31,30,31,30,31];
+                  var d = new Date();
+                  var n = d.getFullYear();
+
+                    if (1900 < yy && yy < n-15) {
+                        if (yy%4==0){
+                            if (0 < mm && mm < 13) {
+                                if (0 < dd && dd < (ListofDays1[mm-1]+1) ) {
+                                    document.getElementById("dateerror").innerHTML = "ok";
+                                    return true;
+                                }else{
+                                    document.getElementById("dateerror").innerHTML = "Day is not match";
+                                    return false;
+                                }
+                            }else{
+                                document.getElementById("dateerror").innerHTML = "Invalid Date input";
+                            }
+                        }else {
+                            if (0 < mm && mm < 13) {
+                                if (0 < dd && dd < (ListofDays[mm-1]+1) ) {
+                                    document.getElementById("dateerror").innerHTML = "ok";
+                                    return true;
+                                }else{
+                                    document.getElementById("dateerror").innerHTML = "Day is not match";
+                                    return false;
+                                }
+                            }else{
+                                document.getElementById("dateerror").innerHTML = "Invalid Date input";
+                                return false;
+                            }
+                        }
+                    }else{
+                        document.getElementById("dateerror").innerHTML = "Invalid Date input";
+                        return false;
+                    }
+              }else{  
+                      document.getElementById("dateerror").innerHTML = "Invalid Date input";
+                      return false;  
+                  }  
+        }
+    </script>
 </head>
 <body>
     <?php
@@ -55,9 +345,15 @@
                     <td><input type="email" name="mail"  placeholder="Email Address"></td>
                 </tr>
                 <tr>
+                <td colspan="2"><p id = ""></p></td>
+                </tr>
+                <tr>
                     <td><label for="password">Password</label></td>
                     <td><input type="password" name="pwd"  placeholder="Password"></td>
                 
+                </tr>
+                <tr>
+                <td colspan="2"><p id = ""></p></td>
                 </tr>
                    <tr> <td colspan="2" align="center"><input type="submit" value="Login" name="send"></td>
                 </tr>
@@ -176,24 +472,8 @@ $dob="$year-$month-$dt";
             }
         }
     ?>
-<script type="text/javascript">
-    function validateForm() {
-        return checkPhone();
-    }
-    function checkPhone() {
-            var connumber = document.forms["myForm"]["connumber"].value;
-            var phoneNum = connumber.replace(/[^\d]/g, '');
-            if(phoneNum.length == 10) {
-                return true;
-            }
-            else {
-                document.getElementById("connumber").className = document.getElementById("connumber").className + " error";
-                return false;
-            }
-        }
-</script>
 
-    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" onsubmit = "return validateForm()">
+    <form onsubmit="validation()"> action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <div id="signup" align="center">
         <form id="f2" action="login.php" method="post">
         <table id="tb2">
@@ -207,8 +487,11 @@ $dob="$year-$month-$dt";
                 
                   <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cnameerr;?></span></td>
                     
-                <td> <input type="text" name="cusname" id="cusname" required></td>
+                <td> <input type="text" name="cusname" id="cusname" onblur="allletters()" required></td>
                 
+            </tr>
+            <tr>
+                <td colspan="2"><p id = ""><span id="correctname"></span></p></td>
             </tr>
             <tr>
                 
@@ -218,18 +501,27 @@ $dob="$year-$month-$dt";
             
             </tr>
             <tr>
+                <td colspan="2"><p id = ""></p></td>
+            </tr>
+            <tr>
                 
                     <td><label for="nic" >NIC</label><span class="error"><?php echo $nicerr;?></span></td>
                     
-                    <td><input type="text" name="nic" id="nic" maxlength="10" minlength="10" required></td>
+                    <td><input type="text" name="nic" id="nic" maxlength="10" minlength="10" onblur="nicval()" required></td>
             
+            </tr>
+            <tr>
+                <td colspan="2"><p id = ""><span id="nic_err"></span></p></td>
             </tr>
              <tr>
                 
                    <td><label for="connumber">Contact Number</label></td>
             
-                   <td> <input type="tel" name="connumber" id="connumber" pattern="^\d{10}$" maxlength="10" minlength="10" required><span class="error"></span></td>
+                   <td> <input type="tel" name="connumber" id="connumber" onblur="checkPhone()" required><span class="error"></span></td>
                     <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p id = ""><span id="check4n"></span></p></td>
             </tr>
             <tr>
                 
@@ -238,18 +530,27 @@ $dob="$year-$month-$dt";
                     <td><input type="text" name="address" id="address" required></td>
             
             </tr>
+            <tr>
+                <td colspan="2"><p id = ""></p></td>
+            </tr>
              <tr>
                 
                     <td><label for="password">Password</label></td>
                    
-                    <td><input type="password" name="password" id="password" placeholder="<?php echo $passworderr;?>" required><span class="error"><?php echo $passworderr;?></span></td>
+                    <td><input type="password" name="password" id="password" placeholder="<?php echo $passworderr;?>" onkeydown="mypassword()" required><span class="error"><?php echo $passworderr;?></span></td>
                     
+            </tr>
+            <tr>
+                <td colspan="2"><p id = ""><span id="length_error"></span></p></td>
             </tr>
             <tr>
                 
                     <td><label for="Password">Reenter Password</label></td>
                    
-                    <td><input type="password" name="repassword" id="repassword" placeholder="<?php echo $repassworderr;?>" required></td>
+                    <td><input type="password" name="repassword" id="repassword" placeholder="<?php echo $repassworderr;?>" onblur="repassword1()" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><p id = ""><span id="notmatch"></span></p></td>
             </tr>
              <tr>
                 
@@ -258,75 +559,34 @@ $dob="$year-$month-$dt";
                    <td><input type="email" name="email" id="email" required></td>
             </tr>
             <tr>
+                <td colspan="2"><p id = ""></p></td>
+            </tr>
+            <tr>
                 <td><label>Gender</label><span class="error"><?php echo $gendererr;?></span></td>
-                <td> <input type="radio" name="gender" value="male" required><label>Male</label>
-                    <input type="radio" name="gender" value="female"><label>Female</label>
+                <td><div id="get"> <input type="radio" name="gender" id="m" value="male" required><label>Male</label>
+                    <input type="radio" name="gender" id="f" value="female"><label>Female</label> </div>
                 </td>
              </tr>
+             <tr>
+                <td colspan="2"><p id = ""><span id="gnderr"></span></p></td>
+            </tr>
 <!--            <tr>
                 
                  <td><label for="dob">DOB</label><span class="error"><?php echo $doberr;?></span></td>
                     
                    <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd" required></td>
             </tr>-->
-            <tr><td><label for="dob">DOB</label><span class="error"></td><td  align=left  >   
-
-<select name=month value=''>Select Month</option>
-<option value='01'>January</option>
-<option value='02'>February</option>
-<option value='03'>March</option>
-<option value='04'>April</option>
-<option value='05'>May</option>
-<option value='06'>June</option>
-<option value='07'>July</option>
-<option value='08'>August</option>
-<option value='09'>September</option>
-<option value='10'>October</option>
-<option value='11'>November</option>
-<option value='12'>December</option>
-</select>
-
-
-
-   
-
-<select name=dt >
-
-<option value='01'>01</option>
-<option value='02'>02</option>
-<option value='03'>03</option>
-<option value='04'>04</option>
-<option value='05'>05</option>
-<option value='06'>06</option>
-<option value='07'>07</option>
-<option value='08'>08</option>
-<option value='09'>09</option>
-<option value='10'>10</option>
-<option value='11'>11</option>
-<option value='12'>12</option>
-<option value='13'>13</option>
-<option value='14'>14</option>
-<option value='15'>15</option>
-<option value='16'>16</option>
-<option value='17'>17</option>
-<option value='18'>18</option>
-<option value='19'>19</option>
-<option value='20'>20</option>
-<option value='21'>21</option>
-<option value='22'>22</option>
-<option value='23'>23</option>
-<option value='24'>24</option>
-<option value='25'>25</option>
-<option value='26'>26</option>
-<option value='27'>27</option>
-<option value='28'>28</option>
-<option value='29'>29</option>
-<option value='30'>30</option>
-<option value='31'>31</option>
-</select>
-
-<input class="year" type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year">
-
+            <tr>
+	            <td>
+	            	<label for="dob">DOB</label><span class="error"></span>
+	            </td>
+	            <td>
+	            	<input type="text" id="datepicker" onblur="validatedate()" placeholder="month/day/year" >
+	            </td>
+	        </tr>
+            <tr>
+                <td colspan="2"><p id = ""><span id="dateerror"></span></p></td>
+            </tr>
              <tr>
                 <td colspan="2">
                     <input type="submit" value="Sign Up" name="submit">
