@@ -10,8 +10,8 @@
 <body>
 <?php include 'temp/header.php';  ?>
 <?php
-	$imageTotal=3;
-	$url="images/";
+	$imageTotal="";
+	$link="";
 ?>
 <div class="cont1" align="center">
     <div class="cont2" align="left">
@@ -28,7 +28,6 @@
                         $error = TRUE;
                     }else{
                         $deadname = $_POST['deadname'];
-
                     }
                   if ($error==FALSE){  
                 $sql="SELECT * FROM personalGallery WHERE deadname='$deadname'";
@@ -75,13 +74,34 @@
 	                <?php 
 	                ?>
 	            </form>
+				<?php 
+                if ($query != null) {
+                    while ($row = mysqli_fetch_assoc($query)){
+                        $no = $row['no'];
+                    }
+                }
+                
+                if(isset($no)){                    
+                    $sql = "SELECT * FROM `personalGallery` WHERE no=$no";
+                    $query=(mysqli_query($conn,$sql));
+                    
+                    if($query){
+                        while($row = mysqli_fetch_assoc($query)){
+                            $link = $row['link'];
+							$imageTotal = $row['num_images'];
+                        }
+                    }
+
+                }                                      
+                ?>
+				
 	        </div>
 	    </form>
 	    <div class="galleryContainer" align="left">
 			<div class="galleryThumbnails">
 			<?php
 				for ($t=1;$t<=$imageTotal;$t++){
-					echo '<a href="javascript: changeimage('.$t.')" class="thumbnailsimage'.$t.'"><img src="'.$url.''.$t.'.jpg" width="auto" height="250" alt=""/></a>';
+					echo '<a href="javascript: changeimage('.$t.')" class="thumbnailsimage'.$t.'"><img src="'.$link.''.$t.'.jpg" width="auto" height="250" alt=""/></a>';
 				}
 			?>
 			</div>
