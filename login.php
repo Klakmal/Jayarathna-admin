@@ -446,26 +446,19 @@
                 }
             }
 
- /*           if(empty($_POST['dob'])){ 
+            if(empty($_POST['dob'])){ 
                 $doberr = "</br>* ";
                 $error = TRUE;
             }else{
                 $dob = $_POST['dob'];
             }
-            */
 
 
-
-$month=$_POST['month'];
-$dt=$_POST['dt'];
-$year=$_POST['year'];
-$dob="$year-$month-$dt";
 
              if ($error==FALSE){
            
             $sql = "INSERT INTO customers (cusname,deadname,nic,address,connumber,password,repassword,email,gender,dob) VALUES ('".$cname."','".$dname."','".$nic."','".$address."','".$connumber."','".$password."','".$repassword."','".$email."','".$gender."','".$dob."')";
             if(mysqli_query($conn,$sql)){
-                header('location:reservationForm.php');
                 die();
             } else{echo "error";}
              
@@ -473,9 +466,9 @@ $dob="$year-$month-$dt";
         }
     ?>
 
-    <form onsubmit="validation()"> action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" onsubmit="return validation()">
     <div id="signup" align="center">
-        <form id="f2" action="login.php" method="post">
+        <form id="f2" action="login.php" method="post" onsubmit="return validation()">
         <table id="tb2">
             <tr>
                 <td colspan="2">
@@ -570,18 +563,12 @@ $dob="$year-$month-$dt";
              <tr>
                 <td colspan="2"><p id = ""><span id="gnderr"></span></p></td>
             </tr>
-<!--            <tr>
-                
-                 <td><label for="dob">DOB</label><span class="error"><?php echo $doberr;?></span></td>
-                    
-                   <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd" required></td>
-            </tr>-->
             <tr>
 	            <td>
 	            	<label for="dob">DOB</label><span class="error"></span>
 	            </td>
 	            <td>
-	            	<input type="text" id="datepicker" onblur="validatedate()" placeholder="month/day/year" >
+	            	<input type="text" id="datepicker" name = "dob" onblur="validatedate()" placeholder="month/day/year" >
 	            </td>
 	        </tr>
             <tr>
