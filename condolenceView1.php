@@ -24,7 +24,7 @@
 	$query=(mysqli_query($conn,$sql));
     echo '<table class = tbl>';
 		$url1=$_SERVER['REQUEST_URI'];
-		header("Refresh: 5; URL=$url1");
+		header("Refresh: 30; URL=$url1");
     while ($row = mysqli_fetch_assoc($query)){
         echo '<tr class = "row">';
         echo '<td class = "col1">';
