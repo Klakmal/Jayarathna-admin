@@ -152,14 +152,14 @@
             }
             
             if (0 < mfnum && mfnum < 367) {
-                document.getElementById("gnderr").innerHTML = "";
+                document.getElementById("nic_err").innerHTML = "";
                 mof = "male";
             }else if (500 < mfnum && mfnum < 867) {
-                document.getElementById("gnderr").innerHTML = "";
+                document.getElementById("nic_err").innerHTML = "";
                 mof = "female";
                 mfnum = mfnum - 500;
             }else {
-                document.getElementById("gnderr").innerHTML = "Invalid NIC";
+                document.getElementById("nic_err").innerHTML = "Invalid NIC";
                 return false;
             }
             if (mof != gender){
@@ -174,6 +174,7 @@
                 document.getElementById("gnderr").innerHTML = "not";
                 document.getElementById("dateerror").innerHTML = "not";
                 document.getElementById("nic_err").innerHTML = "not";
+                return false;
             }
         }
 
@@ -466,9 +467,9 @@
         }
     ?>
 
-    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" onsubmit="return validation()">
+    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" onsubmit="return(validation())">
     <div id="signup" align="center">
-        <form id="f2" action="login.php" method="post" onsubmit="return validation()">
+        <form id="f2" action="login.php" method="post" onsubmit="return(validation())">
         <table id="tb2">
             <tr>
                 <td colspan="2">
@@ -480,7 +481,7 @@
                 
                   <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cnameerr;?></span></td>
                     
-                <td> <input type="text" name="cusname" id="cusname" onblur="allletters()" required></td>
+                <td> <input type="text" name="cusname" id="cusname" required></td>
                 
             </tr>
             <tr>
