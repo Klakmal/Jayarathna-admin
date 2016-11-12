@@ -163,7 +163,7 @@
                 return false;
             }
             if (mof != gender){
-                document.getElementById("dateerror").innerHTML = "Invalid Gender";
+                document.getElementById("dateerror").innerHTML = "Gender does not match";
                 return false;
             }
             if (mof == gender && bday_year == nicyear && countdays(year,month,day,mfnum)) {
@@ -171,9 +171,9 @@
                 document.getElementById("dateerror").innerHTML = "OK";
                 document.getElementById("nic_err").innerHTML = "OK";
             }else{
-                document.getElementById("gnderr").innerHTML = "not";
-                document.getElementById("dateerror").innerHTML = "not";
-                document.getElementById("nic_err").innerHTML = "not";
+                document.getElementById("gnderr").innerHTML = "Gender does not match";
+                document.getElementById("dateerror").innerHTML = "date does not match";
+                document.getElementById("nic_err").innerHTML = "Invalid NIC";
                 return false;
             }
         }
