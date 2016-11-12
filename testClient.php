@@ -12,13 +12,21 @@
 
 	<body>
 		<?php
+			require "dbcon/dbcon.php";
+
 			// define variables and set to empty values
-			$link = $totalImages = "";
-			$linkErr = $totalImagesErr = "";
+			$deadname = $link = $totalImages = "";
+			$deadnameErr = $linkErr = $totalImagesErr = "";
 
 		
 		//checking the fields are filled
 		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if (empty($_POST["deadname"])) {
+    			$deadnameErr = "Deadperson's name is required";
+  			} else {
+		  		$deadname = test_input($_POST["deadname"]);
+		  	}
+
 			if (empty($_POST["link"])) {
     			$linkErr = "Link is required";
   			} else {
@@ -36,14 +44,20 @@
 		}
 		//securing inputs and form action
 		function test_input($data) {
-		  $data = trim($data);
-		  $data = stripslashes($data);
-		  $data = htmlspecialchars($data);
-		  return $data;
+			  $data = trim($data);
+			  $data = stripslashes($data);
+			  $data = htmlspecialchars($data);
+			  return $data;
 		}
+
+		$sql = "INSERT INTO personalgallery (deadname, link, num_images) VALUES('$deadname', '$link', '$totalImages')";
+
 		?>
 
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+			Dead person's name: <input type="text" name="deadname" value="<?php echo $deadname;?>">
+			<span class="error">* <?php echo $deadnameErr;?></span>
+			<br><br>
 			Link of image directory: <input type="text" name="link" value="<?php echo $link;?>">
 			<span class="error">* <?php echo $linkErr;?></span>
 			<br><br>
