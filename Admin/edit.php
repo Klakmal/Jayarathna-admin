@@ -154,8 +154,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             
              <tr>
                 <td colspan="2" align="right">
-                    <input type="submit" value="submit" name="submit">
-                    <input type="reset" value="Reset" name="cancle">
+                    <input type="submit" value="UPDATE" name="submit">
+                    <input type="reset" value="RESET" name="cancle">
                 </td>
             </tr>
         </table>

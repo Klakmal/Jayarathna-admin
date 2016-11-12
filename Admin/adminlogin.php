@@ -27,16 +27,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                     
                     switch($position){
                         case "manager":
-                            header('location:indexmanager.php');
+                            header('location:manager/indexmanager.php');
                             break;
                         case "receptionist":
-                            header('location:indexreceptionist.php');
+                            header('location:receptionist/indexreceptionist.php');
                             break;
                         case "itoperator":
-                            header('location:indexitoperator.php');
+                            header('location:itoperator/indexitoperator.php');
                             break;
                         case "admin":
-                            header('location:manage.php');
+                            header('location:admin/indexadmin.php');
                                 break;
                         default:
                             header('location:#');

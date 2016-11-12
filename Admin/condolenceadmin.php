@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-    require "dbcon/dbcon.php";
+    require "../dbcon/dbcon.php";
     $sql = "SELECT * FROM visitors";
     $query=(mysqli_query($conn,$sql));
 ?>

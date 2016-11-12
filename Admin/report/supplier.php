@@ -10,7 +10,7 @@
 ?>
 <table>
     <tr>
-        <th>Supplier No</th>  
+        <th>SupplierNo</th>  
         <th>Supplier</th>
         <th>Types</th> 
         <th>Contact No</th>

@@ -1,6 +1,6 @@
 <html>
     <head>
-    <title>Receptionist</title>
+    <title>Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
     <link rel="stylesheet" type="text/css" href="../css/manage.css">
@@ -19,10 +19,10 @@
     <p class="">Jayarathna Funrels</p>
     </div>
   </div>
-   <a href="receptionistregister.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;REGISTRATION</a>
-  <a href="feedbackreceptionist.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  
- 
+  <a href="stockmanagement.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
+  <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
+  <a href="feedbackadmin.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
+  <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
 </nav>
 
 <div class="menu2" align="right">

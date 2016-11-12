@@ -21,7 +21,7 @@
   </div>
    <a href="receptionistregister.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;REGISTRATION</a>
   <a href="feedbackreceptionist.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  
+  <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
  
 </nav>
 

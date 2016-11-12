@@ -2,18 +2,18 @@
 <head>
     <title>Reservation Form</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/reservationForm.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/menu/simple_menu.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/reservationForm.css">
 </head>
 <body>
 
-<?php include 'temp/header.php';  ?>
+<?php include '../../temp/header.php';  ?>
 
 <div class = "resd1 " align="center">
     <div class="resd2">
     <?php
-        require "dbcon/dbcon.php";
+        require "../dbcon/dbcon.php";
 
         $error=FALSE;
             $cusnameerr = $diladderr = $dildateerr = $diltmerr = $mobilenoerr =$packname = $service1 = $service2 = $service3=  "";

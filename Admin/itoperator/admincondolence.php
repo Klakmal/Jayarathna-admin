@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Condolence Message</title>
-	<link rel="stylesheet" type="text/css" href="css/admincondolence.css">
-    <link rel="stylesheet" type="text/css" href="css/adminindex.css">
+	<link rel="stylesheet" type="text/css" href="../css/admincondolence.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
 	<style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
