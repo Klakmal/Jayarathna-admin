@@ -6,13 +6,14 @@
 	<script type="text/javascript">
 		$(document).ready(function(){  
 		      $('#search_text').keyup(function(){  
-		           var txt = $(this).val();  
+		           var txt = $(this).val(); 
+		           var x = $('#homecity').val();
 		           if(txt != '')  
 		           {  
 		                $.ajax({  
 		                     url:"fetch.php",  
 		                     method:"post",  
-		                     data:{search:txt},  
+		                     data:{search:txt,baba:x},  
 		                     dataType:"text",  
 		                     success:function(data)  
 		                     {  
@@ -31,31 +32,11 @@
 <body>
 <div class="container">
 	<form action="" method="POST">
+		<input type="text" name="city" id="homecity" placeholder="Home city">
 		<input type="text" name="search" autocomplete="true" id="search_text" placeholder="Search">
 		<input type="submit" name="submit" value="search">
 	</form>
 	<div id="drop_box"></div>
-	<div id="drop_box1">
-		<ul class="drop_list">
-			<li class="drop_item">
-				<a href="" class="person_link">
-					<span>
-						<img src="img/mrjayaratne.jpg" width="30px" height="30px">
-					</span>
-					<span>
-						name
-					</span>
-					<span>
-						 
-					</span>
-					<span>
-						lastname
-					</span>
-				</a>
-			</li>
-			
-		</ul>
-	</div>
 </div>
 </body>
 </html>

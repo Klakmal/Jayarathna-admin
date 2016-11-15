@@ -1,11 +1,11 @@
 <?php  
  require "dbcon/dbcon.php";  
  $output = '';  
- $sql = "SELECT * FROM customers WHERE cusname LIKE '%".$_POST["search"]."%'";
+ $sql = "SELECT * FROM customers WHERE cusname LIKE '%".$_POST["search"]."%' AND deadname LIKE '%".$_POST["baba"]."%'";
  $result = mysqli_query($conn, $sql);  
  if(mysqli_num_rows($result) > 0)  
  {  
-  //    $output .= '<h4 align="center">Search Result</h4>';  
+  //      $output .= '<h4 align="center">Search Result</h4>';  
       $output .= '<div id="drop_box1">
                       <ul class="drop_list">';  
       while($row = mysqli_fetch_array($result))  
