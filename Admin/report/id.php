@@ -12,6 +12,8 @@
     <tr>
         <th>ID</th> 
         <th>No</th>
+        <th>Time in</th>
+        <th>Time out</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
@@ -25,14 +27,21 @@
             echo $row['no'];
             echo "</td>";
 
-           
+            echo "<td>";
+            echo $row['timein'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['timeout'];
+            echo "</td>";
+
          echo "</tr>";}
 ?>
 </table>
     <?php
                 require "dbcon/dbcon.php";
                 $error=FALSE;
-                $iderr = $noerr = "";
+                $iderr = $noerr =  $timeouterr =   "";
                  if (isset($_POST['insert'])) {
                      
                      if(empty($_POST['id'])){ 
@@ -47,10 +56,24 @@
                             }else{
                                 $no = $_POST['no'];
                             }
+                     /*if(empty($_POST['timein'])){ 
+                                $timeinerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $timein = $_POST['timein'];
+                            }*/
+                     $timein = date("Y/m/d");
+
+                     if(empty($_POST['timeout'])){ 
+                                $timeouterr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $timeout = $_POST['timeout'];
+                            }
                     
                     
-                    $sql = "INSERT INTO payment (id , no)
-                VALUES ('".$id."','".$no."')";
+                    $sql = "INSERT INTO id (id , no ,timein ,timeout)
+                VALUES ('".$id."','".$no."','".$timein."','".$timeout."')";
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("New record created successfully")</script>';
@@ -74,7 +97,15 @@
                     <tr>
                     <td><label for="no">No</label><span class="error"><?php echo $noerr;?></span></td>
                     <td><input type="text" name="no" placeholder="no"></td>
-                    </tr>   
+                    </tr>
+                    <!--<tr>
+                    <td><label for="timein">TimeIn</label><span class="error"><?php echo $timeinerr;?></span></td>
+                    <td><input type="text" name="timein" placeholder="Timein"></td>
+                    </tr> -->
+                    <tr>
+                    <td><label for="timeout">TimeOut</label><span class="error"><?php echo $timeouterr;?></span></td>
+                    <td><input type="text" name="timeout" placeholder="Timeout"></td>
+                    </tr>    
                     <tr>
                     <td colspan="2" align="center">
                     <input type="submit" value="INSERT" name="insert">

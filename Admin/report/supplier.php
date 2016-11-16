@@ -12,10 +12,13 @@
     <tr>
         <th>SupplierNo</th>  
         <th>Supplier</th>
-        <th>Types</th> 
         <th>Contact No</th>
         <th>Address</th>
         <th>Email</th>
+        <th>Platinum</th> 
+        <th>Gold</th>
+        <th>Silver</th>
+        <th>Bronze</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
@@ -27,11 +30,7 @@
                 
             echo "<td>";
             echo $row['supplier'];
-            echo "</td>";
-
-             echo "<td>";
-            echo $row['types'];
-            echo "</td>";
+            echo "</td>";        
 
             echo "<td>";
             echo $row['contactno'];
@@ -44,6 +43,22 @@
             echo "<td>";
             echo $row['email'];
             echo "</td>";
+
+            echo "<td>";
+            echo $row['platinum'];
+            echo "</td>";
+
+             echo "<td>";
+            echo $row['gold'];
+            echo "</td>";
+
+             echo "<td>";
+            echo $row['silver'];
+            echo "</td>";
+
+             echo "<td>";
+            echo $row['bronze'];
+            echo "</td>";
            
         echo "</tr>";}
 ?>
@@ -52,7 +67,7 @@
                     
                 require "dbcon/dbcon.php";
                      $error=FALSE;
-                        $suppliernoerr = $suppliererr = $typeserr= $contactnoerr= $addresserr = $emailerr = "";
+                        $suppliernoerr = $suppliererr =  $contactnoerr= $addresserr = $emailerr = $platinumerr =$golderr = $silvererr = $bronzeerr = "";
                  if (isset($_POST['update'])) {
                      
                      if(empty($_POST['supplierno'])){ 
@@ -67,12 +82,7 @@
                             }else{
                                 $supplier = $_POST['supplier'];
                             }
-                     if(empty($_POST['types'])){ 
-                                $typeserr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $types = $_POST['types'];
-                            }
+                     
                      if(empty($_POST['contactno'])){ 
                                 $contactnoerr = "</br>* ";
                                 $error = TRUE;
@@ -90,12 +100,36 @@
                                 $error = TRUE;
                             }else{
                                 $email = $_POST['email'];
+                            }                     
+                     if(empty($_POST['platinum'])){ 
+                                $platinumerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $platinum = $_POST['platinum'];
+                            }
+                     if(empty($_POST['gold'])){ 
+                                $golderr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $gold = $_POST['gold'];
+                            }
+                     if(empty($_POST['silver'])){ 
+                                $silvererr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $silver = $_POST['silver'];
+                            }
+                      if(empty($_POST['bronze'])){ 
+                                $bronzeerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $bronze = $_POST['bronze'];
                             }
 
                  
                 if ($error==FALSE){
 
-                $sql = "UPDATE supplier SET supplier='$supplier', types='$types', contactno='$contactno', address='$address', email='$email' WHERE supplierno=     '$supplierno'";
+                $sql = "UPDATE supplier SET supplier='$supplier', contactno='$contactno', address='$address', email='$email', platinum ='$platinum', gold= '$gold', silver= '$silver', bronze= '$bronze' WHERE supplierno= '$supplierno'";
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("Record updated successfully")</script>';
@@ -122,7 +156,7 @@
                 }
                    
                 $error=FALSE;
-                        $suppliernoerr = $suppliererr= $typeserr = $emailerr =$addresserr = $contactnoerr = "";
+                        $suppliernoerr = $suppliererr=  $emailerr =$addresserr = $contactnoerr = $platinumerr =$golderr = $silvererr = $bronzeerr = "";
                  if (isset($_POST['insert'])) {
                      
                      if(empty($_POST['supplierno'])){ 
@@ -136,12 +170,6 @@
                                 $error = TRUE;
                             }else{
                                 $supplier = $_POST['supplier'];
-                            }
-                     if(empty($_POST['types'])){ 
-                                $typeserr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $types = $_POST['types'];
                             }
                      if(empty($_POST['address'])){ 
                                 $addresserr = "</br>* ";
@@ -160,11 +188,34 @@
                                 $error = TRUE;
                             }else{
                                 $email = $_POST['email'];
+                            }                    
+                      if(empty($_POST['platinum'])){ 
+                                $platinumerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $platinum = $_POST['platinum'];
+                            }
+                      if(empty($_POST['gold'])){ 
+                                $golderr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $gold = $_POST['gold'];
+                            }
+                      if(empty($_POST['silver'])){ 
+                                $silvererr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $silver = $_POST['silver'];
+                            }
+                      if(empty($_POST['bronze'])){ 
+                                $bronzeerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $bronze = $_POST['bronze'];
                             }
                     
-                    
-                    $sql = "INSERT INTO supplier (supplierno, supplier, types, address, contactno, email)
-                VALUES ('".$supplierno."','".$supplier."','".$types."','".$address."','".$contactno."','".$email."')";
+                    $sql = "INSERT INTO supplier (supplierno, supplier, address, contactno, email, platinum, gold, silver, bronze)
+                VALUES ('".$supplierno."','".$supplier."','".$address."','".$contactno."','".$email."','".$platinum."','".$gold."','".$silver."','".$bronze."')";
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("New record created successfully")</script>';
@@ -195,13 +246,17 @@
                     <td><input type="text" name="supplier" placeholder="Supplier"></td>
                     </tr>   
                     <tr>
-                    <td><label for="types">Type</label><span class="error"><?php echo $typeserr;?></span></td>
-                    <td><input type="text" name="types" placeholder="Types"></td>
+                    <td><label >Type</label></td>
+                    <td>
+                    	<input type="checkbox" name="platinum">Platinum
+                    	<input type="checkbox" name="gold">Gold
+                    	<input type="checkbox" name="silver">Silver
+                    	<input type="checkbox" name="bronze">Bronze
+					</td>
                     </tr>
                     <tr>
                     <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
-                    <td><input type="text" name="address" placeholder="Address"></td>address
-                    </tr>
+                    <td><input type="text" name="address" placeholder="Address"></td>
                     <tr>
                     <tr>
                     <td><label for="contactno">Contactno</label><span class="error"><?php echo $contactnoerr;?></span></td>
