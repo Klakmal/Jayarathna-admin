@@ -5,7 +5,7 @@
 <body>
 <?php
     require "dbcon/dbcon.php";
-    $sql = "SELECT * FROM payment";
+    $sql = "SELECT * FROM payment GROUP BY supplierno";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
@@ -99,6 +99,47 @@
                 }
                  }
     ?>
+
+    <?php
+    require "dbcon/dbcon.php";
+    $sql = "SELECT supplierno, supplier, SUM(buy), SUM(pay), SUM(due) FROM payment GROUP BY supplierno";
+    $query=(mysqli_query($conn,$sql));
+?>
+<table>
+    <tr>
+        <th>SupplierNo</th> 
+        <th>Supplier</th>
+        <th>Total Buy</th>
+        <th>Total Pay</th>
+        <th>Total Due</th>
+    </tr>
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr>";
+        
+            echo "<td>";
+            echo $row['supplierno'];
+            echo "</td>";
+                
+            echo "<td>";
+            echo $row['supplier'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['SUM(buy)'];
+            echo "</td>";
+
+             echo "<td>";
+            echo $row['SUM(pay)'];
+            echo "</td>";
+            
+             echo "<td>";
+            echo $row['SUM(due)'];
+            echo "</td>";
+         echo "</tr>";}
+?>
+</table>
+
                 <div id="payment">
                 <form method="post" action="payment.php">
                 <table id="tb7">
@@ -109,7 +150,7 @@
                     <td><label for="supplierno">Supplier No</label><span class="error"><?php echo $suppliernoerr;?></span></td>
                     <td><input type="text" name="supplierno" placeholder="SupplierNo"></td>
                     </tr> 
-                    date<tr>
+                    <tr>
                     <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
                     <td><input type="text" name="supplier" placeholder="supplier"></td>
                     </tr>   
