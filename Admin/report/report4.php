@@ -3,44 +3,12 @@
 <title>Payment Report</title>
 </head>
 <body>
-<?php
-    require "dbcon/dbcon.php";
-    $sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE frm < id.timein< to GROUP BY supplier";
-    $query=(mysqli_query($conn,$sql));
-?>
-<table>
-    <tr>
-        <th>Supplier</th>
-        <th>Type</th>
-        <th>No of in</th>
-        <th>Total Price</th>
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-        
-            echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";
 
-            echo "<td>";
-            echo $row['type'];
-            echo "</td>";
 
-            echo "<td>";
-            echo $row['count(id.id)'];
-            echo "</td>";
-            
-            echo "<td>";
-            echo $row['sum(type.price)'];
-            echo "</td>";
-
-         echo "</tr>";}
-?>
-</table>
 <?php
             $error=FALSE;
                $frmerr = $toerr = $suppliererr=  $typeerr = "";
+               $frm = $to = $supplier=  $type = "";
                  if (isset($_POST['insert'])) {
                      
                      if(empty($_POST['supplier'])){ 
@@ -68,6 +36,42 @@
                                 $to = $_POST['to'];
                             }
 
+        require "dbcon/dbcon.php";
+        $sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE (id.timein BETWEEN '$frm' AND '$to') AND type.no = id.no GROUP BY supplier";
+        $query=(mysqli_query($conn,$sql));
+
+?>
+<table>
+    <tr>
+        <th>No of in</th>
+        <th>Total Price</th>
+    </tr>
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr>";
+        
+            /*echo "<td>";
+            echo $row['supplier'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['type'];
+            echo "</td>";*/
+
+            echo "<td>";
+            echo $row['count(id.id)'];
+            echo "</td>";
+            
+            echo "<td>";
+            echo $row['sum(type.price)'];
+            echo "</td>";
+
+         echo "</tr>";
+     }
+?>
+</table>
+<?php 
+}
 ?>
 
         <div id="type">
@@ -78,11 +82,11 @@
                     </tr>
                     <tr>
                     <td><label for="frm">From</label><span class="error"><?php echo $frmerr;?></span></td>
-                    <td><input type="text" name="frm" placeholder="From"></td>
+                    <td><input type="date" name="frm" placeholder="From"></td>
                     </tr> 
                     <tr>
                     <td><label for="to">To</label><span class="error"><?php echo $toerr;?></span></td>
-                    <td><input type="text" name="to" placeholder="To"></td>
+                    <td><input type="date" name="to" placeholder="To"></td>
                     </tr> 
                     <tr>
                     <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
