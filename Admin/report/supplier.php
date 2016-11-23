@@ -1,69 +1,83 @@
 <html>
 <head>
 <title>Supplier Detail</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
+    <link rel="stylesheet" type="text/css" href="../css/manage.css">
+    <style>
+    html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+    .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+    </style>
+<style>
+body{
+    margin:0px;
+    background-color: #eee;
+}
+.con1{
+    width: 100%;
+    height: 100%;
+    background-color: ;
+}
+.con2{
+    width: 800px;
+    height: 100%;
+    background-color: #eee;
+    position: relative;
+    margin-top: 100px;
+    margin-left: 300px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input[type=text]:hover,[type=password]:hover{
+    width: 200px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    border:1px solid white;
+    padding-left: 5px;
+}
+
+
+.tb{
+    width:150px;
+    background-color: #aaa;
+}
+.tb1{
+    width: 150px;
+}
+.tb2{
+    width:150px;
+    float: center;
+    background-color: white;
+}
+</style>
 </head>
 <body>
-<?php
-    require "dbcon/dbcon.php";
-    $sql = "SELECT * FROM supplier";
-    $query=(mysqli_query($conn,$sql));
-?>
-<table>
-    <tr>
-        <th>SupplierNo</th>  
-        <th>Supplier</th>
-        <th>Contact No</th>
-        <th>Address</th>
-        <th>Email</th>
-        <th>Platinum</th> 
-        <th>Gold</th>
-        <th>Silver</th>
-        <th>Bronze</th>
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-        
-            echo "<td>";
-            echo $row['supplierno'];
-            echo "</td>";
-                
-            echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";        
-
-            echo "<td>";
-            echo $row['contactno'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['address'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['email'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['platinum'];
-            echo "</td>";
-
-             echo "<td>";
-            echo $row['gold'];
-            echo "</td>";
-
-             echo "<td>";
-            echo $row['silver'];
-            echo "</td>";
-
-             echo "<td>";
-            echo $row['bronze'];
-            echo "</td>";
-           
-        echo "</tr>";}
-?>
-    </table>
-    <?php
+<nav class="navi_menu" id="mySidenav"><br>
+  <div class="container">
+    <div class="navi_pro">
+    <img class="propic" src="../img_avatar_g2.jpg"><br>
+    <h4 class=""><b>Kasun Lakmal</b></h4>
+    <p class=""><h3>STOCK MANAGMENT</h3></p>
+    </div>
+  </div>
+  <a href="../manager/indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="../report/id.php" class="navi">&nbsp;&nbsp;ID</a>
+  <a href="../report/moq.php" class="navi">&nbsp;&nbsp;TYPE MOQ</a>
+  <a href="../report/payment.php" class="navi">&nbsp;&nbsp;PAYMENT</a>
+  <a href="../report/supplier.php" class="navi">&nbsp;&nbsp;SUPPLIER</a>
+  <a href="../report/type.php" class="navi">&nbsp;&nbsp;COFFIN TYPES</a>
+  <a href="report.php" class="navi">&nbsp;&nbsp;REPORT</a>
+</nav>
+<div class="menu2" align="right">
+    <div class="menu2in">
+      <a href="../signout.php" class="myButton">Log Out</a>
+    </div>
+<div class="con1" align="center">
+<div class="con2">
+ <?php
                     
                 require "dbcon/dbcon.php";
                      $error=FALSE;
@@ -222,14 +236,10 @@
                     header('location:supplier.php');
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                } 
                 }
 
-                    
-                    
-                    
-                }
-
-?>
+                ?>
 
                 <div id="type">
                 <form method="post" action="supplier.php">
@@ -248,11 +258,11 @@
                     <tr>
                     <td><label >Type</label></td>
                     <td>
-                    	<input type="checkbox" name="platinum">Platinum
-                    	<input type="checkbox" name="gold">Gold
-                    	<input type="checkbox" name="silver">Silver
-                    	<input type="checkbox" name="bronze">Bronze
-					</td>
+                        <input type="checkbox" name="platinum">Platinum
+                        <input type="checkbox" name="gold">Gold
+                        <input type="checkbox" name="silver">Silver
+                        <input type="checkbox" name="bronze">Bronze
+                    </td>
                     </tr>
                     <tr>
                     <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
@@ -279,8 +289,70 @@
                 </table>
                 </form>
                  </div>  
+<?php
+    require "dbcon/dbcon.php";
+    $sql = "SELECT * FROM supplier";
+    $query=(mysqli_query($conn,$sql));
+?>
+<table>
+    <tr>
+        <th class="tb">SupplierNo</th>  
+        <th class="tb">Supplier</th>
+        <th class="tb">Contact No</th>
+        <th class="tb">Address</th>
+        <th class="tb">Email</th>
+        <th class="tb">Platinum</th> 
+        <th class="tb">Gold</th>
+        <th class="tb">Silver</th>
+        <th class="tb">Bronze</th>
+    </tr>
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo '<tr class="tb1">';
+        
+            echo '<td class="tb2">';
+            echo $row['supplierno'];
+            echo "</td>";
+                
+            echo '<td class="tb2">';
+            echo $row['supplier'];
+            echo "</td>";        
 
+            echo '<td class="tb2">';
+            echo $row['contactno'];
+            echo "</td>";
+
+            echo '<td class="tb2">';
+            echo $row['address'];
+            echo "</td>";
+
+            echo '<td class="tb2">';
+            echo $row['email'];
+            echo "</td>";
+
+            echo '<td class="tb2">';
+            echo $row['platinum'];
+            echo "</td>";
+
+            echo '<td class="tb2">';
+            echo $row['gold'];
+            echo "</td>";
+
+            echo '<td class="tb2">';
+            echo $row['silver'];
+            echo "</td>";
+
+            echo '<td class="tb2">';
+            echo $row['bronze'];
+            echo "</td>";
+           
+        echo "</tr>";}
+    ?>
+    </table>
              </div>
          </div>
+
+   </div>
+</div>
     </body>
 </html>

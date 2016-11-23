@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Coffin Report</title>
+<title>Payment Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
     <link rel="stylesheet" type="text/css" href="../css/manage.css">
@@ -22,10 +22,12 @@
     height: 100%;
     background-color: ;
     position: relative;
+
     margin-left: 200px;
     padding: 20px;
     border-radius: 10px;
 }
+
 th{
     width:100px;
     background-color: #aaa;
@@ -63,39 +65,50 @@ td{
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
-  <div class="con1" align="center">
+
+<div class="con1" align="center">
 <div class="con2">
 <?php
     require "dbcon/dbcon.php";
-    $sql = "SELECT type.type, COUNT(id.id) , moq.moq FROM id, type, moq WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = moq.type GROUP BY type.type";
+    $sql = "SELECT supplierno, supplier, SUM(buy), SUM(pay), SUM(due) FROM payment GROUP BY supplierno";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
     <tr>
-        <th>Type</th>
-        <th>Remaining</th> 
-        <th>MOQ </th>
+        <th>SupplierNo</th> 
+        <th>Supplier</th>
+        <th>Total Buy</th>
+        <th>Total Pay</th>
+        <th>Total Due</th>
+    </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
          echo "<tr>";
         
             echo "<td>";
-            echo $row['type'];
+            echo $row['supplierno'];
+            echo "</td>";
+                
+            echo "<td>";
+            echo $row['supplier'];
             echo "</td>";
 
             echo "<td>";
-            echo $row['COUNT(id.id)'];
+            echo $row['SUM(buy)'];
             echo "</td>";
 
-            echo "<td>";
-            echo $row['moq'];
+             echo "<td>";
+            echo $row['SUM(pay)'];
             echo "</td>";
-
+            
+             echo "<td>";
+            echo $row['SUM(due)'];
+            echo "</td>";
 
          echo "</tr>";}
 ?>
+</div>
+</div>
 </table>
-</div>
-</div>
 </body>
 </html>

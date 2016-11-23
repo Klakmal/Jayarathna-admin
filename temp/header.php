@@ -18,8 +18,7 @@
   <div class="clr"></div>
   <!-- menu 2 -->
   <ol id="menu2" class="simple_menu simple_menu_css horizontal black_menu">
-    <li><a href="condolence.php" style="font-family:myfont1;">CONDOLENCE SCREEN MESSAGES</a></li>
-    <li><a href="webcasting.php" style="font-family:myfont1;">WEB CASTING</a></li>
+    <li><a href="memorize.php" style="font-family:myfont1;">MEMORIZE</a></li>
     <li><a href="feedback.php" style="font-family:myfont1;">FEED-BACK</a></li>
   </ol>
   <div class="clr"></div>

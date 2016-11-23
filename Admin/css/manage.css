@@ -64,12 +64,6 @@ input[type=submit]:active {
 	top:1px;
 }
 
-select option{
-	background-color: gray;
-	border-radius: 10px;
-
-}
-
 .error{
 	color: red;
 }

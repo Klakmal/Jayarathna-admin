@@ -16,13 +16,16 @@
     <div class="navi_pro">
     <img class="propic" src="../img_avatar_g2.jpg"><br>
     <h4 class=""><b>Kasun Lakmal</b></h4>
-    <p class="">Jayarathna Funrels</p>
+    <p class=""><h3>STOCK MANAGMENT</h3></p>
     </div>
   </div>
-  <a href="stockmanagment.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
-  <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
-  <a href="feedbackadmin.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+
+  <a href="../report/report1.php" class="navi">&nbsp;&nbsp;REPORT1</a>
+  <a href="../report/report2.php" class="navi">&nbsp;&nbsp;REPORT2</a>
+  <a href="../report/report 3.php" class="navi">&nbsp;&nbsp;REPORT3</a>
+  <a href="../report/report4.php" class="navi">&nbsp;&nbsp;REPORT4</a>
+  <a href="../report/report5.php" class="navi">&nbsp;&nbsp;REPORT5</a>
 </nav>
 
 <div class="menu2" align="right">

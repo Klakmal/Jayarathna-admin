@@ -1,7 +1,7 @@
 <?php  
  require "dbcon/dbcon.php";  
  $output = '';  
- $sql = "SELECT * FROM customers WHERE cusname LIKE '%".$_POST["search"]."%' AND deadname LIKE '%".$_POST["baba"]."%'";
+ $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName LIKE '%".$_POST["search"]."%' AND homesity LIKE '%".$_POST["baba"]."%' AND school LIKE '%".$_POST["scl"]."%' AND university LIKE '%".$_POST["uni"]."%' AND employee LIKE '%".$_POST["emp"]."%'";
  $result = mysqli_query($conn, $sql);  
  if(mysqli_num_rows($result) > 0)  
  {  
@@ -12,21 +12,22 @@
       {  
            $output .= ' 
             <li class="drop_item">
-                <a href="" class="person_link">
+                <a href="profile.php?id='.$row["deadPersonID"].'" class="person_link">
                   <span>
                     <img src="img/mrjayaratne.jpg" width="30px" height="30px">
                   </span>
                   <span>
-                    '.$row["cusname"].'
+                    '.$row["deadPersonName"].'
+                  </span>
+                  <br>
+                  <span>
                   </span>
                   <span>
-                     
-                  </span>
-                  <span>
-                    '.$row["gender"].'
+                    '.$row["Description"].'
                   </span>
                 </a>
             </li> 
+            <hr>
            ';  
       }  
       echo $output;  

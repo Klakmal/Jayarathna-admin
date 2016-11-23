@@ -16,13 +16,16 @@
     <div class="navi_pro">
     <img class="propic" src="../img_avatar_g2.jpg"><br>
     <h4 class=""><b>Kasun Lakmal</b></h4>
-    <p class="">Jayarathna Funrels</p>
+    <p class=""><h3>STOCK MANAGMENT</h3></p>
     </div>
   </div>
-  <a href="stockmanagment.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
-  <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
-  <a href="feedbackadmin.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="../report/id.php" class="navi">&nbsp;&nbsp;ID</a>
+  <a href="../report/moq.php" class="navi">&nbsp;&nbsp;TYPE MOQ</a>
+  <a href="../report/payment.php" class="navi">&nbsp;&nbsp;PAYMENT</a>
+  <a href="../report/supplier.php" class="navi">&nbsp;&nbsp;SUPPLIER</a>
+  <a href="../report/type.php" class="navi">&nbsp;&nbsp;COFFIN TYPES</a>
+  <a href="report.php" class="navi">&nbsp;&nbsp;REPORT</a>
 </nav>
 
 <div class="menu2" align="right">
