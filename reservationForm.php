@@ -8,7 +8,7 @@
 
     <style type="text/css">
     .packv{
-        background-color: white;
+        background-color:#a5adaf;
         width:200px;
         height:20px;
         position: relative;
@@ -24,7 +24,7 @@
     }
 
     #s3,#s1,#s2,#s4,#s5,#s6,#s7,#s8,#s9,#total{
-        background-color: white;
+        background-color: #a5adaf;
         width:150px;
         height:10px;
         position: relative;
@@ -38,28 +38,22 @@
         border-top-left-radius: 10px;
         transition: box-shadow 0.3s, border 1s;
     }
-    #payHere{
-       
-        margin-bottom:100px;
-        margin-left: 450px;
-        margin-top: -21px;
-        position: center;
 
-        width: 200px;
-        height: 50px;
-    }
     input[type=submit],[type=reset]{
-    margin: 5px;
-    float: center;
-    border:none;
-    background-color: #70102e;
-    color:white;
-    width: 85px;
-    height: 30px;
-    float:right;
-    margin-bottom: 100px;
-    margin-top: 100px;
-}
+        margin: 5px;
+        float: center;
+        border:none;
+        background-color: #70102e;
+        color:white;
+        width: 85px;
+        height: 30px;
+        float:right;
+        margin-bottom: 100px;
+        margin-top: 100px;
+    }
+    #ida{
+        width: 600px;
+    }
     </style>
 </head>
 <body>
@@ -709,17 +703,7 @@
                     <tr>
                         <td>
                         <form action="reservationForm.php" method="POST">
-                          <script
-                            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
-                            data-amount="total"
-                            data-name="Jayarathna-funerals"
-                            data-description=""
-                            data-image="img/18.jpg"
-                            data-locale="auto"
-                            data-zip-code="true">
-                            document.getElementById("total").innerHTML = total;
-                          </script>
+                          <div id="ida"></div>
                         </form>
                         </td>
                         <td>
@@ -732,8 +716,8 @@
                           <input type="hidden" name="cmd" value="_xclick">
 
                           <!-- Specify details about the item that buyers will purchase. -->
-                          <input type="hidden" name="item_name" value="Hot Sauce-12oz. Bottle">
-                          <input type="hidden" name="amount" value="5.95">
+                          <input type="hidden" name="item_name" value="Package-fee">
+                          <input type="hidden" name="amount" value="55">
                           <input type="hidden" name="currency_code" value="USD">
 
                           <!-- Display the payment button. -->

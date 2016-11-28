@@ -20,9 +20,7 @@
 
     // Read data
     $read = $serial->readPort();
-    if($read){
-        echo "1";
-    }
+   
     // Print out the data
     echo $read;
 
