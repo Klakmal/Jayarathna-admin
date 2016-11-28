@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/reservationForm.css">
 
     <style type="text/css">
+    input[type=tex] {
+        background-color: #a5adaf;
+    }
     .packv{
         background-color:#a5adaf;
         width:200px;
@@ -508,7 +511,7 @@
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service2">Provision of Remembrance Booklet - Quantity</label>
-                            <input type="text" id="service2" onchange="s2func()" name="service2" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" value="0" >
+                            <input type="tex" id="service2" onchange="s2func()" name="service2" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" value="0" >
                             </font></div>
                         </td>
                         <script>
