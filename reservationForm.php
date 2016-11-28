@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>Reservation Form</title>
@@ -247,7 +248,7 @@
                         </select>
 
 
-                       <input  type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year" required></td>
+                       <input  type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" required></td>
                        
                 </tr>
                 <tr>
@@ -343,7 +344,7 @@
                     
                        <td><label for="mobilenum">Mobile No</label><span class="error"><?php echo $mobilenoerr;?></span></td>
                 
-                     <td> <input type="text" name="mobilenum" id="mobile" required></input></td>
+                     <td> <input type="text" name="mobilenum" id="mobile" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" required></input></td>
                 
                 </tr>
 
@@ -367,13 +368,37 @@
                             <label for="packname"><h4>VIP BRONZE PACKAGE</label><input type="radio" name="packname" onchange="getValue(bronze);" value="VIP BRONZE PACKAGE" required></h4>
                                 <p>Bronze package will include "VOLVO" S80 Limousine Hearse and 04 floral arrangements with special vehicle to carry floral tributes.
                             Free of charge photo album with 60 photographs on the day of funeral and other things like embalming with the best english preservations, casket, carpet, oil lamp, brass canopy and etc</p>
+                            <?php $we=5;?>
                             <script>
                                 total=0;
-                                bronze=275000;
-                                gold=375000;
-                                silver=325000;
-                                platinum=550000;
-                                deluxe=150000;
+                                var bronze=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s0'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['bronze'] ?>;
+                                
+                                
+                                //bronze=275000;
+                                var gold=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s0'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;
+                                var silver=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s0'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['silver'] ?>;
+                                var platinum=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s0'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['platinum'] ?>;
+                                var deluxe=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s0'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['deluxe'] ?>;
 
                                 function getValue(s){
                                     document.getElementById("packval").innerHTML= s ;
@@ -454,10 +479,22 @@
 
                                 function s1func() {
                                     var x = document.getElementById("service1").value;
-                                    if(x=='false'){y=0;}
-                                    if(x=='op1'){y=12;}
-                                    if(x=='op2'){y=20;}
-                                    if(x=='op3'){y=50;}
+                                    if(x=='false'){var y=0;}
+                                    if(x=='op1'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s1'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
+                                    if(x=='op2'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s1'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['silver'] ?>;}
+                                    if(x=='op3'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s1'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['bronze'] ?>;}
                                     document.getElementById("s1").innerHTML =  y;
                                     total=total+y;
                                     document.getElementById("total").innerHTML = total;
@@ -471,12 +508,17 @@
                     <tr>
                         <td colspan="2">
                             <div id="pa2"><font color ="white"><label for="service2">Provision of Remembrance Booklet - Quantity</label>
-                            <input type="text" id="service2" onchange="s2func()" name="service2" value="0"></font></div>
+                            <input type="text" id="service2" onchange="s2func()" name="service2" onkeypress="if ( isNaN( String.fromCharCode(event.keyCode) )) return false;" value="0" >
+                            </font></div>
                         </td>
                         <script>
                             function s2func() {
                                 var x = document.getElementById("service2");
-                                y = x.value*50;
+                                y = x.value*<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s2'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;
                                 document.getElementById("s2").innerHTML =  y;
                                 total=total+y;
                                 document.getElementById("total").innerHTML = total;
@@ -499,10 +541,22 @@
                          <script>
                                 function s3func() {
                                     var x = document.getElementById("service3").value;
-                                    if(x=='false'){y=0;}
-                                    if(x=='op1'){y=99;}
-                                    if(x=='op2'){y=75;}
-                                    if(x=='op3'){y=80;}
+                                    if(x=='false'){var y=0;}
+                                    if(x=='op1'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s3'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
+                                    if(x=='op2'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s3'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['silver'] ?>;}
+                                    if(x=='op3'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s3'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['bronze'] ?>;}
                                     document.getElementById("s3").innerHTML =  y;
                                     total=total+y;
                                     document.getElementById("total").innerHTML = total;
@@ -529,8 +583,16 @@
                                 function s4func() {
                                     var x = document.getElementById("service4").value;
                                     if(x=='false'){y=0;}
-                                    if(x=='Newspaper'){y=999;}
-                                    if(x=='Radio Announcement'){y=1522;}
+                                    if(x=='Newspaper'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s4'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
+                                    if(x=='Radio Announcement'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s4'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['silver'] ?>;}
                                     
                                     document.getElementById("s4").innerHTML =  y;
                                     total=total+y;
@@ -556,7 +618,11 @@
                                 function s5func() {
                                     var x = document.getElementById("service5").value;
                                     if(x=='no'){y=0;}
-                                    if(x=='yes'){y=469;}
+                                    if(x=='yes'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s5'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
                                     
                                     document.getElementById("s5").innerHTML =  y;
                                     total=total+y;
@@ -585,10 +651,26 @@
                                 function s6func() {
                                     var x = document.getElementById("service6").value;
                                     if(x=='false'){y=0;}
-                                    if(x=='op1'){y=99;}
-                                    if(x=='op2'){y=75;}
-                                    if(x=='op3'){y=80;}
-                                    if(x=='op4'){y=19;}
+                                    if(x=='op1'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s6'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
+                                    if(x=='op2'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s6'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['silver'] ?>;}
+                                    if(x=='op3'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s6'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['bronze'] ?>;}
+                                    if(x=='op4'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s6'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['deluxe'] ?>;}
                                     document.getElementById("s6").innerHTML =  y;
                                     total=total+y;
                                     document.getElementById("total").innerHTML = total;
@@ -616,9 +698,21 @@
                                 function s7func() {
                                     var x = document.getElementById("service7").value;
                                     if(x=='false'){y=0;}
-                                    if(x=='op1'){y=27;}
-                                    if(x=='op2'){y=46;}
-                                    if(x=='op3'){y=80;}
+                                    if(x=='op1'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s7'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
+                                    if(x=='op2'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s7'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['silver'] ?>;}
+                                    if(x=='op3'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s7'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['bronze'] ?>;}
                                     document.getElementById("s7").innerHTML =  y;
                                     total=total+y;
                                     document.getElementById("total").innerHTML = total;
@@ -642,7 +736,11 @@
                                 function s8func() {
                                     var x = document.getElementById("service8").value;
                                     if(x=='no'){y=0;}
-                                    if(x=='yes'){y=469;}
+                                    if(x=='yes'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s8'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
 
                                     
                                     document.getElementById("s8").innerHTML =  y;
@@ -668,7 +766,11 @@
                                 function s9func() {
                                     var x = document.getElementById("service9").value;
                                     if(x=='no'){y=0;}
-                                    if(x=='yes'){y=469;}
+                                    if(x=='yes'){var y=<?php  require "dbcon/dbcon.php";
+                                                $sql = "SELECT * FROM serviceprices WHERE s_name='s9'";
+                                                $query=(mysqli_query($conn,$sql));
+                                                $row = mysqli_fetch_assoc($query);
+                                                echo $row['gold'] ?>;}
                                     
                                     document.getElementById("s9").innerHTML =  y;
                                     total=total+y;
@@ -717,7 +819,8 @@
 
                           <!-- Specify details about the item that buyers will purchase. -->
                           <input type="hidden" name="item_name" value="Package-fee">
-                          <input type="hidden" name="amount" value="55">
+                          
+                          <input type="hidden" name="amount" value="">
                           <input type="hidden" name="currency_code" value="USD">
 
                           <!-- Display the payment button. -->
