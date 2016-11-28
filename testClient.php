@@ -16,32 +16,40 @@
 
 			// define variables and set to empty values
 			$deadname = $link = $totalImages = "";
-			$deadnameErr = $linkErr = $totalImagesErr = "";
-
+			$deadnameErr = $linkErr = $totalImagesErr ="";
+			$error= False;
 		
 		//checking the fields are filled
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		if (isset($_POST['submit'])) {
 			if (empty($_POST["deadname"])) {
-    			$deadnameErr = "Deadperson's name is required";
+    			$deadnameErr = "Deadperson's name is required";$error=True;
   			} else {
 		  		$deadname = test_input($_POST["deadname"]);
 		  	}
 
 			if (empty($_POST["link"])) {
-    			$linkErr = "Link is required";
+    			$linkErr = "Link is required";$error=True;
   			} else {
 		  		$link = test_input($_POST["link"]);
 		  	}
 
 		  	if (empty($_POST["totalImages"])) {
-    			$totalImagesErr = "Number of images in the directory is required";
+    			$totalImagesErr = "Number of images in the directory is required";$error=True;
   			} else {
 		  		$totalImages = test_input($_POST["totalImages"]);
 		  		if(!preg_match('/^[0-9]*$/',$totalImages)){
-		  			$totalImagesErr = "Give the total number of images in numbers..!";
+		  			$totalImagesErr = "Give the total number of images in numbers..!";$error=True;
 		  		}
 		  	}
+		  	if($error==False){
+				$sql = "INSERT INTO personalgallery (deadname, link, num_images) VALUES('$deadname', '$link', '$totalImages')";
+			}
+			if (mysqli_query($conn,$sql)){
+			}else{
+				echo "error";
+			}
 		}
+		
 		//securing inputs and form action
 		function test_input($data) {
 			  $data = trim($data);
@@ -49,22 +57,22 @@
 			  $data = htmlspecialchars($data);
 			  return $data;
 		}
-
-		$sql = "INSERT INTO personalgallery (deadname, link, num_images) VALUES('$deadname', '$link', '$totalImages')";
+		
 
 		?>
 
 		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-			Dead person's name: <input type="text" name="deadname" value="<?php echo $deadname;?>">
+			Dead person's name: <input type="text" name="deadname">
 			<span class="error">* <?php echo $deadnameErr;?></span>
 			<br><br>
-			Link of image directory: <input type="text" name="link" value="<?php echo $link;?>">
+			Link of image directory: <input type="text" name="link">
 			<span class="error">* <?php echo $linkErr;?></span>
 			<br><br>
-			Number of images: <input type="text" name="totalImages" value="<?php echo $totalImages;?>">
+			Number of images: <input type="text" name="totalImages" >
 			<span class="error">* <?php echo $totalImagesErr;?></span>
 			<br><br>
-			<input type="submit">
+			<input type="submit" name="submit" value=Submit>
+			<input type="file" name="file">
 		</form>
 
 
