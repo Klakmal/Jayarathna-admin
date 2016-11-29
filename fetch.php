@@ -14,8 +14,18 @@
             <li class="drop_item">
                 <a href="profile.php?id='.$row["deadPersonID"].'" class="person_link">
                   <span>
-                    <img src="img/mrjayaratne.jpg" width="30px" height="30px">
-                  </span>
+                   
+              ';
+                  $sql_image = "SELECT * FROM deathpersondetails WHERE deadPersonID = '".$row["deadPersonID"]."'";
+                  $result_image = mysqli_query($conn, $sql_image);
+                     if(mysqli_num_rows($result_image) > 0)  
+                     {
+                      while($row_img = mysqli_fetch_array($result_image))
+                      { 
+                      $output .= "<img src='img/profileImage/".$row_img['pro_img'].".jpg' width='50px' height='50px'>";
+                      }
+                  }
+                $output .='  </span>
                   <span>
                     '.$row["deadPersonName"].'
                   </span>

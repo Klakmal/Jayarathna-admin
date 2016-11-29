@@ -1,13 +1,114 @@
+<!DOCTYPE html>
 <html>
-<head>
-<title>webcasting</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/menu/simple_menu.css">
-<link rel="stylesheet" type="text/css" href="css/webcasting.css">
-</head>
-<body>
-<?php include "temp/header.php" ?>
-<div class="cont1" align="center">
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+	    <link rel="stylesheet" type="text/css" media="screen" href="css/menu/simple_menu.css">
+<!--	    <link rel="stylesheet" type="text/css" href="css/profile.css">-->
+	    <style type="text/css">
+			.container1{
+				width: 100%;
+				background-color: ;
+				padding: 5px;
+			}
+			.container2{
+				max-width: 1000px;
+				height: 100%;
+				background-color: ;
+			}
+
+			.list{
+				list-style-type: none;
+				
+				overflow: hidden;
+			}
+			.list li{
+				
+				padding: 15px 30px;
+				background-color: #333;
+				
+				margin: 1px .5px;
+			}
+			.list li a{
+				text-decoration: none;
+				display: block;
+				text-align: center;
+				color: white;
+			}
+			.pro-main{
+				margin: 0px 0px;
+				position: relative;
+				width: 100%;
+				background-color: ;
+				
+			}
+			.pro1{
+				width: 250px;
+				height: 500px;	
+				float: left;
+				background-color: ;
+				height: 100%;
+			}
+			.pro2{
+				width: 750px;
+				float: right;
+				background-color: ;
+				height: 100%;
+				
+			}
+			.picture{
+				background-color: ;
+				margin-top: 0px; 
+			}
+			.bar{
+				background-color: white;
+				min-height: 540px;
+				margin: 2px;
+			}
+			.cube{
+				height: 68px;
+				width: 100%;
+				background-color: #333;
+				padding: 20px 40px;
+				color: white;
+			}
+	    </style>
+	</head>
+	<body>
+		<?php include 'temp/header.php'; ?>
+		<?php $id = $_GET["id"]; ?>
+		<div class="container1" align="center">
+			<div class="container2">
+				<div class="pro-main">
+					<div class="pro1">
+						<div class="picture">
+			<!--			<img src="getImage.php?id=<?php echo $id; ?>" width="250px" height="325px">			-->
+
+						<?php
+							require "dbcon/dbcon.php";
+							$sql_image = "SELECT * FROM deathpersondetails WHERE deadPersonID = '".$id."'";
+							$result_image = mysqli_query($conn, $sql_image);
+							 if(mysqli_num_rows($result_image) > 0)  
+							 {
+							 	while($row_img = mysqli_fetch_array($result_image))
+				      			{	
+				      				echo "<img src='img/profileImage/".$row_img['pro_img'].".jpg' width='250px' height='325px'>";
+				      			}
+				      		}
+						?>
+						<ul class="list">
+						<li><a href="profile.php?id=<?php echo $id; ?>">Details</a></li>
+						<li><a href="condolence.php?id=<?php echo $id; ?>">Condolence message</a></li>
+						<li><a href="personalGallery.php?id=<?php echo $id; ?>">Gallery</a></li>
+						<li><a href="webcasting.php?id=<?php echo $id; ?>">Video</a></li>
+						</ul>
+						</div>
+					</div>
+					<div class="pro2">
+						<div class="bar" align="left" style="background-color: #333;">
+						
+
+<div class="cont1" align="center" style="padding: 15px; background-color: #333;">
     <div class="cont2" align="left">
         <?php
             require "dbcon/dbcon.php";
@@ -15,62 +116,12 @@
             $error=FALSE;
                 $deadnameerr = "";
                 
-                if (isset($_POST['view'])) {
-                    
-                    if(empty($_POST['deadname'])){ 
-                        $deadnameerr = "</br>Dead person Name is required";
-                        $error = TRUE;
-                    }else{
-                        $deadname = $_POST['deadname'];
-
-                    }
+                $deadname = $id;
                   if ($error==FALSE){  
-                $sql="SELECT * FROM webcasting WHERE deadname='$deadname'";
+                $sql="SELECT * FROM webcasting WHERE deadPersonID='$deadname'";
                 $query=(mysqli_query($conn,$sql));
                 }
-                }
         ?>
-        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
-        <div id="webcasting" align="center">
-            <form id="frm" action="webcasting.php" method="post">
-            <table id="tbl">
-                <tr>
-                    <td colspan="2">
-                        <h2 id="heading2" align="center"><b>WEBCASTING</b></h2>
-                    </td>
-                
-                </tr>
-                 <tr>
-                
-                    <td><label for="deadname"></label><span class="error"><?php echo $deadnameerr;?></span></td>
-                    <td>
-                        <?php 
-                                    
-                                    echo '<input type="text" list="dn" id="deadname" name="deadname" placeholder="Dead Person Name" required>';
-                                    echo '<datalist id="dn">';
-                                    
-                                    $sql1 = "SELECT `deadname` FROM `webcasting`";
-                                    $result1= mysqli_query($conn, $sql1);
-                                     while($r=mysqli_fetch_row($result1))
-                                     { 
-                                           echo '<option id='.$r[0].'>'.$r[0].'</option>';
-                                     }
-                                    echo '</datalist>';
-                                ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input type="submit" value="VIEW" name="view"> 
-                    </td>
-                </tr>
-                </table>
-                <hr>
-                <?php 
-                ?>
-                
-                
-                </form>
                 <?php 
                 if ($query != null) {
                     while ($row = mysqli_fetch_assoc($query)){
@@ -100,7 +151,14 @@
         </form>
     </div>
 </div>
-      <?php include 'temp/footer.php';  ?>
-    </body>
 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<?php include 'temp/footer.php';  ?>
+	</body>
 </html>

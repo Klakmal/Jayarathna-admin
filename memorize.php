@@ -117,7 +117,7 @@
 		.itm{
 			width: 100%;
 			height: 40px;
-			background-color: yellow;
+			background-color: #333;
 			
 			padding-top: 15px;
 		}
@@ -127,11 +127,24 @@
 			background-color: ;
 			padding-top: 15px;
 		}
+		.headline{
+			width: 100%;
+			float: center;
+		}
+		input{
+			border: 1px solid black;
+			border-radius: 4px;
+			width: 175px;
+			height: 25px;
+			background-color: #eee;
+		}
 	</style>
 </head>
 <body>
 <?php include 'temp/header.php';  ?>
 <div class="container">
+<div class="headline" align="center">
+<h3 style="color: white;"><b>Memorize</b></h3></div>
 	<form action="" method="POST">
 	<div class="itm" align="center">
 		<input type="text" name="city" id="homecity" list="drop_boxa" placeholder="Home city">
