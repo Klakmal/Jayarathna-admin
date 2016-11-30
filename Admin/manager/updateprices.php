@@ -8,129 +8,133 @@
  <?php
                     
                 require "../dbcon/dbcon.php";
+
                      $error=FALSE;
-                        $s_nameerr = $op1err =$op2err =$op3err =$op4err =$op5err = "";
-                if (isset($_POST['update'])) {
+                        $s_nameerr = $golderr =$silvererr =$bronzeerr =$platinumerr =$deluxeerr = "";
+                if (isset($_POST['submit'])) {
                     
-                     if(empty($_POST['s_name'])){ echo "00";
+                     if(empty($_POST['s_name'])){ 
                                 $s_nameerr = "</br>* ";
                                 $error = TRUE;
-                            }else{echo "o1";
+                            }else{
                                 $s_name = $_POST['s_name'];
                             }
-                     if(empty($_POST['op1'])){ echo "o2";
-                                $op1err = "</br>* ";
-                                $error = TRUE;
-                            }else{echo "o3";
-                                $op1 = $_POST['op1'];
-                            }
-                     if(empty($_POST['op2'])){ 
-                                $op2err = "</br>* ";
-                                $error = TRUE;
+                     if(empty($_POST['gold'])){ 
+                                $golderr = "</br>* ";
+                                //$error = TRUE;
                             }else{
-                                $op2 = $_POST['op2'];
+                                $gold = $_POST['gold'];
                             }
-                     if(empty($_POST['op3'])){ 
-                                $op3err = "</br>* ";
-                                $error = TRUE;
+                     if(empty($_POST['silver'])){ 
+                                $silvererr = "</br>* ";
+                                //$error = TRUE;
                             }else{
-                                $op3 = $_POST['op3'];
+                                $silver = $_POST['silver'];
                             }
-                     if(empty($_POST['op4'])){ 
-                                $op4err = "</br>* ";
-                                $error = TRUE;
+                     if(empty($_POST['bronze'])){ 
+                                $bronzeerr = "</br>* ";
+                                //$error = TRUE;
                             }else{
-                                $op4 = $_POST['op4'];
+                                $bronze = $_POST['bronze'];
                             }
-                     if(empty($_POST['op5'])){ 
-                                $op5err = "</br>* ";
-                                $error = TRUE;
+                     if(empty($_POST['platinum'])){ 
+                                $platinumerr = "</br>* ";
+                                //$error = TRUE;
                             }else{
-                                $op5 = $_POST['op5'];
+                                $platinum = $_POST['platinum'];
+                            }
+                     if(empty($_POST['deluxe'])){ 
+                                $deluxeerr = "</br>* ";
+                                //$error = TRUE;
+                            }else{
+                                $deluxe = $_POST['deluxe'];
                             }
 
                  
 	                 
 	                if ($error==FALSE){
 
-		                $sql = "UPDATE serviceprices SET gold='$op1',silver='$op2',bronze='$op3',platinum='$op4',deluxe='$op5' WHERE s_name='$s_name'";
+		                $sql = "UPDATE serviceprices SET gold='$gold',silver='$silver',bronze='$bronze',platinum='$platinum',deluxe='$deluxe' WHERE s_name='$s_name'";
+                        
 
 		                if (mysqli_query($conn, $sql)) {
-		                	header('location:comment.php');
+		                	header('location:updateprices.php');
+                            echo "llll";
 		                    echo '<script>alert("Record updated successfully")</script>';
 		                } else {
-		                    echo "error" ;
+                            echo "oooo";
+		                    echo "Error: " . $sql. "<br>" . mysqli_error($con);
 		                }
 	                }
                 }
  ?> 
-
-
+<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+<div id="updateprices">
 <form method="post" action="updateprices.php">
 <table>
 <tr>
 <td>
 <div id="s_name">
 	<label for="s_name"><b>Package or Service name</b> :-</label>
-	<input type="text" id="s_name">
+	<input type="text" name="s_name"><span class="error"><?php echo $s_nameerr;?></span>
 </div>
 </td></tr>
 
 <tr>
 <td>
-<div id="op1">
-	<label for="op1">option 1 :-</label>
-	<input type="text" id="op1" >
+<div id="gold">
+	<label for="gold">option 1 :-</label>
+	<input type="text" name="gold" ><span class="error"><?php echo $golderr;?></span>
 </div>
 </td>
 </tr>
 
 <tr>
 <td>
-<div id="op2">
-	<label for="op2">option 2 :-</label>
-	<input type="text" id="op2" value="0">
+<div id="silver">
+	<label for="silver">option 2 :-</label>
+	<input type="text" name="silver" ><span class="error"><?php echo $silvererr;?></span>
 </div>
 </td>
 </tr>
 
 <tr>
 <td>
-<div id="op3">
-	<label for="op3">option 3 :-</label>
-	<input type="text" id="op3" value="0">
+<div id="bronze">
+	<label for="bronze">option 3 :-</label>
+	<input type="text" name="bronze" ><span class="error"><?php echo $bronzeerr;?></span>
 </div>
 </td>
 </tr>
 
 <tr>
 <td>
-<div id="op4">
-	<label for="op4">option 4 :-</label>
-	<input type="text" id="op4" value="0">
+<div id="platinum">
+	<label for="platinum">option 4 :-</label>
+	<input type="text" name="platinum"><span class="error"><?php echo $platinumerr;?></span>
 </div>
 </td>
 </tr>
 
 <tr>
 <td>
-<div id="op5">
-	<label for="op5">option 5 :-</label>
-	<input type="text" id="op5" value="0">
+<div id="deluxe">
+	<label for="deluxe">option 5 :-</label>
+	<input type="text" name="deluxe" ><span class="error"><?php echo $deluxeerr;?></span>
 </div>
 </td>
 </tr>
 <tr>
                     
 <td colspan="2" align="center">
-   <input type="submit" value="UPDATE" name="update"> 
+   <input type="submit" value="UPDATE" name="submit"> 
                         
 </td>
                     
 </tr>
 </table>
 </form>
-
-
+</div>
+</form>
 </body>
 </html>

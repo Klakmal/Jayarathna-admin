@@ -823,7 +823,7 @@
                           <!-- Specify details about the item that buyers will purchase. -->
                           <input type="hidden" name="item_name" value="Package-fee">
                           
-                          <input type="hidden" name="amount" value="">
+                          <input type="hidden" name="amount" value="152">
                           <input type="hidden" name="currency_code" value="USD">
 
                           <!-- Display the payment button. -->
