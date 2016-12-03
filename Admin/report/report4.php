@@ -66,45 +66,12 @@ td{
   </div>
   <div class="con1" align="center">
 <div class="con2">
-<?php
-    require "dbcon/dbcon.php";
-    $sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE frm < id.timein< to GROUP BY supplier";
-    $query=(mysqli_query($conn,$sql));
-?>
-<table>
-    <tr>
-        <th>Supplier</th>
-        <th>Type</th>
-        <th>No of in</th>
-        <th>Total Price</th>
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-        
-            echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";
 
-            echo "<td>";
-            echo $row['type'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['count(id.id)'];
-            echo "</td>";
-            
-            echo "<td>";
-            echo $row['sum(type.price)'];
-            echo "</td>";
-
-         echo "</tr>";}
-?>
-</table>
 <?php
-            $error=FALSE;
-               $frmerr = $toerr = $suppliererr=  $typeerr = "";
-                 if (isset($_POST['insert'])) {
+                require "dbcon/dbcon.php";
+                $error=FALSE;
+                $frmerr = $toerr = $suppliererr=  $typeerr = "";
+                if (isset($_POST['insert'])) {
                      
                      if(empty($_POST['supplier'])){ 
                                 $suppliererr = "</br>* ";
@@ -131,8 +98,42 @@ td{
                                 $to = $_POST['to'];
                             }
 
-?>
+                    $sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' AND supplier='$supplier' GROUP BY supplier";
+                    $query=(mysqli_query($conn,$sql));
 
+?>
+<table>
+    <tr>
+        <th>No of in</th>
+        <th>Total Price</th>
+    </tr>
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr>";
+        
+            /*echo "<td>";
+            echo $row['supplier'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['type'];
+            echo "</td>";
+*/
+            echo "<td>";
+            echo $row['count(id.id)'];
+            echo "</td>";
+            
+            echo "<td>";
+            echo $row['sum(type.price)'];
+            echo "</td>";
+
+         echo "</tr>";}
+?>
+</table>
+<?php
+}
+?>
+<br>
         <div id="type">
                 <form method="post" action="report4.php">
                 <table id="tb9">
@@ -163,7 +164,6 @@ td{
 </table>
 </form>
 </div>
-</table>
 </div>
 </div>
 </body>

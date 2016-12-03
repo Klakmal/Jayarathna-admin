@@ -58,7 +58,6 @@ td{
   <a href="../report/report4.php" class="navi">&nbsp;&nbsp;REPORT4</a>
   <a href="../report/report5.php" class="navi">&nbsp;&nbsp;REPORT5</a>
 </nav>
-
 <div class="menu2" align="right" style="margin-bottom: 100px;">
     <div class="menu2in">
       <a href="../signout.php" class="myButton">Log Out</a>
@@ -66,11 +65,33 @@ td{
   </div>
   <div class="con1" align="center">
 <div class="con2">
+
 <?php
-    require "dbcon/dbcon.php";
-    $sql = "SELECT packname, amount, COUNT(res_id) FROM reservations WHERE date BETWEEN date1 AND date2 GROUP BY packname";
-    $query=(mysqli_query($conn,$sql));
+                require "dbcon/dbcon.php";
+                $error=FALSE;
+                $date1err = $date2err =  "";
+                 if (isset($_POST['insert'])) {
+                     
+                     if(empty($_POST['date1'])){ 
+                                $date1err = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $date1 = $_POST['date1'];
+                            }
+                     if(empty($_POST['date2'])){ 
+                                $date2err = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $date2 = $_POST['date2'];
+                            }
+                $sql = "SELECT packname, amount, COUNT(res_id) FROM reservations WHERE reservations.date > '$date1' AND reservations.date < '$date2' GROUP BY packname";
+                $query=(mysqli_query($conn,$sql));
 ?>
+
+
+
+
+
 <table>
     <tr>
         <th>Package</th>
@@ -98,24 +119,9 @@ td{
 ?>
 </table>
 <?php
-                require "dbcon/dbcon.php";
-                $error=FALSE;
-                $date1err = $date2err =  "";
-                 if (isset($_POST['insert'])) {
-                     
-                     if(empty($_POST['date1'])){ 
-                                $date1err = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $date1 = $_POST['date1'];
-                            }
-                     if(empty($_POST['date2'])){ 
-                                $date2err = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $date2 = $_POST['date2'];
-                            }
+    }
 ?>
+<br>
 <div id="id">
                 <form method="post" action="report5.php">
                 <table id="tb10">
