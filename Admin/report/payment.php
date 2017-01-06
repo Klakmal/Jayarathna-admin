@@ -165,7 +165,7 @@ input[type=text]:hover,[type=password]:hover{
                 </form>
 <?php
     require "dbcon/dbcon.php";
-    $sql = "SELECT * FROM payment GROUP BY supplierno";
+    $sql = "SELECT * FROM payment";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
@@ -207,47 +207,7 @@ input[type=text]:hover,[type=password]:hover{
          echo "</tr>";}
 ?>
 </table>
-    <br>
-    <br>
-
-    <?php
-    require "dbcon/dbcon.php";
-    $sql = "SELECT supplierno, supplier, SUM(buy), SUM(pay), SUM(due) FROM payment GROUP BY supplierno";
-    $query=(mysqli_query($conn,$sql));
-?>
-<table>
-    <tr>
-        <th class="tb" >SupplierNo</th> 
-        <th class="tb" >Supplier</th>
-        <th class="tb" >Total Buy</th>
-        <th class="tb" >Total Pay</th>
-        <th class="tb" >Total Due</th>
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr class="tb1">';
-        
-            echo '<td class="tb2">';
-            echo $row['supplierno'];
-            echo "</td>";
-                
-            echo '<td class="tb2">';
-            echo $row['supplier'];
-            echo "</td>";
-
-            echo '<td class="tb2">';
-            echo $row['SUM(buy)'];
-            echo "</td>";
-
-             echo '<td class="tb2">';
-            echo $row['SUM(pay)'];
-            echo "</td>";
-            
-             echo '<td class="tb2">';
-            echo $row['SUM(due)'];
-            echo "</td>";
-         echo "</tr>";}
-?>
+    
 </table>
   
 </div>
