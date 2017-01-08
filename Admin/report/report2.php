@@ -67,7 +67,7 @@ td{
 <div class="con2">
 <?php
     require "dbcon/dbcon.php";
-    $sql = "SELECT type.type, COUNT(id.id) , moq.moq FROM id, type, moq WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = moq.type GROUP BY type.type";
+    $sql = "SELECT type.type, COUNT(id.id) , moq.moq FROM id, type, moq WHERE (id.timeout > CURDATE() OR id.timeout='0000-00-00') AND id.no = type.no AND type.type = moq.type GROUP BY type.type";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
