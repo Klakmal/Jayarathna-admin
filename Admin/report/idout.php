@@ -77,10 +77,10 @@ input[type=text]:hover,[type=password]:hover{
 <div class="containerx" align="center">
 <div class="container1">
 </table>
-    <?php
+ <?php
                 require "dbcon/dbcon.php";
                 $error=FALSE;
-                $iderr = $noerr = $timeouterr = "";
+                $iderr = $timeouterr = "";
                  if (isset($_POST['insert'])) {
                      
                      if(empty($_POST['id'])){ 
@@ -89,19 +89,19 @@ input[type=text]:hover,[type=password]:hover{
                             }else{
                                 $id = $_POST['id'];
                             }
-                     if(empty($_POST['no'])){ 
+                     /*if(empty($_POST['no'])){ 
                                 $noerr = "</br>* ";
                                 $error = TRUE;
                             }else{
                                 $no = $_POST['no'];
                             }
-                     /*if(empty($_POST['timein'])){ 
+                     if(empty($_POST['timein'])){ 
                                 $timeinerr = "</br>* ";
                                 $error = TRUE;
                             }else{
                                 $timein = $_POST['timein'];
-                            }*/
-                     $timein = date("Y/m/d");
+                            }
+                     $timein = date("Y/m/d");*/
 
                      if(empty($_POST['timeout'])){ 
                                 $timeouterr = "</br>* ";
@@ -111,49 +111,46 @@ input[type=text]:hover,[type=password]:hover{
                             }
                     
                     
-                    $sql = "INSERT INTO id (id , no ,timein ,timeout)
-                VALUES ('".$id."','".$no."','".$timein."','".$timeout."')";
-
+                    $sql = "UPDATE id SET timeout='$timeout' WHERE id='$id'";
+                
                 if (mysqli_query($conn, $sql)) {
-                    header('location:id.php');
+                    header('location:idout.php');
                 }
                 else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
                  }
                 ?>
-                <div id="id in">
-                <form method="post" action="id.php">
+                <div id="id out">
+                <form method="post" action="idout.php">
                 <table id="tb8">
                     <tr>
-                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin IN</b></th> 
+                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin OUT</b></th> 
                     </tr>
                     <tr>
                     <td><label for="id">ID</label><span class="error"><?php echo $iderr;?></span></td>
                     <td><input type="text" name="id" placeholder="id"></td>
                     </tr> 
-                    <tr>
+                    <!--tr>
                     <td><label for="no">No</label><span class="error"><?php echo $noerr;?></span></td>
                     <td><input type="text" name="no" placeholder="no"></td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                     <td><label for="timein">TimeIn</label><span class="error"><?php echo $timeinerr;?></span></td>
                     <td><input type="text" name="timein" placeholder="Timein"></td>
-                    </tr> 
+                    </tr>--> 
                     <tr>
                     <td><label for="timeout">TimeOut</label><span class="error"><?php echo $timeouterr;?></span></td>
                     <td><input type="text" name="timeout" placeholder="Timeout"></td>
                     </tr>    
-                    <tr>-->
+                    <tr>
                     <td colspan="2" align="center">
                     <input type="submit" value="INSERT" name="insert">
                     </td>
                     </tr>
                 </table>
                 </form>
-                </div>
-
-                
+                </div>      
                 
 <?php
     require "dbcon/dbcon.php";

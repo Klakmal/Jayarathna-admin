@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Payment Report</title>
+<title>Coffin Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
     <link rel="stylesheet" type="text/css" href="../css/manage.css">
@@ -20,13 +20,12 @@
 .con2{
     width: 500px;
     height: 100%;
-    background-color: ;
-    position: relative;
-
+    background-color: #eee;
     margin-left: 200px;
     padding: 20px;
     border-radius: 10px;
 }
+
 th{
     width:100px;
     background-color: #aaa;
@@ -64,50 +63,65 @@ td{
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
-  <div class="con1" align="center">
-<div class="con2">
 
+<div class="con1" align="center">
+<div class="con2">
 <?php
     require "dbcon/dbcon.php";
-    $sql = "SELECT supplierno, supplier, SUM(buy), SUM(pay), SUM(due) FROM payment GROUP BY supplierno";
+    $sql = "SELECT no, cusname, deadname, connumber, address, email, gender, nic FROM customers";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
     <tr>
-        <th class="tb" >SupplierNo</th> 
-        <th class="tb" >Supplier</th>
-        <th class="tb" >Total Buy</th>
-        <th class="tb" >Total Pay</th>
-        <th class="tb" >Total Due</th>
-    </tr>
+        <th>ID</th> 
+        <th>Customer Name</th>
+        <th>Dead Person Name</th> 
+        <th>Contact Number</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Gender</th>  
+        <th>NIC</th>
+       
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr class="tb1">';
+         echo "<tr>";
         
-            echo '<td class="tb2">';
-            echo $row['supplierno'];
+            echo "<td>";
+            echo $row['no'];
             echo "</td>";
                 
-            echo '<td class="tb2">';
-            echo $row['supplier'];
+            echo "<td>";
+            echo $row['cusname'];
             echo "</td>";
 
-            echo '<td class="tb2">';
-            echo $row['SUM(buy)'];
+            echo "<td>";
+            echo $row['deadname'];
             echo "</td>";
 
-             echo '<td class="tb2">';
-            echo $row['SUM(pay)'];
+            echo "<td>";
+            echo $row['connumber'];
             echo "</td>";
-            
-             echo '<td class="tb2">';
-            echo $row['SUM(due)'];
+                
+            echo "<td>";
+            echo $row['address'];
             echo "</td>";
+
+             echo "<td>";
+            echo $row['email'];
+            echo "</td>";
+                
+            echo "<td>";
+            echo $row['gender'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['nic'];
+            echo "</td>";
+
          echo "</tr>";}
 ?>
-</table>
-  
 </div>
-</div>         
+</div>
+</table>
 </body>
 </html>

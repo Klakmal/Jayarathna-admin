@@ -81,7 +81,7 @@ input[type=text]:hover,[type=password]:hover{
                     
                 require "dbcon/dbcon.php";
                      $error=FALSE;
-                        $suppliernoerr = $suppliererr =  $contactnoerr= $addresserr = $emailerr = $platinumerr =$golderr = $silvererr = $bronzeerr = "";
+                        $suppliernoerr = $suppliererr =  $contactnoerr= $addresserr = $emailerr  = "";
                  if (isset($_POST['update'])) {
                      
                      if(empty($_POST['supplierno'])){ 
@@ -115,30 +115,18 @@ input[type=text]:hover,[type=password]:hover{
                             }else{
                                 $email = $_POST['email'];
                             }                     
-                     if(empty($_POST['platinum'])){ 
-                                $platinumerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $platinum = $_POST['platinum'];
-                            }
-                     if(empty($_POST['gold'])){ 
-                                $golderr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $gold = $_POST['gold'];
-                            }
-                     if(empty($_POST['silver'])){ 
-                                $silvererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                   
                                 $silver = $_POST['silver'];
-                            }
-                      if(empty($_POST['bronze'])){ 
-                                $bronzeerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                      
                                 $bronze = $_POST['bronze'];
-                            }
+                            
 
                  
                 if ($error==FALSE){
@@ -170,7 +158,7 @@ input[type=text]:hover,[type=password]:hover{
                 }
                    
                 $error=FALSE;
-                        $suppliernoerr = $suppliererr=  $emailerr =$addresserr = $contactnoerr = $platinumerr =$golderr = $silvererr = $bronzeerr = "";
+                        $suppliernoerr = $suppliererr=  $emailerr =$addresserr = $contactnoerr = "";
                  if (isset($_POST['insert'])) {
                      
                      if(empty($_POST['supplierno'])){ 
@@ -203,30 +191,18 @@ input[type=text]:hover,[type=password]:hover{
                             }else{
                                 $email = $_POST['email'];
                             }                    
-                      if(empty($_POST['platinum'])){ 
-                                $platinumerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                      
                                 $platinum = $_POST['platinum'];
-                            }
-                      if(empty($_POST['gold'])){ 
-                                $golderr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                      
                                 $gold = $_POST['gold'];
-                            }
-                      if(empty($_POST['silver'])){ 
-                                $silvererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                      
                                 $silver = $_POST['silver'];
-                            }
-                      if(empty($_POST['bronze'])){ 
-                                $bronzeerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                      
                                 $bronze = $_POST['bronze'];
-                            }
+                            
                     
                     $sql = "INSERT INTO supplier (supplierno, supplier, address, contactno, email, platinum, gold, silver, bronze)
                 VALUES ('".$supplierno."','".$supplier."','".$address."','".$contactno."','".$email."','".$platinum."','".$gold."','".$silver."','".$bronze."')";

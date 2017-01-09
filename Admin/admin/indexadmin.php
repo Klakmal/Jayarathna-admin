@@ -1,6 +1,6 @@
 <html>
     <head>
-    <title>IT Operator</title>
+    <title>Administrator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
     <link rel="stylesheet" type="text/css" href="../css/manage.css">
@@ -14,7 +14,7 @@
 <nav class="navi_menu" id="mySidenav"><br>
   <div class="container">
     <div class="navi_pro">
-    <img class="propic" src="img_avatar_g2.jpg"><br>
+    <img class="propic" src="../img_avatar_g2.jpg"><br>
     <h4 class=""><b>Kasun Lakmal</b></h4>
     <p class="">Jayarathna Funrels</p>
     </div>
