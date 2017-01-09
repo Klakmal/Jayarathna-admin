@@ -1,0 +1,85 @@
+body{
+	background-color: #f1f1f1;
+	margin: 0;
+}
+
+.reg_container{
+	margin: 50px;
+}
+
+.reg_container1{
+	background-color: #e8e8e8;
+	margin-top: 50px;
+	width: 600px;
+	height: 775px;
+	padding-top: 50px;
+	border-radius: 20px;
+	border: 1px solid #f8f8f8;
+	box-shadow: 1px 1px 1px gray;
+	padding: 20px;
+}
+
+td{
+	width: 290px;
+}
+
+input[type=text],[type=password],[type=email]{
+	width: 200px;
+	height: 30px;
+	margin: 5px;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+	border:1px solid white;
+	padding-left: 5px;
+}
+
+select{
+	width: 200px;
+	height: 30px;
+	margin: 5px;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+	border:1px solid white;
+	padding-left: 5px;
+}
+
+
+
+input[type=submit],[type=reset] {
+	background-color:#599bb3;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #93b5cc;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:10px 17px;
+	text-decoration:none;
+	text-shadow:2px 2px 1px #3d768a;
+}
+input[type=submit]:hover,[type=reset]:hover {
+	background-color:#408c99;
+}
+input[type=submit]:active,[type=reset]:active {
+	position:relative;
+	top:1px;
+}
+
+select option{
+	background-color: gray;
+	border-radius: 10px;
+
+}
+
+.error{
+	color: red;
+}
+
+label{
+	color: gray;
+	padding-left: 100px;
+}
