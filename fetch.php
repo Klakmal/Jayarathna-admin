@@ -1,7 +1,7 @@
 <?php  
  require "dbcon/dbcon.php";  
  $output = '';  
- $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName LIKE '%".$_POST["search"]."%' AND homesity LIKE '%".$_POST["baba"]."%' AND school LIKE '%".$_POST["scl"]."%' AND university LIKE '%".$_POST["uni"]."%' AND employee LIKE '%".$_POST["emp"]."%'";
+ $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName LIKE '%".$_POST["search"]."%' AND homecity LIKE '%".$_POST["baba"]."%' AND school LIKE '%".$_POST["scl"]."%' AND university LIKE '%".$_POST["uni"]."%' AND employee LIKE '%".$_POST["emp"]."%'";
  $result = mysqli_query($conn, $sql);  
  if(mysqli_num_rows($result) > 0)  
  {  
@@ -22,7 +22,7 @@
                      {
                       while($row_img = mysqli_fetch_array($result_image))
                       { 
-                      $output .= "<img src='img/profileImage/".$row_img['pro_img'].".jpg' width='50px' height='50px'>";
+                      $output .= "<img src='img/profileImage/".$row['pro_img'].".jpg' width='50px' height='50px'>";
                       }
                   }
                 $output .='  </span>
