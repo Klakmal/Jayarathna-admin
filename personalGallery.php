@@ -153,7 +153,7 @@
 										<div class="galleryThumbnails">
 										<?php
 											for ($t=1;$t<=$imageTotal;$t++){
-												echo '<a href="javascript: changeimage('.$t.')" class="thumbnailsimage'.$t.'"><img src="'.$link.''.$t.'.jpg" width="auto" height="180" alt="" style="margin: 3px;"/></a>';
+												echo '<a href="javascript: changeimage('.$t.')" class="thumbnailsimage'.$t.'"><img src="'.$link.''.$t.'.jpg" width="auto" height="250" alt="" style="margin: 3px;"/></a>';
 												#onima format ekakata hadanna jpg eka
 												#nama saha total numberth wenas karaganna balanna
 											}

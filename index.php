@@ -51,24 +51,22 @@ jQuery.noConflict()(function ($) {
 </div>
 <!-- wrapper -->
 <div id="container" style="box-shadow: none; border: none">
-
-
-<div class="one-third" align="center">
-    
-    <h3 style="color: white; font-family:myfont1;"><b>Condolence Message</b></h3>
-    
+  <div class="one-third">
+    <a href = "condolence.php" class = "pic_button1" target="_blank" href="#" style="color: gray;" >
+    <h1 align="center" style="color: white; font-family:myfont1;"><b>CONDOLENCE</b></h1>
+    <h1 align="center"  style="color: white; font-family:myfont1;">MESSAGES</h1>
+    </a>
   </div>
-  <div class="one-third" align="center">
-    
-    <h3 style="color: white; font-family:myfont1;"><b>Web Casting</h3></b>
-    
+  <div class="one-third">
+    <a href="webcasting.php" class = "pic_button2" target="_blank" href="#" style="color: gray">
+    <h1 align="center"  style="color: white; font-family:myfont1;"><b>WEB</b> CASTING</h1>
+    </a>
   </div>
-  <div class="one-third last" align="center">
-    
-    <h3 style="color: white; font-family:myfont1;"><b>Feed-Back</b></h3>
-    
+  <div class="one-third last">
+    <a href="feedback.php" class = "pic_button3" target="_blank" href="#" style="color: gray">
+    <h1 align="center" style="color: white; font-family:myfont1;"><b>FEED</b> BACK</h1>
+    </a>
   </div>
-
 
 
   <div class="one-third">
@@ -86,7 +84,7 @@ jQuery.noConflict()(function ($) {
     <p style="color: gray; font-family:myfont1;">Please be kind enough to leave us your opinion on our service & how can we improve it inorder to make it a better one. </p>
     
   </div>
-  <div class="disc" style="color: gray; font-family:myfont1; width: 940px;">
+  <div class="disc" style="color: gray; font-family:myfont1;">
 	<p>Funeral is a ceremony marking a person's death. Funerary customs comprise the complex of beliefs and practices used by a culture to remember the dead, from the funeral itself, to various monuments, prayers, and rituals undertaken in their honor. These customs vary widely between cultures, and between religious affiliations within cultures.</p>
 </div>
 </div>
