@@ -66,13 +66,22 @@ td{
 <div class="con1" align="center">
 <div class="con2">
 <?php
-    require "dbcon/dbcon.php";
-    $sql = "SELECT no, cusname, deadname, connumber, address, email, gender, nic FROM customers";
+                require "dbcon/dbcon.php";
+                $error=FALSE;
+                $cusnameerr=  "";
+                 if (isset($_POST['insert'])) {
+                     
+                     if(empty($_POST['cusname'])){ 
+                                $cusnameerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $cusname = $_POST['cusname'];
+                            }
+    $sql = "SELECT cusname, deadname, connumber, address, email, gender, nic FROM customers WHERE cusname = '$cusname'";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
-    <tr>
-        <th>ID</th> 
+    <tr> 
         <th>Customer Name</th>
         <th>Dead Person Name</th> 
         <th>Contact Number</th>
@@ -80,14 +89,11 @@ td{
         <th>Email</th>
         <th>Gender</th>  
         <th>NIC</th>
-       
+    </tr>
+
 <?php
     while ($row = mysqli_fetch_assoc($query)){
          echo "<tr>";
-        
-            echo "<td>";
-            echo $row['no'];
-            echo "</td>";
                 
             echo "<td>";
             echo $row['cusname'];
@@ -119,6 +125,32 @@ td{
 
          echo "</tr>";}
 ?>
+</table>
+<?php
+}
+?>
+
+<div id="id">
+                <form method="post" action="customerinfo.php">
+                <table id="tb11">
+                    <tr>
+                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">ID</b></th> 
+                    </tr>
+                    <tr>
+                    <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cusnameerr;?></span></td>
+                    <td><input type="text" name="cusname" placeholder="Customer Name"></td>
+                    </tr> 
+                    <tr>
+                    <td colspan="2" align="center">
+                    <input type="submit" value="Search" name="insert">
+                    </td>
+                    </tr>
+
+                </table>
+            
+                </form>
+                </div>  
+
 </div>
 </div>
 </table>
