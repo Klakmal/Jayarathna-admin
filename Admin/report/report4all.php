@@ -73,20 +73,8 @@ td{
                 $error=FALSE;
                 $frmerr = $toerr = $suppliererr=  $typeerr = "";
                 if (isset($_POST['all'])) {
-                     
-                     if(empty($_POST['supplier'])){ 
-                                $suppliererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $supplier = $_POST['supplier'];
-                            }
-                     if(empty($_POST['type'])){ 
-                                $typeerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $type = $_POST['type'];
-                            }
-                     if(empty($_POST['frm'])){ 
+
+                	if(empty($_POST['frm'])){ 
                                 $frmerr = "</br>* ";
                                 $error = TRUE;
                             }else{
@@ -99,170 +87,139 @@ td{
                                 $to = $_POST['to'];
                             }
 
-                    $sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' AND supplier='$supplier' GROUP BY supplier";
-                    $query=(mysqli_query($conn,$sql));
+                	if(!empty($_POST['supplier']) && !empty($_POST['type'])){
 
-?>
-<table>
-    <tr>
-        <th>No of in</th>
-        <th>Total Price</th>
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-        
-            /*echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";
+                		$supplier = $_POST['supplier'];
+                		$type = $_POST['type'];
 
-            echo "<td>";
-            echo $row['type'];
-            echo "</td>";
-*/
-            echo "<td>";
-            echo $row['count(id.id)'];
-            echo "</td>";
-            
-            echo "<td>";
-            echo $row['sum(type.price)'];
-            echo "</td>";
+                		$sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' AND supplier='$supplier' GROUP BY supplier";
+                    	$query=(mysqli_query($conn,$sql));
+                    	?>
+                    	<table>
+    					<tr>
+				        <th>No of in</th>
+				        <th>Total Price</th>
+    					</tr>
+						<?php
+						    while ($row = mysqli_fetch_assoc($query)){
+						         echo "<tr>";
+						        
+						            /*echo "<td>";
+						            echo $row['supplier'];
+						            echo "</td>";
 
-         echo "</tr>";}
-?>
-</table>
-<?php
-}
-?>
+						            echo "<td>";
+						            echo $row['type'];
+						            echo "</td>";
+						*/
+						            echo "<td>";
+						            echo $row['count(id.id)'];
+						            echo "</td>";
+						            
+						            echo "<td>";
+						            echo $row['sum(type.price)'];
+						            echo "</td>";
 
-<?php
-                require "dbcon/dbcon.php";
-                $error=FALSE;
-                $frmerr = $toerr = $suppliererr= "";
-                if (isset($_POST['supplier'])) {
+						         echo "</tr>";}
+						?>
+						</table>
+						<?php
+						}
+
+					
                      
-                     if(empty($_POST['supplier'])){ 
-                                $suppliererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $supplier = $_POST['supplier'];
+                     if(empty($_POST['supplier']) && !empty($_POST['type'])){ 
+                     	
+                     			$type = $_POST['type'];
+
+                               $sql = "SELECT supplier,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' GROUP BY supplier ";
+                    			$query=(mysqli_query($conn,$sql));
+                    			?>
+
+                    			<table>
+							    <tr>
+							        <th>Supplier</th>
+							        <th>No of in</th>
+							        <th>Total Price</th>
+							        
+							    </tr>
+							<?php
+							    while ($row = mysqli_fetch_assoc($query)){
+							         echo "<tr>";
+							        
+							            /*echo "<td>";
+							            echo $row['supplier'];
+							            echo "</td>";
+							*/
+							            echo "<td>";
+							            echo $row['supplier'];
+							            echo "</td>";
+
+							            echo "<td>";
+							            echo $row['count(id.id)'];
+							            echo "</td>";
+
+							            echo "<td>";
+							            echo $row['sum(type.price)'];
+							            echo "</td>";
+							            
+							         echo "</tr>";}
+							?>
+							</table>
+
+							<?php
+                            }
+
+                     if(empty($_POST['type']) && !empty($_POST['supplier'])){ 
+
+                     			$supplier = $_POST['supplier'];
+                                 $sql = "SELECT type,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";
+                                 $query=(mysqli_query($conn,$sql));
+                                 ?>
+                                 <table>
+							    <tr>
+							        <th>type</th>
+							        <th>No of in</th>
+							        <th>Total Price</th>
+							        
+							    </tr>
+							<?php
+							    while ($row = mysqli_fetch_assoc($query)){
+							         echo "<tr>";
+							        
+							            /*echo "<td>";
+							            echo $row['supplier'];
+							            echo "</td>";
+							*/
+							            echo "<td>";
+							            echo $row['type'];
+							            echo "</td>";
+
+							            echo "<td>";
+							            echo $row['count(id.id)'];
+							            echo "</td>";
+
+							            echo "<td>";
+							            echo $row['sum(type.price)'];
+							            echo "</td>";
+							            
+							         echo "</tr>";}
+							?>
+							</table>
+					<?php
+                    	
                             }
                      
-                     if(empty($_POST['frm'])){ 
-                                $frmerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $frm = $_POST['frm'];
-                            }
-                     if(empty($_POST['to'])){ 
-                                $toerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $to = $_POST['to'];
-                            }
 
-                    $sql = "SELECT type,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";
-                    $query=(mysqli_query($conn,$sql));
+                    }
 
-?>
-<table>
-    <tr>
-        <th>type</th>
-        <th>No of in</th>
-        <th>Total Price</th>
-        
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-        
-            /*echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";
-*/
-            echo "<td>";
-            echo $row['type'];
-            echo "</td>";
+					?>
 
-            echo "<td>";
-            echo $row['count(id.id)'];
-            echo "</td>";
 
-            echo "<td>";
-            echo $row['sum(type.price)'];
-            echo "</td>";
-            
-         echo "</tr>";}
-?>
-</table>
-<?php
-}
-?>
 
-<?php
-                require "dbcon/dbcon.php";
-                $error=FALSE;
-                $frmerr = $toerr = $typeerr= "";
-                if (isset($_POST['type'])) {
-                     
-                     if(empty($_POST['type'])){ 
-                                $typeerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $type = $_POST['type'];
-                            }
-                     
-                     if(empty($_POST['frm'])){ 
-                                $frmerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $frm = $_POST['frm'];
-                            }
-                     if(empty($_POST['to'])){ 
-                                $toerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $to = $_POST['to'];
-                            }
 
-                    $sql = "SELECT supplier,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' GROUP BY supplier ";
-                    $query=(mysqli_query($conn,$sql));
 
-?>
-<table>
-    <tr>
-        <th>Supplier</th>
-        <th>No of in</th>
-        <th>Total Price</th>
-        
-    </tr>
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-        
-            /*echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";
-*/
-            echo "<td>";
-            echo $row['supplier'];
-            echo "</td>";
 
-            echo "<td>";
-            echo $row['count(id.id)'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['sum(type.price)'];
-            echo "</td>";
-            
-         echo "</tr>";}
-?>
-</table>
-<?php
-}
-?>
-<br>
         <div id="type">
                 <form method="post" action="report4all.php">
                 <table id="tb9">
@@ -278,23 +235,18 @@ td{
                     <td><input type="text" name="to" placeholder="To"></td>
                     </tr> 
                     <tr>
-                    <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
+                    <td><label for="supplier">Supplier</label></td>
                     <td><input type="text" name="supplier" placeholder="Supplier"></td>
                     </tr> 
                     <tr>
-                    <td><label for="type">Type</label><span class="error"><?php echo $typeerr;?></span></td>
+                    <td><label for="type">Type</label></td>
                     <td><input type="text" name="type" placeholder="Type"></td>
                     </tr> 
                     <tr>
                         <td colspan="2" align="center">
                         <input type="submit" value="ALL" name="all">
                     </td>
-                        <td colspan="2" align="center">
-                        <input type="submit" value="Supplier" name="supplier">
-                    </td>
-                        <td colspan="2" align="center">
-                        <input type="submit" value="Type" name="type">
-                    </td>
+                       
                     </tr>
 </table>
 </form>
@@ -303,4 +255,3 @@ td{
 </div>
 </body>
 </html>
-
