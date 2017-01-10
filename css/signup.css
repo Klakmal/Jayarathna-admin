@@ -106,3 +106,7 @@ input.year{
 #repassword:-moz-placeholder { /* Firefox 18- */
   color: #ff0000;
 }
+
+#correctname,#nic_err,#length_error,#notmatch,#check4n,#dateerror,#gnderr{
+	color: red;
+}

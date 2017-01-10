@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style type="text/css">
+        #correctname,#nic_status,#length_error,#notmatch,#check4n,#dateerror,#gnderr,#nic_status,#email_status{
+            color: red;
+            font-size: 14px;
+        }
+    </style>
     <script>
         $( function() {
         $( "#datepicker" ).datepicker();
@@ -27,19 +34,33 @@
 		     	return false;
 		    }  
         }
-        function nicval(){
+        function checknic(){
             var nic = document.getElementById("nic").value;
             var val = /^[0-9]{9}[vVxX]$/;
-            if (nic != ""){
+            if (nic){
                 if (nic.match(val)) {
-                    document.getElementById("nic_err").innerHTML = "";
-                    return true;
+                    $.ajax({
+                          type: 'post',
+                          url: 'checkNIC.php',
+                          data: {
+                          user_nic:nic
+                          },
+                          success: function (response) {
+                           $( '#nic_status' ).html(response);
+                               if(response=="OK")   
+                               {
+                                    return response;    
+                               }
+                               else
+                               {
+                                    return response;   
+                               }
+                          }
+                    });
                 }else{
-                    document.getElementById("nic_err").innerHTML = "Invaild NIC";
+                    document.getElementById("nic_status").innerHTML = "Invaild NIC";
                     return false;
                 }
-            }else{
-                document.getElementById("nic_err").innerHTML = "";
             }
         }
         function mypassword(){
@@ -48,9 +69,9 @@
         	if (x==0) {
         		document.getElementById("length_error").innerHTML = "";
         	}else if (x<8) {
-        		document.getElementById("length_error").innerHTML = "too short";
+        		document.getElementById("length_error").innerHTML = "Too Short";
         	}else{
-        		document.getElementById("length_error").innerHTML = "perfect";
+        		document.getElementById("length_error").innerHTML = "";
         	}
         }
 
@@ -59,10 +80,10 @@
         	var repass = document.getElementById("repassword");
             if (pass.value != "" && repass.value != ""){
                 if (pass.value == repass.value) {
-                    document.getElementById("notmatch").innerHTML = "password matched";
+                    document.getElementById("notmatch").innerHTML = "Password Matched";
                     return true;
                 }else{
-                    document.getElementById("notmatch").innerHTML = "password not match";
+                    document.getElementById("notmatch").innerHTML = "Password not Match";
                     return false;
                 }
             }else{
@@ -78,11 +99,11 @@
             var phoneno = /^[0][0-9]{9}$/;
             if (connumber != "") {
                 if(connumber.match(phoneno)) {
-                	document.getElementById("check4n").innerHTML = " ok";
+                	document.getElementById("check4n").innerHTML = "";
                     return true;
                 }
                 else {
-                    document.getElementById("check4n").innerHTML = " error";
+                    document.getElementById("check4n").innerHTML = "Invaild Phone Number";
                     return false;
                 }
             }else{
@@ -91,7 +112,7 @@
         }
 
         function finalresult(){
-            document.getElementById("nic_err").innerHTML = "";
+            document.getElementById("nic_status").innerHTML = "";
             document.getElementById("dateerror").innerHTML = "";
             document.getElementById("gnderr").innerHTML = "";
         	var nicno = document.getElementById("nic").value;
@@ -118,12 +139,12 @@
 			}
 
 			if ( mof == gender && res == res1){
-				document.getElementById("nic_err").innerHTML = "ok";
+				document.getElementById("nic_status").innerHTML = "ok";
 				document.getElementById("dateerror").innerHTML = "ok";
 				document.getElementById("gnderr").innerHTML = "ok";
 				return true;
 			}else {
-				document.getElementById("nic_err").innerHTML = "Invaild";
+				document.getElementById("nic_status").innerHTML = "Invaild";
 				document.getElementById("dateerror").innerHTML = "Deos not match";
 				document.getElementById("gnderr").innerHTML = "Deos not match";
 				return false;
@@ -152,28 +173,28 @@
             }
             
             if (0 < mfnum && mfnum < 367) {
-                document.getElementById("nic_err").innerHTML = "";
+                document.getElementById("nic_status").innerHTML = "";
                 mof = "male";
             }else if (500 < mfnum && mfnum < 867) {
-                document.getElementById("nic_err").innerHTML = "";
+                document.getElementById("nic_status").innerHTML = "";
                 mof = "female";
                 mfnum = mfnum - 500;
             }else {
-                document.getElementById("nic_err").innerHTML = "Invalid NIC";
+                document.getElementById("nic_status").innerHTML = "Invalid NIC";
                 return false;
             }
             if (mof != gender){
-                document.getElementById("dateerror").innerHTML = "Gender does not match";
+                document.getElementById("dateerror").innerHTML = "Gender does not Match";
                 return false;
             }
             if (mof == gender && bday_year == nicyear && countdays(year,month,day,mfnum)) {
                 document.getElementById("gnderr").innerHTML = "OK";
                 document.getElementById("dateerror").innerHTML = "OK";
-                document.getElementById("nic_err").innerHTML = "OK";
+                document.getElementById("nic_status").innerHTML = "OK";
             }else{
-                document.getElementById("gnderr").innerHTML = "Gender does not match";
-                document.getElementById("dateerror").innerHTML = "date does not match";
-                document.getElementById("nic_err").innerHTML = "Invalid NIC";
+                document.getElementById("gnderr").innerHTML = "Gender does not Match";
+                document.getElementById("dateerror").innerHTML = "Date does not Match";
+                document.getElementById("nic_status").innerHTML = "Invalid NIC";
                 return false;
             }
         }
@@ -186,7 +207,7 @@
                 }
                 if (i == 3) {
                     if (year%4 == 0){
-                        count = count + 29;
+                        count = count + 29-1;
                     }else{
                         count = count + 28;
                     } 
@@ -262,7 +283,7 @@
                         if (yy%4==0){
                             if (0 < mm && mm < 13) {
                                 if (0 < dd && dd < (ListofDays1[mm-1]+1) ) {
-                                    document.getElementById("dateerror").innerHTML = "ok";
+                                    document.getElementById("dateerror").innerHTML = "";
                                     return true;
                                 }else{
                                     document.getElementById("dateerror").innerHTML = "Day is not match";
@@ -274,7 +295,7 @@
                         }else {
                             if (0 < mm && mm < 13) {
                                 if (0 < dd && dd < (ListofDays[mm-1]+1) ) {
-                                    document.getElementById("dateerror").innerHTML = "ok";
+                                    document.getElementById("dateerror").innerHTML = "OK";
                                     return true;
                                 }else{
                                     document.getElementById("dateerror").innerHTML = "Day is not match";
@@ -293,6 +314,36 @@
                       document.getElementById("dateerror").innerHTML = "Invalid Date input";
                       return false;  
                   }  
+        }
+
+        function checkemail()
+        {
+             var email=document.getElementById( "email" ).value;
+             if(email)
+             {
+                  $.ajax({
+                      type: 'post',
+                      url: 'checkEmail.php',
+                      data: {
+                      user_email:email
+                    },
+                  success: function (data) {
+                       $( '#email_status' ).html(data);
+                       if(data=="OK")   
+                       {
+                            return data;    
+                       }
+                       else
+                       {
+                            return data;   
+                       }
+                      }
+                  });
+             }
+             else
+             {
+                $( '#email_status' ).html("Enter Email Address");
+             }
         }
     </script>
 </head>
@@ -501,11 +552,11 @@
                 
                     <td><label for="nic" >NIC</label><span class="error"><?php echo $nicerr;?></span></td>
                     
-                    <td><input type="text" name="nic" id="nic" maxlength="10" minlength="10" onblur="nicval()" required></td>
+                    <td><input type="text" name="nic" id="nic" maxlength="10" minlength="10" onblur="checknic()" required></td>
             
             </tr>
             <tr>
-                <td colspan="2"><p id = ""><span id="nic_err"></span></p></td>
+                <td colspan="2"><p id = ""><span id="nic_status"></span></p></td>
             </tr>
              <tr>
                 
@@ -550,10 +601,10 @@
                 
                  <td><label for="email">Email</label><span class="error"><?php echo $emailerr;?></span></td>
                     
-                   <td><input type="email" name="email" id="email" required></td>
+                   <td><input type="email" name="email" id="email" onblur="checkemail()" required></td>
             </tr>
             <tr>
-                <td colspan="2"><p id = ""></p></td>
+                <td colspan="2"><p id = ""><span id="email_status"></span></p></td>
             </tr>
             <tr>
                 <td><label>Gender</label><span class="error"><?php echo $gendererr;?></span></td>
