@@ -54,7 +54,7 @@
                 }
                 
                 if ($error==FALSE){
-                $sql = "INSERT INTO `feedback`(`yourname`, `fdback`, `status`) VALUES ('$_POST[yourname]','$_POST[fdback]','$_POST[status]')";
+                $sql = "INSERT INTO `feedback`(`yourname`, `fdback`, `status`,`flag`) VALUES ('$_POST[yourname]','$_POST[fdback]','$_POST[status]',0)";
 
                 if(mysqli_query($conn,$sql)){
                     echo '<div id="overlay"></div>';
