@@ -41,7 +41,7 @@ input[name=diladd]:hover,[name=mobilenum],[name=cusname]:hover,[type=visnic]:hov
 
 
 input[name=dildate],[type=visnic]{
-	width: 50px;
+	width: 150px;
 	height: 25px;
 	padding: 5px;
 	margin: 5px 0px 5px 5px;
@@ -50,7 +50,7 @@ input[name=dildate],[type=visnic]{
 
 }
 input[name=dildate]:hover,[type=visnic]:hover{
-	width: 50px;
+	width: 150px;
 	height: 25px;
 	padding: 5px;
 	margin: 5px 0px 5px 5px;
