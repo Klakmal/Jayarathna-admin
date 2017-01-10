@@ -191,18 +191,28 @@ input[type=text]:hover,[type=password]:hover{
                             }else{
                                 $email = $_POST['email'];
                             }                    
-                      
-                                $platinum = $_POST['platinum'];
-                            
-                      
-                                $gold = $_POST['gold'];
-                            
-                      
-                                $silver = $_POST['silver'];
-                            
-                      
-                                $bronze = $_POST['bronze'];
-                            
+                      if($_POST['platinum']){
+                        $platinum = $_POST['platinum'];
+                    }else{
+                        $platinum = "off";
+                    }
+                               
+                      if($_POST['gold']){
+                        $gold = $_POST['gold'];
+                    }else{
+                        $gold = "off";
+                    }
+                        if($_POST['silver']){
+                        $silver = $_POST['silver'];
+                    }else{
+                        $silver = "off";
+                    }
+                        if($_POST['bronze']){
+                        $bronze = $_POST['bronze'];
+                    }else{
+                        $bronze = "off";
+                    }
+                                
                     
                     $sql = "INSERT INTO supplier (supplierno, supplier, address, contactno, email, platinum, gold, silver, bronze)
                 VALUES ('".$supplierno."','".$supplier."','".$address."','".$contactno."','".$email."','".$platinum."','".$gold."','".$silver."','".$bronze."')";

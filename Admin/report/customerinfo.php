@@ -53,9 +53,10 @@ td{
 
   <a href="../report/report1.php" class="navi">&nbsp;&nbsp;REPORT1</a>
   <a href="../report/report2.php" class="navi">&nbsp;&nbsp;REPORT2</a>
-  <a href="../report/report 3.php" class="navi">&nbsp;&nbsp;REPORT3</a>
-  <a href="../report/report4.php" class="navi">&nbsp;&nbsp;REPORT4</a>
-  <a href="../report/report5.php" class="navi">&nbsp;&nbsp;REPORT5</a>
+  <a href="../report/supplierpayment.php" class="navi">&nbsp;&nbsp;Supplier Payment</a>
+  <a href="../report/suppliertype.php" class="navi">&nbsp;&nbsp;Supplier/Type Details</a>
+  <a href="../report/packages.php" class="navi">&nbsp;&nbsp;Packages</a>
+  <a href="../report/customerinfo.php" class="navi">&nbsp;&nbsp;Customer Information</a>
 </nav>
 
 <div class="menu2" align="right" style="margin-bottom: 100px;">

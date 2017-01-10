@@ -54,9 +54,10 @@ td{
 
   <a href="../report/report1.php" class="navi">&nbsp;&nbsp;REPORT1</a>
   <a href="../report/report2.php" class="navi">&nbsp;&nbsp;REPORT2</a>
-  <a href="../report/report 3.php" class="navi">&nbsp;&nbsp;REPORT3</a>
-  <a href="../report/report4.php" class="navi">&nbsp;&nbsp;REPORT4</a>
-  <a href="../report/report5.php" class="navi">&nbsp;&nbsp;REPORT5</a>
+  <a href="../report/supplierpayment.php" class="navi">&nbsp;&nbsp;Supplier Payment</a>
+  <a href="../report/suppliertype.php" class="navi">&nbsp;&nbsp;Supplier/Type Details</a>
+  <a href="../report/packages.php" class="navi">&nbsp;&nbsp;Packages</a>
+  <a href="../report/customerinfo.php" class="navi">&nbsp;&nbsp;Customer Information</a>
 </nav>
 
 <div class="menu2" align="right" style="margin-bottom: 100px;">
@@ -71,7 +72,7 @@ td{
                 require "dbcon/dbcon.php";
                 $error=FALSE;
                 $frmerr = $toerr = $suppliererr=  $typeerr = "";
-                if (isset($_POST['insert'])) {
+                if (isset($_POST['all'])) {
                      
                      if(empty($_POST['supplier'])){ 
                                 $suppliererr = "</br>* ";
@@ -133,9 +134,137 @@ td{
 <?php
 }
 ?>
+
+<?php
+                require "dbcon/dbcon.php";
+                $error=FALSE;
+                $frmerr = $toerr = $suppliererr= "";
+                if (isset($_POST['supplier'])) {
+                     
+                     if(empty($_POST['supplier'])){ 
+                                $suppliererr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $supplier = $_POST['supplier'];
+                            }
+                     
+                     if(empty($_POST['frm'])){ 
+                                $frmerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $frm = $_POST['frm'];
+                            }
+                     if(empty($_POST['to'])){ 
+                                $toerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $to = $_POST['to'];
+                            }
+
+                    $sql = "SELECT type,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";
+                    $query=(mysqli_query($conn,$sql));
+
+?>
+<table>
+    <tr>
+        <th>type</th>
+        <th>No of in</th>
+        <th>Total Price</th>
+        
+    </tr>
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr>";
+        
+            /*echo "<td>";
+            echo $row['supplier'];
+            echo "</td>";
+*/
+            echo "<td>";
+            echo $row['type'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['count(id.id)'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['sum(type.price)'];
+            echo "</td>";
+            
+         echo "</tr>";}
+?>
+</table>
+<?php
+}
+?>
+
+<?php
+                require "dbcon/dbcon.php";
+                $error=FALSE;
+                $frmerr = $toerr = $typeerr= "";
+                if (isset($_POST['type'])) {
+                     
+                     if(empty($_POST['type'])){ 
+                                $typeerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $type = $_POST['type'];
+                            }
+                     
+                     if(empty($_POST['frm'])){ 
+                                $frmerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $frm = $_POST['frm'];
+                            }
+                     if(empty($_POST['to'])){ 
+                                $toerr = "</br>* ";
+                                $error = TRUE;
+                            }else{
+                                $to = $_POST['to'];
+                            }
+
+                    $sql = "SELECT supplier,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' GROUP BY supplier ";
+                    $query=(mysqli_query($conn,$sql));
+
+?>
+<table>
+    <tr>
+        <th>Supplier</th>
+        <th>No of in</th>
+        <th>Total Price</th>
+        
+    </tr>
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr>";
+        
+            /*echo "<td>";
+            echo $row['supplier'];
+            echo "</td>";
+*/
+            echo "<td>";
+            echo $row['supplier'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['count(id.id)'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['sum(type.price)'];
+            echo "</td>";
+            
+         echo "</tr>";}
+?>
+</table>
+<?php
+}
+?>
 <br>
         <div id="type">
-                <form method="post" action="report4.php">
+                <form method="post" action="report4all.php">
                 <table id="tb9">
                     <tr>
                     <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Suppliers  Details</b></th> 
@@ -158,7 +287,13 @@ td{
                     </tr> 
                     <tr>
                         <td colspan="2" align="center">
-                        <input type="submit" value="SEARCH" name="insert">
+                        <input type="submit" value="ALL" name="all">
+                    </td>
+                        <td colspan="2" align="center">
+                        <input type="submit" value="Supplier" name="supplier">
+                    </td>
+                        <td colspan="2" align="center">
+                        <input type="submit" value="Type" name="type">
                     </td>
                     </tr>
 </table>
