@@ -20,12 +20,11 @@
     </div>
   </div>
   <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="../report/id.php" class="navi">&nbsp;&nbsp;ID</a>
-  <a href="../report/moq.php" class="navi">&nbsp;&nbsp;TYPE MOQ</a>
+  <a href="updateprices.php" class="navi">&nbsp;&nbsp;UPDATE PRICES</a>
   <a href="../report/payment.php" class="navi">&nbsp;&nbsp;PAYMENT</a>
   <a href="../report/supplier.php" class="navi">&nbsp;&nbsp;SUPPLIER</a>
   <a href="../report/type.php" class="navi">&nbsp;&nbsp;COFFIN TYPES</a>
-  <a href="report.php" class="navi">&nbsp;&nbsp;REPORT</a>
+  <a href="../report/report.php" class="navi">&nbsp;&nbsp;REPORT</a>
 </nav>
 
 <div class="menu2" align="right">

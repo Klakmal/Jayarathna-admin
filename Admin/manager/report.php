@@ -19,10 +19,8 @@
     <p class=""><h3>STOCK MANAGMENT</h3></p>
     </div>
   </div>
-  <a href="../manager/indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
 
-  <a href="../report/report1.php" class="navi">&nbsp;&nbsp;REPORT1</a>
-  <a href="../report/report2.php" class="navi">&nbsp;&nbsp;REPORT2</a>
   <a href="../report/supplierpayment.php" class="navi">&nbsp;&nbsp;Supplier Payment</a>
   <a href="../report/suppliertype.php" class="navi">&nbsp;&nbsp;Supplier/Type Details</a>
   <a href="../report/packages.php" class="navi">&nbsp;&nbsp;Packages</a>
