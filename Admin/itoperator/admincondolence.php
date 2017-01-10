@@ -19,7 +19,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<div class="navidiv">
 	<?php  
 			$num=$dname=$vn=$vc=$rn=$mg="";
-            require "dbcon/dbcon.php";
+            require "../dbcon/dbcon.php";
             session_start();
     		$sql = "SELECT * FROM visitors";
     		$query=(mysqli_query($conn,$sql)); 
@@ -30,7 +30,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     		<li class="navili">
     			<button class="but"  onclick="location.href='admincondolence.php?no=<?php echo $row['msg_no'] ?>'">
     			<?php echo $row['msg_no'] ?>
-    			<?php echo $row['deadname'] ?>
+    			<?php echo $row['deadPersonID'] ?>
     			</button>
     		</li>
                 
@@ -51,8 +51,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						/*	echo "id: ".$row["dealer_id"]. "Name: ".$row["dealer_name"]. "NIC: ".$row["NIC"]."<br/>";*/
 						$num=$row["msg_no"];
 						$_SESSION['msg_no']=$num;
-						$dname=$row["deadname"];
-						$_SESSION['deadname']=$dname;
+						$dname=$row["deadPersonID"];
+						$_SESSION['deadPersonID']=$dname;
 						$vn=$row["visname"];
 						$_SESSION['visname']=$vn;
 						$vc=$row["visnic"];
@@ -71,15 +71,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	    echo '<table class="Condtb">';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'ID :';
+	    		echo 'deadPersonID :';
 	    		echo '</td>';
 	    		echo '<td>';
-	    		echo $num;
+	    		echo $dname;
 	    		echo '</td>';
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Dead Person Name :';
+	    		echo 'Visiter Name :';
 	    		echo '</td>';
 	    		echo '<td>';
 	    		echo $vn;
@@ -87,7 +87,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Visitor Name :';
+	    		echo 'Visitor NIC :';
 	    		echo '</td>';
 	    		echo '<td>';
 	    		echo $vc;
@@ -122,12 +122,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     ?>
 
     <?php
+                    if (isset($_SESSION['msg_no'])){
     					$n = $_SESSION['msg_no'];
-						$dn=$_SESSION['deadname'];
+						$dn=$_SESSION['deadPersonID'];
 						$vnm=$_SESSION['visname'];
 						$vnc=$_SESSION['visnic'];
 						$ren=$_SESSION['relation'];
 						$mge=$_SESSION['message'];
+                    }
     if(isset($_GET['reject'])){
         $reject = $_GET['reject'];
         $sql= "delete from visitors where msg_no = $reject";
@@ -141,9 +143,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     if(isset($_GET['accept'])){
         $accept = $_GET['accept'];
     //    $sql= "INSERT INTO `acceptvisitor`(`msg_no`) VALUES ($_GET[accept])";
-        $sql = "INSERT INTO acceptvisitor(msg_no,deadname,visname,visnic,relation,message) VALUES ($n,'$dn','$vnm','$vnc','$ren','$mge')";
+        $sql = "INSERT INTO acceptvisitor(msg_no,deadPersonID,visname,visnic,relation,message) VALUES ($n,'$dn','$vnm','$vnc','$ren','$mge')";
         mysqli_query($conn,$sql);
-        $sql= "delete from visitors where msg_no = $accept";
+        $sql= "delete from visitors where msg_no = $accept";    
     //    $sql = "INSERT INTO visitors (deadname,visname,visnic,relation,message) VALUES ('$dn','$vnm','$vnc','$ren','$mge')";
         mysqli_query($conn,$sql);
         echo "<script>alert('Accept Condolence message'); window.location.href='admincondolence.php'; </script>";
