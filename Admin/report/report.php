@@ -16,13 +16,17 @@
     <div class="navi_pro">
     <img class="propic" src="../img_avatar_g2.jpg"><br>
     <h4 class=""><b>Kasun Lakmal</b></h4>
-    <p class="">Jayarathna Funrels</p>
+    <p class=""><h3>STOCK MANAGMENT</h3></p>
     </div>
   </div>
-  <a href="stockmanagment.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
-  <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES <span class="noti">2</span></a>
-  <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
-  <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
+  <a href="../manager/indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+
+  <a href="../report/report1.php" class="navi">&nbsp;&nbsp;REPORT1</a>
+  <a href="../report/report2.php" class="navi">&nbsp;&nbsp;REPORT2</a>
+  <a href="../report/supplierpayment.php" class="navi">&nbsp;&nbsp;Supplier Payment</a>
+  <a href="../report/suppliertype.php" class="navi">&nbsp;&nbsp;Supplier/Type Details</a>
+  <a href="../report/packages.php" class="navi">&nbsp;&nbsp;Packages</a>
+  <a href="../report/customerinfo.php" class="navi">&nbsp;&nbsp;Customer Information</a>
 </nav>
 
 <div class="menu2" align="right">
