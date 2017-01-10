@@ -10,7 +10,12 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </style>
 </head>
 <body>
-
+<?php  
+    require "../dbcon/dbcon.php";
+    $sqlflag = "update feedback set flag = 1";
+    $queryflag=(mysqli_query($conn,$sqlflag));
+    
+?>
 <nav class="navi_menu" id="mySidenav"><br>
   <div class="container">
     <div class="navi_pro">

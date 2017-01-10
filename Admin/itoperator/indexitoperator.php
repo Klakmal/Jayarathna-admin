@@ -31,7 +31,17 @@
       </span>
   </a>
   <a href="webcastingadmin.php" class="navi"><img src="../img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
-  <a href="feedbackitoperator.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK <span class="noti">12</span></a>
+  <a href="feedbackitoperator.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK 
+      <span class="noti">
+          <?php
+              require "../dbcon/dbcon.php";
+              $query = "SELECT COUNT(*) FROM feedback WHERE flag = 0";
+              $result = mysqli_query($conn,$query);
+              $rows = mysqli_fetch_row($result);
+              echo $rows[0];
+          ?>
+      </span>
+    </a>
   <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
 </nav>
 
