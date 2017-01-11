@@ -197,7 +197,8 @@ input[name=dildate]:hover,[type=visnic]:hover{
                 $sql = "INSERT INTO `reservations`(`cusname`, `diladd`, `dildate`, `diltime`, `mobilenum`,`packname`,`Floral_tributes`,`Remembrance_booklet`,`Chairs_and_tents`,`Obituary_Notices`,`Crematorium_booking`,`Monumental_plaques`,`Funeral_pyres`,`Web_casting`,`Condolence_messeges`) VALUES ('$_POST[cusname]','$_POST[diladd]','$dildate','$diltime','$_POST[mobilenum]','$_POST[packname]','$_POST[service1]','$_POST[service2]','$_POST[service3]','$_POST[service4]','$_POST[service5]','$_POST[service6]','$_POST[service7]','$_POST[service8]','$_POST[service9]')";
 
                 if(mysqli_query($conn,$sql)){
-                    die();
+                    echo "<script type='text/javascript'>window.location.href = 'payhere.php';</script>";
+                    
                 } else{echo "error";}
                  
                 }
@@ -810,7 +811,7 @@ input[name=dildate]:hover,[type=visnic]:hover{
 
                           <!-- Specify details about the item that buyers will purchase. -->
                           <input type="hidden" name="item_name" value="Package-fee">
-                          <input type="hidden" name="amount" value=>
+                          <input type="hidden" name="amount" value=<total>
                           <input type="hidden" name="currency_code" value="USD">
 
                           <!-- Display the payment button. -->

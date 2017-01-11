@@ -73,7 +73,7 @@ require "dbcon/dbcon.php";
     </div>
   </div>
   <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="../reportstockkeeper/id.php" class="navi">&nbsp;&nbsp;Coffine ID Registration</a>
+  <a href="../reportstockkeeper/id.php" class="navi">&nbsp;&nbsp;Coffin ID Registration</a>
   <a href="../reportstockkeeper/moq.php" class="navi">&nbsp;&nbsp;Add/Change MOQ</a>
 
   <a href="report1.php" class="navi">&nbsp;&nbsp;Stock Details</a>

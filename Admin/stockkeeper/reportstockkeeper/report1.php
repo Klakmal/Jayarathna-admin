@@ -44,13 +44,13 @@ td{
 <nav class="navi_menu" id="mySidenav"><br>
   <div class="container">
     <div class="navi_pro">
-    <img class="propic" src="../img_avatar_g2.jpg"><br>
+    <img class="propic" src="../../img_avatar_g2.jpg"><br>
     <h4 class=""><b>Kasun Lakmal</b></h4>
     <p class=""><h3>STOCK MANAGMENT</h3></p>
     </div>
   </div>
  <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="../reportstockkeeper/id.php" class="navi">&nbsp;&nbsp;Coffine ID Registration</a>
+  <a href="../reportstockkeeper/id.php" class="navi">&nbsp;&nbsp;Coffin ID Registration</a>
   <a href="../reportstockkeeper/moq.php" class="navi">&nbsp;&nbsp;Add/Change MOQ</a>
 
   <a href="report1.php" class="navi">&nbsp;&nbsp;Stock Details</a>
