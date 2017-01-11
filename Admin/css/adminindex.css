@@ -1,51 +1,65 @@
 body{
-	background-image: url("img/fu.jpg");
+	background-color: white;
+ /*   background-image: url(../img/jayaratne_pic.JPG);
+    background-size: cover;*/
 	margin: 0;
 }
 
 .navi_menu{
-	background-color: #eaeaeb;
+	background-color: #424a5d;
 	list-style-type: none;
 	position: fixed;
 	height: 100%;
-	min-width: 22%;
+	min-width: 19%;
 }
 
 .container{
 	background-color: ;
 	width: 100%;
+    
 }
 
 .navi{
+    font-family: 'Ruda', sans-serif;
+    color: #797979;
 	display:block;
-	background-color: #dbdbdc;
+	background-color: #424a5d;
 	text-decoration: none;
-	height: 35px;
+	height: 30px;
 	padding: 5px 10px;
-	margin-top: 1px;
-	border-radius: 5px;
-	color: #1a1b1c;
+	margin-top: 2px;
+	border-radius: 20px;
+    border-bottom: 2px solid #424a5d;
+    border-right: 2px solid #424a5d;
+	font-size: 13px;
+    color: #dbe0e6;
 }
 .navi:hover{
 	display:block;
-	background-color: #ababac;
+	background-color: #fb7a4d;
 	text-decoration: none;
-	height: 35px;
+	height: 30px;
 	padding: 5px 10px;
-	margin-top: 1px;
-	border-radius: 5px;
-	color: #1a1b1c;
+	margin-top: 2px;
+	border-radius: 20px;
+    border-bottom: 2px solid white;
+    border-right: 4px solid white;
+	color: whitesmoke;
 }
 .navi:active{
 	display:block;
-	background-color: #8b8b8c;
+	background-color: #ff865c;
 	text-decoration: none;
-	height: 35px;
-	padding: 5px 20px;
-	margin-top: 1px;
-	border-radius: 5px;
-	color: #1a1b1c;
+	height: 30px;
+	padding: 5px 10px;
+	margin-top: 2px;
+	border-radius: 20px;
+    border-bottom: 2px solid white;
+    border-right: 4px solid white;
+	color: whitesmoke;
 }
+        
+        
 
 .navi_menu2{
 	background-color: ;
@@ -64,18 +78,19 @@ body{
 	padding: 18px;
 	margin: 5px;
 	border-radius: 50%;
-border: 1px solid #c7c9cc;
+    border: 1px solid #c7c9cc;
 }
 
 .propic{
-	border-radius: ;
-	width: 100px;
-	height: 100px;
-	border: 3px solid #9a9ea2;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+	border: 2px solid white;
+    margin-top: 10px;
 }
 
 .navi_pro{
-	padding: 20px;
+	padding: 10px 10px 0px 10px;
 }
 
 .container1{
@@ -93,7 +108,7 @@ border: 1px solid #c7c9cc;
 }
 
 .menu2{
-	background-color: #dbdbdc;
+	background-color: #666f86;
 	width: 100%;
 	height: 60px;
 	margin-left: 22%;
@@ -101,7 +116,7 @@ border: 1px solid #c7c9cc;
 
 }
 .menu2in{
-	background-color: #dbdbdc;
+	background-color: #666f86;
 	width: 1050px;
 	margin-right: 10px	;
 	height: 50px;
@@ -110,7 +125,6 @@ border: 1px solid #c7c9cc;
 }
 
 .image{
-	padding: 5px;
 	width: 20px;
 	height: 20px;
 }
@@ -127,16 +141,16 @@ border: 1px solid #c7c9cc;
 	-moz-box-shadow: 1px 1px 5px 1px #276873;
 	-webkit-box-shadow: 1px 1px 5px 1px #276873;
 	box-shadow: 1px 1px 5px 1px #276873;
-	background-color:#7dc2db;
+	background-color:#4c537d;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
-	border-radius:6px;
+	border-radius:4px;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:10px 10px;
+	font-family: 'Ruda', sans-serif;
+	font-size:13px;
+	padding:7px 7px;
 	text-decoration:none;
 	text-shadow:1px 2px 5px #457585;
 }
@@ -147,3 +161,33 @@ border: 1px solid #c7c9cc;
 	position:relative;
 	top:1px;
 }
+
+        .name{
+            color: white;
+        }
+        .other{
+            color: white;
+        }
+        .headline{
+            color: aliceblue;
+            font-family: 'Ruda', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .headdiv{
+            width: 100%;
+            height: auto;
+            background-color: #ff865c;
+            padding: 30px 0px; 
+        }
+        .menutitle{
+            color: whitesmoke;
+            font-family: 'Ruda', sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .menutitlediv{
+            
+            
+        }

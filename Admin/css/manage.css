@@ -18,7 +18,7 @@ body{
 	box-shadow: 1px 1px 1px gray;
 }
 
-input[type=text],[type=password]{
+input[type=text],[type=password],[type=email]{
 	width: 200px;
 	height: 30px;
 	margin: 5px;
@@ -40,7 +40,7 @@ select{
 
 
 
-input[type=submit] {
+input[type=submit],[type=reset] {
 	background-color:#599bb3;
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
@@ -56,10 +56,10 @@ input[type=submit] {
 	text-decoration:none;
 	text-shadow:2px 2px 1px #3d768a;
 }
-input[type=submit]:hover {
+input[type=submit]:hover,[type=reset]:hover {
 	background-color:#408c99;
 }
-input[type=submit]:active {
+input[type=submit]:active,[type=reset]:active {
 	position:relative;
 	top:1px;
 }
