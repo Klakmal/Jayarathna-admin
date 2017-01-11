@@ -8,6 +8,7 @@
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
         
+        
 body{
 	background-color: white;
  /*   background-image: url(../img/jayaratne_pic.JPG);
@@ -26,6 +27,7 @@ body{
 .container{
 	background-color: ;
 	width: 100%;
+    
 }
 
 .navi{
@@ -41,7 +43,7 @@ body{
     border-bottom: 2px solid #424a5d;
     border-right: 2px solid #424a5d;
 	font-size: 13px;
-    color: #aeb2b7;
+    color: #dbe0e6;
 }
 .navi:hover{
 	display:block;
@@ -49,7 +51,7 @@ body{
 	text-decoration: none;
 	height: 30px;
 	padding: 5px 10px;
-	margin-top: 1px;
+	margin-top: 2px;
 	border-radius: 20px;
     border-bottom: 2px solid white;
     border-right: 4px solid white;
@@ -61,7 +63,7 @@ body{
 	text-decoration: none;
 	height: 30px;
 	padding: 5px 10px;
-	margin-top: 1px;
+	margin-top: 2px;
 	border-radius: 20px;
     border-bottom: 2px solid white;
     border-right: 4px solid white;
@@ -87,7 +89,7 @@ body{
 	padding: 18px;
 	margin: 5px;
 	border-radius: 50%;
-border: 1px solid #c7c9cc;
+    border: 1px solid #c7c9cc;
 }
 
 .propic{
@@ -99,7 +101,7 @@ border: 1px solid #c7c9cc;
 }
 
 .navi_pro{
-	padding: 15px;
+	padding: 10px 10px 0px 10px;
 }
 
 .container1{
@@ -171,25 +173,6 @@ border: 1px solid #c7c9cc;
 	top:1px;
 }
 
-        
-        .textal{
-            padding: 5px; 
-            font-size: 13px;
-            font-family: 'Ruda', sans-serif;
-            color: #aeb2b7;
-        }
-        .textal:hover{
-            padding: 5px; 
-            font-size: 13px;
-            font-family: 'Ruda', sans-serif;
-            color: black;
-        }
-        .textal:active{
-            padding: 5px; 
-            font-size: 13px;
-            font-family: 'Ruda', sans-serif;
-            color: #aeb2b7;
-        }
         .name{
             color: white;
         }
@@ -209,26 +192,40 @@ border: 1px solid #c7c9cc;
             background-color: #ff865c;
             padding: 30px 0px; 
         }
+        .menutitle{
+            color: whitesmoke;
+            font-family: 'Ruda', sans-serif;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .menutitlediv{
+            
+            
+        }
     </style>
     </head>
     <body>
 
-<nav class="navi_menu" id="mySidenav"><br>
+<nav class="navi_menu" id="mySidenav">
   <div class="container">
     <div class="headdiv" align="center">
         <span class="headline">JAYARATNE FUNERALS</span>
     </div>
     <div class="navi_pro" align="center">
     <img class="propic" src="../img_avatar_g2.jpg"><br>
+    <p style="color:#aeb2b7;">Welcome,</p>
     <h4 class="name"><b>Kasun Lakmal</b></h4>
 <!--    <p class="other">Jayarathna Funrels</p>-->
         <hr>
     </div>
+      <div class="menutitlediv">
+          <p class="menutitle">Menu</p>
+      </div>
   </div>
-  <a href="stockmanagment.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
-  <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp;PACKAGE AND SERVICES</a>
-  <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK<span class="noti">12</span></a>
-    <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
+  <a href="stockmanagment.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; STOCK MANAGMENT</a>
+  <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
+  <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK <span class="noti">12</span></a>
+    <a href="../edit.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp; UPDATE PROFILE</a>
     <br>
 </nav>
 
