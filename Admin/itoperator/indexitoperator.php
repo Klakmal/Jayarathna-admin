@@ -30,13 +30,13 @@
     <a href="indexitoperator.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="admincondolence.php" class="navi"><img src="../img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE 
       <span class="noti">
-      <?php
-      require "../dbcon/dbcon.php";
-      $query = "SELECT COUNT(*) FROM visitors";
-      $result = mysqli_query($conn,$query);
-      $rows = mysqli_fetch_row($result);
-      echo $rows[0];
-      ?>    
+          <?php
+          require "../dbcon/dbcon.php";
+          $query = "SELECT COUNT(*) FROM visitors";
+          $result = mysqli_query($conn,$query);
+          $rows = mysqli_fetch_row($result);
+          echo $rows[0];
+          ?>    
       </span>
   </a>
   <a href="webcastingadmin.php" class="navi"><img src="../img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
