@@ -92,11 +92,9 @@ td{
                             }else{
                                 $date2 = $_POST['date2'];
                             }
-                $sql = "SELECT packname, amount, COUNT(res_id) FROM reservations WHERE reservations.date > '$date1' AND reservations.date < '$date2' GROUP BY packname";
+                $sql = "SELECT packname, COUNT(res_id) FROM reservations WHERE dildate > '$date1' AND dildate < '$date2' GROUP BY packname";
                 $query=(mysqli_query($conn,$sql));
 ?>
-
-
 
 
 
@@ -104,7 +102,7 @@ td{
     <tr>
         <th>Package</th>
         <th>No of Orders</th>
-        <th>Total Amount</th>
+        <!--<th>Total Amount</th>-->
     </tr> 
 <?php
     while ($row = mysqli_fetch_assoc($query)){
@@ -119,9 +117,9 @@ td{
             echo "</td>";
 
 
-            echo "<td>";
+           /* echo "<td>";
             echo $row['amount'];
-            echo "</td>";
+            echo "</td>";*/
 
          echo "</tr>";}
 ?>
