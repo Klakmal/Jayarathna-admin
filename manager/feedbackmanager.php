@@ -56,34 +56,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     require "../dbcon/dbcon.php";
     $sql = "SELECT * FROM feedback";
     $query=(mysqli_query($conn,$sql));
-    echo '<table class = tbl>';
 
     while ($row = mysqli_fetch_assoc($query)){
-        echo '<tr class = "row">';
-        echo '<td class = "col1">';
-
-        echo $row['yourname'];
-        echo '<br>';
-                echo '<br>';
-        echo "Feed-Back : ";
-
-        echo $row['fdback'];
+        echo "<div class='loopdiv'>";
+        echo "<span class='fname'><img src='../img/name.png' class='proimg'>".$row['yourname']."</span><hr class ='hor'>";
         
-        echo '</td>';
-        
-        
-        echo '<td class = "col2">';
-        echo "Status";
-        echo '<br>';
-        echo $row['status'];
-        
-        echo '</td>';
-        echo '</tr>';
-
+        echo "<span class='fdname'><b>Feed-Back : </b></span>";
+        echo "<span class='fdname'>".$row['fdback']."</span><br><br><hr class ='hor'>";
+        echo "<div class='st'><span class='status'>Status : ";
+        echo $row['status']."</span></div>";
+        echo "</div>";  
     }
-    echo '</table>';
-    
-    ?>
+?>
 </div>
 </div>
     </body>

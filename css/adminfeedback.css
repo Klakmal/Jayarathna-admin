@@ -6,7 +6,7 @@ body{
 .afb1{
 	background-color: ;
 	padding: 50px;
-	padding-left: 350px;
+	margin-left: 30%;
 }
 .afb2{
 	background-color: ;
@@ -48,3 +48,45 @@ td{
 	min-height: 120px;
 
 }
+
+.proimg{
+        width: 20px;
+        height: 20px;
+    }
+    .loopdiv{
+        width: 550px;
+        height: auto;
+        background-color: white;
+        padding: 3px;
+        border: 0.2px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .fdname{
+        font-family: 'Ruda', sans-serif;
+        color: #424a5d;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    .fname{
+        color: #41a3b1;
+        font-size: 13px;
+        padding-left: 20px;
+    }
+    .status{
+        color: #ff865c;
+        font-family:fantasy;
+    }
+    .hor{
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        
+    }
+    .st{
+        width: 100%;
+        height: auto;
+        text-align: right;
+        
+    }
