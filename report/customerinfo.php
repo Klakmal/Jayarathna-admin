@@ -1,3 +1,6 @@
+<?php
+    include ('../manager/sessionManager.php');
+?>
 <html>
 <head>
 <title>Coffin Report</title>

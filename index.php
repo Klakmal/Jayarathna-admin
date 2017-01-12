@@ -38,6 +38,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                         case "admin":
                             header('location:admin/indexadmin.php');
                                 break;
+                        case "stockkeeper":
+                            header('location:stockkeeper/indexstockkeeper.php');
+                                break;
                         default:
                             header('location:#');
                             

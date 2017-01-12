@@ -23,7 +23,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 	<?php  
 			$num=$dname=$vn=$vc=$rn=$mg="";
             require "../dbcon/dbcon.php";
-            session_start();
     		$sql = "SELECT * FROM visitors";
     		$query=(mysqli_query($conn,$sql)); 
     		echo '<ul class="naviul">';      
