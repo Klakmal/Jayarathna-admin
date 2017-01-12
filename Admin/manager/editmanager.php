@@ -71,7 +71,7 @@ input[type=text]:hover,[type=password]:hover{
           <p class="menutitle">Menu</p>
       </div>
   </div>
-  <a href="stockmanagment.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; STOCK MANAGMENT</a>
+  <a href="datainquiry.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; DATA INQUIRY</a>
   <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
   <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
       <span class="noti">
