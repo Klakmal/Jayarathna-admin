@@ -134,7 +134,7 @@ $dob="$year-$month-$dt";
            
             $sql = "UPDATE employee SET fname='$fname',lname='$lname', email='$email',address='$address',nic='$nic',hnumber='$hnumber', mnumber='$mnumber', password='$password',repassword='$repassword',gender='$gender', dob='$dob'WHERE employeeid='$employeeid' AND temppassword='$temppassword'";
             if(mysqli_query($conn,$sql)){
-                header('location:adminlogin.php');
+                header('location:index.php');
                 die();
             } else{echo "error";}
              
