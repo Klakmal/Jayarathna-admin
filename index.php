@@ -1,10 +1,76 @@
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="css/adminlogin.css">
+<!--    <link rel="stylesheet" type="text/css" href="css/adminlogin.css">-->
     <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+        
+body{
+    background-image: url(img/background.jpg);
+    background-size: cover;
+}
+
+#login1{
+	margin-top: 50px;
+}
+
+#login2{
+	background-color: ;
+	margin-top: 5%;
+	width: 425px;
+	height: 425px;
+	padding-top: 50px;
+	border-radius: 20px;
+	border: 1px solid white;
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(255,255,255,1);
+    box-shadow: 0px 0px 10px 1px rgba(255,255,255,1);
+}
+
+input[type=text],[type=password]{
+	width: 275px;
+	height: 30px;
+	margin: 5px;
+	border-radius: 10px;
+	background-color: #f8f8f8;
+	border:1px solid white;
+	padding-left: 5px;
+    text-align: center;
+}
+
+input[type=submit] {
+	background-color:#599bb3;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #93b5cc;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:7px 65px;
+	text-decoration:none;
+	text-shadow:2px 2px 1px #3d768a;
+}
+input[type=submit]:hover {
+	background-color:#408c99;
+}
+input[type=submit]:active {
+	position:relative;
+	top:1px;
+}
+
+label{
+	color: gray;
+}
+
+.error{
+	color: red;
+	font-size: 12px;
+}
 </style>
 </head>
 <body>
@@ -65,25 +131,28 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 			<form id="f1" action="index.php" method="post">
                 <table id="tb1">
                 <tr>
-                    <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">LOGIN</b></th> 
-                </tr>
-                    <tr><td colspan="2"><span class="error"><?php echo $error ?></span></td></tr>
-                <tr>
-                    <td><label for="employeeid">Employee ID</label></td>
-                    <td><input type="text" name="empid"  placeholder="Employee ID"></td>
+                    <th><span><img src="img/logo.png"></span><br><p>Jayaratna Funeral Directors (Pvt) Ltd.</p><br></th> 
                 </tr>
                 <tr>
-                    <td><label for="password">Password</label></td>
-                    <td><input type="password" name="pwd"  placeholder="Password"></td>
+                    <th align="left"><b>LOGIN</b></th> 
+                </tr>
+                    <tr><td><span class="error"><?php echo $error ?></span></td></tr>
+                <tr>
+               <!--     <td><label for="employeeid">Employee ID</label></td>-->
+                    <td align="center"><input type="text" name="empid"  placeholder="Employee ID"></td>
+                </tr>
+                <tr>
+              <!--      <td><label for="password">Password</label></td>     -->
+                    <td align="center"><input type="password" name="pwd"  placeholder="Password"></td>
                 
                 </tr>
-                   <tr> <td colspan="2" align="right"><input type="submit" value="Login" name="send"></td>
+                   <tr> <td align="center"><input type="submit" value="Login" name="send"><hr></td>
                 </tr>
             
             
                 </table> 
 			</form>	
-        <a href ="adminsignup.php">Create an account</a>
+        <a href ="adminsignup.php" style="text-decoration: none;">Create an account</a>
 	</div>
     </div>
     

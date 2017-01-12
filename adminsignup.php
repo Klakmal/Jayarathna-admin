@@ -1,10 +1,93 @@
 <html>
 <head>
     <title>Sign Up</title>
-    <link rel="stylesheet" type="text/css" href="css/adminsingup.css">
+<!--    <link rel="stylesheet" type="text/css" href="css/adminsingup.css">-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
     <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+body{
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-color: #5fab9f;
+}
+
+.reg_container{
+	margin-top: 30px;
+}
+
+.reg_container1{
+/*	background-color: ;
+	margin-top: 5%;
+	width: 700px;
+	height: 425px;
+	padding-top: 30px;
+	border-radius: 20px;
+	border: 1px solid white;
+	-webkit-box-shadow: 0px 0px 10px 1px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 0px 10px 1px rgba(255,255,255,1);
+    box-shadow: 0px 0px 10px 1px rgba(255,255,255,1);*/
+}
+
+input[type=text],[type=password],[type=email]{
+	width: 275px;
+	height: 30px;
+	margin: 0px 20px 10px 20px;
+	border-radius: 10px;
+	background-color: #f8f8f8;
+	border:1px solid gray;
+	padding-left: 5px;
+}
+
+input[type=radio]{
+    width: 15px;
+	height: 15px;
+	border-radius: 10px;
+	background-color: #f8f8f8;
+	border:1px solid gray;
+	padding-left: 5px;
+    margin: 0px 20px;
+}
+
+input[type=submit],[type=reset] {
+	background-color:#599bb3;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	border:1px solid #93b5cc;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:7px 35px;
+	text-decoration:none;
+	text-shadow:2px 2px 1px #3d768a;
+    margin-right: 20px;
+}
+input[type=submit]:hover {
+	background-color:#408c99;
+}
+input[type=submit]:active {
+	position:relative;
+	top:1px;
+}
+
+        label{
+            margin: auto 20px;
+        }
+.error{
+	color: red;
+	font-size: 12px;
+}
 </style>
 </head>
 <body>
@@ -115,20 +198,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                 }
             }
 
- /*           if(empty($_POST['dob'])){ 
+            if(empty($_POST['dob'])){ 
                 $doberr = "</br>* ";
                 $error = TRUE;
             }else{
                 $dob = $_POST['dob'];
             }
-            */
 
 
-
-$month=$_POST['month'];
-$dt=$_POST['dt'];
-$year=$_POST['year'];
-$dob="$year-$month-$dt";
 
              if ($error==FALSE){
            
@@ -150,91 +227,83 @@ $dob="$year-$month-$dt";
         <table id="atable2">
             <tr>
                 <td colspan="2">
-                    <h1 id="aheading" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">REGISTRATION FORM</b></h1>
+                    <h1 id="aheading" align="center"><b>REGISTRATION FORM</b></h1>
                 </td>
             
             </tr>
             <tr>
                 
-                  <td><label for="fname">First Name</label><span class="error"><?php echo $fnameerr;?></span></td>
-                    
-                <td> <input type="text" name="fname" id="fname" required></td>
-                
-            </tr>
-            <tr>
-                
-                    <td><label for="lname">Last Name</label><span class="error"><?php echo $lnameerr;?></span></td>
-                    
-                    <td><input type="text" name="lname" id="lname" required></td>
-            
-            </tr>
-             <tr>
-                
                    <td><label for="employeeid">Employee ID</label><span class="error"><?php echo $employeeiderr;?></span></td>
+                   <td><label for="temppassword">Temporary Password </label><span class="error"><?php echo $temppassworderr;?></span></td>
+                   
             
+            </tr>
+            <tr>
+                
                    <td> <input type="text" name="employeeid" id="employeeid" required></td>
-            
+                   <td><input type="password" name="temppassword" id="temppassword" required></td>
+                
             </tr>
             <tr>
                 
-                    <td><label for="nic">NIC</label><span class="error"><?php echo $nicerr;?></span></td>
-                    
-                    <td><input type="text" name="nic" id="nic" required></td>
-            
+                  <td><label for="fname">First Name</label><span class="error"><?php echo $fnameerr;?></span></td>
+                  <td><label for="lname">Last Name</label><span class="error"><?php echo $lnameerr;?></span></td>
+                
             </tr>
             <tr>
                 
-                 <td><label for="email">Email</label><span class="error"><?php echo $emailerr;?></span></td>
                     
-                   <td><input type="email" name="email" id="email" required></td>
-            </tr>
-            <tr>
-                
-                    <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
-                    
-                    <td><input type="text" name="address" id="address" required></td>
+                    <td><input type="text" name="fname" id="fname" required></td>
+                    <td><input type="text" name="lname" id="lname" required></td>
             
             </tr>
             <tr>
                 
                     <td><label for="hnumber">Home Phone No.</label><span class="error"><?php echo $hnumbererr;?></span></td>
+                    <td><label for="mnumber">Mobile Phone No.</label><span class="error"><?php echo $mnumbererr;?></span></td>
                     
-                    <td><input type="text" name="hnumber" id="hnumber" required></td>
             
             </tr>
             <tr>
                 
-                    <td><label for="mnumber">Mobile Phone No.</label><span class="error"><?php echo $mnumbererr;?></span></td>
                     
+                    <td><input type="text" name="hnumber" id="hnumber" required></td>
                     <td><input type="text" name="mnumber" id="mnumber" required></td>
             
             </tr>
             <tr>
                 
-                <td><label for="temppassword">Temporary Password </label><span class="error"><?php echo $temppassworderr;?></span></td>
-                   
-                    <td><input type="password" name="temppassword" id="temppassword" required></td>
-            </tr>
+                    <td><label for="nic">NIC</label><span class="error"><?php echo $nicerr;?></span></td>
+                    <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
+                    
             
+            </tr>
+            <tr>
+                
+                    
+                    <td><input type="text" name="nic" id="nic" required></td>
+                    <td><input type="text" name="address" id="address" required></td>
+            
+            </tr>
              <tr>
                 
                     <td><label for="password">Password</label></td>
-                   
-                    <td><input type="password" name="password" id="password" placeholder="<?php echo $passworderr;?>" required><span class="error"><?php echo $passworderr;?></span></td>
+                    <td><label for="Password">ReEnter Password</label></td>
+                    
             </tr>
             <tr>
                 
-                    <td><label for="Password">ReEnter Password</label></td>
-                   
+                    <td><input type="password" name="password" id="password" placeholder="<?php echo $passworderr;?>" required><span class="error"><?php echo $passworderr;?></span></td>
                     <td><input type="password" name="repassword" id="repassword" placeholder="<?php echo $repassworderr;?>" required></td>
             </tr>
             <tr>
-                <td><label>Gender</label></td>
-                <td style="display: inline; color:gray;"> <input type="radio" name="gender" value="male" required>Male
-                <input type="radio" name="gender" value="female">Female
-                    
-                </td>
-             </tr>
+                
+                   <td><label for="email">Email</label><span class="error"><?php echo $emailerr;?></span></td>
+                   <td><label for="dob">DOB</label><span class="error"></span></td>
+                
+                
+            </tr>
+            
 <!--            <tr>
                 
                  <td><label for="dob">DOB</label><span class="error"><?php echo $doberr;?></span></td>
@@ -242,61 +311,19 @@ $dob="$year-$month-$dt";
                    <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd" required></td>
             </tr>-->
             <tr>
-            <td>
-                <label for="dob">DOB</label><span class="error"></span>
-            </td>
-            <td  align=left  >   
-
-                    <select name=month value=''>Select Month</option>
-                        <option value='01'>January</option>
-                        <option value='02'>February</option>
-                        <option value='03'>March</option>
-                        <option value='04'>April</option>
-                        <option value='05'>May</option>
-                        <option value='06'>June</option>
-                        <option value='07'>July</option>
-                        <option value='08'>August</option>
-                        <option value='09'>September</option>
-                        <option value='10'>October</option>
-                        <option value='11'>November</option>
-                        <option value='12'>December</option>
-                    </select>
-
-                    <select name=dt >
-                        <option value='01'>01</option>
-                        <option value='02'>02</option>
-                        <option value='03'>03</option>
-                        <option value='04'>04</option>
-                        <option value='05'>05</option>
-                        <option value='06'>06</option>
-                        <option value='07'>07</option>
-                        <option value='08'>08</option>
-                        <option value='09'>09</option>
-                        <option value='10'>10</option>
-                        <option value='11'>11</option>
-                        <option value='12'>12</option>
-                        <option value='13'>13</option>
-                        <option value='14'>14</option>
-                        <option value='15'>15</option>
-                        <option value='16'>16</option>
-                        <option value='17'>17</option>
-                        <option value='18'>18</option>
-                        <option value='19'>19</option>
-                        <option value='20'>20</option>
-                        <option value='21'>21</option>
-                        <option value='22'>22</option>
-                        <option value='23'>23</option>
-                        <option value='24'>24</option>
-                        <option value='25'>25</option>
-                        <option value='26'>26</option>
-                        <option value='27'>27</option>
-                        <option value='28'>28</option>
-                        <option value='29'>29</option>
-                        <option value='30'>30</option>
-                        <option value='31'>31</option>
-                    </select>
-
-                    <input class="year" type=text name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year">
+                    <td><input type="email" name="email" id="email" required></td>
+                    <td  align=left  ><input type=text name=dob id="datepicker" placeholder="mm/dd/yyyy"></td>
+            </tr>
+            <tr>
+                <td><label>Gender</label></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="display: inline;"> <input type="radio" name="gender" value="male" required>Male
+                <input type="radio" name="gender" value="female">Female
+                </td>
+                <td>
+                
                 </td>
             </tr>
              <tr>
