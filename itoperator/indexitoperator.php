@@ -1,3 +1,6 @@
+<?php
+    include ('sessionItoperator.php');
+?>
 <html>
     <head>
     <title>IT Operator</title>

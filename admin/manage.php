@@ -1,3 +1,6 @@
+<?php
+    include ('sessionAdmin.php');
+?>
 <html>
     <head>
     <title>Administrator</title>

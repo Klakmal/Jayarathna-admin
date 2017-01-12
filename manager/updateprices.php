@@ -1,3 +1,6 @@
+<?php
+    include ('sessionManager.php');
+?>
 <html>
 <head>
 <title>Payment</title>

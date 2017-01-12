@@ -1,3 +1,6 @@
+<?php
+    include ('sessionItoperator.php');
+?>
 <html>
 <head>
     <title>Edit profile</title>

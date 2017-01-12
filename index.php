@@ -11,7 +11,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <?php
      require "dbcon/dbcon.php";
           $error= "" ;
-        
+        session_start();
         if(isset($_POST['send'])){
             
             $empid = $_POST['empid'];
@@ -21,7 +21,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
                 $query = mysqli_query($conn,"SELECT * FROM employee WHERE employeeid='".$empid."' AND password='".$pwd."' ") or die("There is an error");
                 $res = mysqli_fetch_array($query);
                 if(!empty($res['employeeid']) && !empty($res['password'])){
-                    session_start();
+                    
                     $_SESSION['employeeid']=$empid;
                     $position = $res['position'];
                     

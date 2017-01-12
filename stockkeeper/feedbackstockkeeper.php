@@ -1,3 +1,6 @@
+<?php
+    include ('sessionStockkeeper.php');
+?>
 <html>
 <head>
 <title>feedback</title>

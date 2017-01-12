@@ -1,3 +1,6 @@
+<?php
+    include ('sessionReceptionist.php');
+?>
 <html>
 <head>
     <title>Reservation Form</title>
