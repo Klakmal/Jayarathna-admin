@@ -59,7 +59,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div id="login1" align = "center">
 	<div id="login2" align = "center">
-			<form id="f1" action="adminlogin.php" method="post">
+			<form id="f1" action="index.php" method="post">
                 <table id="tb1">
                 <tr>
                     <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">LOGIN</b></th> 
