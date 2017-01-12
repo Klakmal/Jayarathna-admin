@@ -79,7 +79,7 @@ td{
                 require "dbcon/dbcon.php";
                 $error=FALSE;
                 $frmerr = $toerr = $suppliererr=  $typeerr = "";
-                if (isset($_POST['all'])) {
+                if (isset($_POST['submit'])) {
 
                 	if(empty($_POST['frm'])){ 
                                 $frmerr = "</br>* ";
@@ -251,7 +251,7 @@ td{
                     </tr> 
                     <tr>
                         <td colspan="2" align="center">
-                        <input type="submit" value="ALL" name="all">
+                        <input type="submit" value="Submit" name="submit">
                     </td>
                        
                     </tr>
