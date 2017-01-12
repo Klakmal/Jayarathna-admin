@@ -1,19 +1,19 @@
 <?php
 require "dbcon/dbcon.php";
 
-    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type, moq WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = moq.type AND type.type = 'platinum'");
+    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = 'platinum'");
     $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
     $platinum = $result[0] ["COUNT(id.id)"];
 
-    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type, moq WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = moq.type AND type.type = 'gold'");
+    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = 'gold'");
     $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
     $gold = $result[0] ["COUNT(id.id)"];
 
-    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type, moq WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = moq.type AND type.type = 'silver'");
+    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = 'silver'");
     $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
     $silver = $result[0] ["COUNT(id.id)"];
 
-    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type, moq WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = moq.type AND type.type = 'bronze'");
+    $result = mysqli_query($conn, "SELECT COUNT(id.id) FROM id, type WHERE id.timeout > CURDATE() AND id.no = type.no AND type.type = 'bronze'");
     $result = mysqli_fetch_all($result,MYSQLI_ASSOC);
     $bronze = $result[0] ["COUNT(id.id)"];
 
