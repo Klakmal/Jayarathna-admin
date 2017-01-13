@@ -43,6 +43,25 @@ td{
     background-color: white;
 }
     </style>
+    <!--date picker jquery -->
+
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+ $(function(){
+        $("#date2").datepicker({ dateFormat: 'yy-mm-dd' });
+        $("#date1").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+            var minValue = $(this).val();
+            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+            minValue.setDate(minValue.getDate()+1);
+            $("#date2").datepicker( "option", "minDate", minValue );
+        })
+    });
+  
+  </script>
+<!--date picker jquery -->
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
@@ -131,11 +150,11 @@ td{
                     </tr>
                     <tr>
                     <td><label for="date1">From</label></td>
-                    <td><input type="text" name="date1" placeholder="From" required></td>
+                    <td><input type="text" name="date1" id="date1" placeholder="From" required></td>
                     </tr> 
                     <tr>
                     <td><label for="date2">To</label></td>
-                    <td><input type="text" name="date2" placeholder="To" required></td>
+                    <td><input type="text" name="date2" id="date2" placeholder="To" required></td>
                     </tr>
                     <tr>
                     <td colspan="2" align="center">

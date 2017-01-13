@@ -90,22 +90,15 @@ input[type=text]:hover,[type=password]:hover{
     <?php
                     
                 require "dbcon/dbcon.php";
-                     $error=FALSE;
-                        $noerr = $priceerr = "";
+                     
                  if (isset($_POST['update'])) {
                      
-                     if(empty($_POST['no'])){ 
-                                $noerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $no = $_POST['no'];
-                            }
-                     if(empty($_POST['price'])){ 
-                                $priceerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $price = $_POST['price'];
-                            }
+                            
                  
                  
                 if ($error==FALSE){
@@ -137,33 +130,21 @@ input[type=text]:hover,[type=password]:hover{
                 }
                    
                 $error=FALSE;
-                        $noerr = $priceerr =$typeerr = $suppliererr = "";
+                       
                  if (isset($_POST['insert'])) {
                      
-                     if(empty($_POST['no'])){ 
-                                $noerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $no = $_POST['no'];
-                            }
-                     if(empty($_POST['price'])){ 
-                                $priceerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $price = $_POST['price'];
-                            }
-                     if(empty($_POST['type'])){ 
-                                $typeerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $type = $_POST['type'];
-                            }
-                     if(empty($_POST['supplier'])){ 
-                                $suppliererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $supplier = $_POST['supplier'];
-                            }
+                            
                     
                     $sql = "INSERT INTO type (no,price,type,supplier)
                 VALUES ('".$no."','".$price."','".$type."','".$supplier."')";
@@ -189,20 +170,20 @@ input[type=text]:hover,[type=password]:hover{
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Types</b></th> 
                     </tr>
                     <tr>
-                    <td><label for="no">No</label><span class="error"><?php echo $noerr;?></span></td>
+                    <td><label for="no">No</label></td>
                     <td><input type="text" name="no" placeholder="No"></td>
                     </tr>    
                     <tr>
-                    <td><label for="type">Type</label><span class="error"><?php echo $typeerr;?></span></td>
+                    <td><label for="type">Type</label></td>
                     <td><input type="text" name="type" placeholder="type"></td>
                     </tr>
                     <tr>
                     <tr>
-                    <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
+                    <td><label for="supplier">Supplier</label></td>
                     <td><input type="text" name="supplier" placeholder="supplier"></td>
                     </tr>
                     <tr>
-                    <td><label for="price">Price</label><span class="error"><?php echo $priceerr;?></span></td>
+                    <td><label for="price">Price</label></td>
                     <td><input type="text" name="price" placeholder="Price"></td>
                     </tr>
                     <tr>

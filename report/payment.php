@@ -90,41 +90,24 @@ input[type=text]:hover,[type=password]:hover{
 <div class="con2">
 <?php
                 require "dbcon/dbcon.php";
-                $error=FALSE;
-                $suppliernoerr = $dateerr =$buyerr = $suppliererr = $payerr = "";
+                
                  if (isset($_POST['insert'])) {
                      
-                     if(empty($_POST['supplierno'])){ 
-                                $suppliernoerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $supplierno = $_POST['supplierno'];
-                            }
-                     if(empty($_POST['supplier'])){ 
-                                $suppliererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $supplier = $_POST['supplier'];
-                            }
-                     if(empty($_POST['date'])){ 
-                                $dateerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $date = $_POST['date'];
-                            }
-                     if(empty($_POST['buy'])){ 
-                                $buyerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $buy = $_POST['buy'];
-                            }
-                     if(empty($_POST['pay'])){ 
-                                $payerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $pay = $_POST['pay'];
-                            }
                             
+                     
+                                $supplier = $_POST['supplier'];
+                            
+                     
+                                $date = $_POST['date'];
+                            
+                     
+                                $buy = $_POST['buy'];
+                           
+                     
+                                $pay = $_POST['pay'];
+                    
 
                                 $due = $buy - $pay ;
                     
@@ -146,24 +129,24 @@ input[type=text]:hover,[type=password]:hover{
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Types</b></th> 
                     </tr>
                     <tr>
-                    <td><label for="supplierno">Supplier No</label><span class="error"><?php echo $suppliernoerr;?></span></td>
+                    <td><label for="supplierno">Supplier No</label></td>
                     <td><input type="text" name="supplierno" placeholder="SupplierNo" required></td>
                     </tr> 
                     <tr>
-                    <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
+                    <td><label for="supplier">Supplier</label></td>
                     <td><input type="text" name="supplier" placeholder="supplier" required></td>
                     </tr>   
                     <tr>
-                    <td><label for="date">Date</label><span class="error"><?php echo $dateerr;?></span></td>
+                    <td><label for="date">Date</label></td>
                     <td><input type="text" name="date" placeholder="Date" required></td>
                     </tr>
                     <tr>
                     <tr>
-                    <td><label for="buy">Buy</label><span class="error"><?php echo $buyerr;?></span></td>
+                    <td><label for="buy">Buy</label></td>
                     <td><input type="text" name="buy" placeholder="Buy"></td>
                     </tr>
                     <tr>
-                    <td><label for="pay">Pay</label><span class="error"><?php echo $payerr;?></span></td>
+                    <td><label for="pay">Pay</label></td>
                     <td><input type="text" name="pay" placeholder="Pay"></td>
                     </tr>
                     <tr>

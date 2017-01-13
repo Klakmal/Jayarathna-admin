@@ -90,41 +90,25 @@ input[type=text]:hover,[type=password]:hover{
  <?php
                     
                 require "dbcon/dbcon.php";
-                     $error=FALSE;
-                        $suppliernoerr = $suppliererr =  $contactnoerr= $addresserr = $emailerr  = "";
+                     
                  if (isset($_POST['update'])) {
                      
-                     if(empty($_POST['supplierno'])){ 
-                                $suppliernoerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $supplierno = $_POST['supplierno'];
-                            }
-                     if(empty($_POST['supplier'])){ 
-                                $suppliererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $supplier = $_POST['supplier'];
-                            }
                      
-                     if(empty($_POST['contactno'])){ 
-                                $contactnoerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                                $supplierno = $_POST['supplierno'];
+                            
+                     
+                                $supplier = $_POST['supplier'];
+                            
+                     
+                     
                                 $contactno = $_POST['contactno'];
-                            }
-                     if(empty($_POST['address'])){ 
-                                $addresserr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $address = $_POST['address'];
-                            }
-                     if(empty($_POST['email'])){ 
-                                $emailerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $email = $_POST['email'];
-                            }                     
+                                                
                      
                                 $platinum = $_POST['platinum'];
                             
@@ -167,40 +151,24 @@ input[type=text]:hover,[type=password]:hover{
                 }
                 }
                    
-                $error=FALSE;
-                        $suppliernoerr = $suppliererr=  $emailerr =$addresserr = $contactnoerr = "";
+                
                  if (isset($_POST['insert'])) {
                      
-                     if(empty($_POST['supplierno'])){ 
-                                $suppliernoerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $supplierno = $_POST['supplierno'];
-                            }
-                     if(empty($_POST['supplier'])){ 
-                                $suppliererr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $supplier = $_POST['supplier'];
-                            }
-                     if(empty($_POST['address'])){ 
-                                $addresserr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $address = $_POST['address'];
-                            }
-                     if(empty($_POST['contactno'])){ 
-                                $contactnoerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $contactno = $_POST['contactno'];
-                            }
-                     if(empty($_POST['email'])){ 
-                                $emailerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $email = $_POST['email'];
-                            }                    
+                                              
                       if($_POST['platinum']){
                         $platinum = $_POST['platinum'];
                     }else{
@@ -244,12 +212,12 @@ input[type=text]:hover,[type=password]:hover{
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Suppliers Details</b></th> 
                     </tr>
                     <tr>
-                    <td><label for="no">Supplier No</label><span class="error"><?php echo $suppliernoerr;?></span></td>
-                    <td><input type="text" name="supplierno" placeholder="Supplier No"></td>
+                    <td><label for="no">Supplier No</label></td>
+                    <td><input type="text" name="supplierno" placeholder="Supplier No" required></td>
                     </tr> 
                     <tr>
-                    <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
-                    <td><input type="text" name="supplier" placeholder="Supplier"></td>
+                    <td><label for="supplier">Supplier</label></td>
+                    <td><input type="text" name="supplier" placeholder="Supplier" required></td>
                     </tr>   
                     <tr>
                     <td><label >Type</label></td>
@@ -261,17 +229,17 @@ input[type=text]:hover,[type=password]:hover{
                     </td>
                     </tr>
                     <tr>
-                    <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
-                    <td><input type="text" name="address" placeholder="Address"></td>
+                    <td><label for="address">Address</label></td>
+                    <td><input type="text" name="address" placeholder="Address" required></td>
                     <tr>
                     <tr>
-                    <td><label for="contactno">Contactno</label><span class="error"><?php echo $contactnoerr;?></span></td>
-                    <td><input type="text" name="contactno" placeholder="Contactno"></td>
+                    <td><label for="contactno">Contactno</label></td>
+                    <td><input type="text" name="contactno" placeholder="Contactno" required></td>
                     </tr>
                     <tr>
                     <tr>
-                    <td><label for="email">E-mail</label><span class="error"><?php echo $emailerr;?></span></td>
-                    <td><input type="text" name="email" placeholder="Email"></td>
+                    <td><label for="email">E-mail</label></td>
+                    <td><input type="text" name="email" placeholder="Email" required></td>
                     </tr>
                     <tr>
                     

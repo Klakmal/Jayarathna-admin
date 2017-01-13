@@ -84,18 +84,12 @@ td{
                 $frmerr = $toerr = $suppliererr=  $typeerr = "";
                 if (isset($_POST['submit'])) {
 
-                	if(empty($_POST['frm'])){ 
-                                $frmerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                	
                                 $frm = $_POST['frm'];
-                            }
-                     if(empty($_POST['to'])){ 
-                                $toerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $to = $_POST['to'];
-                            }
+                            
 
                 	if(!empty($_POST['supplier']) && !empty($_POST['type'])){
 
