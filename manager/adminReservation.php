@@ -7,21 +7,69 @@
 	<title>Reservation Handling</title>
 	<link rel="stylesheet" type="text/css" href="../css/adminReservation.css">
 	<style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.w3-sidenav a,.w3-sidenav h4 {font-weight:bold}
+html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
+    .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
+        .unl{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #666f86;
+        }
+        .list {
+            float: left;
+        }
+        .list a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        #logout{
+            float: right;
+            margin: 17px;
+            background-color: #4c537d;
+            border-radius: 10px;
+        }
+        
+        #logout:hover{
+            float: right;
+            margin: 17px;
+            background-color: #3c537d;
+            border-radius: 10px;
+        }
+        
+        #logout:active{
+            float: right;
+            margin: 17px;
+            background-color: #2c537d;
+            border-radius: 10px;
+        }
+        
+        .himg{
+            margin: 3px;
+            padding: 3px;
+            width: 40px;
+            height: 40px;
+            background-color: #4c537d;
+            border-radius: 50%;
+        }
 </style>
 </head>
 <body>
-<div class="header">
-	<h1 style="color:white; font-size:24px; text-shadow:2px 2px 2px gray; padding-left:20px;"><b>RESERVATION FORM</b></h1>
-	</div>
-<div>
-	<div>
+    <div class="header">
+<ul class="unl">
+    <li class="list"><a href="indexmanager.php"><img class="himg" src="../img/home.png"></a></li>
+    <li class="list"><a href="indexmanager.php"><h3><b>Jayarathna Funarals</b></h3></a></li>
+    <li class="list" id="logout"><a href="../signout.php">Logout</a></li>
+</ul>
+</div>
 	<div class="navidiv">
 	<?php  
-			$rid=$cname=$dadd=$ddate=$dtime=$mobinum=$pack=$floral=$remembrance=$chairtents=$obituary=$crematorium=$monumental=$pyres="";
+			$rid=$cname=$dadd=$ddate=$dtime=$mobinum=$pack=$floral=$remembrance=$chairtents=$obituary=$crematorium=$monumental=$pyres=$total=$status="";
             require "../dbcon/dbcon.php";
-    		$sql = "SELECT * FROM reservations";
+    		$sql = "SELECT * FROM reservations WHERE flag = 0";
     		$query=(mysqli_query($conn,$sql)); 
     		echo '<ul class="naviul">';
     		echo '<li class="navili"><b>New Reservations</b></li>';     
@@ -44,7 +92,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="navidiv1">
 	<?php  
 		
-    		$sql = "SELECT * FROM paid_reservations";
+    		$sql = "SELECT * FROM reservations WHERE flag = 1";
     		$query=(mysqli_query($conn,$sql)); 
     		echo '<ul class="naviul1">';  
     		echo '<li class="navili1" ><b>Confirmed Reservations</b></li>';    
@@ -86,26 +134,26 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						$_SESSION['diltime']=$dtime;
 						$mobinum=$row["mobilenum"];
 						$_SESSION['mobilenum']=$mobinum;
-
 						$pack=$row["packname"];
 						$_SESSION['packname']=$pack;
-						$floral=$row["Floral_tributes"];
-						$_SESSION['Floral_tributes']=$floral;
-						$remembrance=$row["Remembrance_booklet"];
-						$_SESSION['Remembrance_booklet']=$remembrance;
-						$chairtents=$row["Chairs_and_tents"];
-						$_SESSION['Chairs_and_tents']=$chairtents;
-						$obituary=$row["Obituary_Notices"];
-						$_SESSION['Obituary_Notices']=$obituary;
-						$crematorium=$row["Crematorium_booking"];
-						$_SESSION['Crematorium_booking']=$crematorium;
-
-						$monumental=$row["Monumental_plaques"];
-						$_SESSION['Monumental_plaques']=$monumental;
-						$pyres=$row["Funeral_pyres"];
-						$_SESSION['Funeral_pyres']=$pyres;
-						
-
+						$floral=$row["Floral tributes"];
+						$_SESSION['Floral tributes']=$floral;
+						$remembrance=$row["Remembrance booklet"];
+						$_SESSION['Remembrance booklet']=$remembrance;
+						$chairtents=$row["Chairs and tents"];
+						$_SESSION['Chairs and tents']=$chairtents;
+						$obituary=$row["Obituary Notices"];
+						$_SESSION['Obituary Notices']=$obituary;
+						$crematorium=$row["Crematorium booking"];
+						$_SESSION['Crematorium booking']=$crematorium;
+						$monumental=$row["Monumental plaques"];
+						$_SESSION['Monumental plaques']=$monumental;
+						$pyres=$row["Funeral pyres"];
+						$_SESSION['Funeral pyres']=$pyres;
+						$total=$row['total'];
+                        $_SESSION['total']=$total;
+                        $status=$row['status'];
+                        $_SESSION['status']=$status;    
 						}
 					}else{
 						echo "Zero results";
@@ -114,12 +162,19 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     echo '<div class ="container" align = "center">';
     	echo '<br>';
     	echo '<br>';
-	    echo '<table class="Condtb">';
-		    echo '<tr>';
+        echo '<br>';
+    	echo '<br>';
+        echo '<br>';
+        echo '<br>';
+
+        echo '<div class="reshl"><h3>Reservation Form</h3></div>';
+    echo '<br>';
+	    echo '<table class="condtb">';
+            echo '<tr>';
 		    	echo '<td>';
 	    		echo 'Reservation ID :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $rid;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -127,7 +182,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Customer Name :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $cname;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -135,7 +190,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Delivery Address :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $dadd;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -143,7 +198,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Delivery Date :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $ddate;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -151,7 +206,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Delivery Time :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $dtime;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -159,7 +214,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Mobile Number :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $mobinum;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -167,7 +222,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Package :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $pack;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -175,7 +230,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Floral Tributes :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $floral;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -183,7 +238,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Remembrance booklet :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $remembrance;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -191,7 +246,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Chairs and tents :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $chairtents;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -199,7 +254,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Obituary Notices :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $obituary;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -207,7 +262,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Crematorium booking :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $crematorium;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -215,7 +270,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Monumental plaques :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $monumental;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -223,7 +278,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 		    	echo '<td>';
 	    		echo 'Funeral pyres :';
 	    		echo '</td>';
-	    		echo '<td>';
+	    		echo '<td class="td2">';
 	    		echo $pyres;
 	    		echo '</td>';
 		    echo '</tr>';
@@ -240,24 +295,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     ?>
 
     <?php
-    					$rid=$_SESSION['res_id'];
-						$cname=$_SESSION['cusname'];
-						$dadd=$_SESSION['diladd'];
-						$ddate=$_SESSION['dildate'];
-						$dtime=$_SESSION['diltime'];
-						$mobinum=$_SESSION['mobilenum'];
-
-						$pack=$_SESSION['packname'];
-						$floral=$_SESSION['Floral_tributes'];
-						$remembrance=$_SESSION['Remembrance_booklet'];
-						$chairtents=$_SESSION['Chairs_and_tents'];
-						$obituary=$_SESSION['Obituary_Notices'];
-						$crematorium=$_SESSION['Crematorium_booking'];
-						$monumental=$_SESSION['Monumental_plaques'];
-						$pyres=$_SESSION['Funeral_pyres'];
     if(isset($_GET['reject'])){
         $reject = $_GET['reject'];
-        $sql= "delete from reservations where res_id = $reject";
+        $sql = "UPDATE `reservations` SET `flag`= 2 WHERE res_id = '$reject'";
         mysqli_query($conn,$sql);
 
         echo "<script>alert('Delete Form.'); window.location.href='adminReservation.php'; </script>";
@@ -268,10 +308,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     if(isset($_GET['accept'])){
         $accept = $_GET['accept'];
     //    $sql= "INSERT INTO `acceptvisitor`(`msg_no`) VALUES ($_GET[accept])";
-        $sql = "INSERT INTO paid_reservations(res_id,cusname,diladd,dildate,diltime,mobilenum,packname,Floral_tributes,Remembrance_booklet,Chairs_and_tents,Obituary_Notices,Crematorium_booking,Monumental_plaques,Funeral_pyres) VALUES ($rid,'$cname','$dadd','$ddate','$dtime','$mobinum','$pack','$floral','$remembrance','$chairtents','$obituary','$crematorium','$monumental','$pyres')";
-        mysqli_query($conn,$sql);
-        $sql= "delete from reservations where res_id = $accept";
-    //    $sql = "INSERT INTO visitors (deadname,visname,visnic,relation,message) VALUES ('$dn','$vnm','$vnc','$ren','$mge')";
+        $sql = "UPDATE `reservations` SET `flag`= 1 WHERE res_id = '$accept'";
         mysqli_query($conn,$sql);
         echo "<script>alert('Paid reservation'); window.location.href='adminReservation.php'; </script>";
     }
