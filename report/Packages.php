@@ -79,22 +79,14 @@ td{
 
 <?php
                 require "dbcon/dbcon.php";
-                $error=FALSE;
-                $date1err = $date2err =  "";
                  if (isset($_POST['insert'])) {
                      
-                     if(empty($_POST['date1'])){ 
-                                $date1err = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $date1 = $_POST['date1'];
-                            }
-                     if(empty($_POST['date2'])){ 
-                                $date2err = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                            
+                     
                                 $date2 = $_POST['date2'];
-                            }
+                            
                 $sql = "SELECT packname, COUNT(res_id) FROM reservations WHERE dildate > '$date1' AND dildate < '$date2' GROUP BY packname";
                 $query=(mysqli_query($conn,$sql));
 ?>
@@ -138,11 +130,11 @@ td{
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">ID</b></th> 
                     </tr>
                     <tr>
-                    <td><label for="date1">From</label><span class="error"><?php echo $date1err;?></span></td>
+                    <td><label for="date1">From</label></td>
                     <td><input type="text" name="date1" placeholder="From" required></td>
                     </tr> 
                     <tr>
-                    <td><label for="date2">To</label><span class="error"><?php echo $date2err;?></span></td>
+                    <td><label for="date2">To</label></td>
                     <td><input type="text" name="date2" placeholder="To" required></td>
                     </tr>
                     <tr>

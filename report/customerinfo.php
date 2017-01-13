@@ -79,16 +79,12 @@ td{
 <div class="con2">
 <?php
                 require "dbcon/dbcon.php";
-                $error=FALSE;
-                $cusnameerr=  "";
+                
                  if (isset($_POST['insert'])) {
                      
-                     if(empty($_POST['cusname'])){ 
-                                $cusnameerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
+                     
                                 $cusname = $_POST['cusname'];
-                            }
+                            
     $sql = "SELECT cusname, deadname, connumber, address, email, gender, nic FROM customers WHERE cusname = '$cusname'";
     $query=(mysqli_query($conn,$sql));
 ?>
@@ -149,7 +145,7 @@ td{
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">ID</b></th> 
                     </tr>
                     <tr>
-                    <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cusnameerr;?></span></td>
+                    <td><label for="cusname">Customer Name</label></td>
                     <td><input type="text" name="cusname" placeholder="Customer Name" required></td>
                     </tr> 
                     <tr>
