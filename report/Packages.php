@@ -139,11 +139,11 @@ td{
                     </tr>
                     <tr>
                     <td><label for="date1">From</label><span class="error"><?php echo $date1err;?></span></td>
-                    <td><input type="text" name="date1" placeholder="From"></td>
+                    <td><input type="text" name="date1" placeholder="From" required></td>
                     </tr> 
                     <tr>
                     <td><label for="date2">To</label><span class="error"><?php echo $date2err;?></span></td>
-                    <td><input type="text" name="date2" placeholder="To"></td>
+                    <td><input type="text" name="date2" placeholder="To" required></td>
                     </tr>
                     <tr>
                     <td colspan="2" align="center">

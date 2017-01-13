@@ -150,7 +150,7 @@ td{
                     </tr>
                     <tr>
                     <td><label for="cusname">Customer Name</label><span class="error"><?php echo $cusnameerr;?></span></td>
-                    <td><input type="text" name="cusname" placeholder="Customer Name"></td>
+                    <td><input type="text" name="cusname" placeholder="Customer Name" required></td>
                     </tr> 
                     <tr>
                     <td colspan="2" align="center">

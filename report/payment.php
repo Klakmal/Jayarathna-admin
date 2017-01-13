@@ -147,15 +147,15 @@ input[type=text]:hover,[type=password]:hover{
                     </tr>
                     <tr>
                     <td><label for="supplierno">Supplier No</label><span class="error"><?php echo $suppliernoerr;?></span></td>
-                    <td><input type="text" name="supplierno" placeholder="SupplierNo"></td>
+                    <td><input type="text" name="supplierno" placeholder="SupplierNo" required></td>
                     </tr> 
                     <tr>
                     <td><label for="supplier">Supplier</label><span class="error"><?php echo $suppliererr;?></span></td>
-                    <td><input type="text" name="supplier" placeholder="supplier"></td>
+                    <td><input type="text" name="supplier" placeholder="supplier" required></td>
                     </tr>   
                     <tr>
                     <td><label for="date">Date</label><span class="error"><?php echo $dateerr;?></span></td>
-                    <td><input type="text" name="date" placeholder="Date"></td>
+                    <td><input type="text" name="date" placeholder="Date" required></td>
                     </tr>
                     <tr>
                     <tr>
