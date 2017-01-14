@@ -93,8 +93,12 @@ input[type=text]:hover,[type=password]:hover{
                      
                  if (isset($_POST['update'])) {
                      
+                     			$no=$_POST["no"];
+
+                                $type = $_POST['type'];
+                            
                      
-                                $no = $_POST['no'];
+                                $supplier = $_POST['supplier'];
                             
                      
                                 $price = $_POST['price'];
@@ -103,7 +107,7 @@ input[type=text]:hover,[type=password]:hover{
                  
                 if ($error==FALSE){
 
-                $sql = "UPDATE type SET price='$price' WHERE no='$no'";
+                $sql = "UPDATE type SET price='$price' WHERE no='$no' OR (type='$type' AND supplier='$supplier')";
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("Record updated successfully")</script>';
