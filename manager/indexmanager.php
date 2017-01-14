@@ -21,7 +21,15 @@
         <span class="headline">JAYARATNE FUNERALS</span>
     </div>
     <div class="navi_pro" align="center">
-    <img class="propic" src="../img_avatar_g2.jpg"><br>
+        <?php
+            require "../dbcon/dbcon.php";
+            $empid = $_SESSION['employeeid'];
+            $qry = "select * from employee where employeeid='".$empid."'";
+            $rlt = mysqli_query($conn,$qry);
+            $row = mysqli_fetch_array($rlt);
+                echo '<img class="propic" src = "data:image;base64,'.base64_encode($row['image']).'">';
+        ?>
+    <br>
     <p style="color:#aeb2b7;">Welcome,</p>
     <h4 class="name"><b>Kasun Lakmal</b></h4>
 <!--    <p class="other">Jayarathna Funrels</p>-->
@@ -36,7 +44,6 @@
   <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
       <span class="noti">
           <?php
-              require "../dbcon/dbcon.php";
               $query = "SELECT COUNT(*) FROM feedback WHERE flag = 0";
               $result = mysqli_query($conn,$query);
               $rows = mysqli_fetch_row($result);

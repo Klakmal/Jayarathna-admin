@@ -68,60 +68,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 						echo "Zero results";
 					}
     }
-    echo '<div class ="container">';
-    	echo '<h2>Condolence Screen Message</h2>';
-	    echo '<table class="Condtb">';
-		    echo '<tr>';
-		    	echo '<td>';
-	    		echo 'deadPersonID :';
-	    		echo '</td>';
-	    		echo '<td>';
-	    		echo $dname;
-	    		echo '</td>';
-		    echo '</tr>';
-		    echo '<tr>';
-		    	echo '<td>';
-	    		echo 'Visiter Name :';
-	    		echo '</td>';
-	    		echo '<td>';
-	    		echo $vn;
-	    		echo '</td>';
-		    echo '</tr>';
-		    echo '<tr>';
-		    	echo '<td>';
-	    		echo 'Visitor NIC :';
-	    		echo '</td>';
-	    		echo '<td>';
-	    		echo $vc;
-	    		echo '</td>';
-		    echo '</tr>';
-		    echo '<tr>';
-		    	echo '<td>';
-	    		echo 'Relation :';
-	    		echo '</td>';
-	    		echo '<td>';
-	    		echo $rn;
-	    		echo '</td>';
-		    echo '</tr>';
-		    echo '<tr>';
-		    	echo '<td>';
-	    		echo 'Message :';
-	    		echo '</td>';
-	    		echo '<td>';
-	    		echo $mg;
-	    		echo '</td>';
-		    echo '</tr>';
-		    echo '<tr>';	 ?>
-		    	<td colspan="2" align="right">
-		    		<button class="acc"  onclick="location.href='admincondolence.php?accept=<?php echo $num ?>'">Accept</button>
-		    		<button class="rej"  onclick="location.href='admincondolence.php?reject=<?php echo $num ?>'">Reject</button>
-	<?php	    	echo '</td>';
-		    echo '</tr>';
-	    	
-	    echo '</table>';
-	    echo '</div>';
-
+        
     ?>
+    <div class ="container">
+        <div class="condolence_header">
+            <div class="con_head">
+                <h4 class="h41">Condolence Messages</h4>
+            </div>
+            
+        </div>
+	</div>
+
+    
 
     <?php
                     if (isset($_SESSION['msg_no'])){

@@ -100,9 +100,10 @@ input[type=submit]:active {
         $fnameerr = $lnameerr = $employeeiderr = $nicerr = $emailerr = $addresserr = $hnumbererr = $mnumbererr =$temppassworderr= $passworderr =$repassworderr = $gendererr = $doberr = "";
     if (isset($_POST['submit'])) {
         
-        
-            
-            
+
+            $imagename=$_FILES["myimage"]["name"]; 
+            //Get the content of the image and then add slashes to it 
+            $imagetmp=addslashes (file_get_contents($_FILES['myimage']['tmp_name']));
             if(empty($_POST['fname'])){ 
                 $fnameerr = "* ";
                 $error = TRUE;
@@ -205,11 +206,9 @@ input[type=submit]:active {
                 $dob = $_POST['dob'];
             }
 
-
-
              if ($error==FALSE){
            
-            $sql = "UPDATE employee SET fname='$fname',lname='$lname', email='$email',address='$address',nic='$nic',hnumber='$hnumber', mnumber='$mnumber', password='$password',repassword='$repassword',gender='$gender', dob='$dob'WHERE employeeid='$employeeid' AND temppassword='$temppassword'";
+            $sql = "UPDATE employee SET fname='$fname',lname='$lname', email='$email',address='$address',nic='$nic',hnumber='$hnumber', mnumber='$mnumber', password='$password',repassword='$repassword',gender='$gender', dob='$dob', image_name='$imagename', image='$imagetmp' WHERE employeeid='$employeeid' AND temppassword='$temppassword'";
             if(mysqli_query($conn,$sql)){
                 header('location:index.php');
                 die();
@@ -221,9 +220,9 @@ input[type=submit]:active {
     ?>
 
 
-    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" enctype="multipart/form-data">
     <div id="asignup" align="center">
-        <form id="aform2" action="adminsignup.php" method="post">
+        <form id="aform2" action="adminsignup.php" method="post" enctype="multipart/form-data">
         <table id="atable2">
             <tr>
                 <td colspan="2">
@@ -323,12 +322,12 @@ input[type=submit]:active {
                 <input type="radio" name="gender" value="female">Female
                 </td>
                 <td>
-                
+                <input type="file" name="myimage">
                 </td>
             </tr>
              <tr>
                 <td colspan="2" align="right">
-                    <input type="submit" value="Sign Up" name="submit">
+                    <input type="submit" value="Upload" name="submit">
                     <input type="reset" value="Reset" name="cancle">
                 </td>
             </tr>
