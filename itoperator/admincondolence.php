@@ -14,7 +14,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </head>
 <body>
 <div class="header">
-	<p style="color:white; font-size:24px; text-shadow:2px 2px 2px gray; padding-left:20px;"><b>CONDOLENCE SCREEN MESSAGES</b><a class="myButton" href="indexitoperator.php" style="float:right; margin-right:20px;">Home</a></p>
+	<p style="color:white; font-size:20px; text-shadow:2px 2px 2px gray; padding-left:20px;"><a class="myButton" href="indexitoperator.php" style="float:left; margin-right:20px;">Home</a><b>CONDOLENCE SCREEN MESSAGES</b><a class="myButton" href="../signout.php" style="float:right; margin-right:20px;">Sign Out</a></p>
     
 	</div>
 <div>
@@ -72,10 +72,34 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     ?>
     <div class ="container">
         <div class="condolence_header">
-            <div class="con_head">
-                <h4 class="h41">Condolence Messages</h4>
+            <h3 class="h41">Condolence Messages</h3>
+            <hr>
+            <div class="table">
+                <label class="lbl">Dead Person ID : </label><br>
+                <div class="span">
+                    <span><?php echo $dname; ?></span>
+                </div>
+                <label class="lbl">Visitor Name : </label><br>
+                <div class="span">
+                    <span><?php echo $vn; ?></span>
+                </div>
+                <label class="lbl">Visitor NIC :</label><br>
+                <div class="span">
+                    <span><?php echo $vc; ?></span>
+                </div>
+                <label class="lbl">Relation : </label><br>
+                <div class="span">
+                    <span><?php echo $rn; ?></span>
+                </div>
+                <label class="lbl_message">Message : </label><br>
+                <div class="span">
+                    <span><?php echo $mg; ?></span>
+                </div>
             </div>
-            
+            <div align="right">
+              <button class="acc"  onclick="location.href='admincondolence.php?accept=<?php echo $num ?>'">Accept</button>
+		      <button class="rej"  onclick="location.href='admincondolence.php?reject=<?php echo $num ?>'">Reject</button>
+            </div>
         </div>
 	</div>
 

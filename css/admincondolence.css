@@ -3,15 +3,15 @@ body{
 	margin: 0;
 }
 .header{
-	background-color: gray;
-	height: 70px;
+	background-color: #666f86;
+	height: 60px;
 	width: 100%;
 	position: fixed;
 }
 
 .naviul{
     list-style-type: none;
-    margin-top: 70px;
+    margin-top: 60px;
     padding: 0;
     width: 300px;
     background-color: #e1e1e1;
@@ -48,57 +48,52 @@ body{
 	background-color:;
 	margin-left:300px;
 	padding:1px 16px;
-	height:1000px;
 	
 }
 
 .condolence_header{
-    background-color: aqua;
+    background-color: white;
     width: 700px;
-    height: 500px;
-    margin-left: 12%;
+    min-height: 400px;
+    margin-left: 10%;
     margin-top: 8%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 5px;
+    padding: 20px;
 }
 
-.con_head{
-    width: 100%;
-    height: 50px;
-    color: white;
-    background-color: blue;
-    padding-top: 5px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom: 5px solid red;
+hr{
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .h41{
     margin-left: 10px;
+    color: dimgray;
 }
 
-table{
-	background-color: #e1e1e1;
-	width:800px;
-	margin: 70px;
+.table{
+	background-color: #f7f7f7;
+	width:660px;
+    min-height:300px;
+	margin: 0px;
 	padding: 20px;
-	border-radius: 10px;
+	border-radius: 5px;
+    font-size: 14px;
 }
 
-tr{
-	background-color: ;
-	padding: 20px;
-	margin: 20px; 
+.span{
+    background-color: ;
+    border-top: 1px solid white;
+    min-height: 30px;
+    min-width: 400px;
+    padding: 3px;
+    color: dimgray;
 }
-td{
-	background-color: #f5f5f5;
-	border-radius: 4px;
-	padding: 20px;
-	margin: 20px; 
-	width: 50%;
+span{
+    padding-left: 150px;
 }
-
-
 .acc {
 	background-color:#44c767;
 	-moz-border-radius:5px;
@@ -110,7 +105,7 @@ td{
 	color:#ffffff;
 	font-family:Arial;
 	font-size:17px;
-	padding:16px 31px;
+	padding:10px 20px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
@@ -133,7 +128,7 @@ td{
 	color:#ffffff;
 	font-family:Arial;
 	font-size:17px;
-	padding:16px 31px;
+	padding:10px 20px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #662828;
 }
