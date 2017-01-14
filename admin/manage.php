@@ -15,21 +15,7 @@
     <body>
 
 <nav class="navi_menu" id="mySidenav">
-  <div class="container">
-    <div class="headdiv" align="center">
-        <span class="headline">JAYARATNE FUNERALS</span>
-    </div>
-    <div class="navi_pro" align="center">
-    <img class="propic" src="../img_avatar_g2.jpg"><br>
-    <p style="color:#aeb2b7;">Welcome,</p>
-    <h4 class="name"><b>Kasun Lakmal</b></h4>
-<!--    <p class="other">Jayarathna Funrels</p>-->
-        <hr>
-    </div>
-      <div class="menutitlediv">
-          <p class="menutitle">Menu</p>
-      </div>
-  </div>
+  <?php include '../details.php'; ?>
 <a href="indexadmin.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="manage.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;EMPLOYEE REGISTER</a>
   <a href="editadmin.php" class="navi"><img src="../img/profile.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
@@ -143,7 +129,15 @@
                     </tr>    
                     <tr>
                     <td><label for="position">Position</label><span class="error"><?php echo $positionerr;?></span></td>
-                    <td><select name=position><option disabled selected value> -- select an option --</option><option value='manager'>manager</option><option value='itoperator'>itoperator</option><option value='receptionist'>receptionist</option></select></td>
+                        <td>
+                            <select name=position>
+                                <option disabled selected value> -- select an option --</option>
+                                <option value='manager'>manager</option>
+                                <option value='itoperator'>itoperator</option>
+                                <option value='receptionist'>receptionist</option>
+                                <option value='stockkeeper'>stockkeeper</option>
+                            </select>
+                        </td>
                     </tr>
                      <tr>
                     <td><label for="temppassword">Temporary Password</label><span class="error"><?php echo $temppassworderr;?></span></td>
