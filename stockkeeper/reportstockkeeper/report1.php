@@ -1,3 +1,17 @@
+<?php
+    require "../../dbcon/dbcon.php";
+    session_start();// Starting Session
+    // Storing Session
+    $checkID = $_SESSION['employeeid'];
+    $ses_sql= "SELECT * FROM employee WHERE employeeid = '".$checkID."'";
+    $query = mysqli_query($conn,$ses_sql);
+    $res = mysqli_fetch_array($query);
+    $login_session = $res['position'];
+    if($login_session != 'stockkeeper'){
+        mysql_close($conn); // Closing Connection
+        header('Location: ../../index.php'); // Redirecting To Home Page
+    }
+?>
 <html>
 <head>
 <title>Stock Details</title>
@@ -42,21 +56,7 @@ td{
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
-  <div class="container">
-    <div class="headdiv" align="center">
-        <span class="headline">JAYARATNE FUNERALS</span>
-    </div>
-    <div class="navi_pro" align="center">
-    <img class="propic" src="../../img_avatar_g2.jpg"><br>
-    <p style="color:#aeb2b7;">Welcome,</p>
-    <h4 class="name"><b>Kasun Lakmal</b></h4>
-<!--    <p class="other">Jayarathna Funrels</p>-->
-        <hr>
-    </div>
-      <div class="menutitlediv">
-          <p class="menutitle">Menu</p>
-      </div>
-  </div>
+  <?php include '../../details.php'; ?>
   <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="id.php" class="navi"><img src="../../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
   <a href="moq.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>

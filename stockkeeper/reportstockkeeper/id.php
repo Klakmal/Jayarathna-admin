@@ -69,21 +69,7 @@ input[type=text]:hover,[type=password]:hover{
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
-  <div class="container">
-    <div class="headdiv" align="center">
-        <span class="headline">JAYARATNE FUNERALS</span>
-    </div>
-    <div class="navi_pro" align="center">
-    <img class="propic" src="../../img_avatar_g2.jpg"><br>
-    <p style="color:#aeb2b7;">Welcome,</p>
-    <h4 class="name"><b>Kasun Lakmal</b></h4>
-<!--    <p class="other">Jayarathna Funrels</p>-->
-        <hr>
-    </div>
-      <div class="menutitlediv">
-          <p class="menutitle">Menu</p>
-      </div>
-  </div>
+  <?php include '../../details.php'; ?>
   <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="id.php" class="navi"><img src="../../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
   <a href="moq.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
