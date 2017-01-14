@@ -224,7 +224,7 @@ input[type=text]:hover,[type=password]:hover{
                 ?>
 
                 <div id="type">
-                <form method="post" action="supplier.php">
+                <form method="post" action="check.php">
                 <table id="tb6">
                     <tr>
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Suppliers Details</b></th> 
