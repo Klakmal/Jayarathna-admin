@@ -31,7 +31,7 @@
         ?>
     <br>
     <p style="color:#aeb2b7;">Welcome,</p>
-    <h4 class="name"><b>Kasun Lakmal</b></h4>
+    <h4 class="name"><b><?php echo $row['fname']." ".$row['lname']; ?></b></h4>
 <!--    <p class="other">Jayarathna Funrels</p>-->
         <hr>
     </div>
