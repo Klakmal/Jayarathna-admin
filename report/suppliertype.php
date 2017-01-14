@@ -43,6 +43,25 @@ td{
     background-color: white;
 }
     </style>
+    <!--date picker jquery -->
+
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+ $(function(){
+        $("#to").datepicker({ dateFormat: 'yy-mm-dd' });
+        $("#frm").datepicker({ dateFormat: 'yy-mm-dd' }).bind("change",function(){
+            var minValue = $(this).val();
+            minValue = $.datepicker.parseDate("yy-mm-dd", minValue);
+            minValue.setDate(minValue.getDate()+1);
+            $("#to").datepicker( "option", "minDate", minValue );
+        })
+    });
+  
+  </script>
+<!--date picker jquery -->
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
@@ -231,11 +250,11 @@ td{
                     </tr>
                     <tr>
                     <td><label for="frm">From</label><span class="error"><?php echo $frmerr;?></span></td>
-                    <td><input type="text" name="frm" placeholder="From"></td>
+                    <td><input type="text" name="frm" id="frm" placeholder="From"></td>
                     </tr> 
                     <tr>
                     <td><label for="to">To</label><span class="error"><?php echo $toerr;?></span></td>
-                    <td><input type="text" name="to" placeholder="To"></td>
+                    <td><input type="text" name="to" id="to" placeholder="To"></td>
                     </tr> 
                     <tr>
                     <td><label for="supplier">Supplier</label></td>
