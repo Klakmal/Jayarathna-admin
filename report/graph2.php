@@ -1,4 +1,7 @@
 <?php
+    include ('../manager/sessionManager.php');
+?>
+<?php
                 require "dbcon/dbcon.php";
                  if (isset($_POST['insert'])) {
                      
@@ -45,7 +48,6 @@
     <script src="./highcharts.js" ></script>
 </head>
 <body>
-</br>
 
 
 

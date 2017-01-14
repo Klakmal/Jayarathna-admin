@@ -88,6 +88,11 @@ input[type=submit]:active {
 	color: red;
 	font-size: 12px;
 }
+        
+        input[type=file]{
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
 </style>
 </head>
 <body>
@@ -315,7 +320,7 @@ input[type=submit]:active {
             </tr>
             <tr>
                 <td><label>Gender</label></td>
-                <td></td>
+                <td><label>Your Photo</label></td>
             </tr>
             <tr>
                 <td style="display: inline;"> <input type="radio" name="gender" value="male" required>Male
@@ -327,7 +332,7 @@ input[type=submit]:active {
             </tr>
              <tr>
                 <td colspan="2" align="right">
-                    <input type="submit" value="Upload" name="submit">
+                    <input type="submit" value="Submit" name="submit">
                     <input type="reset" value="Reset" name="cancle">
                 </td>
             </tr>

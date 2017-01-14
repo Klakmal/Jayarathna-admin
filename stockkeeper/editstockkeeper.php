@@ -55,6 +55,10 @@ input[type=text]:hover,[type=password]:hover{
     float: center;
     background-color: white;
 }
+    .em1{
+        margin-left: 20%;
+        padding-top: 10%;
+    }
 </style>
 </head>
 <body>
@@ -83,8 +87,8 @@ input[type=text]:hover,[type=password]:hover{
     </div>
   </div>
 
-<div class="afb1" align="center">
-<div class="afb2" align="left">
+<div class="em1" align="center">
+<div class="em2" align="left">
     <?php
     require "../dbcon/dbcon.php";
     

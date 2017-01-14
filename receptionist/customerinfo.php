@@ -6,9 +6,9 @@
     <title>login</title>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/receptionistregister.css">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
-    <link rel="stylesheet" type="text/css" href="../css/resiptionistregister.css">
     
+    <link rel="stylesheet" type="text/css" href="../css/resiptionistregister.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
     <style>
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
@@ -128,6 +128,6 @@
 
 </div>
 </div>
-</table>
+    </div>
 </body>
 </html>

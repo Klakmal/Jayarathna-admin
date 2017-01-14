@@ -120,7 +120,7 @@
                     
                       <td><label for="url">URL: </label><span class="error"><?php echo $urlerr;?></span></td>
                         
-                    <td> <input type="text" name="url" id="url" placeholder="url" required></td>
+                    <td> <input type="text" name="url" id="url" placeholder="URL" required></td>
                     
                 </tr>
                

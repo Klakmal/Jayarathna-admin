@@ -30,18 +30,7 @@
     padding: 20px;
     border-radius: 10px;
 }
-th{
-    width:100px;
-    background-color: #aaa;
-}
-tr{
-    width: ;
-}
-td{
-    width:100px;
-    float: center;
-    background-color: white;
-}
+
     </style>
     <!--date picker jquery -->
 

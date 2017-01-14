@@ -41,7 +41,7 @@
     <div class="menu2in">
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
-
+</div>
 <div class="conner1" align="center">
             <div class="conner2" align="center">
     <?php
@@ -214,7 +214,7 @@ $dob="$year-$month-$dt";
             </tr>-->
             <tr><td><label for="dob">DOB</label><span class="error"></span></td><td  align=left  >   
 
-<select name=month value=''>Select Month</option>
+<select name=month value=''>
 <option value='01'>January</option>
 <option value='02'>February</option>
 <option value='03'>March</option>

@@ -172,7 +172,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 	    echo '<table class="condtb">';
             echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Reservation ID :';
+	    		echo '<b>Reservation ID :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $rid;
@@ -180,7 +180,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Customer Name :';
+	    		echo '<b><b>Customer Name :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $cname;
@@ -188,7 +188,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Delivery Address :';
+	    		echo '<b>Delivery Address :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $dadd;
@@ -196,7 +196,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Delivery Date :';
+	    		echo '<b>Delivery Date :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $ddate;
@@ -204,7 +204,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Delivery Time :';
+	    		echo '<b>Delivery Time :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $dtime;
@@ -212,7 +212,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Mobile Number :';
+	    		echo '<b>Mobile Number :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $mobinum;
@@ -220,7 +220,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Package :';
+	    		echo '<b>Package :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $pack;
@@ -228,7 +228,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Floral Tributes :';
+	    		echo '<b>Floral Tributes :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $floral;
@@ -236,7 +236,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Remembrance booklet :';
+	    		echo '<b>Remembrance booklet :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $remembrance;
@@ -244,7 +244,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Chairs and tents :';
+	    		echo '<b>Chairs and tents :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $chairtents;
@@ -252,7 +252,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Obituary Notices :';
+	    		echo '<b>Obituary Notices :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $obituary;
@@ -260,7 +260,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Crematorium booking :';
+	    		echo '<b>Crematorium booking :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $crematorium;
@@ -268,7 +268,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Monumental plaques :';
+	    		echo '<b>Monumental plaques :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $monumental;
@@ -276,7 +276,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 		    echo '</tr>';
 		    echo '<tr>';
 		    	echo '<td>';
-	    		echo 'Funeral pyres :';
+	    		echo '<b>Funeral pyres :</b>';
 	    		echo '</td>';
 	    		echo '<td class="td2">';
 	    		echo $pyres;
