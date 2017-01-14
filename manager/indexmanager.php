@@ -16,29 +16,7 @@
     <body>
 
 <nav class="navi_menu" id="mySidenav">
-  <div class="container">
-    <div class="headdiv" align="center">
-        <span class="headline">JAYARATNE FUNERALS</span>
-    </div>
-    <div class="navi_pro" align="center">
-        <?php
-            require "../dbcon/dbcon.php";
-            $empid = $_SESSION['employeeid'];
-            $qry = "select * from employee where employeeid='".$empid."'";
-            $rlt = mysqli_query($conn,$qry);
-            $row = mysqli_fetch_array($rlt);
-                echo '<img class="propic" src = "data:image;base64,'.base64_encode($row['image']).'">';
-        ?>
-    <br>
-    <p style="color:#aeb2b7;">Welcome,</p>
-    <h4 class="name"><b><?php echo $row['fname']." ".$row['lname']; ?></b></h4>
-<!--    <p class="other">Jayarathna Funrels</p>-->
-        <hr>
-    </div>
-      <div class="menutitlediv">
-          <p class="menutitle">Menu</p>
-      </div>
-  </div>
+  <?php include '../details.php'; ?>
   <a href="datainquiry.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; DATA INQUIRY</a>
   <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
   <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
