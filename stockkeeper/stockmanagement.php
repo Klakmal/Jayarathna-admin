@@ -35,6 +35,7 @@
   <a href="reportstockkeeper/moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
   <a href="reportstockkeeper/report1.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
   <a href="reportstockkeeper/report2.php" class="navi"><img src="../img/account.png" class="image">&nbsp;&nbsp;STOCK COUNT</a>
+  <a href="graph.php" class="navi"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;COFFIN LEVEL</a>
   
 </nav>
 
