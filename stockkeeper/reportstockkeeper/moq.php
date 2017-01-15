@@ -103,7 +103,7 @@ body{
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("Record updated successfully")</script>';
-                    header('location:moq.php');
+                    echo "<script>window.location('location:moq.php');</script>";
                 } else {
                     echo "error" ;
                 }
@@ -132,7 +132,7 @@ body{
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("New record created successfully")</script>';
-                    header('location:moq.php');
+                    echo "<script>window.location('location:moq.php');</script>";
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
@@ -152,13 +152,20 @@ body{
                     </tr>
                  
                     <tr>
-                    <td><label for="type">Type</label><span class="error"><?php echo $typeerr;?></span></td>
-                    <td><input type="text" name="type" placeholder="type"></td>
+                        <td><label for="type">Type</label><span class="error"><?php echo $typeerr;?></span></td>
+                        <td>
+                            <select type="text" name="type" placeholder="type" required>
+                                <option value="Platinum">Platinum</option>
+                                <option value="Gold">Gold</option>
+                                <option value="Silver">Silver</option>
+                                <option value="Bronze">Bronze</option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                     <tr>
                     <td><label for="moq">MOQ</label><span class="error"><?php echo $moqerr;?></span></td>
-                    <td><input type="text" name="moq" placeholder="MOQ"></td>
+                    <td><input type="text" name="moq" placeholder="MOQ" required></td>
                     </tr>
                    
                     
