@@ -15,7 +15,7 @@
             throw new UnexpectedValueException("Failed to connect: $errorMessage");
         }
 
-        fwrite($client, "GET / HTTP/1.0\r\nHost: 192.168.1.6\r\nAccept: */*\r\n\r\n");
+        fwrite($client, "POST / HTTP/1.0\r\nHost: 192.168.1.6\r\nAccept: */*\r\n\r\n");
          $value= stream_get_contents($client);
         fclose($client);
         
@@ -23,7 +23,7 @@
         $value=explode("*",$value);
         
         $value=explode(" ",$value[1]);
-        
+        //cut unnessasery parts
         
         ?>
         
@@ -44,7 +44,7 @@
                     $timein=date("Y-m-d");
                     $timeout="no";
                     
-                    $sql="UPDATE id SET status='$status',timein='$timein', timeout='$timeout' WHERE '$v'=id.id";
+                    $sql="UPDATE id SET status='$status',timein='$timein', timeout='$timeout' WHERE id.id='$v'";
                     
                     if (mysqli_query($conn, $sql)) {
                         header('location:client.php');
@@ -59,7 +59,7 @@
                     $timeout=date("Y-m-d");
                     //$timein="SELECT timein FROM id WHERE $v=id";
                     
-                    $sql="UPDATE id SET status='$status', timeout='$timeout' WHERE '$v'=id.id";
+                    $sql="UPDATE id SET status='$status', timeout='$timeout' WHERE id.id='$v'";
                     
                     if (mysqli_query($conn, $sql)) {
                         header('location:client.php');
