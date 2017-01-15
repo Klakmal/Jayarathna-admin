@@ -88,6 +88,7 @@ input[type=text]:hover,[type=password]:hover{
           ?>
       </span>
     </a>
+    <a href="deathpersondetails.php" class="navi"><img src="../img/account.png" class="image">&nbsp;&nbsp;DEAD PERSON DETAILS</a>
   <a href="../itoperator/edititoperator.php" class="active"><img src="../img/account.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
 </nav>
 

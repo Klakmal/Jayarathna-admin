@@ -41,6 +41,7 @@
           ?>
       </span>
     </a>
+    <a href="deathpersondetails.php" class="navi"><img src="../img/account.png" class="image">&nbsp;&nbsp;DEAD PERSON DETAILS</a>
   <a href="../itoperator/edititoperator.php" class="navi"><img src="../img/account.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
 </nav>
 
@@ -61,11 +62,11 @@
             
             if (isset($_POST['submit'])) {
                 
-                if(empty($_POST['deadname'])){ 
+                if(empty($_POST['deadid'])){ 
                     $deadnameerr = "";
                     $error = TRUE;
                 }else{
-                    $deadname = $_POST['deadname'];
+                    $deadid = $_POST['deadid'];
                 }
                 
                 if(empty($_POST['url'])){ 
@@ -79,7 +80,7 @@
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO webcasting (deadname,url) VALUES ('".$deadname."','".$url."')";
+                $sql = "INSERT INTO webcasting (deadPersonID,url) VALUES ('".$deadid."','".$url."')";
                 if(mysqli_query($conn,$sql)){
                     /*echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
                     header( "Location: webcasting.php");*/
@@ -111,9 +112,9 @@
                 </tr>
                  <tr>
                     
-                        <td><label for="deadname">Dead Person Name : </label><span class="error"><?php echo $deadnameerr;?></span></td>
+                        <td><label for="deadid">Dead Person ID : </label><span class="error"><?php echo $deadnameerr;?></span></td>
                         
-                        <td><input type="text" name="deadname" id="deadname" placeholder="Dead Person Name" required></td>
+                        <td><input type="text" name="deadid" id="deadid" placeholder="Dead Person ID" required></td>
                 
                 </tr>
                 <tr>
