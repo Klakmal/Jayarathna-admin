@@ -96,17 +96,23 @@ input[type=text]:hover,[type=password]:hover{
                                 $email = $_POST['email'];
                                                 
                      
-                                $platinum = $_POST['platinum'];
-                            
-                     
-                                $gold = $_POST['gold'];
-                            
-                   
-                                $silver = $_POST['silver'];
-                            
-                      
-                                $bronze = $_POST['bronze'];
-                            
+                                $platinum = null;
+                                $gold = null;
+                                $silver = null;
+                                $bronze = null;
+                                if (isset($_POST['types'])) {
+                                    foreach ($_POST['types'] as $key => $value) {
+                                        if ($value == 'platinum') {
+                                            $platinum = "Yes";
+                                        } elseif ($value == 'gold') {
+                                            $gold = 'Yes';
+                                        } elseif ($value == 'silver') {
+                                            $silver = 'Yes';
+                                        } elseif ($value == 'bronze') {
+                                            $bronze = 'Yes';
+                                        }
+                                    }
+                                }
 
                  
                 if ($error==FALSE){
@@ -155,23 +161,23 @@ input[type=text]:hover,[type=password]:hover{
                      
                                 $email = $_POST['email'];
 
-                    $platinum = null;
-                    $gold = null;
-                    $silver = null;
-                    $bronze = null;
-                    if (isset($_POST['types'])) {
-                        foreach ($_POST['types'] as $key => $value) {
-                            if ($value == 'platinum') {
-                                $platinum = "Yes";
-                            } elseif ($value == 'gold') {
-                                $gold = 'Yes';
-                            } elseif ($value == 'silver') {
-                                $silver = 'Yes';
-                            } elseif ($value == 'bronze') {
-                                $bronze = 'Yes';
-                            }
-                        }
-                    }
+                                $platinum = null;
+                                $gold = null;
+                                $silver = null;
+                                $bronze = null;
+                                if (isset($_POST['types'])) {
+                                    foreach ($_POST['types'] as $key => $value) {
+                                        if ($value == 'platinum') {
+                                            $platinum = "Yes";
+                                        } elseif ($value == 'gold') {
+                                            $gold = 'Yes';
+                                        } elseif ($value == 'silver') {
+                                            $silver = 'Yes';
+                                        } elseif ($value == 'bronze') {
+                                            $bronze = 'Yes';
+                                        }
+                                    }
+                                }
 /*
                      if(isset($_POST['platinum'])){
                         $platinum = $_POST['platinum'];
@@ -221,7 +227,7 @@ input[type=text]:hover,[type=password]:hover{
                     </tr> 
                     <tr>
                     <td><label for="supplier">Supplier</label></td>
-                    <td><input type="text" name="supplier" placeholder="Supplier" required></td>
+                    <td><input type="text" name="supplier" placeholder="Supplier"></td>
                     </tr>   
                     <tr>
                     <td><label >Type</label></td>
@@ -234,16 +240,16 @@ input[type=text]:hover,[type=password]:hover{
                     </tr>
                     <tr>
                     <td><label for="address">Address</label></td>
-                    <td><input type="text" name="address" placeholder="Address" required></td>
+                    <td><input type="text" name="address" placeholder="Address"></td>
                     <tr>
                     <tr>
                     <td><label for="contactno">Contactno</label></td>
-                    <td><input type="text" name="contactno" placeholder="Contactno" required></td>
+                    <td><input type="text" name="contactno" placeholder="Contactno"></td>
                     </tr>
                     <tr>
                     <tr>
                     <td><label for="email">E-mail</label></td>
-                    <td><input type="text" name="email" placeholder="Email" required></td>
+                    <td><input type="text" name="email" placeholder="Email"></td>
                     </tr>
                     <tr>
                     
