@@ -62,7 +62,7 @@ input[type=text]:hover,[type=password]:hover{
   <?php include '../details.php'; ?>
   <a href="../manager/indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="../manager/updateprices.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
-  <a href="../report/payment.php" class="navi"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
+  <a href="../report/payment.php" class="active"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
   <a href="../report/supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
   <a href="../report/type.php" class="navi"><img src="../img/678592-200.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="../report/report.php" class="navi"><img src="../img/report.png" class="image">&nbsp;&nbsp;REPORT</a>
@@ -102,7 +102,7 @@ input[type=text]:hover,[type=password]:hover{
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("New record created successfully")</script>';
-                    header('location:payment.php');
+                    echo "<script>window.location('location:payment.php');</script>";
                 }
                 else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);

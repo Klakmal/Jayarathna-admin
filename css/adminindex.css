@@ -21,7 +21,6 @@ body{
 
 .navi{
     font-family: 'Ruda', sans-serif;
-    color: #797979;
 	display:block;
 	background-color: #424a5d;
 	text-decoration: none;
@@ -58,7 +57,46 @@ body{
     border-right: 4px solid white;
 	color: whitesmoke;
 }
-        
+.active{
+    font-family: 'Ruda', sans-serif;
+	display:block;
+	background-color: #6b748a;
+	text-decoration: none;
+	height: 30px;
+	padding: 5px 10px;
+	margin-top: 2px;
+	border-radius: 20px;
+    border-bottom: 2px solid #424a5d;
+    border-right: 2px solid #424a5d;
+	font-size: 13px;
+    color: #dbe0e6;
+} 
+
+.active:hover{
+    display:block;
+	background-color: #fb7a4d;
+	text-decoration: none;
+	height: 30px;
+	padding: 5px 10px;
+	margin-top: 2px;
+	border-radius: 20px;
+    border-bottom: 2px solid white;
+    border-right: 4px solid white;
+	color: whitesmoke;
+} 
+
+.active:active{
+    display:block;
+	background-color: #ff865c;
+	text-decoration: none;
+	height: 30px;
+	padding: 5px 10px;
+	margin-top: 2px;
+	border-radius: 20px;
+    border-bottom: 2px solid white;
+    border-right: 4px solid white;
+	color: whitesmoke;
+}
         
 
 .navi_menu2{

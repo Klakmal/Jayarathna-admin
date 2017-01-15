@@ -24,7 +24,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
   <a href="indexstockkeeper.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="stockmanagement.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
  
-  <a href="feedbackstockkeeper.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK </a>
+  <a href="feedbackstockkeeper.php" class="active"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK </a>
   <a href="editstockkeeper.php" class="navi"><img src="../img/profile.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
 </nav>
 

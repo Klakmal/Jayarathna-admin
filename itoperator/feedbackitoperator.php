@@ -35,7 +35,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
       </span>
   </a>
   <a href="webcastingadmin.php" class="navi"><img src="../img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
-  <a href="feedbackitoperator.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK 
+  <a href="feedbackitoperator.php" class="active"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK 
       <span class="noti">
           <?php
               require "../dbcon/dbcon.php";

@@ -16,7 +16,7 @@
 
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
-    <a href="indexstockkeeper.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+    <a href="indexstockkeeper.php" class="active"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="stockmanagement.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK MANAGMENT</a>
  
   <a href="feedbackstockkeeper.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK 

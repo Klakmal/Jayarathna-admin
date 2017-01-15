@@ -16,7 +16,7 @@
 
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
-    <a href="indexitoperator.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+    <a href="indexitoperator.php" class="active"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="admincondolence.php" class="navi"><img src="../img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE 
       <span class="noti">
           <?php

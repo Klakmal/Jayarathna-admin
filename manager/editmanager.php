@@ -64,6 +64,7 @@ input[type=text]:hover,[type=password]:hover{
 <body>
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp; HOME</a>
   <a href="datainquiry.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; DATA INQUIRY</a>
   <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
   <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
@@ -77,7 +78,7 @@ input[type=text]:hover,[type=password]:hover{
           ?>
       </span>
     </a>
-    <a href="editmanager.php" class="navi"><img src="../img/profile.png" class="image">&nbsp;&nbsp; UPDATE PROFILE</a>
+    <a href="editmanager.php" class="active"><img src="../img/profile.png" class="image">&nbsp;&nbsp; UPDATE PROFILE</a>
     <br>
 </nav>
 

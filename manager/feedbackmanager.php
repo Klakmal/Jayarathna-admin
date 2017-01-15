@@ -21,9 +21,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
 ?>
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp; HOME</a>
   <a href="datainquiry.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; DATA INQUIRY</a>
   <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
-  <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
+  <a href="feedbackmanager.php" class="active"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
     </a>
     <a href="editmanager.php" class="navi"><img src="../img/profile.png" class="image">&nbsp;&nbsp; UPDATE PROFILE</a>
     <br>

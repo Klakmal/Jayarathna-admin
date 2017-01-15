@@ -66,7 +66,7 @@ input[type=text]:hover,[type=password]:hover{
   <?php include '../details.php'; ?>
 <a href="indexadmin.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
   <a href="manage.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;EMPLOYEE REGISTER</a>
-  <a href="editadmin.php" class="navi"><img src="../img/profile.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
+  <a href="editadmin.php" class="active"><img src="../img/profile.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
   
 </nav>
 

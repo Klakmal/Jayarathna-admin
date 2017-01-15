@@ -78,7 +78,7 @@ input[type=text]:hover,[type=password]:hover{
           ?>
       </span>   
     </a>
-  <a href="editreceptionist.php" class="navi"><img src="../img/profile.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
+  <a href="editreceptionist.php" class="active"><img src="../img/profile.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
  
 </nav>
 
