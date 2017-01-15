@@ -116,21 +116,14 @@ input[type=text]:hover,[type=password]:hover{
                             }else{
                                 $timein = $_POST['timein'];
                             }*/
-                     $timein = date("Y/m/d");
-
-                     if(empty($_POST['timeout'])){ 
-                                $timeouterr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $timeout = $_POST['timeout'];
-                            }
+                     
                     $status="out";
                     while($count>0){
 
-                    $sql = "INSERT INTO id (id , no, status,timein ,timeout)
-                VALUES ('".$id."','".$no."','".$status."','".$timein."','".$timeout."')";
+                    $sql = "INSERT INTO id (id , no, status)
+                VALUES ('".$id."','".$no."','".$status."')";
                 if (mysqli_query($conn, $sql)) {
-                    header('location:id.php');
+                   
                 }
                 else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
