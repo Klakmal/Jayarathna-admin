@@ -1,18 +1,27 @@
 <?php
-    include ('sessionStockkeeper.php');
+    require "../../dbcon/dbcon.php";
+    session_start();// Starting Session
+    // Storing Session
+    $checkID = $_SESSION['employeeid'];
+    $ses_sql= "SELECT * FROM employee WHERE employeeid = '".$checkID."'";
+    $query = mysqli_query($conn,$ses_sql);
+    $res = mysqli_fetch_array($query);
+    $login_session = $res['position'];
+    if($login_session != 'stockkeeper'){
+        mysql_close($conn); // Closing Connection
+        header('Location: ../../index.php'); // Redirecting To Home Page
+    }
 ?>
 <html>
 <head>
-<title>type</title>
+<title>Coffin Report</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
-    <link rel="stylesheet" type="text/css" href="../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../../css/adminindex.css">
+    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
     <style>
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
-    </style>
-<style>
-body{
+    body{
     margin:0px;
     background-color: #eee;
 }
@@ -24,55 +33,45 @@ body{
 .con2{
     width: 500px;
     height: 100%;
-    background-color: #eee;
+    background-color: ;
     position: relative;
-    margin-top: 100px;
-    margin-left: 100px;
+    margin-left: 200px;
     padding: 20px;
     border-radius: 10px;
 }
-
-input[type=text]:hover,[type=password]:hover{
-    width: 200px;
-    height: 30px;
-    margin: 5px;
-    border-radius: 10px;
-    background-color: #fff;
-    border:1px solid white;
-    padding-left: 5px;
-}
-
-
-.tb{
+th{
     width:100px;
     background-color: #aaa;
 }
-.tb1{
+tr{
     width: ;
 }
-.tb2{
+td{
     width:100px;
     float: center;
     background-color: white;
 }
-</style>
+    </style>
+    
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
   <?php include '../../details.php'; ?>
   <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="type.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
+  <a href="type.php" class="active"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="id.php" class="navi"><img src="../../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
   <a href="moq.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
-  <a href="report1.php" class="active"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
+  <a href="report1.php" class="navi"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
   <a href="report2.php" class="navi"><img src="../../img/account.png" class="image">&nbsp;&nbsp;STOCK COUNT</a>
   <a href="graph.php" class="navi"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;COFFIN LEVEL</a>
   
 </nav>
-<div class="menu2" align="right">
+
+<div class="menu2" align="right" style="margin-bottom: 100px;">
     <div class="menu2in">
-      <a href="../signout.php" class="myButton">Log Out</a>
+      <a href="../../signout.php" class="myButton">Log Out</a>
     </div>
+  </div>
 <div class="con1" align="center">
 <div class="con2">
     <?php
