@@ -308,7 +308,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     //    $sql= "INSERT INTO `acceptvisitor`(`msg_no`) VALUES ($_GET[accept])";
         $sql = "UPDATE `reservations` SET `flag`= 1 WHERE res_id = '$accept'";
         mysqli_query($conn,$sql);
-        echo "<script>alert('Paid reservation'); window.location.href='adminReservation.php'; </script>";
+        echo "<script>alert('Reservation Viewed'); window.location.href='adminReservation.php'; </script>";
     }
     ?>
     </div>
