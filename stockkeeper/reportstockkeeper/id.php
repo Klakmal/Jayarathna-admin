@@ -70,6 +70,11 @@ input[type=text]:hover,[type=password]:hover{
     color: white;
 }
 </style>
+<script>
+function openWin() {
+    window.open("http://www.w3schools.com","_blank");
+}    
+</script>
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
@@ -141,6 +146,9 @@ input[type=text]:hover,[type=password]:hover{
                  }
                 ?>
                 <div id="id in">
+                <div class="clientbutton" align="right">
+                <a href="client.php" onclick="window.open(window.location.href,'_blank');window.open(this.href,'_self');">Load Data</a>
+                </div>
                 <form method="post" action="id.php">
                 <table id="tb8">
                     <tr>
