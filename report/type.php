@@ -101,7 +101,7 @@ input[type=text]:hover,[type=password]:hover{
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("Record updated successfully")</script>';
-                    header('location:type.php');
+                    echo "<script>window.location('location:type.php')</script>";
                 } else {
                     echo "error" ;
                 }
@@ -117,7 +117,7 @@ input[type=text]:hover,[type=password]:hover{
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("Record deleted successfully")</script>';
-                    header('location:type.php');
+                    echo "<script>window.location('location:type.php')</script>";
                 } else {
                     echo "Error deleting record: " . mysqli_error($conn);
                 }
@@ -145,7 +145,7 @@ input[type=text]:hover,[type=password]:hover{
 
                 if (mysqli_query($conn, $sql)) {
                     //echo '<script>alert("New record created successfully")</script>';
-                    header('location:type.php');
+                    echo "<script>window.location('location:type.php')</script>";
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }
