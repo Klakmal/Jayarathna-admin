@@ -129,8 +129,7 @@ input[type=text]:hover,[type=password]:hover{
                         
 
 		                if (mysqli_query($conn, $sql)) {
-		                	header('location:updateprices.php');
-                            echo "llll";
+		                	echo "<script>window.location('location:updateprices.php');</script>";
 		                    echo '<script>alert("Record updated successfully")</script>';
 		                } else {
                             echo "oooo";

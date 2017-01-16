@@ -112,37 +112,7 @@ body{
                 }
                  }
                 
-                $error=FALSE;
-                        $typeerr = $moqerr = "";
-                 if (isset($_POST['insert'])) {
-                    
-                     if(empty($_POST['type'])){ 
-                                $typeerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $type = $_POST['type'];
-                            }
-                     if(empty($_POST['moq'])){ 
-                                $moqerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $moq = $_POST['moq'];
-                            }
-                    
-                    $sql = "INSERT INTO moq (type,moq)
-                VALUES ('".$type."','".$moq."')";
-
-                if (mysqli_query($conn, $sql)) {
-                    //echo '<script>alert("New record created successfully")</script>';
-                    echo "<script>window.location('location:moq.php');</script>";
-                } else {
-                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                }
-
-                    
-                    
-                    
-                }
+                
 
                 ?>
 
@@ -173,7 +143,6 @@ body{
                     
                         <td colspan="2" align="center">
                         <input type="submit" value="UPDATE" name="update">
-                        <input type="submit" value="INSERT" name="insert">
                     </td>
                     
                     </tr>
