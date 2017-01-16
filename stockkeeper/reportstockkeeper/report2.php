@@ -39,17 +39,21 @@
     padding: 20px;
     border-radius: 10px;
 }
-th{
-    width:100px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
 }
-tr{
-    width: ;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
 }
-td{
-    width:100px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
     </style>
     
@@ -58,6 +62,7 @@ td{
 <nav class="navi_menu" id="mySidenav">
   <?php include '../../details.php'; ?>
   <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+    <a href="type.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="id.php" class="navi"><img src="../../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
   <a href="moq.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
   <a href="report1.php" class="navi"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
@@ -78,24 +83,24 @@ td{
     $sql = "SELECT type.type, COUNT(id.id) , moq.moq FROM id, type, moq WHERE (id.timeout > CURDATE() OR id.timeout='0000-00-00') AND id.no = type.no AND type.type = moq.type GROUP BY type.type";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
+<table class="tbl">
     <tr>
-        <th>Type</th>
-        <th>Remaining</th> 
-        <th>MOQ </th>
+        <th class="th">Type</th>
+        <th class="th">Remaining</th> 
+        <th class="th">MOQ </th>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
+         echo "<tr class='tr'>";
         
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['type'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['COUNT(id.id)'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['moq'];
             echo "</td>";
 

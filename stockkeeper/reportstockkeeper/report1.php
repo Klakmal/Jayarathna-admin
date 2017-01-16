@@ -39,12 +39,30 @@
     padding: 20px;
     border-radius: 10px;
 }
+
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
+}
     </style>
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
   <?php include '../../details.php'; ?>
   <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+    <a href="type.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="id.php" class="navi"><img src="../../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
   <a href="moq.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
   <a href="report1.php" class="active"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
@@ -105,40 +123,40 @@
     $sql = "SELECT id.id, type.type, type.supplier, type.price, id.timein , id.timeout FROM id, type WHERE id.timein > '$date1' AND id.timein < '$date2'";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
-    <tr>
-        <th>ID</th> 
-        <th>Type</th>
-        <th>Supplier</th> 
-        <th>Price</th>
-        <th>Time In</th>
-        <th>Time Out</th>
+<table class="tbl">
+    <tr class="tr">
+        <th class="th">ID</th> 
+        <th class="th">Type</th>
+        <th class="th">Supplier</th> 
+        <th class="th">Price</th>
+        <th class="th">Time In</th>
+        <th class="th">Time Out</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
+         echo "<tr class='tr'>";
         
             echo "<td>";
             echo $row['id'];
             echo "</td>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['type'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['supplier'];
             echo "</td>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['price'];
             echo "</td>";
 
-             echo "<td>";
+             echo "<td class='td'>";
             echo $row['timein'];
             echo "</td>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['timeout'];
             echo "</td>";
 

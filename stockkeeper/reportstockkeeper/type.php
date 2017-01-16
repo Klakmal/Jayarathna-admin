@@ -39,17 +39,21 @@
     padding: 20px;
     border-radius: 10px;
 }
-th{
-    width:100px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
 }
-tr{
-    width: ;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
 }
-td{
-    width:100px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
     </style>
     
@@ -194,30 +198,30 @@ td{
     $sql = "SELECT * FROM type";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
+<table class="tbl">
     <tr>
-        <th class="tb">No</th> 
-        <th class="tb">Type</th> 
-        <th class="tb">Supplier</th>
-        <th class="tb">Price</th>
+        <th class="th">No</th> 
+        <th class="th">Type</th> 
+        <th class="th">Supplier</th>
+        <th class="th">Price</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr class="tb1" align="center">';
+         echo '<tr class="tr" align="center">';
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['no'];
             echo "</td>";
                 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['type'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['supplier'];
             echo "</td>";
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['price'];
             echo "</td>";
         
@@ -227,7 +231,6 @@ td{
     </table>
              </div>
          </div>
-</div>
-</div>
+
     </body>
 </html>

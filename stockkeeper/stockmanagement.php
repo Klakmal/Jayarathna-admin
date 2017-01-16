@@ -10,6 +10,22 @@
     <style>
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
+.tbl {
+    border-collapse: collapse;
+    width: 400px;
+}
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
+}
     </style>
     </head>
     <body>
@@ -17,6 +33,7 @@
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
   <a href="indexstockkeeper.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="reportstockkeeper/type.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="reportstockkeeper/id.php" class="navi"><img src="../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
   <a href="reportstockkeeper/moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
   <a href="reportstockkeeper/report1.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
@@ -85,7 +102,7 @@
                     <td><input type="text" name="no" placeholder="NO"></td>
                     </tr>
                    
-                    
+                    <tr>
                         <td colspan="2" align="center">
                         <input type="submit" value="UPDATE" name="update">
                     </td>
@@ -99,20 +116,20 @@
     $sql = "SELECT * FROM id WHERE no = 0";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
-    <tr>
-        <th class="tb" >ID</th> 
-        <th class="tb" >Timein</th>
+<table class="tbl">
+    <tr class="tr">
+        <th class="th" >ID</th> 
+        <th class="th" >Timein</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr align="center">';
+         echo '<tr class="tr" align="center">';
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['id'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['timein'];
             echo "</td>";
         
@@ -120,14 +137,12 @@
         echo "</tr>";}
 ?>
 
-    </table>
+</table>
 
 </div>
 
 
 </div>
-
-</div>  
 
 </body>
 </html>
