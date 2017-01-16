@@ -92,31 +92,31 @@ input[type=text]:hover,[type=password]:hover{
                             }
                      if(empty($_POST['gold'])){ 
                                 $golderr = "</br>* ";
-                                //$error = TRUE;
+                                $error = TRUE;
                             }else{
                                 $gold = $_POST['gold'];
                             }
                      if(empty($_POST['silver'])){ 
-                                $silvererr = "</br>* ";
-                                //$error = TRUE;
+                                //$silvererr = "</br>* ";
+                                $silver = 0;
                             }else{
                                 $silver = $_POST['silver'];
                             }
                      if(empty($_POST['bronze'])){ 
-                                $bronzeerr = "</br>* ";
-                                //$error = TRUE;
+                                //$bronzeerr = "</br>* ";
+                                $bronze =0;
                             }else{
                                 $bronze = $_POST['bronze'];
                             }
                      if(empty($_POST['platinum'])){ 
-                                $platinumerr = "</br>* ";
-                                //$error = TRUE;
+                                //$platinumerr = "</br>* ";
+                                $platinum =0;
                             }else{
                                 $platinum = $_POST['platinum'];
                             }
                      if(empty($_POST['deluxe'])){ 
-                                $deluxeerr = "</br>* ";
-                                //$error = TRUE;
+                                //$deluxeerr = "</br>* ";
+                                $deluxe =0;
                             }else{
                                 $deluxe = $_POST['deluxe'];
                             }
@@ -147,14 +147,28 @@ input[type=text]:hover,[type=password]:hover{
 <td>
 <div id="s_name">
 	<label for="s_name"><b>Package or Service name</b> :-</label>
-	<input type="text" name="s_name"><span class="error"><?php echo $s_nameerr;?></span>
+	
+    
+    <select type="text" name="s_name" placeholder="select one" required>
+                                <option value="s0">Main package</option>
+                                <option value="s1">Floral tributes</option>
+                                <option value="s2">Rememberence booklets</option>
+                                <option value="s3">Chairs and tents</option>
+                                <option value="s4">Obituary notices</option>
+                                <option value="s5">Crematorium booking</option>
+                                <option value="s6">Monumential plaques</option>
+                                <option value="s7">Funeral Pyres</option>
+                                <option value="s8">Web Casting</option>
+                                <option value="s9">Condolence message screen</option>
+                            </select>
+    
 </div>
 </td></tr>
 
 <tr>
 <td>
 <div id="gold">
-	<label for="gold">option 1 :-</label>
+	<label for="gold">Gold Price</label>
 	<input type="text" name="gold" ><span class="error"><?php echo $golderr;?></span>
 </div>
 </td>
@@ -163,7 +177,8 @@ input[type=text]:hover,[type=password]:hover{
 <tr>
 <td>
 <div id="silver">
-	<label for="silver">option 2 :-</label>
+	<label for="silver">Silver Price</label>
+    
 	<input type="text" name="silver" ><span class="error"><?php echo $silvererr;?></span>
 </div>
 </td>
@@ -172,7 +187,7 @@ input[type=text]:hover,[type=password]:hover{
 <tr>
 <td>
 <div id="bronze">
-	<label for="bronze">option 3 :-</label>
+	<label for="bronze">Bronze Price</label>
 	<input type="text" name="bronze" ><span class="error"><?php echo $bronzeerr;?></span>
 </div>
 </td>
@@ -181,7 +196,7 @@ input[type=text]:hover,[type=password]:hover{
 <tr>
 <td>
 <div id="platinum">
-	<label for="platinum">option 4 :-</label>
+	<label for="platinum">Platinum Price</label>
 	<input type="text" name="platinum"><span class="error"><?php echo $platinumerr;?></span>
 </div>
 </td>
@@ -190,7 +205,7 @@ input[type=text]:hover,[type=password]:hover{
 <tr>
 <td>
 <div id="deluxe">
-	<label for="deluxe">option 5 :-</label>
+	<label for="deluxe">Deluxe Price</label>
 	<input type="text" name="deluxe" ><span class="error"><?php echo $deluxeerr;?></span>
 </div>
 </td>
