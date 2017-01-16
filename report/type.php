@@ -95,7 +95,7 @@ input[type=text]:hover,[type=password]:hover{
                             
                  
                  
-                if ($error==FALSE){
+               
 
                 $sql = "UPDATE type SET price='$price' WHERE no='$no' OR (type='$type' AND supplier='$supplier')";
 
@@ -106,7 +106,7 @@ input[type=text]:hover,[type=password]:hover{
                     echo "error" ;
                 }
                 }
-                 }
+                 
                 if (isset($_POST['delete'])) {
                      
                      $no=$_POST["no"];
@@ -123,7 +123,7 @@ input[type=text]:hover,[type=password]:hover{
                 }
                 }
                    
-                $error=FALSE;
+                
                        
                  if (isset($_POST['insert'])) {
                      
