@@ -60,6 +60,20 @@ input[type=text]:hover,[type=password]:hover{
     color: white;
 }
 </style>
+    <!--date picker jquery -->
+
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+ $(function(){
+        $("#date").datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+  
+  </script>
+<!--date picker jquery -->
+</style>
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
@@ -128,7 +142,7 @@ input[type=text]:hover,[type=password]:hover{
                     </tr>   
                     <tr>
                     <td><label for="date">Date</label></td>
-                    <td><input type="text" name="date" placeholder="Date" required></td>
+                    <td><input type="text" name="date" id="date" placeholder="Date" required></td>
                     </tr>
                     <tr>
                     <tr>
