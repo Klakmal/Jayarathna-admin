@@ -172,7 +172,7 @@ input[type=text]:hover,[type=password]:hover{
            
             $sql = "UPDATE employee SET email='$email',address='$address',hnumber='$hnumber', mnumber='$mnumber', password='$password',repassword='$repassword' WHERE employeeid='$employeeid'";
             if(mysqli_query($conn,$sql)){
-                header('location:adminlogin.php');
+                header('location:indexitoperator.php');
                 die();
             } else{echo "error";}
              
