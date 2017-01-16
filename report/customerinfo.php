@@ -28,7 +28,22 @@
     padding: 20px;
     border-radius: 10px;
 }
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+.th, .td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
+}
     </style>
 </head>
 <body>
@@ -61,46 +76,46 @@
     $sql = "SELECT cusname, deadname, connumber, address, email, gender, nic FROM customers WHERE cusname = '$cusname'";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
-    <tr> 
-        <th>Customer Name</th>
-        <th>Dead Person Name</th> 
-        <th>Contact Number</th>
-        <th>Address</th>
-        <th>Email</th>
-        <th>Gender</th>  
-        <th>NIC</th>
+<table class="tbl">
+    <tr class="tr"> 
+        <th class="th">Customer Name</th>
+        <th class="th">Dead Person Name</th> 
+        <th class="th">Contact Number</th>
+        <th class="th">Address</th>
+        <th class="th">Email</th>
+        <th class="th">Gender</th>  
+        <th class="th">NIC</th>
     </tr>
 
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
+         echo "<tr class='tr'>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['cusname'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td>";
             echo $row['deadname'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['connumber'];
             echo "</td>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['address'];
             echo "</td>";
 
-             echo "<td>";
+             echo "<td class='td'>";
             echo $row['email'];
             echo "</td>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['gender'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['nic'];
             echo "</td>";
 

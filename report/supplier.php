@@ -43,17 +43,21 @@ input[type=text]:hover,[type=password]:hover{
 }
 
 
-.tb{
-    width:150px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 900px;
 }
-.tb1{
-    width: 150px;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
 }
-.tb2{
-    width:150px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
 </style>
 </head>
@@ -268,55 +272,55 @@ input[type=text]:hover,[type=password]:hover{
     $sql = "SELECT * FROM supplier";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
+<table class="tbl">
     <tr>
-        <th class="tb">SupplierNo</th>  
-        <th class="tb">Supplier</th>
-        <th class="tb">Contact No</th>
-        <th class="tb">Address</th>
-        <th class="tb">Email</th>
-        <th class="tb">Platinum</th> 
-        <th class="tb">Gold</th>
-        <th class="tb">Silver</th>
-        <th class="tb">Bronze</th>
+        <th class="th">SupplierNo</th>  
+        <th class="th">Supplier</th>
+        <th class="th">Contact No</th>
+        <th class="th">Address</th>
+        <th class="th">Email</th>
+        <th class="th">Platinum</th> 
+        <th class="th">Gold</th>
+        <th class="th">Silver</th>
+        <th class="th">Bronze</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr class="tb1">';
+         echo '<tr class="tr">';
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['supplierno'];
             echo "</td>";
                 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['supplier'];
             echo "</td>";        
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['contactno'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['address'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['email'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['platinum'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['gold'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['silver'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['bronze'];
             echo "</td>";
            

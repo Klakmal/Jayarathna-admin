@@ -30,7 +30,22 @@
     padding: 20px;
     border-radius: 10px;
 }
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
+}
 
+.th, .td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
+}
     </style>
     <!--date picker jquery -->
 
@@ -92,14 +107,14 @@
                 		$sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND type='$type' AND supplier='$supplier' GROUP BY supplier";
                     	$query=(mysqli_query($conn,$sql));
                     	?>
-                    	<table>
-    					<tr>
-				        <th>No of in</th>
-				        <th>Total Price</th>
+                    	<table class="tbl">
+    					<tr class="tr">
+				        <th class="th">No of in</th>
+				        <th class="th">Total Price</th>
     					</tr>
 						<?php
 						    while ($row = mysqli_fetch_assoc($query)){
-						         echo "<tr>";
+						         echo "<tr class='tr'>";
 						        
 						            /*echo "<td>";
 						            echo $row['supplier'];
@@ -109,11 +124,11 @@
 						            echo $row['type'];
 						            echo "</td>";
 						*/
-						            echo "<td>";
+						            echo "<td class='td'>";
 						            echo $row['count(id.id)'];
 						            echo "</td>";
 						            
-						            echo "<td>";
+						            echo "<td class='td'>";
 						            echo $row['sum(type.price)'];
 						            echo "</td>";
 

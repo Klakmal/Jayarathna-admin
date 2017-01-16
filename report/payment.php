@@ -43,17 +43,21 @@ input[type=text]:hover,[type=password]:hover{
 }
 
 
-.tb{
-    width:100px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 700px;
 }
-.tb1{
-    width: ;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
 }
-.tb2{
-    width:100px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
 </style>
 </head>
@@ -147,40 +151,40 @@ input[type=text]:hover,[type=password]:hover{
     $sql = "SELECT * FROM payment";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
+<table class="tbl">
     <tr>
-        <th class="tb">SupplierNo</th> 
-        <th class="tb">Supplier</th>
-        <th class="tb" >Date</th> 
-        <th class="tb" >Buy</th>
-        <th class="tb" >Pay</th>
-        <th class="tb" >Due</th>
+        <th class="th">SupplierNo</th> 
+        <th class="th">Supplier</th>
+        <th class="th" >Date</th> 
+        <th class="th" >Buy</th>
+        <th class="th" >Pay</th>
+        <th class="th" >Due</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr class="tb1">';
+         echo '<tr class="tr">';
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['supplierno'];
             echo "</td>";
                 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['supplier'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['date'];
             echo "</td>";
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['buy'];
             echo "</td>";
 
-             echo '<td class="tb2">';
+             echo '<td class="td">';
             echo $row['pay'];
             echo "</td>";
             
-             echo '<td class="tb2">';
+             echo '<td class="td">';
             echo $row['due'];
             echo "</td>";
          echo "</tr>";}

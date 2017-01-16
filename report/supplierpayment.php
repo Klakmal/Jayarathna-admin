@@ -31,17 +31,21 @@
     border-radius: 10px;
 }
 
-th{
-    width:100px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 600px;
 }
-tr{
-    width: ;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
 }
-td{
-    width:100px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
     </style>
 </head>
@@ -69,35 +73,35 @@ td{
     $sql = "SELECT supplierno, supplier, SUM(buy), SUM(pay), SUM(due) FROM payment GROUP BY supplierno";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
-    <tr>
-        <th>SupplierNo</th> 
-        <th>Supplier</th>
-        <th>Total Buy</th>
-        <th>Total Pay</th>
-        <th>Total Due</th>
+<table class="tbl">
+    <tr class="tr">
+        <th class="th">SupplierNo</th> 
+        <th class="th">Supplier</th>
+        <th class="th">Total Buy</th>
+        <th class="th">Total Pay</th>
+        <th class="th">Total Due</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
+         echo "<tr class='tr'>";
         
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['supplierno'];
             echo "</td>";
                 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['supplier'];
             echo "</td>";
 
-            echo "<td>";
+            echo "<td class='td'>";
             echo $row['SUM(buy)'];
             echo "</td>";
 
-             echo "<td>";
+             echo "<td class='td'>";
             echo $row['SUM(pay)'];
             echo "</td>";
             
-             echo "<td>";
+             echo "<td class='td'>";
             echo $row['SUM(due)'];
             echo "</td>";
 
