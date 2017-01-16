@@ -40,20 +40,21 @@ body{
     height: 100%;
     margin-left: 150px;
 }
-.tb{
-    width:100px;
-    background-color: #aaa;
-    padding: 3px;
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
 }
-.tb1{
-    width: ;
-}
-.tb2{
-    width:100px;
-    float: center;
-    background-color: white;
-    padding: 3px;
 
+.th, .td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
 </style>
 </head>
@@ -183,20 +184,20 @@ body{
     $sql = "SELECT * FROM moq";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
+<table class="tbl">
     <tr>
-        <th class="tb" >Type</th> 
-        <th class="tb" >MOQ</th>
+        <th class="th" >Type</th> 
+        <th class="th" >MOQ</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr align="center">';
+         echo '<tr class="tr" align="center">';
         
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['type'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['moq'];
             echo "</td>";
         

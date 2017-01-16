@@ -53,17 +53,21 @@ input[type=text]:hover,[type=password]:hover{
 }
 
 
-.tb{
-    width:100px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 100%;
 }
-.tb1{
-    width: ;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
 }
-.tb2{
-    width:100px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
 </style>
 </head>
@@ -177,37 +181,37 @@ input[type=text]:hover,[type=password]:hover{
     $sql = "SELECT * FROM id";
     $query=(mysqli_query($conn,$sql));
 ?>
-<table>
-    <tr>
-        <th class="tb">ID</th> 
-        <th class="tb">No</th>
-        <th class="tb">Status</th>
-        <th class="tb">Time in</th>
-        <th class="tb">Time out</th>
+<table class="tbl">
+    <tr class="tr">
+        <th class="th">ID</th> 
+        <th class="th">No</th>
+        <th class="th">Status</th>
+        <th class="th">Time in</th>
+        <th class="th">Time out</th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
-         echo '<tr class="tb1" align="center">';
+         echo '<tr class="tr" align="center">';
          $today=date("Y-m-d");
          
         if($row["timein"]== $today){
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['id'];
             echo "</td>";
                 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['no'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['status'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['timein'];
             echo "</td>";
 
-            echo '<td class="tb2">';
+            echo '<td class="td">';
             echo $row['timeout'];
             echo "</td>";
          echo "</tr>";}
