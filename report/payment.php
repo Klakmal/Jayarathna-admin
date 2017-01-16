@@ -130,7 +130,7 @@ input[type=text]:hover,[type=password]:hover{
 <form method="post" action="payment.php">
                 <table id="tb7">
                     <tr>
-                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Types</b></th> 
+                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Insert Payments</b></th> 
                     </tr>
                     <tr>
                     <td><label for="supplierno">Supplier No</label></td>
