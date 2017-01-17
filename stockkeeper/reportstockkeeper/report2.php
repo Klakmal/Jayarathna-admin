@@ -85,6 +85,10 @@
 ?>
 <table class="tbl">
     <tr>
+        <th colspan="2" align="left"><br><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Stock Count</b></th> 
+    </tr>
+
+    <tr>
         <th class="th">Type</th>
         <th class="th">Remaining</th> 
         <th class="th">MOQ </th>

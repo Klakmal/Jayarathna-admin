@@ -7,7 +7,7 @@
         
         
 
-        $addr = gethostbyname("192.168.1.6");
+        $addr = gethostbyname("192.168.1.2");
 
         $client = stream_socket_client("tcp://$addr:80", $errno, $errorMessage);
 
@@ -33,7 +33,7 @@
             $v=(int)$v;
             $sql= "SELECT status FROM id WHERE id='$v'";
             $result = mysqli_query($conn, $sql);
-            $row = $result->fetch_assoc();
+            $row = mysqli_fetch_assoc($result);
                      $inout=$row['status'];
                      echo $inout;
                 

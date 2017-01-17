@@ -15,6 +15,22 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
         width: 205px;
         height: 75px;
     }
+    .tbl {
+    border-collapse: collapse;
+    width: 700px;
+}
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
+}
 </style>
 </head>
 <body>
@@ -63,62 +79,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
   </div>
   <div class="afb1" align="center">
 <div class="afb2" align="left">
-  <?php
-                require "../dbcon/dbcon.php";
-                
-                 if (isset($_POST['insert'])) {
-                     
-                     
-                                $deadPersonName = $_POST['deadPersonName'];
-                            
-    $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName = '$deadPersonName'";
-    $query=(mysqli_query($conn,$sql));
-?>
-<table>
-    <tr> 
-        <th>Dead Person ID</th>
-        <th>Dead Person Name</th> 
-        <th>School</th>
-        <th>University</th>
-        <th>Homecity</th>
-        <th>Employee</th>  
-    </tr>
-
-<?php
-    while ($row = mysqli_fetch_assoc($query)){
-         echo "<tr>";
-                
-            echo "<td>";
-            echo $row['deadPersonID'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['deadPersonName'];
-            echo "</td>";
-
-            echo "<td>";
-            echo $row['school'];
-            echo "</td>";
-                
-            echo "<td>";
-            echo $row['university'];
-            echo "</td>";
-
-             echo "<td>";
-            echo $row['homecity'];
-            echo "</td>";
-                
-            echo "<td>";
-            echo $row['employee'];
-            echo "</td>";
-
-         echo "</tr>";}
-?>
-</table>
-<?php
-}
-?>
-
 <div id="id">
                 <form method="post" action="deadpersoninfo.php">
                 <table id="tb11">
@@ -139,6 +99,61 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
             
                 </form>
                 </div>  
+<?php
+                require "../dbcon/dbcon.php";
+                
+                 if (isset($_POST['insert'])) {
+                     
+                     
+                                $deadPersonName = $_POST['deadPersonName'];
+                            
+    $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName = '$deadPersonName'";
+    $query=(mysqli_query($conn,$sql));
+?>
+<table class="tbl">
+    <tr class="tr"> 
+        <th class="th">Dead Person ID</th>
+        <th class="th">Dead Person Name</th> 
+        <th class="th">School</th>
+        <th class="th">University</th>
+        <th class="th">Homecity</th>
+        <th class="th" class="th">Employee</th>  
+    </tr>
+
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr class='tr'>";
+                
+            echo "<td class='td'>";
+            echo $row['deadPersonID'];
+            echo "</td>";
+
+            echo "<td class='td'>";
+            echo $row['deadPersonName'];
+            echo "</td>";
+
+            echo "<td class='td'>";
+            echo $row['school'];
+            echo "</td>";
+                
+            echo "<td class='td'>";
+            echo $row['university'];
+            echo "</td>";
+
+            echo "<td class='td'>";
+            echo $row['homecity'];
+            echo "</td>";
+                
+            echo "<td class='td'>";
+            echo $row['employee'];
+            echo "</td>";
+
+         echo "</tr>";}
+?>
+</table>
+<?php
+}
+?>
 
 </div>
 </div>

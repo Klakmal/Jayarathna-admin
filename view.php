@@ -21,7 +21,8 @@
                     echo "<span class='fdname'>".$row['message']."</span></div><br><hr class ='hor'>";
                     echo "<div class='st' align='right'><span class='status'><b>Relation : </b>";
                     echo $row['relation']."</span></div>";
-                    echo "</div>";  
+                    echo "</div>";
+                    sleep(0);
                 }
             }
             ?>
