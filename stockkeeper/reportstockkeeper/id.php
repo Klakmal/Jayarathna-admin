@@ -69,12 +69,18 @@ input[type=text]:hover,[type=password]:hover{
     background-color: #41a3b1;
     color: white;
 }
+   input[type=button]{
+        align-content:left;
+        padding: 8px;
+        
+    }
 </style>
 <script>
 function openWin() {
     window.open("http://www.w3schools.com","_blank");
 }    
 </script>
+    
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">
@@ -120,12 +126,7 @@ function openWin() {
                             }else{
                                 $no = $_POST['no'];
                             }
-                     /*if(empty($_POST['timein'])){ 
-                                $timeinerr = "</br>* ";
-                                $error = TRUE;
-                            }else{
-                                $timein = $_POST['timein'];
-                            }*/
+                    
                      
                     $status="out";
                     while($count>0){
@@ -146,9 +147,7 @@ function openWin() {
                  }
                 ?>
                 <div id="id in">
-                <div class="clientbutton" align="right">
-                <a href="client.php" onclick="window.open(window.location.href,'_blank');window.open(this.href,'_self');">Load Data</a>
-                </div>
+                
                 <form method="post" action="id.php">
                 <table id="tb8">
                     <tr>
@@ -166,15 +165,8 @@ function openWin() {
                     <td><label for="no">No</label><span class="error"><?php echo $noerr;?></span></td>
                     <td><input type="text" name="no" placeholder="no"></td>
                     </tr>
-                    <!-- <tr>
-                    <td><label for="timein">TimeIn</label><span class="error"><?php echo $timeinerr;?></span></td>
-                    <td><input type="text" name="timein" placeholder="Timein"></td>
-                    </tr> 
+                      
                     <tr>
-                    <td><label for="timeout">TimeOut</label><span class="error"><?php echo $timeouterr;?></span></td>
-                    <td><input type="text" name="timeout" placeholder="Timeout"></td>
-                    </tr>    
-                    <tr>-->
                     <td colspan="2" align="center">
                     <input type="submit" value="INSERT" name="insert">
                     </td>
@@ -190,6 +182,9 @@ function openWin() {
     $sql = "SELECT * FROM id";
     $query=(mysqli_query($conn,$sql));
 ?>
+    <div class="clientbutton" align="right">
+                <a href="client.php" onclick="window.open(window.location.href,'_blank');window.open(this.href,'_self');"><input type="button" value="Load ID log" name="clintbtn" ></a>
+     </div>
 <table class="tbl">
     <tr class="tr">
         <th class="th">ID</th> 

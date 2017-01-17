@@ -140,7 +140,7 @@
 
 
     require "dbcon/dbcon.php";
-    $sql = "SELECT id.id, type.type, type.supplier, type.price, id.timein , id.timeout FROM id, type WHERE id.timein > '$date1' AND id.timein < '$date2'";
+    $sql = "SELECT id.id, type.type, type.supplier, type.price, id.timein , id.timeout FROM id, type WHERE id.timein > '$date1' AND id.timein < '$date2' AND id.no=type.no";
     $query=(mysqli_query($conn,$sql));
 ?>
 <table class="tbl">
