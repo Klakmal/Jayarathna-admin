@@ -101,8 +101,8 @@
                 $sql = "UPDATE type SET price='$price' WHERE no='$no' OR (type='$type' AND supplier='$supplier')";
 
                 if (mysqli_query($conn, $sql)) {
-                    //echo '<script>alert("Record updated successfully")</script>';
-                    header('location:type.php');
+                    echo '<script>window.location("Record updated successfully")</script>';
+              
                 } else {
                     echo "error" ;
                 }
@@ -117,8 +117,8 @@
                 $sql = "DELETE FROM type WHERE no='$no'";
 
                 if (mysqli_query($conn, $sql)) {
-                    //echo '<script>alert("Record deleted successfully")</script>';
-                    header('location:type.php');
+                    echo '<script>window.location("Record deleted successfully")</script>';
+                    
                 } else {
                     echo "Error deleting record: " . mysqli_error($conn);
                 }
@@ -145,8 +145,8 @@
                 VALUES ('".$no."','".$price."','".$type."','".$supplier."')";
 
                 if (mysqli_query($conn, $sql)) {
-                    //echo '<script>alert("New record created successfully")</script>';
-                    header('location:type.php');
+                    echo '<script>window.location("New record created successfully")</script>';
+                    
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }

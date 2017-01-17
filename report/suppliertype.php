@@ -148,30 +148,30 @@
                     			$query=(mysqli_query($conn,$sql));
                     			?>
 
-                    			<table>
+                    			<table class="tbl">
 							    <tr>
-							        <th>Supplier</th>
-							        <th>No of in</th>
-							        <th>Total Price</th>
+							        <th class="th">Supplier</th>
+							        <th class="th">No of in</th>
+							        <th class="th">Total Price</th>
 							        
 							    </tr>
 							<?php
 							    while ($row = mysqli_fetch_assoc($query)){
-							         echo "<tr>";
+							         echo "<tr class='tr'>";
 							        
 							            /*echo "<td>";
 							            echo $row['supplier'];
 							            echo "</td>";
 							*/
-							            echo "<td>";
+							            echo "<td class='td'>";
 							            echo $row['supplier'];
 							            echo "</td>";
 
-							            echo "<td>";
+							            echo "<td class='td'>";
 							            echo $row['count(id.id)'];
 							            echo "</td>";
 
-							            echo "<td>";
+							            echo "<td class='td'>";
 							            echo $row['sum(type.price)'];
 							            echo "</td>";
 							            
@@ -188,30 +188,30 @@
                                  $sql = "SELECT type,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein< '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";
                                  $query=(mysqli_query($conn,$sql));
                                  ?>
-                                 <table>
+                                 <table class="tbl">
 							    <tr>
-							        <th>type</th>
-							        <th>No of in</th>
-							        <th>Total Price</th>
+							        <th class="th">type</th>
+							        <th class="th">No of in</th>
+							        <th class="th">Total Price</th>
 							        
 							    </tr>
 							<?php
 							    while ($row = mysqli_fetch_assoc($query)){
-							         echo "<tr>";
+							         echo "<tr class='tr'>";
 							        
 							            /*echo "<td>";
 							            echo $row['supplier'];
 							            echo "</td>";
 							*/
-							            echo "<td>";
+							            echo "<td class='td'>";
 							            echo $row['type'];
 							            echo "</td>";
 
-							            echo "<td>";
+							            echo "<td class='td'>";
 							            echo $row['count(id.id)'];
 							            echo "</td>";
 
-							            echo "<td>";
+							            echo "<td class='td'>";
 							            echo $row['sum(type.price)'];
 							            echo "</td>";
 							            
@@ -252,7 +252,14 @@
                     </tr> 
                     <tr>
                     <td><label for="type">Type</label></td>
-                    <td><input type="text" name="type" placeholder="Type"></td>
+                    <td><select type="text" name="type" placeholder="Type">
+						<option value="">---Select---</option>
+						<option value="platinum">Platinum</option>
+						<option value="gold">Gold</option>
+						<option value="silver">Silver</option>
+						<option value="bronze">Bronze</option>
+						</select>
+					</td>
                     </tr> 
                     <tr>
                         <td colspan="2" align="center">
