@@ -119,7 +119,7 @@ input[type=text]:hover,[type=password]:hover{
                                 }
 
                  
-                if ($error==FALSE){
+               
 
                 $sql = "UPDATE supplier SET supplier='$supplier', contactno='$contactno', address='$address', email='$email', platinum ='$platinum', gold= '$gold', silver= '$silver', bronze= '$bronze' WHERE supplierno= '$supplierno'";
 
@@ -130,7 +130,7 @@ input[type=text]:hover,[type=password]:hover{
                     echo "error" ;
                 }
                 }
-                 }
+                 
                 if (isset($_POST['delete'])) {
                      
                      $supplierno=$_POST["supplierno"];

@@ -161,7 +161,7 @@ input[type=text]:hover,[type=password]:hover{
                 <form method="post" action="type.php">
                 <table id="tb6">
                     <tr>
-                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Types</b></th> 
+                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Prices</b></th> 
                     </tr>
                     <tr>
                     <td><label for="no">No</label></td>

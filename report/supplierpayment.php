@@ -74,6 +74,9 @@
     $query=(mysqli_query($conn,$sql));
 ?>
 <table class="tbl">
+    <tr>
+    <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Total Supplier Payments</b></th> 
+    </tr>
     <tr class="tr">
         <th class="th">SupplierNo</th> 
         <th class="th">Supplier</th>
