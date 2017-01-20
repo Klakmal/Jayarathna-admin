@@ -90,7 +90,7 @@ label{
                     
                     $_SESSION['employeeid']=$empid;
                     $position = $res['position'];
-                    
+                    //Direct employees according to positions
                     switch($position){
                         case "manager":
                             header('location:manager/indexmanager.php');
@@ -138,11 +138,11 @@ label{
                 </tr>
                     <tr><td><span class="error"><?php echo $error ?></span></td></tr>
                 <tr>
-               <!--     <td><label for="employeeid">Employee ID</label></td>-->
+               
                     <td align="center"><input type="text" name="empid"  placeholder="Employee ID"></td>
                 </tr>
                 <tr>
-              <!--      <td><label for="password">Password</label></td>     -->
+              
                     <td align="center"><input type="password" name="pwd"  placeholder="Password"></td>
                 
                 </tr>

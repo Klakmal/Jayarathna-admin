@@ -18,7 +18,7 @@
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
     <a href="indexitoperator.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="admincondolence.php" class="navi"><img src="../img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE 
+    <a href="admincondolence.php" class="navi"><img src="../img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE 
       <span class="noti">
       <?php
       require "../dbcon/dbcon.php";
@@ -81,10 +81,9 @@
                 
                 if ($error==FALSE){
                
-                $sql = "INSERT INTO webcasting (deadPersonID,url) VALUES ('".$deadid."','".$url."')";
+                $sql = "INSERT INTO webcasting (deadPersonID,url) VALUES ('".$deadid."','".$url."')";//INSERT DETAILS INTO WEBCASTING
                 if(mysqli_query($conn,$sql)){
-                    /*echo "<script type='text/javascript'>alert('submitted successfully!')</script>";
-                    header( "Location: webcasting.php");*/
+                    
                     echo "<script>alert('webcasting url successfully send'); window.location.href='webcastingadmin.php'; </script>";
                     die();
                 } else{
@@ -113,15 +112,13 @@
                 </tr>
                  <tr>
                     
-                        <td><label for="deadid">Dead Person ID : </label><span class="error"><?php echo $deadnameerr;?></span></td>
-                        
-                        <td><input type="text" name="deadid" id="deadid" placeholder="Dead Person ID" required></td>
+                    <td><label for="deadid">Dead Person ID : </label><span class="error"><?php echo $deadnameerr;?></span></td>                        
+                    <td><input type="text" name="deadid" id="deadid" placeholder="Dead Person ID" required></td>
                 
                 </tr>
                 <tr>
                     
-                      <td><label for="url">URL: </label><span class="error"><?php echo $urlerr;?></span></td>
-                        
+                    <td><label for="url">URL: </label><span class="error"><?php echo $urlerr;?></span></td>                        
                     <td> <input type="text" name="url" id="url" placeholder="URL" required></td>
                     
                 </tr>
@@ -149,7 +146,7 @@
                      
                                 $deadPersonName = $_POST['deadPersonName'];
                             
-    $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName = '$deadPersonName'";
+    $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName = '$deadPersonName'";//TAKE ALL DETAILS FROM DEATHPERSONDETAILS WITH GIVEN DEAD PERSON NAME
     $query=(mysqli_query($conn,$sql));
 ?>
 <table>
