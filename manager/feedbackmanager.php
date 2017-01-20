@@ -23,7 +23,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
   <?php include '../details.php'; ?>
   <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp; HOME</a>
   <a href="datainquiry.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; DATA ENTERING</a>
-  <a href="report.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; REPORTS</a>
+  <a href="../report/report.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; REPORTS</a>
   <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
   <a href="feedbackmanager.php" class="active"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
     </a>

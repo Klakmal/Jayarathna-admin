@@ -66,7 +66,7 @@ input[type=text]:hover,[type=password]:hover{
   <?php include '../details.php'; ?>
   <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp; HOME</a>
   <a href="datainquiry.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; DATA ENTERING</a>
-  <a href="report.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; REPORTS</a>
+  <a href="../report/report.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp; REPORTS</a>
   <a href="adminReservation.php" class="navi"><img src="../img/package.png" class="image">&nbsp;&nbsp; PACKAGE AND SERVICES</a>
   <a href="feedbackmanager.php" class="navi"><img src="../img/feedback.png" class="image">&nbsp;&nbsp; FEED-BACK 
       <span class="noti">
