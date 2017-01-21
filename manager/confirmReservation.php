@@ -277,17 +277,17 @@
     </div>
     <div class="navidiv">
         <ul class="naviul">
-            <li class="navilihead"><a class="confirmlink" href="confirmReservation.php">Confirm Reservation</a><br><br><b>New Reservations</b></li>
+            <li class="navilihead"><a class="confirmlink" href="adminReservation.php">New Reservations</a><br><br><b>Confirm Reservation</b></li>
 	<?php  
 			$rid=$cname=$dadd=$ddate=$dtime=$mobinum=$pack=$floral=$remembrance=$chairtents=$obituary=$crematorium=$monumental=$pyres=$total=$status="";
             require "../dbcon/dbcon.php";
-    		$sql = "SELECT * FROM reservations WHERE flag = 0 OR flag = 1 ORDER BY res_id DESC";
+    		$sql = "SELECT * FROM reservations WHERE flag = 2 ORDER BY res_id DESC";
     		$query=(mysqli_query($conn,$sql));   
             while($row = mysqli_fetch_array($query)) {
     
     ?>	
     		<li class="navili">
-    			<button class="but"  onclick="location.href='adminReservation.php?no=<?php echo $row['res_id'] ?>'">
+    			<button class="but"  onclick="location.href='confirmReservation.php?no=<?php echo $row['res_id'] ?>'">
     			<?php echo $row['res_id'] ?><br>
     			<?php echo $row['packname'] ?><br>
     			<div align="right"><?php echo $row['dildate'] ?></div>
@@ -303,8 +303,6 @@
     <?php
     if(isset($_GET['no'])){
         $no = $_GET['no'];
-        $sq = "UPDATE `reservations` SET `flag`= 1 WHERE res_id = '$no'";
-        mysqli_query($conn, $sq);
         $sql = "SELECT * FROM reservations WHERE res_id = '$no'";
 					
 					$result= mysqli_query($conn, $sql);
@@ -376,8 +374,7 @@
                 <hr class="hrd">
             </div>
             
-            <button class="rej"  onclick="location.href='adminReservation.php?reject=<?php echo $no; ?>'">Remove</button> 
-            <button class="acc"  onclick="location.href='adminReservation.php?accept=<?php echo $no; ?>'">Confirm</button>
+            <button class="rej"  onclick="location.href='confirmReservation.php?reject=<?php echo $no; ?>'">Remove</button> 
         </div>
     </div>
         
@@ -392,18 +389,10 @@
         $sql = "UPDATE `reservations` SET `flag`= 3 WHERE res_id = '$reject'";
         mysqli_query($conn,$sql);
 
-        echo "<script>alert('Delete Form.'); window.location.href='adminReservation.php'; </script>";
+        echo "<script>alert('Delete Form.'); window.location.href='confirmReservation.php'; </script>";
 
 
     }
-
-    if(isset($_GET['accept'])){
-        $accept = $_GET['accept'];
-    //    $sql= "INSERT INTO `acceptvisitor`(`msg_no`) VALUES ($_GET[accept])";
-        $sql = "UPDATE `reservations` SET `flag`= 2 WHERE res_id = '$accept'";
-        mysqli_query($conn,$sql);
-        echo "<script>alert('Reservation Viewed'); window.location.href='adminReservation.php'; </script>";
-    }
-    ?>
+        ?>
     </body>
 </html>
