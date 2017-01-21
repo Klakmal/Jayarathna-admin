@@ -13,6 +13,18 @@
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
     </style>
+    <!--date picker eke jquery -->
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="/resources/demos/style.css">
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+
+      </script>
+    <!--date picker eke jquery -->
 </head>
 <body>
 
@@ -48,7 +60,7 @@
     require "../dbcon/dbcon.php";
 
     $error=FALSE;
-        $cnameerr = $dnameerr = $connumbererr = $emailerr = $gendererr = $doberr = $nicerr= $addresserr ="";
+        $cnameerr = $doberror = $connumbererr = $emailerr = $gendererr = $doberr = $nicerr= $addresserr ="";
         
         if (isset($_POST['submit'])) {
             
@@ -58,13 +70,6 @@
                 $error = TRUE;
             }else{
                 $cname = $_POST['cusname'];
-            }
-            
-          if(empty($_POST['deadname'])){ 
-                $dnameerr = "</br>* ";
-                $error = TRUE;
-            }else{
-                $dname = $_POST['deadname'];
             }
             if(empty($_POST['nic'])){ 
                 $nicerr = "* ";
@@ -104,6 +109,12 @@
                 $gender = $_POST['gender'];
             }
             
+            if(empty($_POST['dob'])){ 
+                $dobererr = "</br>* ";
+                $error = TRUE;
+            }else{
+                $dob = $_POST['dob'];
+            }
            
             
  /*           if(empty($_POST['dob'])){ 
@@ -113,19 +124,13 @@
                 $dob = $_POST['dob'];
             }
             */
-
-
-
-$month=$_POST['month'];
-$dt=$_POST['dt'];
-$year=$_POST['year'];
-$dob="$year-$month-$dt";
+            
 
              if ($error==FALSE){
            
-            $sql = "INSERT INTO customers (cusname,deadname,nic,address,connumber,email,gender,dob) VALUES ('".$cname."','".$dname."','".$nic."','".$address."','".$connumber."','".$email."','".$gender."','".$dob."')";
+            $sql = "INSERT INTO customers (cusname,nic,address,connumber,email,gender,dob,password,repassword) VALUES ('".$cname."','".$nic."','".$address."','".$connumber."','".$email."','".$gender."','".$dob."','0','0')";
             if(mysqli_query($conn,$sql)){
-                die();
+                echo "<script type='text/javascript'>window.location.href ='receptionistreservation.php';</script>";
             } else{echo "error";}
              
             }
@@ -167,13 +172,6 @@ $dob="$year-$month-$dt";
             </tr>
             <tr>
                 
-                    <td><label for="deadname">Dead Person Name</label><span class="error"><?php echo $dnameerr;?></span></td>
-                    
-                    <td><input type="text" name="deadname" id="deadname" required></td>
-            
-            </tr>
-            <tr>
-                
                     <td><label for="nic">NIC</label><span class="error"><?php echo $nicerr;?></span></td>
                     
                     <td><input type="text" name="nic" id="nic" required></td>
@@ -212,69 +210,18 @@ $dob="$year-$month-$dt";
                     
                    <td><input type="date" name="dob" id="dob" placeholder="yyyy-mm-dd" required></td>
             </tr>-->
-            <tr><td><label for="dob">DOB</label><span class="error"></span></td><td  align=left  >   
-
-<select name=month value=''>
-<option value='01'>January</option>
-<option value='02'>February</option>
-<option value='03'>March</option>
-<option value='04'>April</option>
-<option value='05'>May</option>
-<option value='06'>June</option>
-<option value='07'>July</option>
-<option value='08'>August</option>
-<option value='09'>September</option>
-<option value='10'>October</option>
-<option value='11'>November</option>
-<option value='12'>December</option>
-</select>
-
-
-
-   
-
-<select name=dt >
-
-<option value='01'>01</option>
-<option value='02'>02</option>
-<option value='03'>03</option>
-<option value='04'>04</option>
-<option value='05'>05</option>
-<option value='06'>06</option>
-<option value='07'>07</option>
-<option value='08'>08</option>
-<option value='09'>09</option>
-<option value='10'>10</option>
-<option value='11'>11</option>
-<option value='12'>12</option>
-<option value='13'>13</option>
-<option value='14'>14</option>
-<option value='15'>15</option>
-<option value='16'>16</option>
-<option value='17'>17</option>
-<option value='18'>18</option>
-<option value='19'>19</option>
-<option value='20'>20</option>
-<option value='21'>21</option>
-<option value='22'>22</option>
-<option value='23'>23</option>
-<option value='24'>24</option>
-<option value='25'>25</option>
-<option value='26'>26</option>
-<option value='27'>27</option>
-<option value='28'>28</option>
-<option value='29'>29</option>
-<option value='30'>30</option>
-<option value='31'>31</option>
-</select>
-
-<input class="year" type=year name=year size=4 value="" pattern="^\d{4}$" maxlength="4" max="4" placeholder="year">
-</td>
-</tr>
-             <tr>
+            <tr>
+                <td>
+                    <label for="dob">DOB</label><span class="error"></span>
+                </td>
+                <td  align=left  >
+                    <input class="year" id="datepicker" type="text" name="dob" placeholder="mm/dd/yyyy">
+                </td>
+            </tr>
+            <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="Sign Up" name="submit">
                     <input type="reset" value="Reset" name="cancle">
+                    <input type="submit" value="Reservation Form" name="submit">
                 </td>
             
             </tr>
