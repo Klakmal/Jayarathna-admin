@@ -82,6 +82,12 @@
                 #insert details into the database
                 $sql = "INSERT INTO personalgallery (deadPersonID,num_images) VALUES ('$deadPersonID','$num_images')";
                 if(mysqli_query($conn,$sql)){
+                    //set the directory path name
+                    $dir = ("../../Project/personalGallery");
+
+                    //make the directory
+                    mkdir($dir, $deadPersonID);
+
                     #alert if data transfered successfully
                     echo "<script>alert('photos are successfully uploaded'); window.location.href='personalGalleryadmin.php'; </script>"; 
                     die();
@@ -90,9 +96,12 @@
                     echo "<script type='text/javascript'>alert('Not successfully data tranfer!')</script>"; 
                 }
                  
-                }
+              }
             }
-        ?>
+              
+              
+
+      ?>
 
       <!--form for the personal gallery details-->
  
