@@ -85,12 +85,7 @@ input[type=text]:hover,[type=password]:hover{
        $employeeiderr = $emailerr = $addresserr = $hnumbererr = $mnumbererr = $passworderr =$repassworderr = "";
     if (isset($_POST['submit'])) {
 
-            if(empty($_POST['employeeid'])){ 
-                $employeeiderr = "</br>* ";
-                $error = TRUE;
-            }else{
-                $employeeid = $_POST['employeeid'];
-            }
+            $employeeid = $_SESSION['employeeid'];
         
             if(empty($_POST['email'])){ 
                 $emailerr = "</br>* ";
@@ -150,7 +145,8 @@ input[type=text]:hover,[type=password]:hover{
            
             $sql = "UPDATE employee SET email='$email',address='$address',hnumber='$hnumber', mnumber='$mnumber', password='$password',repassword='$repassword' WHERE employeeid='$employeeid'";
             if(mysqli_query($conn,$sql)){
-                header('location:indexadmin.php');
+                echo "<script>alert('Details Updated.');</script>";
+                echo "<script>window.location(location:editadmin.php);</script>";
                 die();
             } else{echo "error";}
              
@@ -159,7 +155,12 @@ input[type=text]:hover,[type=password]:hover{
     
     ?>
 
-
+    <?php 
+    $empid = $_SESSION['employeeid'];
+    $query="SELECT * FROM employee WHERE employeeid = '$empid'";
+    $res = mysqli_fetch_array(mysqli_query($conn,$query));
+    ?>
+    
     <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <div id="asignup" align="center">
         <form id="bform5" action="edit.php" method="post">
@@ -175,7 +176,7 @@ input[type=text]:hover,[type=password]:hover{
                 
                    <td><label for="employeeid">Employee ID</label><span class="error"><?php echo $employeeiderr;?></span></td>
             
-                   <td> <input type="text" name="employeeid" id="employeeid" required></td>
+                   <td><?php echo $res['employeeid']; ?></td>
             
             </tr>
            
@@ -183,27 +184,27 @@ input[type=text]:hover,[type=password]:hover{
                 
                  <td><label for="email">Email</label><span class="error"><?php echo $emailerr;?></span></td>
                     
-                   <td><input type="email" name="email" id="email" required></td>
+                   <td><input type="email" name="email" id="email" value="<?php echo $res['email']; ?>" required></td>
             </tr>
             <tr>
                 
                     <td><label for="address">Address</label><span class="error"><?php echo $addresserr;?></span></td>
                     
-                    <td><input type="text" name="address" id="address" required></td>
+                    <td><input type="text" name="address" id="address" value="<?php echo $res['address']; ?>" required></td>
             
             </tr>
             <tr>
                 
                     <td><label for="hnumber">Home Phone No.</label><span class="error"><?php echo $hnumbererr;?></span></td>
                     
-                    <td><input type="text" name="hnumber" id="hnumber" required></td>
+                    <td><input type="text" name="hnumber" id="hnumber" value="<?php echo $res['hnumber']; ?>" required></td>
             
             </tr>
             <tr>
                 
                     <td><label for="mnumber">Mobile Phone No.</label><span class="error"><?php echo $mnumbererr;?></span></td>
                     
-                    <td><input type="text" name="mnumber" id="mnumber" required></td>
+                    <td><input type="text" name="mnumber" id="mnumber" value="<?php echo $res['mnumber']; ?>" required></td>
             
             </tr>
             
@@ -222,7 +223,7 @@ input[type=text]:hover,[type=password]:hover{
             
              <tr>
                 <td colspan="2" align="right">
-                    <input type="submit" value="UPDATE" name="submit">
+                    <input type="submit" value="UPDATE" name="submit" onclick="return confirm('Are you sure?')">
                     <input type="reset" value="RESET" name="cancle">
                 </td>
             </tr>
