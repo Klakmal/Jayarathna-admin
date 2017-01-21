@@ -70,7 +70,7 @@ input[type=text]:hover,[type=password]:hover{
 
 <div class="menu2" align="right" style="margin-bottom: 100px;">
     <div class="menu2in">
-      <a href="../../signout.php" class="myButton">Log Out</a>
+      <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
 <div class="con1" align="center">
