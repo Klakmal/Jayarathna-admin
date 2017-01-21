@@ -17,7 +17,7 @@ body{
     background-color: #eee;
 }
 .con1{
-    width: 100%;
+    width: 100%; 
     height: 100%;
     background-color: ;
 }
@@ -79,9 +79,11 @@ input[type=text]:hover,[type=password]:hover{
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
   <a href="../manager/indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="../manager/type.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="../manager/updateprices.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
-  <a href="../report/payment.php" class="active"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
-  <a href="../report/supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
+  <a href="payment.php" class="active"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
+  <a href="supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
+  <a href="../manager/moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
 </nav>
 <div class="menu2" align="right">
     <div class="menu2in">

@@ -20,7 +20,7 @@
     padding: 8px;
 }
 
-.tr:nth-child(even){background-color: #f2f2f2}
+.tr:nth-child(even){background-color: #f2f2f2} 
 
 .th {
     background-color: #41a3b1;
@@ -33,9 +33,7 @@
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
   <a href="indexstockkeeper.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="reportstockkeeper/type.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
   <a href="reportstockkeeper/id.php" class="navi"><img src="../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
-  <a href="reportstockkeeper/moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
   <a href="reportstockkeeper/report1.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
   <a href="reportstockkeeper/report2.php" class="navi"><img src="../img/account.png" class="image">&nbsp;&nbsp;STOCK COUNT</a>
   <a href="reportstockkeeper/graph.php" class="navi"><img src="../img/stock.png" class="image">&nbsp;&nbsp;COFFIN LEVEL</a>

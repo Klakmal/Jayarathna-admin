@@ -1,76 +1,74 @@
 <?php
-    require "../../dbcon/dbcon.php";
-    session_start();// Starting Session
-    // Storing Session
-    $checkID = $_SESSION['employeeid'];
-    $ses_sql= "SELECT * FROM employee WHERE employeeid = '".$checkID."'";
-    $query = mysqli_query($conn,$ses_sql);
-    $res = mysqli_fetch_array($query);
-    $login_session = $res['position'];
-    if($login_session != 'stockkeeper'){
-        mysql_close($conn); // Closing Connection
-        header('Location: ../../index.php'); // Redirecting To Home Page
-    }
+    include ('sessionManager.php');
 ?>
 <html>
 <head>
-<title>type</title>
-  
-
+<title>Payment</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="../../css/adminindex.css">
-    <link rel="stylesheet" type="text/css" href="../../css/manage.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
+    <link rel="stylesheet" type="text/css" href="../css/manage.css">
     <style>
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
     </style>
-<style>
-body{
+<style> 
+body{ 
     margin:0px;
     background-color: #eee;
 }
 .con1{
     width: 100%;
     height: 100%;
-    margin-top: 100px;
+    background-color: ;
 }
 .con2{
-    padding-left: 150px; 
-    width: 300px;
+    width: 500px;
     height: 100%;
-    margin-left: 150px;
-}
-.tbl {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.th, .td {
-    text-align: left;
-    padding: 8px;
+    background-color: #eee;
+    position: relative;
+    margin-top: 100px;
+    margin-left: 200px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.tr:nth-child(even){background-color: #f2f2f2}
+input[type=text]:hover,[type=password]:hover{
+    width: 200px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    border:1px solid white;
+    padding-left: 5px;
+}
 
-.th {
-    background-color: #41a3b1;
-    color: white;
+
+.tb{
+    width:100px;
+    background-color: #aaa;
+}
+.tb1{
+    width: ;
+}
+.tb2{
+    width:100px;
+    float: center;
+    background-color: white;
 }
 </style>
 </head>
 <body>
 
 <nav class="navi_menu" id="mySidenav">
-  <?php include '../../details.php'; ?>
-  <a href="../indexstockkeeper.php" class="navi"><img src="../../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="type.php" class="navi"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
-  <a href="id.php" class="navi"><img src="../../img/report.png" class="image">&nbsp;&nbsp;COFFIN ID REGISTRATION</a>
-  <a href="moq.php" class="active"><img src="../../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
-  <a href="report1.php" class="navi"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;STOCK DETAILS</a>
-  <a href="report2.php" class="navi"><img src="../../img/account.png" class="image">&nbsp;&nbsp;STOCK COUNT</a>
-  <a href="graph.php" class="navi"><img src="../../img/stock.png" class="image">&nbsp;&nbsp;COFFIN LEVEL</a>
-  
+  <?php include '../details.php'; ?>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="type.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
+  <a href="updateprices.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
+  <a href="../report/payment.php" class="navi"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
+  <a href="../report/supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
+  <a href="moq.php" class="active"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
 </nav>
+
 <div class="menu2" align="right">
     <div class="menu2in">
       <a href="../../signout.php" class="myButton">Log Out</a>
@@ -80,7 +78,7 @@ body{
 <div class="con2">
     <?php
                     
-                require "dbcon/dbcon.php";
+                require "../dbcon/dbcon.php";
                      $error=FALSE;
                         $typeerr = $moqerr = "";
                  if (isset($_POST['update'])) {
@@ -150,7 +148,7 @@ body{
                 </form>
                  </div>  
 <?php
-    require "dbcon/dbcon.php";
+    require "../dbcon/dbcon.php";
     $sql = "SELECT * FROM moq";
     $query=(mysqli_query($conn,$sql));
 ?>

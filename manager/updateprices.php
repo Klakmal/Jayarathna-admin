@@ -11,8 +11,8 @@
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
     </style>
-<style>
-body{
+<style> 
+body{ 
     margin:0px;
     background-color: #eee;
 }
@@ -60,10 +60,12 @@ input[type=text]:hover,[type=password]:hover{
 <body>
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
-  <a href="../manager/indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="../manager/updateprices.php" class="active"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
+  <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
+  <a href="type.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
+  <a href="updateprices.php" class="active"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
   <a href="../report/payment.php" class="navi"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
   <a href="../report/supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
+  <a href="moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
 </nav>
 <div class="menu2" align="right">
     <div class="menu2in">
