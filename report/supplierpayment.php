@@ -33,12 +33,14 @@
 
 .tbl {
     border-collapse: collapse;
-    width: 600px;
+    width: 650px;
+    font-size: 13px;
 }
 
 .th, .td {
     text-align: left;
     padding: 8px;
+    border-bottom: 1px solid gray;
 }
 
 .tr:nth-child(even){background-color: #f2f2f2}
@@ -46,8 +48,7 @@
 .th {
     background-color: #41a3b1;
     color: white;
-}
-    </style>
+}   </style>
 </head>
 <body>
 <nav class="navi_menu" id="mySidenav">

@@ -43,17 +43,23 @@ input[type=text]:hover,[type=password]:hover{
 }
 
 
-.tb{
-    width:100px;
-    background-color: #aaa;
+.tbl {
+    border-collapse: collapse;
+    width: 500px;
+    font-size: 13px;
 }
-.tb1{
-    width: ;
+
+.th, .td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid gray;
 }
-.tb2{
-    width:100px;
-    float: center;
-    background-color: white;
+
+.tr:nth-child(even){background-color: #f2f2f2}
+
+.th {
+    background-color: #41a3b1;
+    color: white;
 }
 </style>
 </head>

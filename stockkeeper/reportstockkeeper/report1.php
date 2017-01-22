@@ -42,12 +42,14 @@
 
 .tbl {
     border-collapse: collapse;
-    width: 100%;
+    width: 600px;
+    font-size: 13px;
 }
 
 .th, .td {
     text-align: left;
     padding: 8px;
+    border-bottom: 1px solid gray;
 }
 
 .tr:nth-child(even){background-color: #f2f2f2}
