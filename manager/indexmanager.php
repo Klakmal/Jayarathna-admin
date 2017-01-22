@@ -14,7 +14,6 @@
         
         
         .indexcontainer{
-            width: 100%;
             height: 100%;
         }
         .reservation_nav{
@@ -52,7 +51,6 @@
             width: 100%;
         }
         .datediv{
-            width: 100%;
             padding-left: 220px; 
             
         }

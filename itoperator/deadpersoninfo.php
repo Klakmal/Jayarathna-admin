@@ -31,6 +31,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     background-color: #41a3b1;
     color: white;
 }
+    
+    .main_cover{
+            width: 81%;
+            height: 100%;
+            margin-left: 19%;
+            padding-top: 50px;
+            background-color: #f1f1f1;
+            color: dimgray;
+        }
+        .cover{
+            padding-top: 10%;
+        }
 </style>
 </head>
 <body>
@@ -77,13 +89,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
-  <div class="afb1" align="center">
-<div class="afb2" align="left">
+<div class="main_cover" align="center">
+        <div class="cover">
 <div id="id">
                 <form method="post" action="deadpersoninfo.php">
                 <table id="tb11">
                     <tr>
-                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">DEAD PERSON INFORMATION</b></th> 
+                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">DEAD PERSON INFORMATION</b><br><br><br></th> 
                     </tr>
                     <tr>
                     <td><label for="deadPersonName">Dead Person Name</label></td>

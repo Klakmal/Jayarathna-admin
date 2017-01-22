@@ -11,6 +11,18 @@
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
+    
+    .main_cover{
+            width: 81%;
+            height: 100%;
+            margin-left: 19%;
+            padding-top: 50px;
+            background-color: #f1f1f1;
+            color: dimgray;
+        }
+        .cover{
+            padding: 50px;
+        }
 </style>
 </head>
 <body>
@@ -57,8 +69,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     </div>
   </div>
 
-<div class="afb1" align="center">
-<div class="afb2" align="left">
+<div class="main_cover" align="center">
+        <div class="cover">
 <h1 style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;"><b>FEED-BACK</b></h1>
 <?php
     require "../dbcon/dbcon.php";
@@ -66,7 +78,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     $query=(mysqli_query($conn,$sql));
 
     while ($row = mysqli_fetch_assoc($query)){
-        echo "<div class='loopdiv'>";
+        echo "<div class='loopdiv' align='left'>";
         echo "<span class='fname'><img src='../img/name.png' class='proimg'>".$row['yourname']."</span><hr class ='hor'>";
         
         echo "<span class='fdname'><b>Feed-Back : </b></span>";

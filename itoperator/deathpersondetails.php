@@ -15,6 +15,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
         width: 205px;
         height: 75px;
     }
+    
+    .main_cover{
+            width: 81%;
+            height: 100%;
+            margin-left: 19%;
+            padding-top: 50px;
+            background-color: #f1f1f1;
+            color: dimgray;
+        }
+        .cover{
+            padding-top: 10%;
+        }
 </style>
 </head>
 <body>
@@ -61,8 +73,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     </div>
   </div>
 
-<div class="afb1" align="center">
-<div class="afb2" align="left">
+<div class="main_cover" align="center">
+        <div class="cover">
 <?php
     require "../dbcon/dbcon.php";
     
