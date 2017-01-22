@@ -3,10 +3,10 @@
 ?>
 <html>
 <head>
-    <title>Personal gallery</title>
+    <title>Personal Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/adminindex.css">
-    <link rel="stylesheet" type="text/css" href="../css/personalGallery.css">
+    <link rel="stylesheet" type="text/css" href="../css/webcastingadmin.css">
     <link rel="stylesheet" type="text/css" href="../css/manage.css">
     <style>
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
@@ -15,11 +15,10 @@
     </head>
 <body>
 
-<!--left navigation menu-->
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
     <a href="indexitoperator.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="admincondolence.php" class="navi"><img src="../img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE 
+    <a href="admincondolence.php" class="navi"><img src="../img/condolence.png" class="image">&nbsp;&nbsp;CONDOLENCE MESSAGE 
       <span class="noti">
       <?php
       require "../dbcon/dbcon.php";
@@ -48,12 +47,14 @@
   <a href="../itoperator/edititoperator.php" class="navi"><img src="../img/account.png" class="image">&nbsp;&nbsp;UPDATE PROFILE</a>
 </nav>
 
-<!--log out button-->
   <div class="menu2" align="right">
     <div class="menu2in">
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
+<div class = "web_container1" align="center">
+<!--personal gallery bigin-->
+
 
 <div class = "web_container1" align="center">
 <div class="web_container2">
@@ -86,7 +87,7 @@
                     $dir = ("../../Project/personalGallery");
 
                     //make the directory
-                    mkdir($dir, $deadPersonID);
+                    #mkdir($dir, $deadPersonID);
 
                     #alert if data transfered successfully
                     echo "<script>alert('photos are successfully uploaded'); window.location.href='personalGalleryadmin.php'; </script>"; 
@@ -110,17 +111,19 @@
             <table id="tbl1">
                 
                         <h1 id="heading2" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Personal Gallery</b></h1>
-						<hr>	
-				    <tr>
+            <hr>
+                   
+        
+        <tr>
                     <td colspan="2" align="center">
                         
-						<br>
+            <br>
                     </td>
                 
                 </tr>
                  <tr>
                     
-                        <td><label for="deadPersonID">Dead Person ID : </label></span></td>
+                        <td><label for="deadPersonID">Dead Person ID : </label></td>
                         
                         <td><input type="text" name="deadPersonID" id="deadPersonID" placeholder="Dead Person ID" required></td>
                 
@@ -146,6 +149,104 @@
                 </table>
             </form>
             </div>
+            </div>
+            </div>
+            
+<!--personal gallery end-->
+<!--search dead person bigin-->
 
-    </body>
+
+<div class = "web_container1" align="center">
+<div class="web_container2">
+
+   
+  <?php
+                require "../dbcon/dbcon.php";
+                
+                 if (isset($_POST['insert'])) {
+                     
+                     
+                                $deadPersonName = $_POST['deadPersonName'];
+                            
+    $sql = "SELECT * FROM deathpersondetails WHERE deadPersonName = '$deadPersonName'";//TAKE ALL DETAILS FROM DEATHPERSONDETAILS WITH GIVEN DEAD PERSON NAME
+    $query=(mysqli_query($conn,$sql));
+?>
+<table>
+    <tr> 
+        <th>Dead Person ID</th>
+        <th>Dead Person Name</th> 
+        <th>School</th>
+        <th>University</th>
+        <th>Homecity</th>
+        <th>Employee</th>  
+    </tr>
+
+<?php
+    while ($row = mysqli_fetch_assoc($query)){
+         echo "<tr>";
+                
+            echo "<td>";
+            echo $row['deadPersonID'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['deadPersonName'];
+            echo "</td>";
+
+            echo "<td>";
+            echo $row['school'];
+            echo "</td>";
+                
+            echo "<td>";
+            echo $row['university'];
+            echo "</td>";
+
+             echo "<td>";
+            echo $row['homecity'];
+            echo "</td>";
+                
+            echo "<td>";
+            echo $row['employee'];
+            echo "</td>";
+
+         echo "</tr>";}
+?>
+</table>
+<?php
+}
+?>
+
+            <div id="id">
+                <form method="post" action="webcastingadmin.php">
+            <table id="tbl1">
+                
+                        <h1 id="heading2" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">DEAD PERSON INFORMATION</b></h1>
+            <hr>
+                <tr>
+                    <td colspan="2" align="center">
+                      <br>
+                    </td>
+                </tr>
+                    <tr>
+                    <td><label for="deadPersonName">Dead Person Name</label></td>
+                    <td><input type="text" name="deadPersonName" placeholder="Dead Person Name" required></td>
+                    </tr> 
+                    <tr>
+                    <td colspan="2" align="center">
+                    <input type="submit" value="Search" name="insert">
+                    </td>
+                    </tr>
+
+                </table>
+            
+                </form>
+            </div>  
+
+  </div>
+  </div>
+
+<!--search dead person end-->
+
+</div>
+</body>
 </html>

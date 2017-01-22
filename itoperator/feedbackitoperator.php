@@ -12,7 +12,7 @@
 html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
     
-    .main_cover{
+    .main_cover{ 
             width: 81%;
             height: 100%;
             margin-left: 19%;
@@ -47,6 +47,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
       </span>
   </a>
   <a href="webcastingadmin.php" class="navi"><img src="../img/webcasting.png" class="image">&nbsp;&nbsp;WEB CASTING</a>
+  <a href="personalGalleryadmin.php" class="navi"><img src="../img/webcasting.png" class="image">&nbsp;&nbsp;PERSONAL GALLERY</a>
   <a href="feedbackitoperator.php" class="active"><img src="../img/feedback.png" class="image">&nbsp;&nbsp;FEED-BACK 
       <span class="noti">
           <?php
