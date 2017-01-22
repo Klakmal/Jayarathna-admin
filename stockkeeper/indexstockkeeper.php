@@ -86,7 +86,7 @@
         <div id="location" style="margin-left:280px; width: 300px; height:350px; padding-top: 20px; background-color: #f44242; color: #ffeded;">
             <table>
                 <tr>
-                    <td colspan="3"><span class="warning">WARNING ! </span><br> Lori Talk Eka<br></td>
+                    <td colspan="3"><span class="warning">WARNING ! </span><br> Remaining coffin level is less than MOQ. <br></td>
                 </tr>
                 <tr>
                     <th>

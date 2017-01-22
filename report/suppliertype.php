@@ -102,12 +102,13 @@
                 		$supplier = $_POST['supplier'];
                 		$type = $_POST['type'];
 
-                		$sql = "SELECT count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND type='$type' AND supplier='$supplier'";//GET NO OF COFFINS WITH REGARD TO TYPE & SUPPLIERS
+                		$sql = "SELECT count(id.id), sum(type.price), type.price AS unit FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND type='$type' AND supplier='$supplier'";//GET NO OF COFFINS WITH REGARD TO TYPE & SUPPLIERS
                     	$query=(mysqli_query($conn,$sql));
                     	?>
                     	<table class="tbl">
     					<tr class="tr">
 				        <th class="th">No of in</th>
+                <th class="th">Unit Price</th>
 				        <th class="th">Total Price</th>
     					</tr>
 						<?php
@@ -117,6 +118,11 @@
 						            echo "<td class='td'>";
 						            echo $row['count(id.id)'];
 						            echo "</td>";
+
+                        echo "<td class='td'>";
+                        echo $row['unit'];
+                        echo "</td>";
+
 						            
 						            echo "<td class='td'>";
 						            echo $row['sum(type.price)'];
@@ -134,7 +140,7 @@
                      	
                      			$type = $_POST['type'];
 
-                               $sql = "SELECT supplier,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND type='$type' GROUP BY supplier ";//GET SUPPLIERS REGARD TO TYPES
+                               $sql = "SELECT supplier,count(id.id), sum(type.price), type.price AS unit FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND type='$type' GROUP BY supplier ";//GET SUPPLIERS REGARD TO TYPES
                     			$query=(mysqli_query($conn,$sql));
                     			?>
 
@@ -142,6 +148,7 @@
 							    <tr>
 							        <th class="th">Supplier</th>
 							        <th class="th">No of in</th>
+                      <th class="th">Unit Price</th>
 							        <th class="th">Total Price</th>
 							        
 							    </tr>
@@ -157,6 +164,11 @@
 							            echo $row['count(id.id)'];
 							            echo "</td>";
 
+                          echo "<td class='td'>";
+                          echo $row['unit'];
+                          echo "</td>";
+
+
 							            echo "<td class='td'>";
 							            echo $row['sum(type.price)'];
 							            echo "</td>";
@@ -171,13 +183,14 @@
                      if(empty($_POST['type']) && !empty($_POST['supplier'])){ 
 
                      			$supplier = $_POST['supplier'];
-                                 $sql = "SELECT type,count(id.id), sum(type.price) FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";//GET TYPES REGARD TO SUPPLIERS
+                                 $sql = "SELECT type,count(id.id), sum(type.price), type.price FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";//GET TYPES REGARD TO SUPPLIERS
                                  $query=(mysqli_query($conn,$sql));
                                  ?>
                                  <table class="tbl">
 							    <tr>
 							        <th class="th">type</th>
 							        <th class="th">No of in</th>
+                      <th class="th">Unit Price</th>
 							        <th class="th">Total Price</th>
 							        
 							    </tr>
@@ -192,6 +205,11 @@
 							            echo "<td class='td'>";
 							            echo $row['count(id.id)'];
 							            echo "</td>";
+
+                          echo "<td class='td'>";
+                          echo $row['unit'];
+                          echo "</td>";
+
 
 							            echo "<td class='td'>";
 							            echo $row['sum(type.price)'];
