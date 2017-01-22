@@ -27,7 +27,11 @@
 .th {
     background-color: #41a3b1;
     color: white;
-}  
+}
+    
+    .con2{
+        padding-top: 100px;
+    }
     
 </style>
     </head>
@@ -50,7 +54,7 @@
   </div>
         
 <div class="con1" align="center">
-<div class="con2">
+<div class="con2" align="center">
     <?php
                     
                 require "../dbcon/dbcon.php";
