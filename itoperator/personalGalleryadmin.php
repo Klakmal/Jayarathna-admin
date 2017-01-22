@@ -52,7 +52,7 @@
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
-<div class = "web_container1" align="center">
+
 <!--personal gallery bigin-->
 
 
@@ -247,6 +247,6 @@
 
 <!--search dead person end-->
 
-</div>
+
 </body>
 </html>
