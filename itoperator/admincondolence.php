@@ -203,7 +203,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     					$n = $_SESSION['msg_no'];
 						$dn=$_SESSION['deadPersonID'];
 						$vnm=$_SESSION['visname'];
-						$vnc=$_SESSION['visnic'];
 						$ren=$_SESSION['relation'];
 						$mge=$_SESSION['message'];
                     }
@@ -220,7 +219,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     if(isset($_GET['accept'])){
         $accept = $_GET['accept'];
     //    $sql= "INSERT INTO `acceptvisitor`(`msg_no`) VALUES ($_GET[accept])";
-        $sql = "INSERT INTO acceptvisitor(msg_no,deadPersonID,visname,visnic,relation,message) VALUES ($n,'$dn','$vnm','$vnc','$ren','$mge')";
+        $sql = "INSERT INTO acceptvisitor(msg_no,deadPersonID,visname,relation,message) VALUES ($n,'$dn','$vnm','$ren','$mge')";
         mysqli_query($conn,$sql);
         $sql= "delete from visitors where msg_no = $accept";    
     //    $sql = "INSERT INTO visitors (deadname,visname,visnic,relation,message) VALUES ('$dn','$vnm','$vnc','$ren','$mge')";
