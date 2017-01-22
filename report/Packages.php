@@ -95,7 +95,7 @@
                      
                                 $date2 = $_POST['date2'];
                             
-                $sql = "SELECT packname, COUNT(res_id),total FROM reservations WHERE dildate > '$date1' AND dildate < '$date2' GROUP BY packname";
+                $sql = "SELECT packname, COUNT(res_id),SUM(total) FROM reservations WHERE dildate > '$date1' AND dildate < '$date2' GROUP BY packname";
                 $query=(mysqli_query($conn,$sql));
 ?>
 
@@ -121,7 +121,7 @@
 
 
            echo "<td class='td'>";
-            echo $row['total'];
+            echo $row['SUM(total)'];
             echo "</td>";
 
          echo "</tr>";}
