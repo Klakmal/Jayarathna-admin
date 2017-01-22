@@ -7,7 +7,7 @@
         
         
 
-        $addr = gethostbyname("192.168.1.2");
+        $addr = gethostbyname("192.168.1.3");
 
         $client = stream_socket_client("tcp://$addr:80", $errno, $errorMessage);
 
