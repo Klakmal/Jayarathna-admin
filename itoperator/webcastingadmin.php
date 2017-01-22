@@ -51,6 +51,8 @@
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
   </div>
+<div class = "web_container1" align="center">
+<!--webcasting bigin-->
 
 <div class = "web_container1" align="center">
 <div class="web_container2">
@@ -100,13 +102,13 @@
             <table id="tbl1">
                 
                         <h1 id="heading2" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Webcasting</b></h1>
-						<hr>
+            <hr>
                    
-				
-				<tr>
+        
+        <tr>
                     <td colspan="2" align="center">
                         
-						<br>
+            <br>
                     </td>
                 
                 </tr>
@@ -127,7 +129,7 @@
                  <tr>
                     <td colspan="2" align="right">
                         <input type="submit" value="Submit" name="submit"> 
-                        <input type="reset" value="Cancle" name="cancle">
+                        <input type="reset" value="Cancel" name="cancel">
                     </td>
                 
                 </tr>
@@ -137,6 +139,116 @@
             </form>
             </div>
         </form>
+        </div>
+        </div>
+        
+<!--webcasting end-->
+
+<!--personal gallery bigin-->
+
+
+<div class = "web_container1" align="center">
+  <div class="web_container2">
+
+    <?php
+    #connecting to database 
+        require "../dbcon/dbcon.php";
+
+        $error=FALSE;
+            
+            if (isset($_POST['submit'])) {
+                #taking the dead pearson id input
+                if(empty($_POST['deadPersonID'])){ 
+                    $error = TRUE;
+                }else{
+                    $deadPersonID = $_POST['deadPersonID'];
+                }
+                #taking the number of input
+                if(empty($_POST['num_images'])){ 
+                    $error = TRUE;
+                }else{
+                    $num_images = $_POST['num_images'];
+                }                
+                if ($error==FALSE){
+
+                #insert details into the database
+                $sql = "INSERT INTO personalgallery (deadPersonID,num_images) VALUES ('$deadPersonID','$num_images')";
+                if(mysqli_query($conn,$sql)){
+                    //set the directory path name
+                    $dir = ("../../Project/personalGallery");
+
+                    //make the directory
+                    mkdir($dir, $deadPersonID);
+
+                    #alert if data transfered successfully
+                    echo "<script>alert('photos are successfully uploaded'); window.location.href='personalGalleryadmin.php'; </script>"; 
+                    die();
+                } else{
+                    #alert if failed to enter data
+                    echo "<script type='text/javascript'>alert('Not successfully data tranfer!')</script>"; 
+                }
+                 
+              }
+            }
+              
+              
+
+      ?>
+
+      <!--form for the personal gallery details-->
+ 
+        <div id="pGallery">
+            <form id="frm1" action="personalGalleryadmin.php" method="post">
+            <table id="tbl1">
+                
+                        <h1 id="heading2" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Personal Gallery</b></h1>
+            <hr>  
+            <tr>
+                    <td colspan="2" align="center">
+                        
+            <br>
+                    </td>
+                
+                </tr>
+                 <tr>
+                    
+                        <td><label for="deadPersonID">Dead Person ID : </label></td>
+                        
+                        <td><input type="text" name="deadPersonID" id="deadPersonID" placeholder="Dead Person ID" required></td>
+                
+                </tr>
+
+                <tr>
+                    
+                      <td><label for="num_images">Number Of Images: </label></td>
+                        
+                      <td> <input type="text" name="num_images" id="num_images" placeholder="Number of images" required></td>
+                    
+                </tr>
+                               
+                 <tr>
+                    <td colspan="2" align="right">
+                        <input type="submit" value="Submit" name="submit"> 
+                        <input type="reset" value="Cancel" name="cancel">
+                    </td>
+                
+                </tr>
+                
+                
+                </table>
+            </form>
+            </div>
+            </div>
+            </div>
+            
+<!--personal gallery end-->
+
+<!--search dead person bigin-->
+
+
+<div class = "web_container1" align="center">
+<div class="web_container2">
+
    
   <?php
                 require "../dbcon/dbcon.php";
@@ -194,12 +306,17 @@
 }
 ?>
 
-<div id="id">
+            <div id="id">
                 <form method="post" action="webcastingadmin.php">
-                <table id="tb11">
-                    <tr>
-                        <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">DEAD PERSON INFORMATION</b></th> 
-                    </tr>
+            <table id="tbl1">
+                
+                        <h1 id="heading2" align="center"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">DEAD PERSON INFORMATION</b></h1>
+            <hr>
+                <tr>
+                    <td colspan="2" align="center">
+                      <br>
+                    </td>
+                </tr>
                     <tr>
                     <td><label for="deadPersonName">Dead Person Name</label></td>
                     <td><input type="text" name="deadPersonName" placeholder="Dead Person Name" required></td>
@@ -213,11 +330,13 @@
                 </table>
             
                 </form>
-                </div>  
+            </div>  
+
+  </div>
+  </div>
+
+<!--search dead person end-->
 
 </div>
-</div>
-
-
-    </body>
+</body>
 </html>
