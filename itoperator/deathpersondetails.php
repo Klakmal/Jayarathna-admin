@@ -146,7 +146,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
             
             <tr>
                 
-                    <td><label for="employee">Employee</label></td>
+                    <td><label for="employee">Work Place</label></td>
                     
                     <td><input type="text" name="employee" id="employee" required></td>
             
