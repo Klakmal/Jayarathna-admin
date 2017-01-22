@@ -11,12 +11,12 @@
     html,body,h1,h2,h3,h4,h5 {font-family: 'Ruda', sans-serif;}
     .w3-sidenav a,.w3-sidenav h4 {font-weight:bold;}
     </style>
-<style>
+<style> 
 body{ 
     margin:0px;
     background-color: #eee;
 }
-.con1{ 
+.con1{
     width: 100%;
     height: 100%;
     background-color: ;
@@ -61,18 +61,17 @@ input[type=text]:hover,[type=password]:hover{
 <nav class="navi_menu" id="mySidenav">
   <?php include '../details.php'; ?>
   <a href="indexmanager.php" class="navi"><img src="../img/home.png" class="image">&nbsp;&nbsp;HOME</a>
-  <a href="type.php" class="active"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
-  <a href="updateprices.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
+  <a href="type.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;COFFIN PRICES</a>
+  <a href="updateprices.php" class="active"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
   <a href="../report/payment.php" class="navi"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
   <a href="../report/supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
   <a href="moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
 </nav>
-
-<div class="menu2" align="right" style="margin-bottom: 100px;">
+<div class="menu2" align="right">
     <div class="menu2in">
       <a href="../signout.php" class="myButton">Log Out</a>
     </div>
-  </div>
+
 <div class="con1" align="center">
 <div class="con2">
     <?php
@@ -81,7 +80,7 @@ input[type=text]:hover,[type=password]:hover{
                      
                  if (isset($_POST['update'])) {
                      
-                     			$no=$_POST["no"];
+                                $no=$_POST["no"];
 
                                 $type = $_POST['type'];
                             
@@ -227,8 +226,7 @@ input[type=text]:hover,[type=password]:hover{
         echo "</tr>";}
 ?>
     </table>
-             </div>
-         </div>
-
-    </body>
+</div>
+</div>
+</body>
 </html>
