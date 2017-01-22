@@ -183,7 +183,7 @@
                      if(empty($_POST['type']) && !empty($_POST['supplier'])){ 
 
                      			$supplier = $_POST['supplier'];
-                                 $sql = "SELECT type,count(id.id), sum(type.price), type.price FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";//GET TYPES REGARD TO SUPPLIERS
+                                 $sql = "SELECT type,count(id.id), sum(type.price), type.price AS unit FROM type, id WHERE '$frm' < id.timein AND id.timein < '$to' AND id.no=type.no AND supplier='$supplier' GROUP BY type ";//GET TYPES REGARD TO SUPPLIERS
                                  $query=(mysqli_query($conn,$sql));
                                  ?>
                                  <table class="tbl">
