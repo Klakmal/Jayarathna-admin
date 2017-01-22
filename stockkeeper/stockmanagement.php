@@ -33,6 +33,17 @@
         padding-top: 100px;
     }
     
+    .main_cover{
+            width: 81%;
+            height: 100%;
+            margin-left: 19%;
+            padding-top: 50px;
+            background-color: #f1f1f1;
+            color: dimgray;
+        }
+        .cover{
+            padding-top: 10%;
+        }
 </style>
     </head>
     <body>
@@ -53,8 +64,8 @@
     </div>
   </div>
         
-<div class="con1" align="center">
-<div class="con2" align="center">
+<div class="main_cover" align="center">
+        <div class="cover">
     <?php
                     
                 require "../dbcon/dbcon.php";

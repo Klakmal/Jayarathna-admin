@@ -89,7 +89,7 @@ input[type=text]:hover,[type=password]:hover{
                         if ($row0 = mysqli_fetch_assoc($result1)){
                 ?>
                 <div id="type">
-                <form method="post" action="updatesupp.php">
+                <form method="post" action="upType.php">
                 <table id="tb6">
                     <tr>
                         <th colspan="2" align="left"><b style="color:white; font-size:24px; text-shadow:2px 2px 2px gray;">Coffin Suppliers Details</b><br><br></th> 
