@@ -27,7 +27,7 @@ body{
     background-color: #eee;
     position: relative;
     margin-top: 100px;
-    margin-left: 200px;
+    margin-left: 100px;
     padding: 20px;
     border-radius: 10px;
 }

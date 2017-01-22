@@ -27,7 +27,7 @@ body{
     background-color: #eee;
     position: relative;
     margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 200px;
     padding: 20px;
     border-radius: 10px;
 }
@@ -46,11 +46,13 @@ input[type=text]:hover,[type=password]:hover{
 .tbl {
     border-collapse: collapse;
     width: 900px;
+    font-size: 13px;
 }
 
 .th, .td {
     text-align: left;
     padding: 8px;
+    border-bottom: 1px solid gray;
 }
 
 .tr:nth-child(even){background-color: #f2f2f2}
@@ -80,60 +82,9 @@ input[type=text]:hover,[type=password]:hover{
  <?php
                     
                 require "dbcon/dbcon.php";
+                if (isset($_GET['remove'])) {
                      
-                 if (isset($_POST['update'])) {
-                     
-                     
-                                $supplierno = $_POST['supplierno'];
-                            
-                     
-                                $supplier = $_POST['supplier'];
-                            
-                     
-                     
-                                $contactno = $_POST['contactno'];
-                            
-                     
-                                $address = $_POST['address'];
-                            
-                     
-                                $email = $_POST['email'];
-                                                
-                     
-                                $platinum = null;
-                                $gold = null;
-                                $silver = null;
-                                $bronze = null;
-                                if (isset($_POST['types'])) {
-                                    foreach ($_POST['types'] as $key => $value) {
-                                        if ($value == 'platinum') {
-                                            $platinum = "Yes";
-                                        } elseif ($value == 'gold') {
-                                            $gold = 'Yes';
-                                        } elseif ($value == 'silver') {
-                                            $silver = 'Yes';
-                                        } elseif ($value == 'bronze') {
-                                            $bronze = 'Yes';
-                                        }
-                                    }
-                                }
-
-                 
-               
-
-                $sql = "UPDATE supplier SET supplier='$supplier', contactno='$contactno', address='$address', email='$email', platinum ='$platinum', gold= '$gold', silver= '$silver', bronze= '$bronze' WHERE supplierno= '$supplierno'";
-
-                if (mysqli_query($conn, $sql)) {
-                    //echo '<script>alert("Record updated successfully")</script>';
-                    echo "<script>window.location('location:supplier.php')</script>";
-                } else {
-                    echo "error" ;
-                }
-                }
-                 
-                if (isset($_POST['delete'])) {
-                     
-                     $supplierno=$_POST["supplierno"];
+                     $supplierno=$_GET["remove"];
                     
                  
 
@@ -258,8 +209,6 @@ input[type=text]:hover,[type=password]:hover{
                     <tr>
                     
                         <td colspan="2" align="center">
-                        <input type="submit" value="UPDATE" name="update"> 
-                        <input type="submit" value="DELETE" name="delete">
                         <input type="submit" value="INSERT" name="insert">
                     </td>
                     
@@ -283,11 +232,13 @@ input[type=text]:hover,[type=password]:hover{
         <th class="th">Gold</th>
         <th class="th">Silver</th>
         <th class="th">Bronze</th>
+        <th class="th"></th>
+        <th class="th"></th>
     </tr>
 <?php
     while ($row = mysqli_fetch_assoc($query)){
          echo '<tr class="tr">';
-        
+            $no = $row['supplierno'];
             echo '<td class="td">';
             echo $row['supplierno'];
             echo "</td>";
@@ -323,14 +274,24 @@ input[type=text]:hover,[type=password]:hover{
             echo '<td class="td">';
             echo $row['bronze'];
             echo "</td>";
-           
-        echo "</tr>";}
+            
+        ?>
+            <td class="td">
+            <button class='updt'  onclick="location.href='updatesupplier.php?update=<?php echo $no; ?>'">Update</button>
+            </td>
+        
+            <td class="td">
+            <button class='rem' onclick="location.href='supplier.php?remove=<?php echo $no; ?>'">Remove</button>
+            </td>
+        </tr>
+    
+    <?php
+    }
     ?>
     </table>
              </div>
          </div>
 
    </div>
-</div>
     </body>
 </html>
