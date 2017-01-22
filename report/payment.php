@@ -83,7 +83,7 @@ input[type=text]:hover,[type=password]:hover{
   <a href="../manager/updateprices.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;UPDATE PRICES</a>
   <a href="payment.php" class="active"><img src="../img/payments.png" class="image">&nbsp;&nbsp;PAYMENT</a>
   <a href="supplier.php" class="navi"><img src="../img/supplier.png" class="image">&nbsp;&nbsp;SUPPLIER</a>
-  <a href="../manager/moq.php" class="navi"><img src="../img/updateprice.png" class="image">&nbsp;&nbsp;ADD/CHANGE MOQ</a>
+  
 </nav>
 <div class="menu2" align="right">
     <div class="menu2in">
